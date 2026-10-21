@@ -8,9 +8,17 @@
     {
       "src": "assets/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "resources/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/resources/navbars/?",
+      "dest": "/resources/navbars/index.html"
+    },
     {
       "handle": "filesystem"
     },
