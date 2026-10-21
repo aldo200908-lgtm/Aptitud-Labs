@@ -12,9 +12,17 @@
     {
       "src": "assets/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "resources/navbars/aurora.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "^/resources/navbars/aurora\\.html$",
+      "dest": "/resources/navbars/aurora.html"
+    },
     {
       "src": "^/$",
       "dest": "/index.html"
