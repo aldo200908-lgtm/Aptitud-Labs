@@ -16,9 +16,41 @@
     {
       "src": "resources/navbars/aurora.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "resources/navbars/folio.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "resources/navbars/glass.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "resources/navbars/nexa.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "resources/navbars/kai.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "^/resources/navbars/kai\\.html$",
+      "dest": "/resources/navbars/kai.html"
+    },
+    {
+      "src": "^/resources/navbars/nexa\\.html$",
+      "dest": "/resources/navbars/nexa.html"
+    },
+    {
+      "src": "^/resources/navbars/glass\\.html$",
+      "dest": "/resources/navbars/glass.html"
+    },
+    {
+      "src": "^/resources/navbars/folio\\.html$",
+      "dest": "/resources/navbars/folio.html"
+    },
     {
       "src": "^/resources/navbars/aurora\\.html$",
       "dest": "/resources/navbars/aurora.html"
