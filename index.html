@@ -187,6 +187,27 @@ body>nav .navcta:hover{background:#e2eddf!important}
 @keyframes aptLetterDrop{0%{opacity:0;transform:translateY(-92px) rotate(-5deg);filter:blur(4px)}65%{opacity:1;filter:blur(0)}82%{transform:translateY(6px) rotate(1deg)}100%{opacity:1;transform:translateY(0) rotate(0);filter:blur(0)}}
 @keyframes aptLabsReveal{to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.cinematic-hero .hero-letter,.cinematic-hero .hero-word-sub{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}}
+
+/* Immersive responsive hero: preserve the full vertical composition */
+@media(max-width:700px){
+.cinematic-hero{margin:0;width:100%;border-radius:0;min-height:0;height:auto;aspect-ratio:9/16;max-height:none;overflow:hidden;background:#0c211b}
+.cinematic-hero .hero-image,.cinematic-hero .hero-foreground{inset:0;background-position:center center!important;background-size:100% 100%!important}
+.cinematic-hero .hero-image{background-image:linear-gradient(180deg,#081c182e 0%,transparent 34%,#081a1430 60%,#071a13c9 100%),url('/assets/hero/aptitud-hero-background.png')!important;filter:none;transform:none;animation:heroSceneSettle 7s cubic-bezier(.2,.65,.2,1) both!important}
+.cinematic-hero .hero-foreground{background-image:url('/assets/hero/aptitud-hero-foreground.png')!important;transform:none;filter:none}
+.cinematic-hero .hero-grain{background:linear-gradient(180deg,#071a1740 0%,transparent 25%,transparent 51%,#071a1352 74%,#071a13e0 100%);opacity:1}
+.cinematic-hero .hero-frame{padding:clamp(130px,26vw,205px) 7% 76px}
+.cinematic-hero .hero-topline{position:relative;z-index:5}
+.cinematic-hero .hero-occlusion-title{top:34.7%}
+.cinematic-hero .hero-bottom{z-index:5}
+.cinematic-hero .hero-description{padding:10px 0 6px}
+.cinematic-hero .hero-description:before{inset:-25px -15px -15px;filter:blur(18px)}
+.cinematic-hero .hero-description p{font-size:clamp(13px,3.6vw,16px);line-height:1.55}
+.cinematic-hero .hero-cta{min-height:54px}
+.cinematic-hero .hero-scroll{bottom:19px}
+}
+@keyframes heroSceneSettle{from{opacity:.86;filter:brightness(.88)}to{opacity:1;filter:brightness(1)}}
+@media(max-width:390px){.cinematic-hero .hero-frame{padding-bottom:68px}.cinematic-hero .hero-description p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.cinematic-hero .hero-image{animation:none!important}}
 </style>
 </head>
 <body>
