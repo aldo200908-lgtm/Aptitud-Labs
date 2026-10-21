@@ -132,6 +132,16 @@ body>nav .brand{color:#fff}body>nav .brand-mark{border-color:#f5f5ed}body>nav .n
 @media(max-width:700px){.hero-occlusion-title,.hero-foreground{display:block}}
 @keyframes heroTypeReveal{from{opacity:0;filter:blur(10px);translate:0 24px}to{opacity:1;filter:blur(0);translate:0 0}}
 @media(prefers-reduced-motion:reduce){.cinematic-hero .hero-occlusion-title{animation:none}}
+/* Compact mobile navigation and visible layered photograph */
+@media(max-width:700px){
+body>nav{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;top:23px;left:25px;right:25px;min-height:64px;padding:10px 13px}
+body>nav .navlinks{width:auto;flex:0 0 auto;display:flex;gap:0}
+body>nav .navlinks a:not(.navcta){display:none}
+body>nav .navcta{display:inline-flex;align-items:center;white-space:nowrap}
+.cinematic-hero .hero-image{background-image:linear-gradient(180deg,#071a1599 0%,#15291d10 35%,#0b201838 65%,#071b13cc 100%),url('/assets/hero/aptitud-hero-background.png')!important;background-size:100% 100%,cover;background-position:center center,center center;animation:none;transform:none}
+.cinematic-hero .hero-foreground{background-image:url('/assets/hero/aptitud-hero-foreground.png');background-size:cover;background-position:center center}
+.cinematic-hero .hero-occlusion-title{top:29%}
+}
 </style>
 </head>
 <body>
