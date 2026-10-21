@@ -16,6 +16,10 @@
   ],
   "routes": [
     {
+      "src": "^/$",
+      "dest": "/index.html"
+    },
+    {
       "src": "^/resources/navbars/?$",
       "dest": "/resources/navbars/index.html"
     },
@@ -25,10 +29,6 @@
     },
     {
       "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
     }
   ]
 }
