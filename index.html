@@ -142,6 +142,28 @@ body>nav .navcta{display:inline-flex;align-items:center;white-space:nowrap}
 .cinematic-hero .hero-foreground{background-image:url('/assets/hero/aptitud-hero-foreground.png');background-size:cover;background-position:center center}
 .cinematic-hero .hero-occlusion-title{top:29%}
 }
+
+/* Final cinematic integration: live typography, spatial masking, readable controls */
+@media(max-width:700px){
+body>nav .navcta,body>nav .navlinks .navcta{color:#203529!important;background:#f5f5ed!important;font-weight:800;text-shadow:none}
+body>nav .navcta:hover{background:#e2eddf!important}
+.cinematic-hero{--scene-scroll:0px}
+.cinematic-hero .hero-image{filter:saturate(.94) contrast(1.03);will-change:transform}
+.cinematic-hero .hero-occlusion-title{top:43.5%;left:50%;font-size:clamp(57px,15.2vw,116px);letter-spacing:-.105em;z-index:1;color:#f5f4eeed;line-height:.95;text-shadow:0 4px 26px #15251b66;transform:translate(-50%,var(--scene-scroll))}
+.cinematic-hero .hero-foreground{z-index:2;filter:drop-shadow(0 2px 1px #13241b18)}
+.cinematic-hero .hero-grain{z-index:3;background:linear-gradient(180deg,transparent 0%,transparent 43%,#0b1c150d 56%,#091a13a8 79%,#091911d9 100%);opacity:1}
+.cinematic-hero .hero-bottom{margin-bottom:7px}
+.cinematic-hero .hero-description{position:relative;isolation:isolate;padding:19px 0 10px}
+.cinematic-hero .hero-description:before{content:'';position:absolute;z-index:-1;inset:-34px -18px -24px;background:linear-gradient(180deg,transparent,#071b15a3 42%,#071b15a6 80%,transparent);filter:blur(17px);pointer-events:none}
+.cinematic-hero .hero-description p{font-size:clamp(14px,3.55vw,16px);line-height:1.7;max-width:36ch;text-wrap:pretty}
+.cinematic-hero .hero-index{color:#e2ecdf}
+.cinematic-hero .hero-cta{box-shadow:0 8px 30px #06160d35;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+.cinematic-hero .hero-cta:active{transform:scale(.97)}
+.cinematic-hero .hero-scroll{color:#e5eee4;z-index:6}
+.cinematic-hero .hero-titlewrap{visibility:visible;position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+}
+@media(max-width:370px){.cinematic-hero .hero-occlusion-title{font-size:14.8vw;top:43%}}
+@media(prefers-reduced-motion:reduce){.cinematic-hero .hero-image{will-change:auto}.cinematic-hero .hero-occlusion-title{transform:translateX(-50%);animation:none}}
 </style>
 </head>
 <body>
@@ -166,5 +188,5 @@ function playTone(time,frequency,duration,type,volume,endFrequency){if(!audioCtx
 function cue(index){if(!audioCtx||audioCtx.state!=='running')return;const t=audioCtx.currentTime+.005;try{if(index===0)playTone(t,230,.21,'sine',.09,720);if(index===1){playTone(t,150,.18,'triangle',.11,65);playTone(t,510,.09,'sine',.04,330)}if(index===2)playTone(t,310,.15,'sine',.07,900);if(index===3)playTone(t,125,.24,'triangle',.12,55);if(index===4){playTone(t,392,.38,'sine',.055,440);playTone(t+.08,587,.48,'sine',.045,659)}}catch(e){}}
 function enableSound(){if(audioCtx||intro.classList.contains('out')||intro.classList.contains('done'))return;try{const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(!AudioContextClass)return;audioCtx=new AudioContextClass();audioCtx.resume().then(()=>{const elapsed=performance.now()-introStarted;[0,630,1240,1850,2550].forEach((delay,index)=>{if(delay>=elapsed)soundTimers.push(window.setTimeout(()=>cue(index),delay-elapsed))})}).catch(()=>{});document.getElementById('enableSound').textContent='♫ Activado';document.getElementById('enableSound').disabled=true}catch(e){audioCtx=null}}
 if(reducedMotion){intro.classList.add('done')}else{introStarted=performance.now();intro.classList.add('is-playing');introTimer=window.setTimeout(()=>{finishIntro();stopSound()},3550);document.getElementById('enableSound').addEventListener('click',enableSound);document.getElementById('skipIntro').addEventListener('click',()=>{window.clearTimeout(introTimer);stopSound();finishIntro()})}
-const briefForm=document.getElementById('briefForm');if(briefForm){briefForm.addEventListener('submit',async event=>{event.preventDefault();if(!briefForm.reportValidity())return;const fields=new FormData(briefForm);const request='SOLICITUD DE PROYECTO — APTITUD LABS\nNombre: '+fields.get('nombre')+'\nCorreo: '+fields.get('correo')+'\nServicio: '+fields.get('servicio')+'\nPresupuesto: '+fields.get('presupuesto')+'\nDetalles: '+fields.get('detalle');const status=document.getElementById('briefResult');try{await navigator.clipboard.writeText(request);status.textContent='Solicitud copiada. Puedes pegarla en tu aplicación de mensajería para compartirla.'}catch(error){status.textContent='No se pudo copiar automáticamente. Selecciona y copia el texto que aparece abajo.';const output=document.createElement('textarea');output.readOnly=true;output.value=request;output.style.width='100%';output.style.marginTop='12px';output.rows=8;status.appendChild(output);output.focus();output.select()}})};</script>
+const cinematicHero=document.querySelector('.cinematic-hero');if(cinematicHero&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){let scrollScheduled=false;const updateHeroScroll=()=>{scrollScheduled=false;if(window.innerWidth>700)return;const distance=Math.min(Math.max(window.scrollY,0),window.innerHeight);cinematicHero.style.setProperty('--scene-scroll',(distance*.035).toFixed(1)+'px')};window.addEventListener('scroll',()=>{if(!scrollScheduled){scrollScheduled=true;requestAnimationFrame(updateHeroScroll)}},{passive:true});updateHeroScroll()};const briefForm=document.getElementById('briefForm');if(briefForm){briefForm.addEventListener('submit',async event=>{event.preventDefault();if(!briefForm.reportValidity())return;const fields=new FormData(briefForm);const request='SOLICITUD DE PROYECTO — APTITUD LABS\nNombre: '+fields.get('nombre')+'\nCorreo: '+fields.get('correo')+'\nServicio: '+fields.get('servicio')+'\nPresupuesto: '+fields.get('presupuesto')+'\nDetalles: '+fields.get('detalle');const status=document.getElementById('briefResult');try{await navigator.clipboard.writeText(request);status.textContent='Solicitud copiada. Puedes pegarla en tu aplicación de mensajería para compartirla.'}catch(error){status.textContent='No se pudo copiar automáticamente. Selecciona y copia el texto que aparece abajo.';const output=document.createElement('textarea');output.readOnly=true;output.value=request;output.style.width='100%';output.style.marginTop='12px';output.rows=8;status.appendChild(output);output.focus();output.select()}})};</script>
 </body></html>
