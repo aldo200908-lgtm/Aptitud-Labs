@@ -6,17 +6,21 @@
       "use": "@vercel/static"
     },
     {
-      "src": "assets/**",
+      "src": "resources/navbars/index.html",
       "use": "@vercel/static"
     },
     {
-      "src": "resources/**",
+      "src": "assets/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/resources/navbars/?",
+      "src": "^/resources/navbars/?$",
+      "dest": "/resources/navbars/index.html"
+    },
+    {
+      "src": "^/resources/navbars/index\\.html$",
       "dest": "/resources/navbars/index.html"
     },
     {
