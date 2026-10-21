@@ -281,26 +281,12 @@ body>nav .navcta:hover{background:#e2eddf!important}
 @media(max-width:700px){.apt-mascot{right:10px;bottom:12px}.apt-character{width:68px;height:77px}.apt-speech{width:min(250px,calc(100vw - 28px));padding:12px 13px}.apt-speech p{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.apt-character svg{animation:none}}
 
-/* Legacy positioning rules retained for compatibility; opt-in guide is fixed by final rules */
-.apt-mascot{left:auto;right:14px;top:auto;bottom:14px;transition:left .7s cubic-bezier(.2,.7,.2,1),top .7s cubic-bezier(.2,.7,.2,1),right .7s ease,bottom .7s ease}
-.apt-mascot.apti-roaming{right:auto;bottom:auto;align-items:flex-end}
-.apt-mascot.apti-roaming .apt-speech{width:min(245px,calc(100vw - 96px))}
-.apt-character svg{animation:aptiFloat 3.2s ease-in-out infinite}
-.apti-spotlight{outline:2px solid #e9bd72!important;outline-offset:7px;box-shadow:0 0 0 9px #e9bd7224;transition:outline-color .3s,box-shadow .3s}
-.apti-pointer{position:fixed;z-index:64;width:0;height:0;pointer-events:none;display:none;filter:drop-shadow(0 1px 5px #10231799)}
-.apti-pointer.is-visible{display:block}
-.apti-pointer svg{overflow:visible}
-@media(max-width:700px){.apt-mascot.apti-roaming .apt-speech{width:min(220px,calc(100vw - 105px))}.apti-spotlight{outline-offset:3px}}
-@media(prefers-reduced-motion:reduce){.apt-mascot{transition:none!important}}
-
-/* Professional restraint: guide is opt-in, compact and never blocks reading */
-.apti-pointer{display:none!important}
-.apt-mascot{right:14px!important;bottom:14px!important;left:auto!important;top:auto!important;transition:none!important;align-items:flex-end}
-.apt-mascot.apti-roaming{right:14px!important;bottom:14px!important;left:auto!important;top:auto!important}
+/* APTI stays fixed and opt-in; no pointer or roaming overlays */
+.apti-pointer,.apti-spotlight{display:none}
+.apt-mascot{right:14px;bottom:14px;left:auto;top:auto;transition:none}
 .apt-character{width:64px;height:73px}
 .apt-speech{width:min(270px,calc(100vw - 30px));max-height:45svh;overflow:auto}
-.apti-spotlight{outline:none!important;box-shadow:none!important}
-@media(max-width:700px){.apt-mascot{right:10px!important;bottom:10px!important}.apt-character{width:56px;height:64px}.apt-speech{width:min(240px,calc(100vw - 26px))}}
+@media(max-width:700px){.apt-mascot{right:10px;bottom:10px}.apt-character{width:56px;height:64px}.apt-speech{width:min(240px,calc(100vw - 26px))}}
 
 /* Direct contact: two clear channels, no backend or false submission states */
 .contact-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;margin-top:22px}
