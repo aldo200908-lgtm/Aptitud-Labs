@@ -40,6 +40,10 @@
     {
       "src": "robots.txt",
       "use": "@vercel/static"
+    },
+    {
+      "src": "favicon.svg",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
