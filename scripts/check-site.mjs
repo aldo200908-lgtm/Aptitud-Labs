@@ -112,6 +112,7 @@ for(const [publicPath,sourcePath] of pages) {
   test(sitemap.includes('<loc>'+canonicalBase+publicPath+'</loc>'),
     sourcePath+': falta en sitemap.xml');
   test(built.has(sourcePath),sourcePath+': falta en la lista de builds de Vercel');
+  test(html.includes('property="og:image"'),sourcePath+': falta imagen para vista previa social');
   checkLinks(html,sourcePath,publicPath);
   checkScripts(html,sourcePath);
 }
@@ -124,6 +125,9 @@ for(const extra of extras){
   }
   checkScripts(html,extra,undefined);
 }
+const resourceDemos=file('resources/navbars/index.html');
+test((resourceDemos.match(/<iframe sandbox="allow-scripts"/g)||[]).length===5,
+  'Las demostraciones deben estar aisladas con sandbox');
 const home=file('index.html');
 test(home.includes('name="correo" type="email"')&&!home.includes('name="correo" type="email" maxlength="150" autocomplete="email" required'),
   'El correo de formulario para WhatsApp debe ser opcional');
