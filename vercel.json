@@ -48,9 +48,33 @@
     {
       "src": "diseno-web-puno/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "soluciones/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "nfc-qr/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "diseno-web-juliaca/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "^/diseno-web-juliaca/?$",
+      "dest": "/diseno-web-juliaca/index.html"
+    },
+    {
+      "src": "^/nfc-qr/?$",
+      "dest": "/nfc-qr/index.html"
+    },
+    {
+      "src": "^/soluciones/?$",
+      "dest": "/soluciones/index.html"
+    },
     {
       "src": "^/diseno-web-puno/?$",
       "dest": "/diseno-web-puno/index.html"
