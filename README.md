@@ -34,6 +34,10 @@ node scripts/check-site.mjs
 
 El workflow `.github/workflows/quality.yml` automatiza estos controles en pushes y pull requests. Comprueba enlaces internos, sitemap, metadatos, rutas, archivos y sintaxis de JavaScript.
 
+Además, el workflow instala Selenium y ejecuta `python scripts/browser_smoke.py` en Chromium para comprobar menú, formulario, móviles de 320–390 px, páginas sectoriales y exportación del editor. Ejecuta `node scripts/check-live.mjs` para verificar que el dominio `.com` y el alias Vercel responden, y comprobar endpoints publicados. Este diagnóstico es **informativo**: un build exitoso no garantiza accesibilidad desde todos los países o redes.
+
+La configuración de Vercel también aplica una política CSP para limitar recursos externos; las pruebas de navegador la reproducen localmente para detectar incompatibilidades.
+
 Las pruebas estáticas **no sustituyen** las pruebas visuales en celular y computadora, Lighthouse/PageSpeed, Search Console ni la verificación de enlaces externos.
 
 ## Contacto, privacidad y mantenimiento

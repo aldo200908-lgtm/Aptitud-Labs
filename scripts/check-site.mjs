@@ -52,6 +52,10 @@ test(vercel.routes.some(r=>r.src.includes('aptitud-web')&&r.dest==='/aptitud-web
  'Falta la ruta de Aptitud Web');
 test(vercel.routes.some(r=>r.src.includes('aptitud-hero-background')&&r.headers?.['Content-Type']==='image/jpeg'),
  'El JPEG del hero requiere Content-Type image/jpeg');
+const securityRoute=vercel.routes.find(r=>r.src.startsWith('^/.*')&&r.continue===true&&r.headers);
+const csp=securityRoute?.headers?.['Content-Security-Policy']||'';
+test(csp.includes("default-src 'self'")&&csp.includes("object-src 'none'")&&csp.includes("frame-ancestors 'self'"),
+ 'Falta CSP restrictiva o se ha eliminado la protección de contenido');
 
 const localTarget=(pathname)=>{
   if (pages.has(pathname)) return pages.get(pathname);
@@ -136,6 +140,10 @@ test(home.includes('aptitudlabs.studio@gmail.com'),'Falta correo de contacto');
 test(home.includes('id="sectores"'),'Falta zona de sectores');
 test(home.includes('href="#contenido"')&&home.includes('id="contenido"'),'Falta acceso directo al contenido');
 test(file('404.html').includes('name="robots" content="noindex"'),'404 no debe indexarse');
+const editor=file('aptitud-web/index.html');
+test(editor.includes("if(el.id!=='contacto')"),'El HTML exportado debe conservar el ancla contacto');
+test(editor.includes("createElement('h1')"),'El editor debe exportar un H1');
+test(editor.includes("phone:''")&&editor.includes("validPhone(data.phone)"),'No usar un WhatsApp ficticio en el editor');
 
 console.log('Revisión de Aptitud Labs:',checks,'comprobaciones ejecutadas.');
 if(errors.length){
