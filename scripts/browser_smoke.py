@@ -33,6 +33,11 @@ class SilentHandler(SimpleHTTPRequestHandler):
     def log_message(self, *_args):
         pass
 
+    def end_headers(self):
+        # Mismo CSP definido en vercel.json para detectar bloqueos reales.
+        self.send_header("Content-Security-Policy", "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self'; frame-src 'self'; form-action 'self'")
+        super().end_headers()
+
 
 def check(condition, message):
     global CHECKS
