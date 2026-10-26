@@ -114,8 +114,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     const mensaje=['Hola, Aptitud Labs. Quisiera cotizar una página web en Puno.','Nombre o negocio: '+name,'Rubro: '+rubro,'Necesito: '+objetivo,detalle?'Detalles: '+detalle:null].filter(Boolean).join('\n');
     const href='https://wa.me/51937367296?text='+encodeURIComponent(mensaje);
     document.getElementById('punoQuoteStatus').textContent='Se abrirá WhatsApp con un mensaje preparado. Revisa y confirma el envío en la aplicación; no se ha enviado automáticamente.';
-    const popup=window.open(href,'_blank','noopener,noreferrer');
-    if(!popup){window.location.assign(href)}
+    window.open(href,'_blank','noopener,noreferrer');
   });
 })();
 </script></body></html>
