@@ -41,8 +41,8 @@ console.log('\nComprobación pública independiente: '+success+'/'+sites.length+
 const endpointChecks=[
   {path:'/robots.txt',code:200,needle:'Sitemap:'},
   {path:'/sitemap.xml',code:200,needle:'<urlset'},
-  {path:'/web-para-barberias/',code:200,needle:'Web para barberías'},
-  {path:'/web-para-restaurantes/',code:200,needle:'Carta digital'},
+  {path:'/web-para-barberias/',code:200,needle:'https://aptitudlabs.com/web-para-barberias/'},
+  {path:'/web-para-restaurantes/',code:200,needle:'https://aptitudlabs.com/web-para-restaurantes/'},
   {path:'/aptitud-web/',code:200,needle:'noindex,follow'},
   {path:'/prueba-error-404-aptitud-2026/',code:404,needle:'Esta página no existe'},
 ];
