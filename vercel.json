@@ -44,9 +44,17 @@
     {
       "src": "favicon.svg",
       "use": "@vercel/static"
+    },
+    {
+      "src": "diseno-web-puno/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "^/diseno-web-puno/?$",
+      "dest": "/diseno-web-puno/index.html"
+    },
     {
       "src": "^/resources/navbars/kai\\.html$",
       "dest": "/resources/navbars/kai.html"
