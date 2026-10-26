@@ -258,6 +258,30 @@ def run():
                 "Portada sin desbordamiento móvil a 320px",
             )
 
+            # Nueva identidad visual: inspeccionar anchos críticos en las siete landings.
+            for route in (
+                "/", "/soluciones/", "/nfc-qr/", "/diseno-web-puno/",
+                "/diseno-web-juliaca/", "/web-para-restaurantes/",
+                "/web-para-barberias/",
+            ):
+                for width in (320, 390):
+                    driver.set_window_size(width, 840)
+                    driver.get(base + route)
+                    wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "h1")) == 1)
+                    check(
+                        driver.execute_script(
+                            "return document.documentElement.scrollWidth <= window.innerWidth + 2"
+                        ),
+                        f"{route}: rediseño sin desbordamiento móvil a {width}px",
+                    )
+                check(
+                    driver.execute_script(
+                        "return !!document.querySelector('link[href=\"/assets/refresh.css\"]')"
+                    ),
+                    f"{route}: utiliza el nuevo sistema visual compartido",
+                )
+            driver.set_window_size(1280, 900)
+
             driver.get(base + "/resources/navbars/")
             wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "iframe")) == 5)
             check(
