@@ -151,7 +151,9 @@ def run():
             phone = driver.find_element(By.CSS_SELECTOR, '[data-key="phone"]')
             check(phone.get_attribute("value") == "", "Editor empieza sin WhatsApp inventado")
             driver.find_element(By.ID, "export").click()
-            check("WhatsApp válido" in driver.find_element(By.ID, "toast").text,
+            denied = driver.execute_script("return document.getElementById('toast').textContent")
+            no_download = not list(Path(downloads).glob("*.html"))
+            check("WhatsApp válido" in denied and no_download,
                   "No exporta con número de WhatsApp ausente")
 
             phone.send_keys("51987654321")
