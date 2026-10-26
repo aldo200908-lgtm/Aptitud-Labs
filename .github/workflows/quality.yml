@@ -23,3 +23,12 @@ jobs:
         run: python -m pip install --disable-pip-version-check "selenium>=4.20,<5"
       - name: Comprobar menú, formulario y exportación en Chromium
         run: python scripts/browser_smoke.py
+  public-site-diagnostic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Diagnosticar DNS y acceso público (informativo)
+        run: node scripts/check-live.mjs
