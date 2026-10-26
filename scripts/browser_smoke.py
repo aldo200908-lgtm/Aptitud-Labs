@@ -203,6 +203,43 @@ def run():
                 "HTML autónomo responsive sin desbordamiento a 375px"
             )
 
+            # Página de Puno: prueba de conversión y prueba de ancho móvil.
+            driver.set_window_size(1280, 900)
+            driver.get(base + "/diseno-web-puno/")
+            wait(driver, lambda d: d.find_element(By.ID, "punoQuoteForm"))
+            check(len(driver.find_elements(By.CSS_SELECTOR, "h1")) == 1,
+                  "Diseño web Puno: exactamente un H1")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#trabajos-web-puno .proof-card")) == 2,
+                  "Diseño web Puno: dos trabajos etiquetados como demostración")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "link[rel='canonical'][href='https://aptitudlabs.com/diseno-web-puno/']")) == 1,
+                  "Diseño web Puno: canonical correcto")
+            driver.execute_script("window.__punoQA=null; window.open=(url)=>{window.__punoQA=url;return {};};")
+            quote = driver.find_element(By.ID, "punoQuoteForm")
+            driver.execute_script("arguments[0].scrollIntoView({block:'center',behavior:'instant'})", quote)
+            driver.find_element(By.CSS_SELECTOR, "#punoQuoteForm button[type='submit']").click()
+            check(driver.execute_script("return window.__punoQA") is None,
+                  "Diseño web Puno: no se prepara mensaje con campos vacíos")
+            driver.find_element(By.ID, "punoNombre").send_keys("Tienda & Café QA")
+            Select(driver.find_element(By.ID, "punoRubro")).select_by_visible_text("Restaurante o cafetería")
+            Select(driver.find_element(By.ID, "punoObjetivo")).select_by_visible_text("Mostrar productos o una carta digital")
+            driver.find_element(By.ID, "punoDetalle").send_keys("Quiero ver catálogo con QR.")
+            driver.execute_script("arguments[0].scrollIntoView({block:'center',behavior:'instant'});",driver.find_element(By.CSS_SELECTOR, "#punoQuoteForm button[type='submit']"))
+            time.sleep(0.35)
+            driver.find_element(By.CSS_SELECTOR, "#punoQuoteForm button[type='submit']").click()
+            outgoing = wait(driver, lambda d: d.execute_script("return window.__punoQA"))
+            decoded = unquote(outgoing)
+            check(outgoing.startswith("https://wa.me/51937367296?text="),
+                  "Diseño web Puno: WhatsApp apunta al contacto real")
+            check("Tienda & Café QA" in decoded and "Restaurante o cafetería" in decoded and "carta digital" in decoded,
+                  "Diseño web Puno: los datos se conservan en la consulta")
+            check("no se ha enviado automáticamente" in driver.find_element(By.ID, "punoQuoteStatus").text,
+                  "Diseño web Puno: se aclara que todavía falta enviar el mensaje")
+            for width in (320,375,390):
+                driver.set_window_size(width, 840)
+                dimensions = driver.execute_script("return [document.documentElement.scrollWidth,window.innerWidth]")
+                check(dimensions[0] <= dimensions[1]+2,
+                      f"Diseño web Puno: sin scroll lateral a {width}px")
+
             for sector in ("/web-para-barberias/", "/web-para-restaurantes/"):
                 driver.get(base + sector)
                 wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "h1")) == 1)
