@@ -183,6 +183,37 @@ def run():
                   "La exportación no incluye controles del editor")
             check("@media(max-width:640px)" in html, "Exportación conserva estilo responsive")
 
+            # Abrir el archivo exportado sin el editor ni backend.
+            driver.get(generated.as_uri())
+            wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "h1")) == 1)
+            driver.set_window_size(375, 812)
+            driver.find_element(By.CSS_SELECTOR, 'a[href="#contacto"]').click()
+            wait(driver, lambda d: d.execute_script("return location.hash") == "#contacto")
+            check(driver.find_element(By.ID, "contacto").is_displayed(),
+                  "HTML autónomo navega al contacto")
+            check(
+                driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth + 2"),
+                "HTML autónomo responsive sin desbordamiento a 375px"
+            )
+
+            for sector in ("/web-para-barberias/", "/web-para-restaurantes/"):
+                driver.get(base + sector)
+                wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "h1")) == 1)
+                check(len(driver.find_elements(By.CSS_SELECTOR, "a[href^='https://wa.me/']")) > 0,
+                      f"{sector}: CTA funcional de WhatsApp")
+                check(
+                    driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth + 2"),
+                    f"{sector}: sin desbordamiento móvil a 375px",
+                )
+
+            driver.set_window_size(320, 740)
+            driver.get(base + "/")
+            wait(driver, lambda d: d.find_element(By.ID, "briefForm"))
+            check(
+                driver.execute_script("return document.documentElement.scrollWidth <= window.innerWidth + 2"),
+                "Portada sin desbordamiento móvil a 320px",
+            )
+
             driver.get(base + "/resources/navbars/")
             wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "iframe")) == 5)
             check(
