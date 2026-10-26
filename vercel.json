@@ -72,6 +72,18 @@
     {
       "src": "site.webmanifest",
       "use": "@vercel/static"
+    },
+    {
+      "src": "aptitud-web/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "web-para-barberias/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "web-para-restaurantes/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -82,6 +94,14 @@
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "X-Frame-Options": "SAMEORIGIN",
         "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/assets/hero/aptitud-hero-background\\.png$",
+      "headers": {
+        "Content-Type": "image/jpeg",
+        "Cache-Control": "public, max-age=604800"
       },
       "continue": true
     },
@@ -142,6 +162,18 @@
       "dest": "/404.html"
     },
     {
+      "src": "^/aptitud-web/?$",
+      "dest": "/aptitud-web/index.html"
+    },
+    {
+      "src": "^/web-para-barberias/?$",
+      "dest": "/web-para-barberias/index.html"
+    },
+    {
+      "src": "^/web-para-restaurantes/?$",
+      "dest": "/web-para-restaurantes/index.html"
+    },
+    {
       "handle": "filesystem"
     },
     {
@@ -149,5 +181,6 @@
       "dest": "/404.html",
       "status": 404
     }
-  ]
+  ],
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }
