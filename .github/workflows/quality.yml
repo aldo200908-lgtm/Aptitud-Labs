@@ -16,3 +16,10 @@ jobs:
           node-version: '22'
       - name: Verificar enlaces, SEO, rutas y JavaScript
         run: node scripts/check-site.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar navegador de pruebas
+        run: python -m pip install --disable-pip-version-check "selenium>=4.20,<5"
+      - name: Comprobar menú, formulario y exportación en Chromium
+        run: python scripts/browser_smoke.py
