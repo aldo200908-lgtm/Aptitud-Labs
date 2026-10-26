@@ -48,6 +48,11 @@ test(vercel.builds.some(r=>r.src==='404.html'),'Falta publicar 404.html');
 test(robots.includes(canonicalBase+'/sitemap.xml'),'robots.txt sin mapa correcto');
 test((sitemap.match(/<loc>/g)||[]).length===pages.size,
   'La cantidad de URLs en sitemap no coincide con las páginas indexables');
+
+const sitemapDates=[...sitemap.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)].map(x=>x[1]);
+test(sitemapDates.length===pages.size,'Cada página en sitemap debe tener fecha de modificación');
+test(sitemapDates.every(date=>Number.isFinite(Date.parse(date))&&Date.parse(date)<=Date.now()),'Fechas de sitemap inválidas o futuras');
+
 test(vercel.routes.some(r=>r.src.includes('aptitud-web')&&r.dest==='/aptitud-web/index.html'),
  'Falta la ruta de Aptitud Web');
 test(vercel.routes.some(r=>r.src.includes('aptitud-hero-background')&&r.headers?.['Content-Type']==='image/jpeg'),
