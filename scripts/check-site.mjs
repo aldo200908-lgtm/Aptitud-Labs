@@ -143,6 +143,13 @@ test(home.includes('name="correo" type="email"')&&!home.includes('name="correo" 
 test(home.includes('https://wa.me/51937367296'),'Falta WhatsApp válido');
 test(home.includes('aptitudlabs.studio@gmail.com'),'Falta correo de contacto');
 test(home.includes('id="sectores"'),'Falta zona de sectores');
+const punoLanding=file('diseno-web-puno/index.html');
+test(punoLanding.includes('id="trabajos-web-puno"')&&punoLanding.includes('id="cotizar-web-puno"'),
+ 'Puno debe mostrar ejemplos y facilitar la cotización');
+test(punoLanding.includes('id="punoQuoteForm"')&&punoLanding.includes('Se abrirá WhatsApp'),
+ 'Puno debe tener formulario de consulta sin backend');
+test(punoLanding.includes('no los presentamos como encargos')||punoLanding.includes('No los presentamos como encargos'),
+ 'Las demostraciones no deben presentarse como clientes');
 test(home.includes('href="#contenido"')&&home.includes('id="contenido"'),'Falta acceso directo al contenido');
 test(file('404.html').includes('name="robots" content="noindex"'),'404 no debe indexarse');
 const editor=file('aptitud-web/index.html');
