@@ -119,7 +119,18 @@ def run():
             driver.find_element(By.NAME, "detalle").send_keys(
                 "Quisiera conocer opciones para un negocio pequeño, con contacto por WhatsApp."
             )
-            driver.find_element(By.CSS_SELECTOR, "[data-contact-channel='whatsapp']").click()
+            send_button = driver.find_element(By.CSS_SELECTOR, "[data-contact-channel='whatsapp']")
+            driver.execute_script("arguments[0].scrollIntoView({block:'center',behavior:'instant'});",send_button)
+            time.sleep(0.7)  # las animaciones de revelado terminan antes del clic
+            obscurer = driver.execute_script("""
+                const r=arguments[0].getBoundingClientRect();
+                const x=Math.round(r.x+r.width/2), y=Math.round(r.y+r.height/2);
+                const hit=document.elementFromPoint(x,y);
+                return {x,y,viewport:innerHeight,top:hit?.tagName,classes:hit?.className,
+                  button:arguments[0].contains(hit)};
+            """,send_button)
+            print("Diagnóstico clic WhatsApp:",obscurer,flush=True)
+            send_button.click()
             outgoing = wait(driver, lambda d: d.execute_script("return window.__qaWhatsApp"))
             check(outgoing.startswith("https://wa.me/51937367296?text="), "WhatsApp usa el número de Aptitud Labs")
             check("Persona QA" in unquote(outgoing) and "No indicado" in unquote(outgoing),
