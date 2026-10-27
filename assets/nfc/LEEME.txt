@@ -1,0 +1,1 @@
+Sube estos 23 archivos WEBP directamente a assets/nfc/ en GitHub. No subas el ZIP. La tienda utiliza rutas /assets/nfc/{producto}-01.webp a -04.webp (placa hasta -03.webp).
