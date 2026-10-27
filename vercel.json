@@ -96,6 +96,10 @@
     {
       "src": "planes/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "cotizar/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -133,6 +137,10 @@
     {
       "src": "^/planes/?$",
       "dest": "/planes/index.html"
+    },
+    {
+      "src": "^/cotizar/?$",
+      "dest": "/cotizar/index.html"
     },
     {
       "src": "^/nfc-qr/?$",
