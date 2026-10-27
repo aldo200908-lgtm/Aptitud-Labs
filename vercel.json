@@ -84,6 +84,18 @@
     {
       "src": "web-para-restaurantes/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "servicios/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "proyectos/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "planes/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -109,6 +121,18 @@
     {
       "src": "^/diseno-web-juliaca/?$",
       "dest": "/diseno-web-juliaca/index.html"
+    },
+    {
+      "src": "^/servicios/?$",
+      "dest": "/servicios/index.html"
+    },
+    {
+      "src": "^/proyectos/?$",
+      "dest": "/proyectos/index.html"
+    },
+    {
+      "src": "^/planes/?$",
+      "dest": "/planes/index.html"
     },
     {
       "src": "^/nfc-qr/?$",
