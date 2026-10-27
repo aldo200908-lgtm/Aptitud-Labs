@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aptitudlabs.com/</loc>
-  <lastmod>2026-10-26</lastmod>
+  <lastmod>2026-10-27</lastmod>
   </url>
   <url>
     <loc>https://aptitudlabs.com/diseno-web-puno/</loc>
@@ -35,5 +35,21 @@
   <url>
     <loc>https://aptitudlabs.com/web-para-restaurantes/</loc>
   <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://aptitudlabs.com/servicios/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://aptitudlabs.com/proyectos/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://aptitudlabs.com/planes/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://aptitudlabs.com/cotizar/</loc>
+    <lastmod>2026-10-27</lastmod>
   </url>
 </urlset>
