@@ -133,6 +133,11 @@ try {
       themeToggle: Boolean(document.querySelector('#theme-toggle')),
       projectCards: document.querySelectorAll('.project-card').length,
       options: document.querySelectorAll('input[name="servicio"]').length,
+      overflowCandidates: [...document.querySelectorAll('body *')]
+        .map(el => ({el, rect: el.getBoundingClientRect()}))
+        .filter(({el,rect}) => (rect.right > window.innerWidth + 3 || rect.left < -3) && rect.width > 0 && getComputedStyle(el).position !== 'fixed')
+        .slice(0,18)
+        .map(({el,rect}) => ({tag:el.tagName,className:String(el.className).slice(0,75),right:Math.round(rect.right),left:Math.round(rect.left),width:Math.round(rect.width)})),
     }));
     if (geometry.documentScrollWidth > geometry.width + 2) throw new Error('Desbordamiento horizontal móvil: ' + JSON.stringify(geometry));
     if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6 || !geometry.contactForm || !geometry.themeToggle || geometry.projectCards !== 2 || geometry.options !== 4) throw new Error('Navegación o controles incorrectos: ' + JSON.stringify(geometry));
