@@ -85,11 +85,20 @@ function checkLinks(html,sourcePath,publicPath) {
     if(url.origin!==canonicalBase) continue;
     const target=localTarget(url.pathname);
     test(existsSync(join(root,target)),sourcePath+': enlace local sin archivo '+href+' -> '+target);
-    if(tag==='a'&&url.hash&&url.hash!=='#'&&url.pathname===publicPath) {
-      test(html.includes('id="'+decodeURIComponent(url.hash.slice(1))+'"'),
-       sourcePath+': ancla inexistente '+href);
+    if(tag==='a'&&url.hash&&url.hash!=='#') {
+      const anchor=decodeURIComponent(url.hash.slice(1));
+      const route=pages.get(url.pathname);
+      const destination=url.pathname===publicPath?html:route&&existsSync(join(root,route))?file(route):null;
+      if(destination!==null) {
+        test(destination.includes('id="'+anchor+'"'),
+          sourcePath+': ancla de destino inexistente '+href);
+      }
     }
-    if(tag==='img') test(/\balt\s*=/.test(full),sourcePath+': imagen sin texto alternativo');
+    if(tag==='img') {
+      test(/\balt\s*=/.test(full),sourcePath+': imagen sin texto alternativo');
+      test(/\bwidth\s*=/.test(full)&&/\bheight\s*=/.test(full),
+        sourcePath+': imagen sin dimensiones para evitar cambios de diseño '+href);
+    }
     if(tag==='iframe') test(/\btitle\s*=/.test(full),sourcePath+': iframe sin título');
     if(tag==='a'&&/\btarget=["']_blank["']/.test(full)) {
       test(/\brel=["'][^"']*noopener/.test(full),sourcePath+': target blank sin noopener');
@@ -126,6 +135,13 @@ for(const [publicPath,sourcePath] of pages) {
     sourcePath+': falta en sitemap.xml');
   test(built.has(sourcePath),sourcePath+': falta en la lista de builds de Vercel');
   test(html.includes('property="og:image"'),sourcePath+': falta imagen para vista previa social');
+  test(html.includes('property="og:image:type"')&&html.includes('property="og:image:alt"'),
+    sourcePath+': faltan el tipo o la descripción alternativa de imagen Open Graph');
+  const ogImage=html.match(/<meta property="og:image" content="([^"]+)"/)?.[1];
+  if(ogImage?.startsWith(canonicalBase+'/')) {
+    const imagePath=ogImage.slice(canonicalBase.length+1);
+    test(existsSync(join(root,imagePath)),sourcePath+': recurso Open Graph ausente '+imagePath);
+  }
   checkLinks(html,sourcePath,publicPath);
   checkScripts(html,sourcePath);
 }
@@ -144,6 +160,13 @@ test((resourceDemos.match(/<iframe sandbox="allow-scripts"/g)||[]).length===5,
 const home=file('index.html');
 test(home.includes('name="correo" type="email"')&&!home.includes('name="correo" type="email" maxlength="150" autocomplete="email" required'),
   'El correo de formulario para WhatsApp debe ser opcional');
+const structured=[...home.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
+test(structured.some(x=>x['@type']==='Organization'),'Falta schema Organization');
+const localBusiness=structured.find(x=>x['@type']==='LocalBusiness');
+test(!!localBusiness&&!!localBusiness.areaServed&&!!localBusiness.telephone,
+  'Falta LocalBusiness para atención remota');
+test(!!localBusiness&&!('address' in localBusiness)&&!('geo' in localBusiness),
+  'LocalBusiness no debe declarar dirección o coordenadas físicas no verificadas');
 test(home.includes('https://wa.me/51937367296'),'Falta WhatsApp válido');
 test(home.includes('aptitudlabs.studio@gmail.com'),'Falta correo de contacto');
 test(home.includes('id="sectores"'),'Falta zona de sectores');
