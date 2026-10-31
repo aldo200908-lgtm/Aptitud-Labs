@@ -34,7 +34,7 @@ jobs:
           # Confirm all homepage portals now show real project/catalogue media.
           import re
           home=(site/'index.html').read_text(encoding='utf-8')
-          for selector in ('v6-gateway-services','v6-gateway-plans','v6-gateway-nfc'):
+          for selector in ('v3-gateway-services v6-realwork-card','v3-gateway-plans v6-realwork-card','v3-gateway-nfc v6-realwork-card'):
               assert selector in home, f'Missing improved image card: {selector}'
           for asset in ('assets/projects/sushi-ten-bento-cover.png',
                         'assets/projects/pulso-cover.webp',
