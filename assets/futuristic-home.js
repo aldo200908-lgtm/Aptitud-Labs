@@ -69,7 +69,7 @@
 
  // Filter seven actual examples; project feature is included in category counts.
  const controls=$$('[data-future-filter]');
- const projects=$('[data-future-kind]', $('#fx-project-grid')||document);
+ const projects=$$('[data-future-kind]', $('#fx-project-grid')||document);
  const status=$('#fx-filter-status');
  function filterProjects(value){
   const choice=['todos','web','herramientas'].includes(value)?value:'todos';
