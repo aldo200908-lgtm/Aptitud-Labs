@@ -19,6 +19,10 @@
 <link rel="stylesheet" href="/assets/refresh.css"><link rel="stylesheet" href="/assets/business-sections.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Aptitud Labs","url":"https://aptitudlabs.com/","description":"Estudio digital de diseño web, software y automatización para negocios en Puno, Perú.","email":"aptitudlabs.studio@gmail.com","contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+51-937-367-296","availableLanguage":"Spanish"},"areaServed":{"@type":"AdministrativeArea","name":"Puno, Perú"}}</script>
 <style>
+.home-project-art .home-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:2;display:block}
+.home-project-art.has-preview{aspect-ratio:16/9;min-height:0}
+.home-project-art.has-preview::after,.home-project-art.has-preview>span,.home-project-art.has-preview>strong,.home-project-art.has-preview>small{display:none}
+
 .home-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-bottom:18px}
 .home-project{overflow:hidden;border:1px solid #d0dde5;border-radius:22px;background:#fff}
 .home-project-art{padding:36px;min-height:325px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;position:relative;isolation:isolate;overflow:hidden}
@@ -84,15 +88,15 @@
     <p class="copy">Conoce dos demostraciones web de gastronomía. Abre cada proyecto y navega por sus páginas: no son solo imágenes.</p></div>
     <div class="home-projects">
       <article class="home-project sushi-project">
-        <div class="home-project-art" aria-hidden="true"><span>01 / DISEÑO WEB</span><strong>Sushi<br>Ten Bento</strong><small>Gastronomía japonesa · Concepto independiente</small></div>
+        <div class="home-project-art" aria-label="Vista previa de Sushi Ten Bento"><img class="home-cover" src="/assets/projects/sushi-ten-bento-cover.png" width="1600" height="900" loading="lazy" decoding="async" alt="Captura real de la portada de Sushi Ten Bento" onload="this.parentNode.classList.add('has-preview')" onerror="this.remove()"><span>01 / DISEÑO WEB</span><strong>Sushi<br>Ten Bento</strong><small>Gastronomía japonesa · Concepto independiente</small></div>
         <div class="home-project-bottom"><div><h3>Sushi Ten Bento</h3><p>Diseño gastronómico, catálogo visual y animaciones.</p></div><a href="https://aldo200908-lgtm.github.io/sushi-ten-bento-/" target="_blank" rel="noopener noreferrer" aria-label="Explorar demostración Sushi Ten Bento, abre en nueva pestaña">Explorar demo ↗</a></div>
       </article>
       <article class="home-project allin-project">
-        <div class="home-project-art" aria-hidden="true"><span>02 / DISEÑO WEB</span><strong>Allin<br>Mikuy</strong><small>Café Restobar · Concepto independiente</small></div>
+        <div class="home-project-art" aria-label="Vista previa de Allin Mikuy"><img class="home-cover" src="/assets/projects/allin-mikuy-cover.png" width="1600" height="900" loading="lazy" decoding="async" alt="Captura real de la portada de Allin Mikuy" onload="this.parentNode.classList.add('has-preview')" onerror="this.remove()"><span>02 / DISEÑO WEB</span><strong>Allin<br>Mikuy</strong><small>Café Restobar · Concepto independiente</small></div>
         <div class="home-project-bottom"><div><h3>Allin Mikuy</h3><p>Una carta interactiva, fotografía y diseño adaptable.</p></div><a href="https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/" target="_blank" rel="noopener noreferrer" aria-label="Explorar demostración Allin Mikuy, abre en nueva pestaña">Explorar demo ↗</a></div>
       </article>
     </div>
-    <p class="disclosure">Son proyectos de demostración independientes, no encargos de los establecimientos ni sus sitios oficiales. Las tarjetas son ilustraciones de estilo, no capturas de pantalla.</p>
+    <p class="disclosure">Son proyectos de demostración independientes, no encargos de los establecimientos ni sus sitios oficiales. Las portadas muestran capturas reales cuando estén disponibles, con una vista ilustrativa de respaldo.</p>
     <a class="button dark" href="/proyectos/">Ver portafolio completo ↗</a>
   </div>
 </section>
