@@ -328,7 +328,7 @@ def run():
             for route, selectors in (
                 ("/planes/", (".al-plans .section-title", ".al-card h3", ".al-price")),
                 ("/cotizar/", (".quote-addons legend", ".brief-step-title")),
-                ("/nfc-qr/", (".asset-guide strong", ".nfc-product h3")),
+                ("/nfc-qr/", (".asset-guide strong", ".nfc-product h3", ".nfc-checkout-info label")),
             ):
                 driver.get(base + route)
                 theme = wait(driver, lambda d: d.find_element(By.ID, "site-theme"))

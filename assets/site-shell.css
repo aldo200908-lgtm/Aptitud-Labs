@@ -52,3 +52,5 @@ body.site-page[data-theme=dark]{--cream:#111923;--paper:#172330;--ink:#eef5fa;--
 .site-page .asset-guide{background:var(--surface);border-color:var(--line);color:var(--ink)}.site-page .asset-guide>span:not(.asset-hint){color:var(--muted)}
 .site-page .quote-addons legend,.site-page .brief-review h4{color:var(--ink)}
 .site-page[data-theme=dark] .nfc-gift{color:#9ce0ca}
+.site-page[data-theme=dark] .nfc-checkout-info label{color:var(--muted)}
+.site-page[data-theme=dark] :is(input,textarea)::placeholder{color:#a7bac8;opacity:1}
