@@ -43,16 +43,18 @@
 .home-project-bottom a{color:#255b76;white-space:nowrap;font-size:13px;font-weight:800;text-underline-offset:4px}
 #trabajo-destacado .disclosure{margin-bottom:20px}
 @media(max-width:760px){.home-projects{grid-template-columns:1fr}.home-project-art{min-height:275px;padding:26px}.home-project-bottom{align-items:flex-start;flex-direction:column;gap:12px}}
-</style></head>
-<body>
+</style><link rel="stylesheet" href="/assets/folio-home.css">
+</head>
+<body class="al-folio-home" data-theme="light">
 <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 <!-- SITE HEADER START -->
 <header class="site-nav"><div class="shell nav-inner">
 <a class="brand" href="/" aria-label="Aptitud Labs, inicio"><span class="brand-sign" aria-hidden="true">a</span> Aptitud Labs<span class="brand-period">.</span></a>
 <nav class="desktop-links" aria-label="Navegación principal">
-<a href="/planes/">Planes</a><a href="/servicios/">Servicios</a><a href="/proyectos/">Nuestro trabajo</a><a href="/nfc-qr/">NFC + QR</a><a href="/diseno-web-puno/">Web en Puno</a>
+<a href="#inicio" aria-current="location">Inicio</a><a href="#nosotros">Estudio</a><a href="#resumen-servicios">Servicios</a><a href="#trabajo-destacado">Portafolio</a><a href="#resumen-planes">Planes</a><a href="/nfc-qr/">NFC + QR</a>
 </nav>
 <a class="nav-cta" href="/cotizar/#contratar">Contratar servicio <span aria-hidden="true">↗</span></a>
+<button class="folio-theme" type="button" id="folio-theme" aria-label="Activar modo oscuro" aria-pressed="false">Oscuro</button>
 <button class="menu-toggle" type="button" id="resource-menu-toggle" aria-expanded="false" aria-controls="resource-menu" aria-label="Abrir menú">Menú <span aria-hidden="true">☰</span></button>
 </div>
 <nav class="menu-panel" id="resource-menu" aria-label="Menú móvil" hidden>
@@ -67,23 +69,28 @@
 <!-- SITE HEADER END -->
 <main id="contenido">
 <section class="hero" id="inicio" aria-labelledby="hero-title"><div class="shell hero-grid">
-<div class="hero-copy">
+<div class="hero-copy folio-entrance">
 <div class="eyebrow">Estudio creativo & tecnológico · Perú</div>
-<h1 class="display" id="hero-title">Tu idea merece verse <i class="accent">increíble.</i></h1>
+<h1 class="display" id="hero-title">Hola, somos<br><span class="accent">Aptitud Labs.</span></h1>
+<p class="folio-role"><span id="folio-role">Diseño y desarrollo web</span></p>
 <p class="hero-lead">Diseñamos páginas web, herramientas y experiencias digitales que hacen que tu negocio se vea tan bien como lo que ofrece. Desde Puno para donde nos necesites.</p>
 <div class="hero-actions"><a class="button dark" href="/cotizar/#cotizador">Cotiza tu proyecto <span aria-hidden="true">↗</span></a><a class="button stroke" href="#trabajo-destacado">Ver nuestro trabajo <span aria-hidden="true">↓</span></a></div>
-<div class="hero-foot"><strong>Diseño hecho a tu medida.</strong><span>Web · Software · IA · NFC + QR<br>Atención remota y cotización personalizada</span></div>
+<div class="hero-foot"><strong>Diseño hecho a tu medida.</strong><span>Web · Software · IA · NFC + QR<br> Atención remota y cotización personalizada</span></div>
 </div>
-<div class="hero-art" aria-label="Maqueta ilustrativa de una página web moderna, ejemplo conceptual">
-<span class="hero-badge">Ideas con intención · 001</span>
-<div class="browser-window" aria-hidden="true"><div class="browser-bar"><i></i><i></i><i></i><span></span></div>
-<div class="browser-content"><div class="browser-top"><span>CASA VERDE<span style="color:#5A99B5">.</span></span><em>Menú &nbsp; Nosotros &nbsp; Reservas</em></div>
-<div class="browser-feature"><div><strong>Lo natural se disfruta.</strong><p>Una experiencia creada para marcas que se sienten diferentes.</p><b>Explorar carta ↗</b></div><div class="mock-image"></div></div>
-<div class="browser-stats"><span><strong>01 /</strong> Identidad</span><span><strong>02 /</strong> Experiencia</span><span><strong>03 /</strong> Diseño</span></div></div></div>
-<div class="floating-note"><small>Una web a la altura de tu idea</small><strong>Tu próxima gran impresión empieza aquí. ✳</strong></div>
-</div>
+<div class="folio-visual" aria-label="Identidad de Aptitud Labs y sus áreas de trabajo">
+<div class="folio-brand-orb"><img src="/favicon.svg" alt="Marca Aptitud Labs" width="400" height="400" fetchpriority="high"></div>
+<div class="folio-badges">
+<div class="folio-badge folio-entrance"><span class="folio-number" aria-hidden="true">01</span>Diseño pensado para tu negocio</div>
+<div class="folio-badge folio-entrance"><span class="folio-number" aria-hidden="true">02</span>Web · Apps · Automatización</div>
+<div class="folio-badge folio-entrance"><span class="folio-number" aria-hidden="true">03</span>Desde Puno, para todo el Perú</div>
+</div></div>
 </div></section>
 <div class="ticker" aria-label="Áreas de especialidad"><div class="shell ticker-inner"><span>Diseño web</span><b>✳</b><span>Automatización</span><b>✳</b><span>Aplicaciones</span><b>✳</b><span>Tarjetas NFC + QR</span></div></div>
+
+<section class="folio-about" id="nosotros" aria-labelledby="folio-about-title"><div class="shell folio-about-grid">
+<div><div class="eyebrow">CONOCE EL ESTUDIO</div><h2 id="folio-about-title">Diseño con intención.<br>Tecnología que sirve.</h2><p>Somos un estudio digital independiente de Puno. Convertimos ideas y necesidades de negocios en páginas web, aplicaciones y herramientas fáciles de usar.</p><a class="folio-about-link" href="/proyectos/#nosotros">Conoce Aptitud Labs ↗</a></div>
+<div><div class="folio-about-points"><div><h3>Nuestro enfoque</h3><p>Entender tu negocio, cuidar su identidad y construir una experiencia clara para quienes te visitan.</p></div><div><h3>Cómo empezamos</h3><p>Una conversación, un alcance por escrito y avances que puedas revisar antes de la entrega.</p></div></div><div class="folio-tech" aria-label="Áreas del estudio"><span>Diseño web</span><span>Apps y sistemas</span><span>Automatización</span><span>NFC + QR</span></div></div>
+</div></section>
 
 <section class="al-summary al-summary-services" id="resumen-servicios" aria-labelledby="resumen-servicios-title">
  <div class="al-summary-inner">
@@ -143,7 +150,7 @@
   <link rel="stylesheet" href="/assets/al-work.css">
   <div class="al-work-container">
     <header class="al-work-heading al-work-reveal">
-      <span class="al-work-eyebrow">NUESTRO TRABAJO · EN ACCIÓN</span>
+      <span class="al-work-eyebrow">PORTAFOLIO · TRABAJO SELECCIONADO</span>
       <h2 class="al-work-title" id="trabajo-title">Proyectos seleccionados</h2>
       <p class="al-work-intro">Conoce dos demostraciones web de gastronomía. Abre cada proyecto y navega por sus páginas: no son solo imágenes.</p>
     </header>
@@ -156,7 +163,7 @@
         </a>
         <div class="al-work-content">
           <h3 class="al-work-project-name">Sushi Ten Bento</h3>
-          <p class="al-work-description">Diseño gastronómico, catálogo visual y animaciones.</p>
+          <p class="al-work-description">Diseño gastronómico, catálogo visual y animaciones.</p><div class="folio-project-tags"><span>Diseño web</span><span>Catálogo visual</span><span>Demo navegable</span></div>
           <a class="al-work-demo" href="https://aldo200908-lgtm.github.io/sushi-ten-bento-/" target="_blank" rel="noopener noreferrer" aria-label="Explorar demo de Sushi Ten Bento, abre en una nueva pestaña">EXPLORAR DEMO <span aria-hidden="true">↗</span></a>
         </div>
       </article>
@@ -168,7 +175,7 @@
         </a>
         <div class="al-work-content">
           <h3 class="al-work-project-name">Allin Mikuy</h3>
-          <p class="al-work-description">Una carta interactiva, fotografía y diseño adaptable.</p>
+          <p class="al-work-description">Una carta interactiva, fotografía y diseño adaptable.</p><div class="folio-project-tags"><span>Carta digital</span><span>Diseño adaptable</span><span>Demo navegable</span></div>
           <a class="al-work-demo" href="https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/" target="_blank" rel="noopener noreferrer" aria-label="Explorar demo de Allin Mikuy, abre en una nueva pestaña">EXPLORAR DEMO <span aria-hidden="true">↗</span></a>
         </div>
       </article>
@@ -345,5 +352,7 @@
 <div class="footer-bottom"><span>© <span data-year>2026</span> Aptitud Labs. Diseñado para ideas que avanzan.</span><span>Hecho con intención. Sin promesas infladas.</span></div>
 </div></footer>
 <!-- SITE FOOTER END -->
+<a class="folio-contact-float" href="https://wa.me/51937367296" target="_blank" rel="noopener noreferrer" aria-label="Conversar con Aptitud Labs por WhatsApp">Hablemos ↗</a>
+<script src="/assets/folio-home.js" defer></script>
 <script src="/assets/al-summary.js" defer></script>
 <script src="/assets/refresh.js" defer></script></body></html>
