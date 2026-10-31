@@ -1,0 +1,55 @@
+name: Aptitud Labs | Motion V5 preview on GitHub Pages
+
+on:
+  push:
+    branches:
+      - preview/github-pages-motion-v5
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: aptitud-github-pages-preview
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/preview/github-pages-motion-v5'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout only the Motion V5 preview
+        uses: actions/checkout@v4
+      - name: Build scoped Pages assets (no production changes)
+        run: python3 scripts/build-gh-pages-preview.py --repo Aptitud-Labs --output _site
+      - name: Validate rebased assets and page routes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          site=Path('_site')
+          for relative in ('index.html','proyectos/index.html','servicios/index.html',
+                           'planes/index.html','nfc-qr/index.html','cotizar/index.html',
+                           'assets/motion-graphics-v5.css','assets/motion-graphics-v5.js'):
+              assert (site/relative).is_file(), relative
+          print('GitHub Pages preview contents verified.')
+          PY
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages (must be enabled in repository Settings)
+        uses: actions/configure-pages@v5
+      - name: Deploy Motion V5 without touching aptitudlabs.com
+        id: deployment
+        uses: actions/deploy-pages@v4
