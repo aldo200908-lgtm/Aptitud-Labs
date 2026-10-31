@@ -321,6 +321,34 @@ def run():
                 )
             driver.set_window_size(1280, 900)
 
+            # Shared theme: exercise real computed contrast on legacy conversion surfaces.
+            for route, selectors in (
+                ("/planes/", (".al-plans .section-title", ".al-card h3", ".al-price")),
+                ("/cotizar/", (".quote-addons legend", ".brief-step-title")),
+                ("/nfc-qr/", (".asset-guide strong", ".nfc-product h3")),
+            ):
+                driver.get(base + route)
+                theme = wait(driver, lambda d: d.find_element(By.ID, "site-theme"))
+                if driver.execute_script("return document.body.dataset.theme") != "dark":
+                    theme.click()
+                for selector in selectors:
+                    ratio = driver.execute_script(r"""
+                        const el=document.querySelector(arguments[0]);
+                        if(!el) return 0;
+                        const rgba=s=>(s.match(/[\d.]+/g)||[]).map(Number);
+                        const fg=rgba(getComputedStyle(el).color);
+                        let node=el,bg=[255,255,255,1];
+                        while(node){
+                          const c=rgba(getComputedStyle(node).backgroundColor);
+                          if(c.length>=3&&(c[3]===undefined||c[3]>=0.99)){bg=c;break}
+                          node=node.parentElement;
+                        }
+                        const lum=c=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4})
+                          .reduce((v,x,i)=>v+x*[.2126,.7152,.0722][i],0);
+                        const a=lum(fg),b=lum(bg);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+                    """, selector)
+                    check(ratio >= 4.5, f"{route} {selector}: contraste oscuro {ratio:.2f}:1")
+
             driver.get(base + "/resources/navbars/")
             wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "iframe")) == 5)
             check(

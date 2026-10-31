@@ -15,7 +15,9 @@ jobs:
         with:
           node-version: '22'
       - name: Verificar enlaces, SEO, rutas y JavaScript
-        run: node scripts/check-site.mjs
+        run: |
+          node scripts/check-site.mjs
+          node scripts/test-site-theme.mjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

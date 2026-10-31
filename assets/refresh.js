@@ -25,7 +25,7 @@ if(form){
     const servicio=clean(data.get('servicio'),100);
     const presupuesto=clean(data.get('presupuesto'),80)||'Por definir';
     const detalle=clean(data.get('detalle'));
-    const mensaje=['Hola, Aptitud Labs. Quisiera conversar sobre un proyecto.','Nombre: '+nombre,'Correo: '+correo,'Servicio: '+servicio,'Presupuesto aproximado: '+presupuesto,'Mi idea: '+detalle].join('\n');
+    const mensaje=['Hola, Aptitud Labs. Quisiera conversar sobre un proyecto.','Nombre: '+nombre,'Correo: '+correo,'Servicio: '+servicio,...(data.has('presupuesto')?['Presupuesto aproximado: '+presupuesto]:[]),'Mi idea: '+detalle].join('\n');
     const channel=event.submitter?.dataset.contactChannel||'whatsapp';
     const url=channel==='email'?'mailto:aptitudlabs.studio@gmail.com?subject='+encodeURIComponent('Proyecto web - '+nombre)+'&body='+encodeURIComponent(mensaje):'https://wa.me/51937367296?text='+encodeURIComponent(mensaje);
     const status=document.getElementById('briefResult');

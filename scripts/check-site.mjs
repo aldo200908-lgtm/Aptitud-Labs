@@ -11,7 +11,6 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const canonicalBase = 'https://aptitudlabs.com';
 const pages = new Map([
   ['/', 'index.html'],
-  ['/soluciones/', 'soluciones/index.html'],
   ['/diseno-web-puno/', 'diseno-web-puno/index.html'],
   ['/diseno-web-juliaca/', 'diseno-web-juliaca/index.html'],
   ['/nfc-qr/', 'nfc-qr/index.html'],
@@ -24,7 +23,7 @@ const pages = new Map([
   ['/planes/', 'planes/index.html'],
   ['/cotizar/', 'cotizar/index.html'],
 ]);
-const extras = ['aptitud-web/index.html','404.html',
+const extras = ['soluciones/index.html','aptitud-web/index.html','404.html',
   'resources/navbars/aurora.html','resources/navbars/folio.html',
   'resources/navbars/glass.html','resources/navbars/nexa.html',
   'resources/navbars/kai.html'];
@@ -169,7 +168,10 @@ test(!!localBusiness&&!('address' in localBusiness)&&!('geo' in localBusiness),
   'LocalBusiness no debe declarar dirección o coordenadas físicas no verificadas');
 test(home.includes('https://wa.me/51937367296'),'Falta WhatsApp válido');
 test(home.includes('aptitudlabs.studio@gmail.com'),'Falta correo de contacto');
-test(home.includes('id="sectores"'),'Falta zona de sectores');
+test(home.includes('id="sectores"'),'Falta acceso a rubros');
+const servicesRedirect=vercel.routes.find(r=>r.status===308&&r.headers?.Location==='/servicios/');
+test(!!servicesRedirect,'Soluciones debe redirigir permanentemente a Servicios');
+test(!sitemap.includes('https://aptitudlabs.com/soluciones/'),'No incluir redirecciones en sitemap');
 const punoLanding=file('diseno-web-puno/index.html');
 test(punoLanding.includes('id="trabajos-web-puno"')&&punoLanding.includes('id="cotizar-web-puno"'),
  'Puno debe mostrar ejemplos y facilitar la cotización');

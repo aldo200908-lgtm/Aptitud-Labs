@@ -147,8 +147,11 @@
       "dest": "/nfc-qr/index.html"
     },
     {
-      "src": "^/soluciones/?$",
-      "dest": "/soluciones/index.html"
+      "src": "^/soluciones(?:/index\\.html)?/?$",
+      "status": 308,
+      "headers": {
+        "Location": "/servicios/"
+      }
     },
     {
       "src": "^/diseno-web-puno/?$",

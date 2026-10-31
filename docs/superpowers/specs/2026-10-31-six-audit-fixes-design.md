@@ -1,0 +1,6 @@
+# Six audit fixes — approved scope
+User approved implementing the six solutions in the audit table, including publishing to main. Keep the portfolio a separate page. Retain current NFC base prices, +S/3 personalization, pricing calculations and the mandatory formal hiring brief. Do not invent clients, deliveries, physical product specifications or commercial commitments.
+
+Implement: replace nine published image placeholders with honest, useful content; remove contradictory NFC pricing copy; shorten homepage to seven sections; merge Soluciones into Servicios with permanent redirects and compatible anchors; share light/dark navigation, typography and footer across public marketing pages; provide an initial three-required-field inquiry on homepage and quotation page before the unchanged detailed brief. Use actual existing concept screenshots where relevant and label them. Keep the studio's pale blue glass direction.
+
+Approach: incremental static HTML/CSS/JS changes on an isolated copy of production. No framework migration, no new database or paid dependency, no new images needed. Reuse existing four explanatory illustrations and two project screenshots. Shared CSS and theme JS provide chrome consistency; forms retain existing user-confirmed app handoff.
