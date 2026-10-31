@@ -169,6 +169,13 @@ test(!!localBusiness&&!('address' in localBusiness)&&!('geo' in localBusiness),
 test(home.includes('https://wa.me/51937367296'),'Falta WhatsApp válido');
 test(home.includes('aptitudlabs.studio@gmail.com'),'Falta correo de contacto');
 test(home.includes('id="sectores"'),'Falta acceso a rubros');
+const brandedPages=['index.html','proyectos/index.html','servicios/index.html','planes/index.html','nfc-qr/index.html','cotizar/index.html'];
+for(const page of brandedPages){
+ const content=file(page);
+ test(content.includes('/assets/obsidian-ice-v4.css')&&content.includes('/assets/obsidian-ice-v4.js'),
+  page+': falta una pieza del sistema Obsidian Ice');
+ test(content.includes('obsidian-ice'),page+': identidad de marca no aplicada');
+}
 const portfolioPage=file('proyectos/index.html');
 test(home.includes('href="/proyectos/"')&&home.includes('id="conoce-aptitud"'),
  'Inicio debe enlazar al Portafolio en una ruta propia');
