@@ -108,6 +108,25 @@ def run():
             driver.set_window_size(390, 844)
             driver.get(base + "/")
             wait(driver, lambda d: d.find_element(By.ID, "hero-title"))
+            # Reproduce the user's screenshot: previous version saved "light".
+            # The new matte branding must ignore that legacy key on first visit.
+            driver.execute_script(
+                "localStorage.setItem('aptitud-portfolio-theme','light');"
+                "localStorage.removeItem('aptitud-obsidian-theme-v4');"
+            )
+            driver.refresh()
+            wait(driver, lambda d: d.execute_script("return document.body.dataset.theme") == "dark")
+            check(driver.find_element(By.ID, "site-theme").text == "Claro",
+                  "Preferencia clara antigua no sobreescribe negro mate de V4")
+            check(driver.execute_script(
+                "return document.querySelector('.site-nav').getBoundingClientRect().height < 82"
+            ), "Barra móvil compacta, sin tapar el contenido")
+            check(driver.execute_script("""
+                const a=document.querySelector('.home-gateway');
+                const b=document.querySelector('.home-belief-index');
+                return b.getBoundingClientRect().top-a.getBoundingClientRect().bottom < 115;
+            """), "Sin gran hueco vacío entre las secciones del Inicio")
+
             check("Aptitud Labs" in driver.title and "Diseño web" in driver.title, "Inicio con título comercial")
             check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Inicio tiene un solo H1")
             check(driver.find_element(By.ID, "conoce-aptitud").is_displayed(),
@@ -131,8 +150,9 @@ def run():
                   "Inicio tiene tres vistas de demostración seleccionables")
             driver.execute_script("document.querySelector('[data-v3-preview=\"caja\"]').click()")
             wait(driver, lambda d: "caja-cover.webp" in d.find_element(By.ID, "v3-workbench-main").get_attribute("src"))
-            check(driver.find_element(By.ID, "v3-workbench-name").text == "Caja Clara",
-                  "Inicio cambia imagen y nombre a Caja Clara sin navegación")
+            check(driver.execute_script(
+                "return document.getElementById('v3-workbench-name').textContent.trim() === 'Caja Clara'"
+            ), "Inicio cambia imagen y nombre a Caja Clara sin navegación")
             check(driver.find_element(By.CSS_SELECTOR, '[data-v3-preview="caja"]').get_attribute("aria-pressed") == "true",
                   "Selector de Inicio anuncia el proyecto activo")
             driver.execute_script("document.querySelector('[data-v3-preview=\"maison\"]').click()")
@@ -150,6 +170,16 @@ def run():
                   "Portafolio incluye un reel de tres proyectos")
             check(driver.execute_script("return !!document.querySelector('.v4-folio-layers')"),
                   "Portafolio ofrece profundidad de capas tridimensionales")
+            check(driver.execute_script("""
+                const visual=document.querySelector('.v4-folio-visual');
+                const screen=document.querySelector('.v3-folio-screen');
+                const layers=document.querySelector('.v4-folio-layers');
+                const toolbar=document.querySelector('.v3-folio-toolbar');
+                return visual.contains(screen)
+                    && getComputedStyle(layers).display==='none'
+                    && visual.getBoundingClientRect().bottom<=toolbar.getBoundingClientRect().top+2;
+            """), "Capas 3D no tapan el selector del portafolio en móvil")
+
             check(driver.execute_script("return document.body.dataset.theme") == "dark",
                   "Portafolio comparte negro mate por defecto")
 

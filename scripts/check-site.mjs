@@ -176,6 +176,10 @@ for(const page of brandedPages){
   page+': falta una pieza del sistema Obsidian Ice');
  test(content.includes('obsidian-ice'),page+': identidad de marca no aplicada');
 }
+for(const page of brandedPages){
+ test(file(page).includes('/assets/mobile-visual-fixes.css'),
+  page+': falta el CSS de reparación visual para móvil');
+}
 const portfolioPage=file('proyectos/index.html');
 test(home.includes('href="/proyectos/"')&&home.includes('id="conoce-aptitud"'),
  'Inicio debe enlazar al Portafolio en una ruta propia');
