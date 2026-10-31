@@ -13,6 +13,11 @@ const targets = [
     name: 'Allin Mikuy Café Restobar',
     url: 'https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/',
   },
+  {
+    id: 'aptitud-portfolio',
+    name: 'Portafolio de Aptitud Labs',
+    url: 'https://aptitudlabs.com/proyectos/',
+  },
 ];
 
 const outDir = path.resolve('assets/projects');
