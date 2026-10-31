@@ -144,6 +144,27 @@ def run():
             check(driver.execute_script(
                 "return !!document.querySelector('.v4-technical-grid')"
             ), "Inicio incluye retícula técnica con composición")
+            # Motion graphics: the visitor's scroll should drive one coordinated scene,
+            # not an auto-playing video or an inert visual placeholder.
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#motion-graphics .mg-motion-face")) == 3,
+                  "Inicio incluye tres pantallas físicas de motion graphics")
+            driver.execute_script("""
+                document.documentElement.style.scrollBehavior='auto';
+                const scene=document.querySelector('#motion-graphics');
+                scrollTo(0,scene.getBoundingClientRect().top+scrollY+
+                   (scene.offsetHeight-innerHeight)*.54);
+            """)
+            wait(driver, lambda d: d.find_element(By.ID,"motion-graphics").get_attribute("data-mg-phase") == "1")
+            check("Diseñamos" in driver.find_element(By.ID,"mg-chapter").get_attribute("textContent"),
+                  "El desplazamiento cambia título y perspectiva de la secuencia")
+            check(driver.execute_script("""
+                const scene=document.querySelector('#motion-graphics');
+                return getComputedStyle(scene.querySelector('.mg-pin')).position==='sticky'
+                    && scene.querySelectorAll('.mg-motion-face')[1].style.transform.includes('rotateY(');
+            """), "Escena de Inicio usa profundidad 3D real, no imagen estática")
+            check(driver.execute_script("return document.documentElement.scrollWidth <= document.documentElement.clientWidth + 2"),
+                  "El showreel no introduce scroll lateral en móvil")
+
 
             wait(driver, lambda d: d.find_element(By.ID, "v3-workbench-main").get_attribute("src"))
             check(len(driver.find_elements(By.CSS_SELECTOR, "#v3-workbench [data-v3-preview]")) == 3,
@@ -182,6 +203,20 @@ def run():
 
             check(driver.execute_script("return document.body.dataset.theme") == "dark",
                   "Portafolio comparte negro mate por defecto")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#motion-gallery .mg-wall-card")) == 4,
+                  "Portafolio contiene un showreel cinematográfico de cuatro proyectos")
+            driver.execute_script("""
+                document.documentElement.style.scrollBehavior='auto';
+                const scene=document.querySelector('#motion-gallery');
+                scrollTo(0,scene.getBoundingClientRect().top+scrollY+
+                    (scene.offsetHeight-innerHeight)*.84);
+            """)
+            wait(driver, lambda d: d.find_element(By.ID,"motion-gallery").get_attribute("data-mg-frame") == "3")
+            check("CORTE 01" in driver.find_element(By.ID,"mg-wall-caption").get_attribute("textContent"),
+                  "Secuencia del portafolio se sincroniza con el scroll")
+            check(driver.execute_script("return document.documentElement.scrollWidth <= document.documentElement.clientWidth + 2"),
+                  "Showreel de portafolio no produce desbordamiento horizontal")
+
 
             driver.execute_script("document.querySelector('[data-v3-case-control=\"sushi\"]').click()")
             wait(driver, lambda d: "sushi-ten-bento-cover.png" in d.find_element(By.ID, "v3-folio-main").get_attribute("src"))

@@ -172,6 +172,15 @@ test(home.includes('id="sectores"'),'Falta acceso a rubros');
 const brandedPages=['index.html','proyectos/index.html','servicios/index.html','planes/index.html','nfc-qr/index.html','cotizar/index.html'];
 for(const page of brandedPages){
  const content=file(page);
+ test(content.includes('/assets/motion-graphics-v5.css')&&content.includes('/assets/motion-graphics-v5.js'),
+  page+': falta nuevo lenguaje motion graphics en estilos o scripts');
+}
+test(home.includes('id="motion-graphics"')&&!home.includes('id="motion-gallery"'),
+ 'Inicio debe tener su propio showreel y no duplicar el Portafolio');
+test(file('proyectos/index.html').includes('id="motion-gallery"'),
+ 'Portafolio debe tener su recorrido 3D independiente');
+for(const page of brandedPages){
+ const content=file(page);
  test(content.includes('/assets/obsidian-ice-v4.css')&&content.includes('/assets/obsidian-ice-v4.js'),
   page+': falta una pieza del sistema Obsidian Ice');
  test(content.includes('obsidian-ice'),page+': identidad de marca no aplicada');
