@@ -65,3 +65,7 @@
 
 /* Las imágenes de tortas son recortes transparentes: no aplicarles el encuadre 960/659 de las capturas de proyectos. */
 .portfolio-premium .case-card--maison .maison-img{aspect-ratio:1;object-fit:contain;object-position:center;border:0;max-width:none}
+
+.portfolio-premium .case-card--maison .maison-img--one{width:72%}
+.portfolio-premium .case-card--maison .maison-img--two{width:43%}
+@media(max-width:520px){.portfolio-premium .case-card--maison .maison-img--one{width:76%}.portfolio-premium .case-card--maison .maison-img--two{width:45%}}
