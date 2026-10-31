@@ -36,7 +36,7 @@ class SilentHandler(SimpleHTTPRequestHandler):
 
     def end_headers(self):
         # Mismo CSP definido en vercel.json para detectar bloqueos reales.
-        self.send_header("Content-Security-Policy", "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self'; frame-src 'self'; form-action 'self'")
+        self.send_header("Content-Security-Policy", "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self'; frame-src 'self' https://aldo200908-lgtm.github.io; form-action 'self'")
         super().end_headers()
 
 
@@ -108,8 +108,25 @@ def run():
             driver.set_window_size(390, 844)
             driver.get(base + "/")
             wait(driver, lambda d: d.find_element(By.ID, "briefForm"))
-            check(driver.title.startswith("Diseño de Páginas Web"), "Portada con título comercial")
+            check("Aptitud Labs" in driver.title and "Diseño web" in driver.title, "Portada con título comercial")
             check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Portada tiene un solo H1")
+            wait(driver, lambda d: len(d.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]")) == 7)
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]")) == 7,
+                  "Portada incluye los siete proyectos sin entrar al portafolio secundario")
+            check(driver.find_element(By.ID, "fx-demo-frame").get_attribute("src") in ("", None),
+                  "Iframe externo no se carga antes de la interacción")
+            wait(driver, lambda d: d.execute_script(
+                "return document.getElementById('fx-filter-status').textContent.includes('7 experiencias')"
+            ))
+            driver.execute_script("document.querySelector('[data-future-filter=\"herramientas\"]').click()")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]:not([hidden])")) == 2,
+                  "El filtro de sistemas muestra dos demostraciones")
+            driver.execute_script("document.querySelector('[data-future-filter=\"web\"]').click()")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]:not([hidden])")) == 5,
+                  "El filtro de web muestra cinco proyectos, incluido Maison Dulce")
+            driver.execute_script("document.querySelector('[data-future-filter=\"todos\"]').click()")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]:not([hidden])")) == 7,
+                  "El filtro todos restituye siete proyectos")
 
             toggle = driver.find_element(By.ID, "resource-menu-toggle")
             toggle.click()
