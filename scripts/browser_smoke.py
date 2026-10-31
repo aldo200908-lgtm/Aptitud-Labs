@@ -176,11 +176,23 @@ def run():
             driver.set_window_size(1280, 900)
             driver.get(base + "/aptitud-web/")
             wait(driver, lambda d: d.find_element(By.ID, "export"))
+            print("Editor diagnóstico:", driver.execute_script("""
+                return {
+                    currentUrl: location.href,
+                    readyState: document.readyState,
+                    init: typeof render,
+                    exporter: typeof exportSite,
+                    exportHandler: typeof document.getElementById('export').onclick,
+                    phone: document.querySelector('[data-key="phone"]').value,
+                    phoneStatus: document.getElementById('phoneStatus').textContent
+                }
+            """), flush=True)
             phone = driver.find_element(By.CSS_SELECTOR, '[data-key="phone"]')
             check(phone.get_attribute("value") == "", "Editor empieza sin WhatsApp inventado")
             driver.find_element(By.ID, "export").click()
             denied = driver.execute_script("return document.getElementById('toast').textContent")
             no_download = not list(Path(downloads).glob("*.html"))
+            print("Editor exportación vacía:", {"toast": denied, "download": str(list(Path(downloads).glob("*.html"))), "url": driver.current_url}, flush=True)
             check("WhatsApp válido" in denied and no_download,
                   "No exporta con número de WhatsApp ausente")
 
@@ -191,6 +203,7 @@ def run():
             description = driver.find_element(By.CSS_SELECTOR, '[data-key="description"]')
             description.clear()
             description.send_keys("Atención & calidad <sin riesgos>")
+            print("Editor tras ingresar teléfono:", driver.execute_script("""return {dataPhone:data.phone,inputPhone:document.querySelector(\'[data-key=phone]\').value,link:document.getElementById(\'pvButton\').getAttribute(\'href\')}"""), flush=True)
             check(
                 driver.find_element(By.ID, "pvButton").get_attribute("href")
                 == "https://wa.me/51987654321",
