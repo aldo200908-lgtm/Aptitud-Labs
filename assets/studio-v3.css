@@ -295,3 +295,37 @@
  .studio-v3 .v3-h1 .v3-line>span{transform:none!important;opacity:1!important}
  ::view-transition-old(root),::view-transition-new(root){animation:none!important}
 }
+
+/* Explicit dark preference: preserve the editorial art direction and contrast. */
+body.studio-v3.independent-home[data-theme=dark] .v3-home-hero{
+ background:#242e25;color:#f7f2e8;
+}
+body.studio-v3.independent-home[data-theme=dark] .v3-hero-grain{background:radial-gradient(circle at 72% 45%,#73635458,transparent 48%),repeating-linear-gradient(90deg,transparent 0,transparent 92px,#f7eee709 92px,#f7eee709 93px)}
+body.studio-v3.independent-home[data-theme=dark] .v3-huge-a{color:#435044}
+body.studio-v3.independent-home[data-theme=dark] .v3-h1{color:#faf4e7}
+body.studio-v3.independent-home[data-theme=dark] .v3-h1 em{color:#ecb596}
+body.studio-v3.independent-home[data-theme=dark] .v3-h1 i{color:#bed0b7}
+body.studio-v3.independent-home[data-theme=dark] .v3-index-line{border-color:#778575;color:#c5c8b9}
+body.studio-v3.independent-home[data-theme=dark] .v3-index-line span:first-child{color:#f5f0e6}
+body.studio-v3.independent-home[data-theme=dark] .v3-lead{color:#d0d5c7}
+body.studio-v3.independent-home[data-theme=dark] .v3-button{background:#e8c1a6;color:#223328;border-color:#e8c1a6}
+body.studio-v3.independent-home[data-theme=dark] .v3-button-ghost{color:#f7eddf;border-color:#899788}
+body.studio-v3.independent-home[data-theme=dark] .v3-home-bottom{border-color:#667867;color:#d1cfbd}
+body.studio-v3.independent-home[data-theme=dark] .v3-home-bottom a{color:#f4e9d9}
+body.studio-v3.independent-home[data-theme=dark] #contacto{background:#2a352b}
+body.studio-v3.independent-home[data-theme=dark] #contacto .contact-intro h2{color:#f4f0e6}
+body.studio-v3.independent-home[data-theme=dark] #contacto .contact-intro p,body.studio-v3.independent-home[data-theme=dark] #contacto .contact-intro a{color:#d6d8cb}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-portfolio-hero,body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-headline{background:#263127;color:#f9f0e6}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-title-row h1{color:#f8f0e4}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-title-row h1 em{color:#edb393}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-title-row p,body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-bar,body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-showcase-head,body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-after{color:#d6d1c4}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-after a{color:#f2e4d4}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-tabs button{color:#f1e9dc;border-color:#6c7969}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-tabs button[aria-pressed=true]{background:#ecc6a9;color:#253128;border-color:#ecc6a9}
+body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-notes,body.studio-v3.independent-portfolio[data-theme=dark] .fx-work{background:#263127}
+body.studio-v3.independent-portfolio[data-theme=dark] .fx-section-heading h2,body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-notes .folio-intro-heading h2{color:#f8f1e5}
+body.studio-v3.independent-portfolio[data-theme=dark] .fx-section-heading>p,body.studio-v3.independent-portfolio[data-theme=dark] .v3-folio-notes .folio-intro-heading p{color:#d7d9cb}
+/* Fit the long manifesto lettering without cutting off the substance. */
+.studio-v3.independent-portfolio .fx-manifesto-line>span{font-size:clamp(51px,6.2vw,99px)}
+@media(max-width:700px){.studio-v3.independent-portfolio .fx-manifesto-line>span{font-size:clamp(35px,7.1vw,54px)!important}}
+@media(max-width:390px){.studio-v3.independent-portfolio .fx-manifesto-line>span{font-size:clamp(31px,7.1vw,37px)!important}}
