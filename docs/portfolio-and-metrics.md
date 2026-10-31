@@ -17,3 +17,7 @@ User selected: Web Esencial and Web Negocio include two rounds of revisions and 
 Receiver: demo origin + `/api/events`. D1 binding `DB`, table `daily_events`, fields day/event/path/count, day uses America/Lima. Read via owner-authorized Sites database overview/row tools; there is no public stats API. Event recording may include QA visits and cannot verify WhatsApp message receipt, signed contracts or sales. Do not interpret counts as leads.
 
 Tests: main static/theme/measurement tests and existing Chromium CI smoke checks; public demo domain/receiver tests and live interactive checks. Screenshots originate from actual public pages, converted to responsive WebP covers. Original capture JPEGs are QA artifacts, not deployed assets.
+
+
+## Actualización visual y funcional
+Corte 01 y Luma integran fotografías conceptuales originales generadas. Luma tiene fichas con material, medidas y cuidados y bolsa local persistente. Caja Clara y Pulso guardan sus datos de prueba en localStorage, admiten exportación CSV y restablecimiento; los datos no se envían a las métricas. Corte 01 continúa en memoria.
