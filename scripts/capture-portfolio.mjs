@@ -97,12 +97,14 @@ try {
       width: window.innerWidth,
       bodyScrollWidth: document.body.scrollWidth,
       documentScrollWidth: document.documentElement.scrollWidth,
-      navLinks: document.querySelectorAll('.pf-links a').length,
+      navLinks: document.querySelectorAll('.nav-items a').length,
       dropdownCount: document.querySelectorAll('select,details,.menu-toggle,.menu-panel').length,
       sections: [...document.querySelectorAll('main section[id]')].map(n => n.id),
+      contactForm: Boolean(document.querySelector('#portfolio-contact-form')),
+      themeToggle: Boolean(document.querySelector('#theme-toggle')),
     }));
     if (geometry.documentScrollWidth > geometry.width + 2) throw new Error('Desbordamiento horizontal móvil: ' + JSON.stringify(geometry));
-    if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6) throw new Error('Navegación incorrecta: ' + JSON.stringify(geometry));
+    if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6 || !geometry.contactForm || !geometry.themeToggle) throw new Error('Navegación o controles incorrectos: ' + JSON.stringify(geometry));
     const filename = path.join(outDir,'aptitud-portfolio-mobile.png');
     await mobile.screenshot({ path: filename, type: 'png', fullPage: false, animations: 'disabled' });
     console.log('CAPTURA MÓVIL OK:', filename, JSON.stringify(geometry));
