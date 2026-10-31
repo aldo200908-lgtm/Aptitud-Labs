@@ -229,6 +229,96 @@ button{cursor:pointer}
  .footer-inner{align-items:flex-start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Aptitud Labs — visual polish: depth without heavy media */
+.hero-visual{perspective:950px}
+.brand-kinetic{--tilt-x:0deg;--tilt-y:0deg;position:relative;width:min(82%,345px);aspect-ratio:1;display:grid;place-items:center;transform-style:preserve-3d;transform:rotateX(var(--tilt-x)) rotateY(var(--tilt-y));transition:transform .5s cubic-bezier(.2,.8,.2,1);isolation:isolate}
+.kinetic-halo{position:absolute;inset:0;border-radius:50%;border:1px solid color-mix(in srgb,var(--accent) 36%,transparent);transform:translateZ(-25px)}
+.halo-one{inset:-8%;border-style:dashed;opacity:.55;animation:brand-spin 36s linear infinite}
+.halo-two{inset:-18%;border-color:color-mix(in srgb,var(--line) 80%,transparent);opacity:.7}
+.kinetic-stack{position:absolute;inset:4%;transform-style:preserve-3d;transform:rotate(-13deg);filter:drop-shadow(0 33px 24px #10151a32)}
+.kinetic-edge,.kinetic-face{position:absolute;inset:0;border-radius:29%;display:grid;place-items:center;overflow:hidden}
+.kinetic-edge{background:linear-gradient(143deg,#9acde3,#4f6782 36%,#090f1b 72%,#1d364a);border:1px solid #7896a8}
+.edge-back{transform:translate(13px,19px) scale(.975);filter:brightness(.55)}
+.edge-middle{transform:translate(8px,12px) scale(.985);filter:brightness(.78)}
+.kinetic-face{background:radial-gradient(circle at 15% 12%,#a8c6d4 0%,#516779 17%,#222d3b 48%,#11161e 85%);border:1px solid #ffffff80;box-shadow:inset 0 3px 3px #ffffff5e,inset 0 -14px 40px #0a111acc}
+.kinetic-face:before{content:"";position:absolute;inset:7%;border:1px solid #ffffff2e;border-radius:25%}
+.kinetic-letter{z-index:2;font:850 clamp(150px,18vw,225px)/1 Manrope,Arial,sans-serif;letter-spacing:-.18em;padding-right:.18em;color:#f9fcff;text-shadow:1px 2px 0 #99b4ca,4px 5px 0 #708ca4,7px 8px 0 #334d64,12px 17px 18px #000b;transform:rotate(11deg) translateY(-7px)}
+.kinetic-gloss{position:absolute;inset:0;background:linear-gradient(150deg,#ffffff4d 0%,#ffffff00 43%,#00000023 100%);pointer-events:none}
+.kinetic-spark{position:absolute;width:7px;height:7px;border-radius:50%;background:#90d0e9;box-shadow:0 0 0 5px #90d0e921;z-index:3}
+.spark-one{top:7%;right:4%}.spark-two{bottom:17%;left:1%;width:5px;height:5px}.spark-three{bottom:4%;right:6%;width:4px;height:4px}
+@keyframes brand-spin{to{transform:translateZ(-25px) rotate(360deg)}}
+.about-art{background:linear-gradient(135deg,#f0f1f4 0%,#b8c7d1 58%,#63788b 100%);isolation:isolate}
+.about-art::after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff9e;border-radius:21%;transform:rotate(23deg);box-shadow:0 0 0 29px #ffffff21,0 0 0 63px #ffffff12}
+.about-art .about-logo{text-shadow:0 4px 0 #c7d2dc,0 8px 0 #7b8fa0,0 13px 19px #25374b65;z-index:2}
+.service-grid{align-items:stretch}
+.service-card{min-height:330px}
+.service-card p{margin-bottom:18px}
+.service-example{border-top:1px solid var(--line);padding-top:13px;margin-top:auto;display:flex;flex-direction:column;gap:7px}
+.service-example strong{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.service-example span{font-size:11px;color:var(--muted);line-height:1.65}
+.service-link{color:var(--text);display:inline-flex;gap:10px;align-items:center;text-decoration:none;font-size:11px;font-weight:800;margin-top:18px;border-bottom:1px solid color-mix(in srgb,var(--text) 23%,transparent);padding-bottom:5px}
+.service-link:hover{border-bottom-color:var(--accent);color:var(--accent)}
+.scope-note{text-align:center;color:var(--muted);font-size:11px;line-height:1.7;margin:22px auto 0;max-width:670px}
+.project-card{display:flex;flex-direction:column}
+.project-cover{display:block;color:inherit;text-decoration:none;position:relative}
+.project-image-label{position:absolute;left:15px;top:15px;z-index:2;border-radius:7px;background:#ffffffef;color:#172331;padding:9px 12px;font-size:10px;font-weight:800;letter-spacing:.05em}
+.project-open{position:absolute;right:14px;bottom:14px;z-index:2;width:35px;height:35px;display:grid;place-items:center;border-radius:50%;background:#ffffffec;color:#152336;font-size:21px}
+.project-cover:focus-visible{outline-offset:-4px}
+.project-card-info{display:flex;flex-direction:column;flex:1}
+.project-card-info h3{font-size:23px}
+.project-insights{display:grid;grid-template-columns:1fr 1fr;gap:14px;border-top:1px solid var(--line);margin:4px 0 20px;padding-top:18px}
+.project-insights strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
+.project-insights p{font-size:11px;line-height:1.75;margin:0}
+.project-tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-bottom:22px}
+.project-tech span{font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:8px 9px}
+.project-actions{gap:14px}
+.project-actions a{font-size:11px;text-transform:none;letter-spacing:0;text-decoration:none}
+.project-actions a:first-child{font-weight:900;color:var(--accent)}
+.project-actions a:last-child{font-weight:700;text-align:right}
+.reason-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.reason{min-width:0}
+.project-type-field{border:0;padding:0;margin:0 0 20px;min-width:0}
+.project-type-field legend{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;margin-bottom:12px}
+.project-type-options{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.type-choice{cursor:pointer;position:relative;display:block}
+.type-choice input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.type-choice span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:42px;border-radius:8px;padding:9px 7px;border:1px solid var(--line);background:var(--panel-soft);font-size:11px;font-weight:700;transition:border-color .2s,background .2s,box-shadow .2s}
+.type-choice input:checked+span{background:var(--accent-soft);border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.type-choice input:focus-visible+span{outline:3px solid var(--accent);outline-offset:3px}
+.form-eyebrow{color:var(--accent);font-size:10px;text-transform:uppercase;font-weight:850;letter-spacing:.13em}
+.contact-form h3{margin-top:8px;margin-bottom:9px}
+.form-description{color:var(--muted);font-size:12px;line-height:1.7;margin:0 0 23px}
+.reveal{transition-delay:var(--reveal-delay,0ms)}
+.service-card:nth-child(2),.project-card:nth-child(2),.reason:nth-child(2){--reveal-delay:85ms}
+.service-card:nth-child(3),.reason:nth-child(3){--reveal-delay:160ms}
+.service-card:nth-child(4),.reason:nth-child(4){--reveal-delay:235ms}
+.nav-items{scroll-snap-type:x proximity}
+.nav-items a{scroll-snap-align:center;flex-shrink:0}
+@media(max-width:1080px){.reason-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .brand-kinetic{width:min(78%,285px)}
+ .kinetic-letter{font-size:170px}
+ .hero-visual{min-height:410px}
+ .chip-1{bottom:110px}.chip-2{bottom:63px}.chip-3{bottom:15px}
+ .service-card{min-height:0}
+ .project-insights{grid-template-columns:1fr;gap:13px}
+ .reason-grid{grid-template-columns:1fr}
+ .nav-items{scroll-padding-inline:10px}
+}
+@media(max-width:490px){
+ .hero-visual{min-height:360px}
+ .kinetic-letter{font-size:145px}
+ .project-actions{align-items:flex-start;flex-direction:column}
+ .project-actions a:last-child{text-align:left}
+ .project-type-options{gap:8px}
+ .skill-chip{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .brand-kinetic,.project-card,.service-card,.project-cover img,.type-choice span,.reveal{transition:none!important;animation:none!important}
+ .reveal{opacity:1!important;transform:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -263,8 +353,16 @@ button{cursor:pointer}
       <a href="mailto:aptitudlabs.studio@gmail.com" aria-label="Escribir correo a Aptitud Labs" title="Correo">@</a>
     </div></div>
    </div>
-   <div class="hero-visual" aria-label="Composición gráfica original de Aptitud Labs">
-    <div class="portrait-circle" aria-hidden="true"><span class="portrait-symbol">a</span></div>
+   <div class="hero-visual" aria-label="Escultura digital original de la marca Aptitud Labs, creada mediante capas y luz">
+    <div class="brand-kinetic" id="brand-kinetic" aria-hidden="true">
+      <div class="kinetic-halo halo-one"></div><div class="kinetic-halo halo-two"></div>
+      <div class="kinetic-stack">
+       <span class="kinetic-edge edge-back"></span>
+       <span class="kinetic-edge edge-middle"></span>
+       <span class="kinetic-face"><span class="kinetic-letter">a</span><span class="kinetic-gloss"></span></span>
+      </div>
+      <span class="kinetic-spark spark-one"></span><span class="kinetic-spark spark-two"></span><span class="kinetic-spark spark-three"></span>
+     </div>
     <div class="skill-chip chip-1"><span class="chip-icon">✦</span> Diseño con propósito</div>
     <div class="skill-chip chip-2"><span class="chip-icon">⌘</span> Desarrollo web</div>
     <div class="skill-chip chip-3"><span class="chip-icon">◈</span> Soluciones digitales</div>
@@ -281,17 +379,17 @@ button{cursor:pointer}
    <div class="about-copy reveal">
     <span class="eyebrow">Conócenos</span>
     <h2 id="about-title">Quiénes somos</h2>
-    <p>Somos un estudio digital independiente nacido en Puno. Nos apasiona transformar ideas en páginas, herramientas y experiencias digitales que se puedan utilizar de verdad.</p>
+    <p>Aptitud Labs nació como un proyecto independiente impulsado desde Puno por alguien que disfruta diseñar, programar y convertir problemas cotidianos en soluciones digitales. No somos una agencia con décadas de trayectoria: estamos construyendo nuestra experiencia proyecto a proyecto, con trabajo que puedes explorar.</p>
     <div class="about-small-grid">
      <div><h3>Nuestra misión</h3><p>Acercar diseño y tecnología a los negocios, con soluciones claras, útiles y adaptadas a su identidad.</p></div>
      <div><h3>Nuestro enfoque</h3><p>Escuchar, comprender y diseñar con intención. Cada detalle debe tener una razón.</p></div>
     </div>
     <div class="about-details">
-     <strong>Detalles del estudio</strong>
+     <strong>Un estudio cercano, sin promesas infladas</strong>
      <div class="about-detail-grid">
       <div><small>Ubicación</small><span>Puno, Perú</span></div>
       <div><small>Modalidad</small><span>Atención local y remota</span></div>
-      <div><small>Especialidad</small><span>Web, apps y automatización</span></div>
+      <div><small>Lo que desarrollamos</small><span>Web, prototipos y automatización</span></div>
       <div><small>Contacto</small><span>aptitudlabs.studio@gmail.com</span></div>
      </div>
     </div>
@@ -300,29 +398,78 @@ button{cursor:pointer}
  </section>
  <section class="section services" id="servicios" aria-labelledby="services-title">
   <div class="container">
-   <div class="section-heading reveal"><span class="eyebrow">Lo que hacemos</span><h2 id="services-title">Nuestras especialidades</h2><p>Diseño y tecnología al servicio de ideas que merecen hacerse realidad.</p></div>
+   <div class="section-heading reveal"><span class="eyebrow">Lo que hacemos</span><h2 id="services-title">Soluciones que aportan valor</h2><p>No se trata de tener una página por tenerla. Se trata de mostrar lo que vendes, facilitar consultas o resolver una tarea concreta.</p></div>
    <div class="service-grid">
-    <article class="service-card reveal"><span class="service-icon" aria-hidden="true">⌘</span><h3>Desarrollo web</h3><p>Páginas para negocios, catálogos digitales y experiencias atractivas adaptadas a celulares.</p></article>
-    <article class="service-card reveal"><span class="service-icon" aria-hidden="true">▣</span><h3>Apps y sistemas</h3><p>Prototipos y herramientas digitales para organizar tareas, servicios y procesos de negocio.</p></article>
-    <article class="service-card reveal"><span class="service-icon" aria-hidden="true">✳</span><h3>Automatización e IA</h3><p>Exploramos asistentes y procesos automatizados para simplificar tareas repetitivas.</p></article>
-    <article class="service-card reveal"><span class="service-icon" aria-hidden="true">◇</span><h3>NFC y QR</h3><p>Tarjetas, accesos y catálogos digitales que acercan una marca a sus clientes.</p></article>
+    <article class="service-card reveal">
+     <span class="service-icon" aria-hidden="true">⌘</span><h3>Desarrollo web</h3>
+     <p>Haz que tus productos se encuentren y se consulten fácilmente desde cualquier dispositivo.</p>
+     <div class="service-example"><strong>Podemos desarrollar</strong><span>Catálogo, botones de pedido por WhatsApp, novedades y contacto.</span></div>
+     <a class="service-link" href="#contacto" aria-label="Consultar desarrollo web">Consultar una web <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="service-card reveal">
+     <span class="service-icon" aria-hidden="true">▣</span><h3>Apps y sistemas</h3>
+     <p>Organiza mejor un proceso concreto con una herramienta diseñada para tu manera de trabajar.</p>
+     <div class="service-example"><strong>Podemos plantear</strong><span>Prototipos de inventario, reservas y gestión sencilla.</span></div>
+     <a class="service-link" href="#contacto" aria-label="Consultar prototipos de aplicaciones y sistemas">Explorar mi idea <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="service-card reveal">
+     <span class="service-icon" aria-hidden="true">✳</span><h3>Automatización e IA</h3>
+     <p>Estudiamos procesos repetitivos para proponer flujos digitales más prácticos.</p>
+     <div class="service-example"><strong>Según el alcance</strong><span>Formularios, notificaciones y asistentes experimentales.</span></div>
+     <a class="service-link" href="#contacto" aria-label="Consultar automatización e inteligencia artificial">Conversar solución <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="service-card reveal">
+     <span class="service-icon" aria-hidden="true">◇</span><h3>NFC y QR</h3>
+     <p>Conecta tus materiales físicos con información que las personas puedan abrir al instante.</p>
+     <div class="service-example"><strong>Ideas posibles</strong><span>Tarjetas de contacto, menú digital y enlaces de negocios.</span></div>
+     <a class="service-link" href="/nfc-qr/" aria-label="Conocer soluciones NFC y QR">Ver soluciones <span aria-hidden="true">↗</span></a>
+    </article>
    </div>
+   <p class="scope-note">Las funcionalidades y el mantenimiento se definen en la propuesta de cada proyecto; no todos los ejemplos están incluidos en un mismo plan.</p>
   </div>
  </section>
  <section class="section work" id="proyectos" aria-labelledby="work-title">
   <div class="container">
-   <div class="section-heading reveal"><span class="eyebrow">Portafolio</span><h2 id="work-title">Proyectos seleccionados</h2><p>Más que imágenes de ejemplo: puedes abrir estas demostraciones y recorrer sus páginas.</p></div>
+   <div class="section-heading reveal"><span class="eyebrow">Portafolio</span><h2 id="work-title">Trabajo que puedes explorar</h2><p>Dos proyectos de demostración, con capturas reales y páginas navegables. Conoce para qué fueron diseñados y qué funciones construimos.</p></div>
    <div class="projects-grid">
     <article class="project-card reveal">
-     <div class="project-cover"><img src="/assets/projects/sushi-ten-bento-cover.png" width="1600" height="900" alt="Captura real de la demostración web Sushi Ten Bento" loading="lazy"></div>
-     <div class="project-card-info"><span class="tag">Restaurante · Web demostrativa</span><h3>Sushi Ten Bento</h3><p>Propuesta independiente para un restaurante japonés, con catálogo visual, animaciones y navegación por secciones. No es una web contratada por el negocio.</p>
-      <div class="project-actions"><a href="https://aldo200908-lgtm.github.io/sushi-ten-bento-/" target="_blank" rel="noopener noreferrer">Explorar demostración ↗</a><span>Diseño web</span></div>
+     <a class="project-cover" href="https://aldo200908-lgtm.github.io/sushi-ten-bento-/" target="_blank" rel="noopener noreferrer" aria-label="Visitar demostración de Sushi Ten Bento">
+      <img src="/assets/projects/sushi-ten-bento-cover.png" width="1600" height="900" decoding="async" loading="lazy" alt="Captura de la portada real de la demostración Sushi Ten Bento">
+      <span class="project-image-label">01 / Gastronomía</span><span class="project-open" aria-hidden="true">↗</span>
+     </a>
+     <div class="project-card-info">
+      <span class="tag">Concepto independiente · Sitio funcional</span>
+      <h3>Sushi Ten Bento</h3>
+      <p>Demostración de identidad digital para un restaurante japonés real, creada por iniciativa propia para mostrar el trabajo de diseño y programación de Aptitud Labs.</p>
+      <div class="project-insights">
+       <div><strong>La idea</strong><p>Presentar platos y transmitir una experiencia visual memorable.</p></div>
+       <div><strong>Lo desarrollado</strong><p>Portada editorial, menú visual, navegación y diseño adaptable.</p></div>
+      </div>
+      <div class="project-tech"><span>Diseño responsivo</span><span>HTML · CSS · JS</span><span>Demo navegable</span></div>
+      <div class="project-actions">
+       <a href="https://aldo200908-lgtm.github.io/sushi-ten-bento-/" target="_blank" rel="noopener noreferrer">Visitar web <span aria-hidden="true">↗</span></a>
+       <a href="#contacto" class="project-quote">Quiero una web similar <span aria-hidden="true">→</span></a>
+      </div>
      </div>
     </article>
     <article class="project-card reveal">
-     <div class="project-cover"><img src="/assets/projects/allin-mikuy-cover.png" width="1600" height="900" alt="Captura real de la demostración web Allin Mikuy Café Restobar" loading="lazy"></div>
-     <div class="project-card-info"><span class="tag">Café restobar · Web demostrativa</span><h3>Allin Mikuy Café Restobar</h3><p>Concepto gastronómico con carta visual ampliable, portada editorial y experiencia adaptable. Proyecto independiente, no encargado por el negocio.</p>
-      <div class="project-actions"><a href="https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/" target="_blank" rel="noopener noreferrer">Explorar demostración ↗</a><span>Carta interactiva</span></div>
+     <a class="project-cover" href="https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/" target="_blank" rel="noopener noreferrer" aria-label="Visitar demostración de Allin Mikuy Café Restobar">
+      <img src="/assets/projects/allin-mikuy-cover.png" width="1600" height="900" decoding="async" loading="lazy" alt="Captura real de la web conceptual Allin Mikuy Café Restobar">
+      <span class="project-image-label">02 / Café restobar</span><span class="project-open" aria-hidden="true">↗</span>
+     </a>
+     <div class="project-card-info">
+      <span class="tag">Concepto independiente · Sitio funcional</span>
+      <h3>Allin Mikuy Café Restobar</h3>
+      <p>Propuesta visual independiente, inspirada en un establecimiento gastronómico, que prioriza una carta fácil de explorar desde el celular.</p>
+      <div class="project-insights">
+       <div><strong>La idea</strong><p>Mostrar la propuesta gastronómica en un espacio digital ordenado.</p></div>
+       <div><strong>Lo desarrollado</strong><p>Portada, carta ampliable, navegación y diseño adaptable.</p></div>
+      </div>
+      <div class="project-tech"><span>Diseño responsivo</span><span>HTML · CSS · JS</span><span>Galería interactiva</span></div>
+      <div class="project-actions">
+       <a href="https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/" target="_blank" rel="noopener noreferrer">Visitar web <span aria-hidden="true">↗</span></a>
+       <a href="#contacto" class="project-quote">Quiero una web similar <span aria-hidden="true">→</span></a>
+      </div>
      </div>
     </article>
    </div>
@@ -343,11 +490,12 @@ button{cursor:pointer}
  </section>
  <section class="section why" id="por-que" aria-labelledby="why-title">
   <div class="container">
-   <div class="section-heading reveal"><span class="eyebrow">Nuestra filosofía</span><h2 id="why-title">Por qué elegirnos</h2><p>Nos interesa construir algo que se sienta propio de tu negocio, no solamente una plantilla con otro nombre.</p></div>
+   <div class="section-heading reveal"><span class="eyebrow">Nuestra filosofía</span><h2 id="why-title">Por qué elegirnos</h2><p>Nos interesa construir algo que se sienta propio de tu negocio. Nos diferenciamos por ser claros en el proceso y concretos con las funciones.</p></div>
    <div class="reason-grid">
     <article class="reason reveal"><span class="reason-index">01 /</span><h3>Identidad propia</h3><p>Partimos de tus productos, tu público y el estilo de tu negocio para dar sentido al diseño.</p></article>
     <article class="reason reveal"><span class="reason-index">02 /</span><h3>Experiencia clara</h3><p>Pensamos primero en quienes te visitarán desde su teléfono y buscan información sin complicaciones.</p></article>
     <article class="reason reveal"><span class="reason-index">03 /</span><h3>Comunicación transparente</h3><p>Explicamos el alcance, las funcionalidades y qué parte del trabajo es una demostración.</p></article>
+    <article class="reason reveal"><span class="reason-index">04 /</span><h3>Proyectos para comprobar</h3><p>Compartimos demostraciones que se pueden navegar, con claridad sobre qué es trabajo propio y qué es una propuesta conceptual.</p></article>
    </div>
   </div>
  </section>
@@ -365,12 +513,23 @@ button{cursor:pointer}
      </div>
     </div>
     <form class="contact-form reveal" id="portfolio-contact-form">
-     <h3>Envíanos tu idea directamente.</h3>
+     <span class="form-eyebrow">Hablemos de lo que necesitas</span>
+     <h3>Cuéntanos tu idea.</h3>
+     <p class="form-description">Elige un tipo de proyecto y prepara tu consulta en menos de un minuto.</p>
      <div class="field"><label for="client-name">Tu nombre</label><input id="client-name" name="nombre" placeholder="¿Cómo te llamas?" maxlength="80" required autocomplete="name"></div>
-     <div class="field"><label for="client-email">Correo electrónico (opcional)</label><input id="client-email" name="correo" type="email" placeholder="nombre@ejemplo.com" maxlength="150" autocomplete="email"></div>
-     <div class="field"><label for="client-message">Cuéntanos sobre tu proyecto</label><textarea id="client-message" name="mensaje" placeholder="Me gustaría una página para mostrar mis productos y recibir pedidos..." maxlength="1400" required></textarea></div>
-     <button class="form-submit" type="submit">Continuar por WhatsApp ↗</button>
-     <p class="form-note" id="form-result" role="status">El botón abre WhatsApp con el mensaje preparado. Podrás revisarlo antes de enviarlo.</p>
+     <fieldset class="project-type-field">
+      <legend>¿Qué quieres desarrollar?</legend>
+      <div class="project-type-options">
+       <label class="type-choice"><input type="radio" name="servicio" value="Página web / catálogo" checked><span>Web o catálogo</span></label>
+       <label class="type-choice"><input type="radio" name="servicio" value="Aplicación / sistema"><span>App o sistema</span></label>
+       <label class="type-choice"><input type="radio" name="servicio" value="Automatización / IA"><span>Automatización</span></label>
+       <label class="type-choice"><input type="radio" name="servicio" value="Otro / por definir"><span>Otro proyecto</span></label>
+      </div>
+     </fieldset>
+     <div class="field"><label for="client-email">Correo (opcional)</label><input id="client-email" name="correo" type="email" placeholder="nombre@ejemplo.com" maxlength="150" autocomplete="email"></div>
+     <div class="field"><label for="client-message">Cuéntanos los detalles</label><textarea id="client-message" name="mensaje" placeholder="Tengo un negocio y quiero mostrar mis productos y recibir consultas..." minlength="10" maxlength="1400" required></textarea></div>
+     <button class="form-submit" type="submit">Preparar mensaje de WhatsApp <span aria-hidden="true">↗</span></button>
+     <p class="form-note" id="form-result" role="status">No se envía automáticamente: WhatsApp abrirá un mensaje para que lo revises y confirmes.</p>
     </form>
    </div>
   </div>
@@ -390,11 +549,25 @@ function updateTheme(){const dark=root.dataset.theme==='dark';themeButton.setAtt
 updateTheme();
 themeButton.addEventListener('click',function(){const next=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('aptitud-portfolio-theme',next)}catch{}updateTheme()});
 const navLinks=Array.from(document.querySelectorAll('.nav-items a'));
-const sections=navLinks.map(a=>document.getElementById(a.hash.slice(1))).filter(Boolean);
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>{const match=a.hash==='#'+entry.target.id;a.classList.toggle('active',match);if(match)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}})},{rootMargin:'-22% 0px -64% 0px',threshold:0});
-sections.forEach(s=>observer.observe(s));
+const sections=[...document.querySelectorAll('main section[id]')];
+let lastActive=null;
+if('IntersectionObserver' in window){
+ const observer=new IntersectionObserver(entries=>{
+  const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);
+  if(!visible.length)return;
+  const id=visible[0].target.id;
+  if(id===lastActive)return;
+  lastActive=id;
+  navLinks.forEach(a=>{const on=a.hash==='#'+id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+  const selected=navLinks.find(a=>a.hash==='#'+id);
+  if(selected&&window.matchMedia('(max-width:760px)').matches){
+   selected.scrollIntoView({block:'nearest',inline:'nearest',behavior:'auto'});
+  }
+ },{rootMargin:'-22% 0px -64% 0px',threshold:[0,.15,.4,.65]});
+ sections.forEach(item=>observer.observe(item));
+}
 if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-const reveals=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');reveals.unobserve(e.target)}})},{threshold:.07,rootMargin:'0px 0px 40px 0px'});
+const reveals=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');reveals.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px 70px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>reveals.observe(el));
 }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
 const roles=['Diseño y desarrollo web','Aplicaciones y sistemas','Automatización e inteligencia artificial'];
@@ -409,14 +582,28 @@ if(deleting&&step===0){deleting=false;index=(index+1)%roles.length;delay=400}
 setTimeout(tick,delay)};
 setTimeout(()=>{deleting=true;tick()},2900);
 }
+
+const kinetic=document.getElementById('brand-kinetic');
+if(kinetic&&window.matchMedia('(hover:hover) and (pointer:fine)').matches&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const visual=kinetic.closest('.hero-visual');
+ let frame=0;let nextX=0,nextY=0;
+ visual.addEventListener('pointermove',e=>{
+  const bounds=visual.getBoundingClientRect();
+  nextX=((e.clientX-bounds.left)/bounds.width-.5)*12;
+  nextY=((e.clientY-bounds.top)/bounds.height-.5)*-12;
+  if(frame)return;
+  frame=requestAnimationFrame(()=>{kinetic.style.setProperty('--tilt-x',nextY+'deg');kinetic.style.setProperty('--tilt-y',nextX+'deg');frame=0});
+ },{passive:true});
+ visual.addEventListener('pointerleave',()=>{kinetic.style.setProperty('--tilt-x','0deg');kinetic.style.setProperty('--tilt-y','0deg')});
+}
 const form=document.getElementById('portfolio-contact-form');
 form?.addEventListener('submit',event=>{
 event.preventDefault();
 if(!form.reportValidity())return;
 const d=new FormData(form);
 const clean=(value,max=1500)=>String(value||'').trim().replace(/\s+/g,' ').slice(0,max);
-const name=clean(d.get('nombre'),80),email=clean(d.get('correo'),150),message=clean(d.get('mensaje'),1400);
-const text=['Hola, Aptitud Labs. Vi su portafolio y quisiera consultar sobre un proyecto.','Nombre: '+name,'Correo: '+(email||'No indicado'),'Proyecto: '+message].join('\n');
+const name=clean(d.get('nombre'),80),email=clean(d.get('correo'),150),message=clean(d.get('mensaje'),1400),service=clean(d.get('servicio'),70)||'Por definir';
+const text=['Hola, Aptitud Labs. Vi su portafolio y quisiera consultar sobre un proyecto.','Nombre: '+name,'Correo: '+(email||'No indicado'),'Tipo de proyecto: '+service,'Descripción: '+message].join('\n');
 document.getElementById('form-result').textContent='Se abrirá WhatsApp con el mensaje preparado. Revisa el texto y confirma el envío.';
 window.location.href='https://wa.me/51937367296?text='+encodeURIComponent(text);
 });
