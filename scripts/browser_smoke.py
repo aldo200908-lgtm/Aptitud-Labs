@@ -150,8 +150,9 @@ def run():
                   "Inicio tiene tres vistas de demostración seleccionables")
             driver.execute_script("document.querySelector('[data-v3-preview=\"caja\"]').click()")
             wait(driver, lambda d: "caja-cover.webp" in d.find_element(By.ID, "v3-workbench-main").get_attribute("src"))
-            check(driver.find_element(By.ID, "v3-workbench-name").text == "Caja Clara",
-                  "Inicio cambia imagen y nombre a Caja Clara sin navegación")
+            check(driver.execute_script(
+                "return document.getElementById('v3-workbench-name').textContent.trim() === 'Caja Clara'"
+            ), "Inicio cambia imagen y nombre a Caja Clara sin navegación")
             check(driver.find_element(By.CSS_SELECTOR, '[data-v3-preview="caja"]').get_attribute("aria-pressed") == "true",
                   "Selector de Inicio anuncia el proyecto activo")
             driver.execute_script("document.querySelector('[data-v3-preview=\"maison\"]').click()")
