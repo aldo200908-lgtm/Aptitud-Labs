@@ -169,3 +169,26 @@
  .independent-home .home-studio-copy h1>span,.independent-home .home-art-orbit,.independent-home .home-art-canvas,.independent-home .home-art-footer b,.independent-home .home-art-floating,.independent-home .home-art-curve path{animation:none!important;transition:none!important}
  .independent-home .home-studio-copy h1>span{transform:none!important;filter:none!important;opacity:1!important}
 }
+
+/* Inicio: a short studio story, not a duplicate services/pricing page. */
+.home-studio-belief{padding:115px 0 120px;background:#f7f2e9;color:#28352c}
+.home-studio-belief .shell{width:min(1320px,calc(100% - 70px))}
+.home-belief-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(45px,6vw,100px)}
+.home-belief-index{font:750 10px Poppins,sans-serif;letter-spacing:.16em;color:#986f56}
+.home-studio-belief h2{font:650 clamp(40px,5vw,76px)/1.08 Manrope,sans-serif;letter-spacing:-.08em;color:#28362d;margin:26px 0}
+.home-studio-belief h2 em{font:400 italic 1em Georgia,serif;color:#9f7157}
+.home-belief-copy>p{font-size:14px;line-height:1.95;color:#626960;margin:0 0 26px}
+.home-belief-steps{border-top:1px solid #bfb9a9}
+.home-belief-steps>div{display:flex;align-items:center;gap:27px;padding:19px 0;border-bottom:1px solid #bfb9a9}
+.home-belief-steps b{font:700 11px Manrope,sans-serif;color:#9d7155}
+.home-belief-steps span{font:650 15px Poppins,sans-serif;color:#303c32}
+.home-belief-links{display:flex;flex-wrap:wrap;gap:15px 25px;margin-top:27px}
+.home-belief-links a{font:700 12px Poppins,sans-serif;color:#805f48}
+.independent-home #contacto{background:#e9e3d9}
+.independent-home #contacto .contact-panel{align-items:start}
+.independent-home #contacto .contact-intro h2{color:var(--ink)}
+.independent-home[data-theme=dark] .home-studio-belief{background:#2a3029;color:#f0e9de}
+.independent-home[data-theme=dark] .home-studio-belief h2,.independent-home[data-theme=dark] .home-belief-steps span{color:#f0e9de}
+.independent-home[data-theme=dark] .home-belief-copy>p{color:#d0cdbf}
+@media(max-width:800px){.home-belief-grid{grid-template-columns:1fr;gap:30px}}
+@media(max-width:620px){.home-studio-belief{padding:75px 0}.home-studio-belief .shell{width:calc(100% - 36px)}.home-studio-belief h2{font-size:clamp(37px,8vw,52px)}}
