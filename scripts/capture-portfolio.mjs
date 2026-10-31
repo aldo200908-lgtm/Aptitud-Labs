@@ -71,6 +71,26 @@ try {
       }
 
       console.log('CAPTURA OK:', filename, buffer.length + ' bytes', JSON.stringify(details));
+      if (target.id === 'aptitud-portfolio') {
+        const integrity = await page.evaluate(() => ({
+          h1: document.querySelectorAll('h1').length,
+          services: document.querySelectorAll('.service-card').length,
+          projects: document.querySelectorAll('.project-card').length,
+          projectImages: [...document.querySelectorAll('.project-cover img')].map(img => ({ loaded: img.complete && img.naturalWidth > 0, src: img.getAttribute('src') })),
+          sections: [...document.querySelectorAll('main section[id]')].map(x => x.id),
+          serviceChoices: document.querySelectorAll('input[name="servicio"]').length,
+          dropdownCount: document.querySelectorAll('select,details,.menu-toggle,.menu-panel').length,
+          overflow: document.documentElement.scrollWidth > window.innerWidth + 2,
+        }));
+        if (integrity.h1 !== 1 || integrity.services !== 4 || integrity.projects !== 2 ||
+            integrity.serviceChoices !== 4 || integrity.dropdownCount !== 0 || integrity.overflow ||
+            !integrity.projectImages.every(img => img.loaded)) {
+          throw new Error('Integridad del portafolio de escritorio: ' + JSON.stringify(integrity));
+        }
+        const projectsPath = path.join(outDir, 'aptitud-portfolio-projects-cover.png');
+        await page.locator('#proyectos').screenshot({path: projectsPath, animations:'disabled'});
+        console.log('PORTAFOLIO DE ESCRITORIO OK:', JSON.stringify(integrity));
+      }
     } catch (error) {
       failures.push({ name: target.name, error: String(error) });
       console.error('No se pudo capturar:', target.name, error);
@@ -102,12 +122,21 @@ try {
       sections: [...document.querySelectorAll('main section[id]')].map(n => n.id),
       contactForm: Boolean(document.querySelector('#portfolio-contact-form')),
       themeToggle: Boolean(document.querySelector('#theme-toggle')),
+      projectCards: document.querySelectorAll('.project-card').length,
+      options: document.querySelectorAll('input[name="servicio"]').length,
     }));
     if (geometry.documentScrollWidth > geometry.width + 2) throw new Error('Desbordamiento horizontal móvil: ' + JSON.stringify(geometry));
-    if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6 || !geometry.contactForm || !geometry.themeToggle) throw new Error('Navegación o controles incorrectos: ' + JSON.stringify(geometry));
+    if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6 || !geometry.contactForm || !geometry.themeToggle || geometry.projectCards !== 2 || geometry.options !== 4) throw new Error('Navegación o controles incorrectos: ' + JSON.stringify(geometry));
     const filename = path.join(outDir,'aptitud-portfolio-mobile-cover.png');
     await mobile.screenshot({ path: filename, type: 'png', fullPage: false, animations: 'disabled' });
     console.log('CAPTURA MÓVIL OK:', filename, JSON.stringify(geometry));
+    await mobile.locator('label.type-choice').nth(1).click();
+    const selected = await mobile.locator('input[name="servicio"]:checked').inputValue();
+    if (selected !== 'Aplicación / sistema') throw new Error('Las opciones del formulario no cambian correctamente: ' + selected);
+    await mobile.locator('#theme-toggle').click();
+    const theme = await mobile.evaluate(() => document.documentElement.dataset.theme);
+    if (theme !== 'dark') throw new Error('El cambio de tema no funciona: ' + theme);
+    console.log('INTERACCIONES MÓVILES OK: opción=', selected, ' tema=', theme);
   } catch (error) {
     failures.push({ name: 'Portafolio móvil', error: String(error) });
     console.error('Portafolio móvil: ', error);
