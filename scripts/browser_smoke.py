@@ -240,12 +240,13 @@ def run():
                     const cr=close.getBoundingClientRect();
                     const links=[...menu.querySelectorAll('a')].map(el=>el.getBoundingClientRect());
                     return {
-                      vw:innerWidth,
+                      vw:document.documentElement.clientWidth,
+                      inner:innerWidth,
                       nav:{left:nr.left,right:nr.right,width:nr.width},
                       brand:{left:br.left,right:br.right},
                       menu:{left:mr.left,right:mr.right,width:mr.width},
                       close:{left:cr.left,right:cr.right},
-                      linksFit:links.every(r=>r.left>=-2&&r.right<=innerWidth+2),
+                      linksFit:links.every(r=>r.left>=-2&&r.right<=document.documentElement.clientWidth+2),
                       scrollWidth:document.documentElement.scrollWidth
                     };
                 """)
