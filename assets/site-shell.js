@@ -7,6 +7,6 @@
   const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='dark'?'#111923':'#f7fafc';
  }
  let saved;try{saved=localStorage.getItem('aptitud-portfolio-theme')}catch{}
- apply(saved==='dark'?'dark':'light');
+ apply(saved==='dark'||(saved!== 'light'&&body.classList.contains('futuristic-home'))?'dark':'light');
  button?.addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark';apply(next);try{localStorage.setItem('aptitud-portfolio-theme',next)}catch{}});
 })();
