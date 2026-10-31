@@ -1,0 +1,61 @@
+/* Aptitud Labs — resúmenes de portada: Servicios, Planes y Tienda NFC.
+   Visual consistente con Selected Works; clases al-summary- encapsuladas. */
+.al-summary{
+ --al-summary-bg:var(--cream,#fafafa);
+ --al-summary-card:#fff;
+ --al-summary-text:#111827;
+ --al-summary-muted:#6b7080;
+ --al-summary-border:#e8e9ec;
+ --al-summary-hover:#0f172a;
+ background:var(--al-summary-bg);
+ color:var(--al-summary-text);
+ padding:98px 24px 105px;
+ font-family:inherit;
+ isolation:isolate;
+}
+.al-summary,.al-summary *,.al-summary *::before,.al-summary *::after{box-sizing:border-box}
+.al-summary .al-summary-inner{width:min(1120px,100%);margin:0 auto}
+.al-summary .al-summary-header{max-width:680px;margin:0 auto 46px;text-align:center}
+.al-summary .al-summary-eyebrow{display:block;color:var(--al-summary-muted);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px}
+.al-summary .al-summary-heading{font-family:inherit;color:var(--al-summary-text);font-size:clamp(36px,4.7vw,56px);font-weight:700;letter-spacing:-.045em;line-height:1.16;margin:0}
+.al-summary .al-summary-description{font-size:13px;line-height:1.85;color:var(--al-summary-muted);max-width:590px;margin:18px auto 0}
+.al-summary .al-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.al-summary .al-summary-card{background:var(--al-summary-card);border:1px solid var(--al-summary-border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 3px 14px #0f172a09;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.al-summary .al-summary-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0f172a1b}
+.al-summary .al-summary-art{position:relative;aspect-ratio:16/10;background:linear-gradient(145deg,#f1f2f4,#e0e3e8 63%,#cfd5dc);border-bottom:1px solid var(--al-summary-border);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.al-summary .al-summary-art-plans{background:linear-gradient(145deg,#f7f7f8,#e8e9ed 58%,#d3d7df)}
+.al-summary .al-summary-art-nfc{background:linear-gradient(145deg,#f2f3f5,#e3e6e9 58%,#cbd0d6)}
+.al-summary .al-summary-art::before{content:"";position:absolute;width:140px;height:140px;border:1px solid #88919e55;transform:rotate(28deg);border-radius:23px;box-shadow:0 0 0 32px #ffffff36,0 0 0 68px #ffffff22;transition:transform .5s ease}
+.al-summary .al-summary-card:hover .al-summary-art::before{transform:rotate(36deg) scale(1.04)}
+.al-summary .al-summary-art-tag{position:absolute;top:18px;left:20px;color:#586270;font-size:10px;letter-spacing:.16em;font-weight:750}
+.al-summary .al-summary-art-motif{position:relative;z-index:1;font-size:clamp(37px,4vw,53px);font-weight:800;letter-spacing:-.09em;color:#343e4b;line-height:1;text-shadow:0 2px 1px #ffffff80}
+.al-summary .al-summary-art-lines{position:absolute;right:18px;bottom:15px;width:45px;height:12px;background:repeating-linear-gradient(90deg,#54607077 0,#54607077 2px,transparent 2px,transparent 8px);opacity:.6}
+.al-summary .al-summary-card-body{display:flex;flex:1;flex-direction:column;text-align:left;padding:27px 25px 25px}
+.al-summary .al-summary-card-title{margin:0 0 9px;font-family:inherit;font-size:19px;font-weight:650;letter-spacing:-.025em;color:var(--al-summary-text);line-height:1.35}
+.al-summary .al-summary-price{color:#233247;font-size:20px;font-weight:800;margin:2px 0 10px;letter-spacing:-.03em}
+.al-summary .al-summary-card-description{font-size:13px;line-height:1.85;color:var(--al-summary-muted);margin:0 0 24px}
+.al-summary .al-summary-card-cta,.al-summary .al-summary-more{display:flex;align-items:center;justify-content:center;gap:10px;background:transparent;color:var(--al-summary-text);border:1px solid var(--al-summary-border);border-radius:10px;min-height:46px;padding:13px 15px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .25s ease,color .25s ease,border-color .25s ease}
+.al-summary .al-summary-card-cta{margin-top:auto;width:100%}
+.al-summary .al-summary-card-cta:hover,.al-summary .al-summary-more:hover{background:var(--al-summary-hover);border-color:var(--al-summary-hover);color:white}
+.al-summary a:focus-visible{outline:3px solid #64748b;outline-offset:3px}
+.al-summary .al-summary-featured{border-color:#c5cad4}
+.al-summary .al-summary-disclosure{max-width:770px;text-align:center;margin:28px auto 0;font-size:11px;line-height:1.85;color:var(--al-summary-muted)}
+.al-summary .al-summary-footer{margin-top:34px;display:flex;justify-content:center}
+.al-summary .al-summary-more{min-height:44px;border-radius:9px;padding:13px 23px}
+.al-summary.al-summary-enhanced .al-summary-reveal:not(.al-summary-visible){opacity:0;transform:translateY(24px);filter:blur(6px)}
+.al-summary.al-summary-enhanced .al-summary-reveal{transition:opacity 700ms ease-out,transform 700ms ease-out,filter 700ms ease-out;transition-delay:var(--al-summary-delay,0ms)}
+.al-summary.al-summary-enhanced .al-summary-reveal.al-summary-visible{opacity:1;transform:translateY(0);filter:none}
+.al-summary.al-summary-enhanced .al-summary-card.al-summary-reveal.al-summary-done{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;transition-delay:0ms}
+.al-summary.al-summary-enhanced .al-summary-card.al-summary-reveal.al-summary-done:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0f172a1b}
+.al-summary .al-summary-header{--al-summary-delay:0ms}
+.al-summary .al-summary-card:nth-child(1){--al-summary-delay:120ms}
+.al-summary .al-summary-card:nth-child(2){--al-summary-delay:240ms}
+.al-summary .al-summary-card:nth-child(3){--al-summary-delay:360ms}
+.al-summary .al-summary-disclosure{--al-summary-delay:480ms}
+.al-summary .al-summary-footer{--al-summary-delay:540ms}
+@media(max-width:860px){.al-summary{padding:80px 22px}.al-summary .al-summary-grid{gap:14px}.al-summary .al-summary-card-body{padding:20px 17px}.al-summary .al-summary-card-title{font-size:17px}}
+@media(max-width:640px){.al-summary{padding:75px 18px 80px}.al-summary .al-summary-header{margin-bottom:35px}.al-summary .al-summary-heading{font-size:clamp(33px,8.5vw,42px)}.al-summary .al-summary-grid{grid-template-columns:minmax(0,430px);justify-content:center;gap:21px}.al-summary .al-summary-card-body{padding:23px 21px}.al-summary .al-summary-art-motif{font-size:55px}}
+@media(prefers-reduced-motion:reduce){
+ .al-summary *,.al-summary *::before,.al-summary *::after{animation:none!important;transition:none!important}
+ .al-summary .al-summary-reveal{opacity:1!important;transform:none!important;filter:none!important}
+}
