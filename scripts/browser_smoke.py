@@ -114,6 +114,17 @@ def run():
                   "Inicio muestra acceso a las páginas independientes")
             check(len(driver.find_elements(By.CSS_SELECTOR, ".home-gateway-grid > a")) == 4,
                   "Inicio enlaza a Portafolio, Servicios, Planes y NFC")
+            wait(driver, lambda d: d.find_element(By.ID, "v3-workbench-main").get_attribute("src"))
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#v3-workbench [data-v3-preview]")) == 3,
+                  "Inicio tiene tres vistas de demostración seleccionables")
+            driver.execute_script("document.querySelector('[data-v3-preview=\"caja\"]').click()")
+            wait(driver, lambda d: "caja-cover.webp" in d.find_element(By.ID, "v3-workbench-main").get_attribute("src"))
+            check(driver.find_element(By.ID, "v3-workbench-name").text == "Caja Clara",
+                  "Inicio cambia imagen y nombre a Caja Clara sin navegación")
+            check(driver.find_element(By.CSS_SELECTOR, '[data-v3-preview="caja"]').get_attribute("aria-pressed") == "true",
+                  "Selector de Inicio anuncia el proyecto activo")
+            driver.execute_script("document.querySelector('[data-v3-preview=\"maison\"]').click()")
+            wait(driver, lambda d: "maison-fresas.webp" in d.find_element(By.ID, "v3-workbench-main").get_attribute("src"))
             check(not driver.find_elements(By.ID, "fx-project-grid"),
                   "Inicio no duplica el portafolio completo")
             check(len(driver.find_elements(By.CSS_SELECTOR, ".desktop-links a[href='/proyectos/']")) == 1,
@@ -123,6 +134,15 @@ def run():
             driver.get(base + "/proyectos/")
             wait(driver, lambda d: d.find_element(By.ID, "fx-project-grid"))
             check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Portafolio tiene su propio H1")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#v3-folio-showcase [data-v3-case-control]")) == 3,
+                  "Portafolio incluye un reel de tres proyectos")
+            driver.execute_script("document.querySelector('[data-v3-case-control=\"sushi\"]').click()")
+            wait(driver, lambda d: "sushi-ten-bento-cover.png" in d.find_element(By.ID, "v3-folio-main").get_attribute("src"))
+            check("Sushi Ten Bento" in driver.find_element(By.ID, "v3-folio-open").get_attribute("aria-label"),
+                  "El reel actualiza el enlace accesible del proyecto seleccionado")
+            check("sushi-ten-bento-" in driver.find_element(By.ID, "v3-folio-open").get_attribute("href"),
+                  "El reel enlaza a la demostración correcta")
+            driver.execute_script("document.querySelector('[data-v3-case-control=\"maison\"]').click()")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#vision .fx-manifesto-line")) == 2,
                   "Portafolio tiene manifiesto tipográfico cinético")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#laboratorio [data-fx-chapter]")) == 3,
