@@ -1,0 +1,533 @@
+/* APTITUD LABS / OBSIDIAN ICE — Studio Edition 04
+   Matte carbon, architectural ice blue, cool steel, restrained 3D depth.
+   Distinct documents; one identity. Progressive enhancement with motion budget.
+*/
+body.site-page.obsidian-ice{
+ --v4-bg:#0a1016;--v4-bg-2:#0e151c;--v4-deep:#080d12;
+ --v4-panel:#131d26;--v4-panel2:#19252f;--v4-raised:#1b2934;
+ --v4-ink:#edf5f9;--v4-muted:#a4b6c3;--v4-dim:#718896;--v4-line:#32434e;
+ --v4-ice:#9bdaee;--v4-active:#68bad7;--v4-ice-deep:#2e7591;--v4-silver:#d0dce3;
+ --v4-lightwash:#a8d7ec13;--v4-hero-bloom:#17405680;
+ --cream:var(--v4-bg);--paper:var(--v4-bg-2);--surface:var(--v4-panel);
+ --ink:var(--v4-ink);--muted:var(--v4-muted);--line:var(--v4-line);
+ --deep:var(--v4-deep);--accent:var(--v4-ice);--accent-soft:#183b4c;
+ --glass:linear-gradient(135deg,#213541e8,#0f1b24e8);
+ --text:var(--v4-ink);--panel:var(--v4-panel);--panel-soft:var(--v4-bg-2);
+ --v3-ink:var(--v4-ink);--v3-paper:var(--v4-bg);--v3-sepia:var(--v4-panel);
+ --v3-coral:var(--v4-ice);--v3-mid:var(--v4-muted);--v3-rule:var(--v4-line);
+ background:var(--v4-bg);color:var(--v4-ink);color-scheme:dark;
+ font-family:Manrope,"DM Sans",Arial,sans-serif;
+ overflow-x:clip;
+}
+body.site-page.obsidian-ice[data-theme=light]{
+ --v4-bg:#eff5f8;--v4-bg-2:#e8f0f4;--v4-deep:#dbe9f0;
+ --v4-panel:#fff;--v4-panel2:#edf3f7;--v4-raised:#e3ecf2;
+ --v4-ink:#182b37;--v4-muted:#4f6777;--v4-dim:#697e89;--v4-line:#bdcfd9;
+ --v4-ice:#17799b;--v4-active:#15799c;--v4-ice-deep:#16627d;--v4-silver:#263f4d;
+ --v4-lightwash:#268db113;--v4-hero-bloom:#91d6ee6b;
+ --accent-soft:#d3e9f3;--glass:linear-gradient(135deg,#fffffff5,#e4f0f7f2);
+ background:var(--v4-bg);color:var(--v4-ink);color-scheme:light;
+}
+body.site-page.obsidian-ice ::selection{background:#84cadf;color:#0a1620}
+body.site-page.obsidian-ice h1,body.site-page.obsidian-ice h2,body.site-page.obsidian-ice h3{font-family:Manrope,Arial,sans-serif}
+body.site-page.obsidian-ice a,body.site-page.obsidian-ice button{-webkit-tap-highlight-color:transparent}
+body.site-page.obsidian-ice a:focus-visible,body.site-page.obsidian-ice button:focus-visible,body.site-page.obsidian-ice input:focus-visible,body.site-page.obsidian-ice select:focus-visible{outline:3px solid var(--v4-ice);outline-offset:4px}
+body.site-page.obsidian-ice .shell{width:min(1340px,calc(100% - 72px))}
+body.site-page.obsidian-ice .site-nav{
+ border:0;border-bottom:1px solid var(--v4-line);border-radius:0;
+ background:color-mix(in srgb,var(--v4-bg) 93%,transparent);
+ backdrop-filter:blur(24px) saturate(1.15);-webkit-backdrop-filter:blur(24px) saturate(1.15);
+ box-shadow:0 12px 40px #0000001f;
+}
+body.site-page.obsidian-ice .site-nav .brand{color:var(--v4-ink);font:850 22px Manrope,sans-serif;letter-spacing:-.075em}
+body.site-page.obsidian-ice .site-nav .brand-period{color:var(--v4-ice)}
+body.site-page.obsidian-ice .site-nav .desktop-links a{color:var(--v4-muted);font-size:12px;transition:color .3s ease}
+body.site-page.obsidian-ice .site-nav .desktop-links a:hover,body.site-page.obsidian-ice .site-nav .desktop-links a[aria-current=page]{color:var(--v4-ice)}
+body.site-page.obsidian-ice .site-nav .nav-cta{
+ background:var(--v4-ice);border:1px solid var(--v4-ice);color:#0b1a25;border-radius:6px;
+ box-shadow:none;font-weight:800;transition:background .35s,color .35s,transform .35s,box-shadow .35s;
+}
+body.site-page.obsidian-ice .site-nav .nav-cta:hover{transform:translateY(-2px);background:var(--v4-ink);border-color:var(--v4-ink);box-shadow:0 9px 28px #64bdd52b}
+body.site-page.obsidian-ice .site-nav .menu-toggle,body.site-page.obsidian-ice .site-nav .theme-control{
+ background:var(--v4-panel);color:var(--v4-ink);border:1px solid var(--v4-line);border-radius:5px;
+}
+body.site-page.obsidian-ice .site-nav .menu-panel{background:var(--v4-panel);border:1px solid var(--v4-line);box-shadow:0 22px 50px #0007}
+body.site-page.obsidian-ice .site-nav .menu-panel a,body.site-page.obsidian-ice .site-nav .menu-panel-close{color:var(--v4-ink);border-color:var(--v4-line)}
+body.site-page.obsidian-ice .site-nav .menu-panel a:hover{color:var(--v4-ice)}
+body.site-page.obsidian-ice .v4-reading-line{position:fixed;z-index:490;top:0;left:0;width:100%;height:2px;background:var(--v4-ice);box-shadow:0 0 14px #a8daec60;transform:scaleX(var(--v4-scroll,0));transform-origin:left;pointer-events:none}
+body.site-page.obsidian-ice.futuristic-home .fx-scroll-progress{display:none}
+/* Reusable architecture — fine rules, calibrated contrast, no template gradient flood. */
+body.site-page.obsidian-ice .eyebrow,body.site-page.obsidian-ice .folio-section-kicker{color:var(--v4-ice);font-weight:750;letter-spacing:.17em}
+body.site-page.obsidian-ice .section-title,body.site-page.obsidian-ice .section-top h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice .copy,body.site-page.obsidian-ice .section-top p{color:var(--v4-muted)}
+body.site-page.obsidian-ice .section-pad{background:var(--v4-bg);color:var(--v4-ink)}
+body.site-page.obsidian-ice .section-muted{background:var(--v4-bg-2)}
+body.site-page.obsidian-ice .section-dark{background:var(--v4-deep)}
+body.site-page.obsidian-ice .section-dark .section-title,body.site-page.obsidian-ice .section-dark h3{color:var(--v4-ink)}
+body.site-page.obsidian-ice .section-dark .copy,body.site-page.obsidian-ice .section-dark p{color:var(--v4-muted)}
+body.site-page.obsidian-ice .site-footer{
+ background:var(--v4-deep);color:var(--v4-ink);border-top:1px solid var(--v4-line);
+}
+body.site-page.obsidian-ice .site-footer p,body.site-page.obsidian-ice .site-footer .footer-bottom{color:var(--v4-muted)}
+body.site-page.obsidian-ice .site-footer a,body.site-page.obsidian-ice .site-footer .brand{color:var(--v4-ink)}
+body.site-page.obsidian-ice .site-footer a:hover{color:var(--v4-ice)}
+/* Optical finish: restrained architectural light, no big neon wheels. */
+body.site-page.obsidian-ice .v4-technical-grid{
+ position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background-image:linear-gradient(90deg,#91d3e510 1px,transparent 1px),
+ linear-gradient(0deg,#91d3e50b 1px,transparent 1px);
+ background-size:clamp(66px,8vw,133px) clamp(66px,8vw,133px);
+ mask-image:linear-gradient(90deg,#0006,transparent 67%);
+ opacity:.55;
+}
+body.site-page.obsidian-ice .v4-status-led,body.site-page.obsidian-ice .v4-signal{
+ display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--v4-ice);
+ box-shadow:0 0 0 4px #85d0e51e;vertical-align:middle;flex:0 0 auto;
+}
+body.site-page.obsidian-ice .v4-badge-index{font:800 9px Manrope,sans-serif;color:var(--v4-ice);letter-spacing:.12em;padding:4px 7px;border:1px solid var(--v4-line);margin-left:9px}
+
+/* INIT / signature split-screen with quiet cinematic art direction. */
+body.site-page.obsidian-ice.independent-home .home-studio-hero.v3-home-hero{
+ position:relative;isolation:isolate;overflow:hidden;
+ background:radial-gradient(ellipse 43% 47% at 86% 49%,var(--v4-hero-bloom),transparent 87%),var(--v4-bg);
+ color:var(--v4-ink);min-height:clamp(650px,94svh,1080px);padding:120px 0 88px;
+}
+body.site-page.obsidian-ice.independent-home .home-studio-hero.v3-home-hero:before{
+ content:"";position:absolute;right:2%;top:12%;width:45%;aspect-ratio:1;
+ border-radius:50%;background:radial-gradient(circle,#84bdd515,transparent 72%);pointer-events:none;
+}
+body.site-page.obsidian-ice.independent-home .v3-hero-grain{
+ background-image:linear-gradient(120deg,#ffffff07,transparent 55%),
+ repeating-linear-gradient(90deg,transparent 0,transparent 93px,#a9def00a 93px,#a9def00a 94px);
+ opacity:.44;
+}
+body.site-page.obsidian-ice.independent-home .v3-huge-a{font-size:clamp(300px,41vw,700px);color:#b1d7e809;right:0;top:18%;transform:rotate(-10deg);letter-spacing:-.1em}
+body.site-page.obsidian-ice.independent-home .v3-home-layout{width:min(1400px,calc(100% - 92px));grid-template-columns:1.03fr .97fr;gap:clamp(30px,4.5vw,84px)}
+body.site-page.obsidian-ice.independent-home .v3-index-line{
+ color:var(--v4-muted);border-top:1px solid var(--v4-line);border-bottom:1px solid var(--v4-line);letter-spacing:.12em;
+}
+body.site-page.obsidian-ice.independent-home .v3-index-line span:first-child{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-home .v3-index-line b{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-home .v3-h1{
+ color:var(--v4-ink);font:780 clamp(53px,6.15vw,99px)/1.005 Manrope,sans-serif;
+ letter-spacing:-.096em;margin:32px 0 28px;
+}
+body.site-page.obsidian-ice.independent-home .v3-h1 em{color:var(--v4-ice);font-style:italic;letter-spacing:-.075em}
+body.site-page.obsidian-ice.independent-home .v3-h1 i{color:var(--v4-silver);font-style:italic;letter-spacing:-.073em}
+body.site-page.obsidian-ice.independent-home .v3-lead{color:var(--v4-muted);font-size:clamp(14px,1.25vw,16px);line-height:1.92}
+body.site-page.obsidian-ice.independent-home .v3-hero-actions{margin:28px 0 51px}
+body.site-page.obsidian-ice.independent-home .v3-button{
+ background:var(--v4-ice);color:#071a25;border:1px solid var(--v4-ice);
+ border-radius:5px;font-weight:800;
+}
+body.site-page.obsidian-ice.independent-home .v3-button:hover{background:var(--v4-ink);border-color:var(--v4-ink);box-shadow:0 14px 34px #7bc1d528}
+body.site-page.obsidian-ice.independent-home .v3-button-ghost{
+ color:var(--v4-ink);border-color:var(--v4-line);border-radius:5px;background:#799eaf0a;
+}
+body.site-page.obsidian-ice.independent-home .v3-button-ghost:hover{background:var(--v4-lightwash);border-color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-home .v3-home-bottom{border-top:1px solid var(--v4-line);color:var(--v4-dim)}
+body.site-page.obsidian-ice.independent-home .v3-home-bottom a{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-home .v3-side-type{color:var(--v4-dim)}
+
+/* Matte metal / glass: 3D physically readable workbench */
+body.site-page.obsidian-ice.independent-home .v3-workbench{
+ padding:19px;border:1px solid #4b6674;
+ background:linear-gradient(135deg,#182630,#0d141b 55%,#172530);
+ box-shadow:0 48px 90px #0009,0 0 0 1px #a7d9eb11,14px 14px 0 #17212a;
+ transform-style:preserve-3d;perspective:1400px;isolation:isolate;
+}
+body.site-page.obsidian-ice.independent-home .v3-workbench:before{
+ content:"";position:absolute;inset:-1px;z-index:-1;pointer-events:none;border:1px solid #b1e1ef24;
+ background:linear-gradient(130deg,#bdeaff0f,transparent 35%,#a9dded04 80%);
+}
+body.site-page.obsidian-ice .v3-workbench-heading{color:var(--v4-silver);letter-spacing:.15em;min-height:40px}
+.v4-workbench-status{display:inline-flex;gap:10px;align-items:center;color:#a1dce9;font-size:8px}
+body.site-page.obsidian-ice .v4-depth-slab{
+ position:absolute;z-index:-1;top:8%;left:6%;width:92%;height:74%;
+ background:linear-gradient(145deg,#3e6373,#182631);
+ border:1px solid #6d9fb084;transform:translate3d(15px,12px,-35px) rotate(2deg);
+ box-shadow:0 35px 54px #0007;pointer-events:none;
+}
+body.site-page.obsidian-ice .v3-workbench-sheet{
+ background:#111b23;border:1px solid #486577;
+ box-shadow:inset 0 0 0 1px #e2f5ff0b,0 25px 65px #0009;
+ transform-origin:center center;transform-style:preserve-3d;
+ transform:perspective(1400px) rotateX(var(--v4-rotate-x,0deg)) rotateY(var(--v4-rotate-y,0deg)) translateZ(8px);
+ transition:transform .72s cubic-bezier(.16,1,.3,1),box-shadow .5s;
+}
+body.site-page.obsidian-ice .v3-workbench-sheet:hover{box-shadow:0 35px 90px #000a,0 0 0 1px #9acbe520}
+body.site-page.obsidian-ice .v3-workbench-browser{
+ background:#071019;color:#aac0ce;border-bottom:1px solid #304a5a;letter-spacing:.15em;
+}
+body.site-page.obsidian-ice .v3-browser-circles{color:#91cddf}
+body.site-page.obsidian-ice .v3-workbench-image{background:radial-gradient(circle at 45% 30%,#d5e7e6,#9ab7bd 58%,#567786);overflow:hidden}
+body.site-page.obsidian-ice .v3-workbench-image:before{
+ content:"";position:absolute;z-index:1;inset:0;pointer-events:none;
+ background:radial-gradient(circle 240px at var(--v4-spot-x,50%) var(--v4-spot-y,50%),#e4ffff22,transparent 90%);
+ mix-blend-mode:screen;
+}
+body.site-page.obsidian-ice .v3-workbench-type{color:#effbff50}
+body.site-page.obsidian-ice .v3-workbench-type span{color:#315363}
+body.site-page.obsidian-ice .v3-workbench-foot{background:#0b1827eb;color:#c5deeb;border:1px solid #487083ad}
+body.site-page.obsidian-ice .v3-workbench-card{border-bottom:1px solid #3b5260;padding:20px 0 16px}
+body.site-page.obsidian-ice .v3-workbench-card>span{color:#9cd8e9}
+body.site-page.obsidian-ice .v3-workbench-card strong{color:#f2f9fc}
+body.site-page.obsidian-ice .v3-workbench-card p{color:#a9bdc9}
+body.site-page.obsidian-ice .v3-workbench-switch{gap:6px;margin-top:13px}
+body.site-page.obsidian-ice .v3-workbench-switch button{
+ background:#101d27;border:1px solid #354a58;color:#a9bdc7;border-radius:2px;
+ min-height:63px;transition:background .3s,color .3s,transform .35s,border-color .35s;
+}
+body.site-page.obsidian-ice .v3-workbench-switch button span{color:#6baec6}
+body.site-page.obsidian-ice .v3-workbench-switch button[aria-pressed=true]{background:#a0dcee;color:#10232e;border-color:#a0dcee}
+body.site-page.obsidian-ice .v3-workbench-switch button[aria-pressed=true] span{color:#245a72}
+body.site-page.obsidian-ice .v3-workbench-switch button:hover{border-color:#96d2e6;transform:translateY(-3px)}
+body.site-page.obsidian-ice .v4-workbench-ruler{
+ display:flex;justify-content:space-between;align-items:center;
+ margin-top:15px;padding-top:10px;border-top:1px solid #334957;
+ font:700 8px Manrope,sans-serif;color:#7b9fb1;letter-spacing:.07em;
+ background-image:repeating-linear-gradient(90deg,#60899b44 0,#60899b44 1px,transparent 1px,transparent 12px);
+ background-size:100% 5px;background-position:top;background-repeat:no-repeat;
+}
+body.site-page.obsidian-ice .v3-workbench-disclaimer{color:#9db0bd;font-size:9px}
+body.site-page.obsidian-ice .v3-workbench[data-v3-work=caja] .v3-workbench-image{background:#9dbecc}
+body.site-page.obsidian-ice .v3-workbench[data-v3-work=sushi] .v3-workbench-image{background:#26252c}
+/* A sequence of four distinct portals instead of a repeated card preset. */
+body.site-page.obsidian-ice .v3-rule-strip{background:#a4dce9;color:#142632;height:48px;border:0}
+body.site-page.obsidian-ice .v3-rule-track b{color:#37738c}
+body.site-page.obsidian-ice.independent-home .home-gateway{
+ background:var(--v4-bg-2);color:var(--v4-ink);position:relative;
+ padding:110px 0 120px;
+}
+body.site-page.obsidian-ice.independent-home .home-gateway:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:radial-gradient(ellipse 25% 50% at 7% 60%,#2362852a,transparent 95%);
+}
+body.site-page.obsidian-ice .home-gateway-header{border-color:var(--v4-line)}
+body.site-page.obsidian-ice .home-gateway-header>span{color:var(--v4-ice)}
+body.site-page.obsidian-ice .home-gateway-header h2{color:var(--v4-ink);letter-spacing:-.09em}
+body.site-page.obsidian-ice .home-gateway-header h2 em{color:var(--v4-ice)}
+body.site-page.obsidian-ice .home-gateway-header p{color:var(--v4-muted)}
+body.site-page.obsidian-ice .home-gateway-grid{gap:15px}
+body.site-page.obsidian-ice .home-gateway-item{
+ background:#131e27;color:#f3f8fa;border:1px solid #344b59;border-radius:5px;
+ box-shadow:0 22px 60px #050a1090;position:relative;overflow:hidden;
+}
+body.site-page.obsidian-ice .home-gateway-item:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(145deg,#88d4ed0e,transparent 46%,#83c0d20a);opacity:.9;
+}
+body.site-page.obsidian-ice .home-gateway-item:hover{
+ border-color:#6aaec6;transform:translateY(-9px);box-shadow:0 35px 75px #0009;
+}
+body.site-page.obsidian-ice .home-gateway-item>span:first-child{color:#b4ddec}
+body.site-page.obsidian-ice .home-gateway-item strong{color:#eff9fc}
+body.site-page.obsidian-ice .home-gateway-item small{color:#b5c9d3}
+body.site-page.obsidian-ice .home-gateway-item small b{color:#a4dfee}
+body.site-page.obsidian-ice .home-gateway-feature{
+ background:linear-gradient(150deg,#1b394b 0%,#111f2a 67%,#0f1a23);
+ border-color:#467087;min-height:500px;
+}
+body.site-page.obsidian-ice .home-gateway-feature .home-gateway-images img{filter:drop-shadow(0 24px 28px #000a)}
+body.site-page.obsidian-ice .v3-gateway-services{background:#172630}
+body.site-page.obsidian-ice .v3-gateway-plans{background:#111b24}
+body.site-page.obsidian-ice .v3-gateway-nfc{background:#182b37}
+body.site-page.obsidian-ice .v3-gateway-graphic span{background:#426d85;border-color:#68a7ba}
+body.site-page.obsidian-ice .v3-gateway-graphic span:nth-child(2){background:#9ed8e9}
+body.site-page.obsidian-ice .v3-gateway-graphic span:nth-child(3){background:#627f9d}
+body.site-page.obsidian-ice .v3-plan-graphic{background:#a2dcee;color:#0b202c;box-shadow:8px 8px 0 #2a4a5a}
+body.site-page.obsidian-ice .v3-plan-graphic i{color:#2d718d}
+body.site-page.obsidian-ice .v3-nfc-graphic{border-color:#82bdd1;box-shadow:0 0 0 20px #78c4dc25,0 0 0 40px #80c4dd12}
+body.site-page.obsidian-ice .v3-nfc-graphic span{border-color:#9bdff1;color:#a0dfee}
+/* Agency voice, deliberately not a second services landing. */
+body.site-page.obsidian-ice.independent-home .home-studio-belief{background:var(--v4-bg);color:var(--v4-ink);padding:115px 0}
+body.site-page.obsidian-ice .home-belief-index{color:var(--v4-ice)}
+body.site-page.obsidian-ice .home-studio-belief h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice .home-studio-belief h2 em{color:var(--v4-ice)}
+body.site-page.obsidian-ice .home-belief-copy>p{color:var(--v4-muted)}
+body.site-page.obsidian-ice .home-belief-steps{border-color:var(--v4-line)}
+body.site-page.obsidian-ice .home-belief-steps>div{border-color:var(--v4-line)}
+body.site-page.obsidian-ice .home-belief-steps b{color:var(--v4-ice)}
+body.site-page.obsidian-ice .home-belief-steps span{color:var(--v4-ink)}
+body.site-page.obsidian-ice .home-belief-links a{color:var(--v4-ice)}
+/* Portfolio / intentional case-study stage with 3D gallery + filters. */
+body.site-page.obsidian-ice.independent-portfolio .v3-portfolio-hero{
+ background:radial-gradient(ellipse 50% 55% at 80% 25%,#20435565,transparent 83%),var(--v4-bg);
+ color:var(--v4-ink);padding:135px 0 83px;
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-headline{background:transparent}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-bar{border-color:var(--v4-line);color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-title-row h1{color:var(--v4-ink);letter-spacing:-.105em}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-title-row h1 em{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-title-row p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-showcase{border-color:var(--v4-line);position:relative}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-showcase-head,body.site-page.obsidian-ice.independent-portfolio .v3-folio-after{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .v4-folio-layers{position:absolute;inset:5% 1% 25% 1%;z-index:0;pointer-events:none}
+body.site-page.obsidian-ice.independent-portfolio .v4-folio-layers span{
+ position:absolute;inset:0;border:1px solid #5c93aa88;
+ background:#1a3440b3;transform:translate3d(12px,17px,-10px) rotate(1.1deg);box-shadow:0 24px 50px #0007;
+}
+body.site-page.obsidian-ice.independent-portfolio .v4-folio-layers span+span{
+ background:#1c4a5a65;transform:translate3d(19px,29px,-30px) rotate(2.2deg);
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen{
+ border:1px solid #547d90;background:#101a23;
+ box-shadow:0 44px 80px #0009,0 0 0 1px #87c1d810;
+ transform:perspective(1700px) rotateX(var(--v4-rotate-x,0deg)) rotateY(var(--v4-rotate-y,0deg));
+ transform-origin:center;transition:transform .85s cubic-bezier(.16,1,.3,1);
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen-top,
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen-bottom{background:#0b151e;color:#bfdae5;border-color:#345365}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen-stage{
+ background:radial-gradient(circle at 50% 35%,#e8f2ee,#adc6d0 51%,#708f9d 100%);
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen-word{color:#153b50}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen-word span{color:#f7fcfe}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-stamp{
+ background:#102635ee;border-color:#95cee0;color:#e3f8ff;box-shadow:0 0 0 9px #123e5540;
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-stamp b{color:#a9e3f1}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-showcase[data-v3-case=caja] .v3-folio-screen-stage{background:#9cb8c6}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-showcase[data-v3-case=sushi] .v3-folio-screen-stage{background:#111c26}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-tabs button{
+ background:var(--v4-panel);border-color:var(--v4-line);color:var(--v4-muted);
+ border-radius:4px;transition:transform .3s,border-color .3s,background .3s;
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-tabs button span{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-tabs button[aria-pressed=true]{
+ background:var(--v4-ice);color:#092130;border-color:var(--v4-ice);
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-tabs button[aria-pressed=true] span{color:#285d72}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-tabs button:hover{border-color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-selection{background:var(--v4-panel2);border:1px solid var(--v4-line);border-radius:4px}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-selection>span{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-selection a{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-after{border-color:var(--v4-line)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-after a{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes{background:var(--v4-bg-2);color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-intro-heading h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-intro-heading h2 em{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-intro-heading p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-benefits{border-color:var(--v4-line)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-benefits article{border-color:var(--v4-line);background:transparent}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-benefits article>span{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-benefits article h3{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-notes .folio-benefits article p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .fx-manifesto{background:#101c25;color:#f3faff}
+body.site-page.obsidian-ice.independent-portfolio .fx-manifesto:before{border-color:#93cce41c;box-shadow:0 0 0 75px #90c8de0a,0 0 0 155px #90c8de06}
+body.site-page.obsidian-ice.independent-portfolio .fx-manifesto-head,body.site-page.obsidian-ice.independent-portfolio .fx-manifesto-bottom{border-color:#426071;color:#b9cad7}
+body.site-page.obsidian-ice.independent-portfolio .fx-manifesto-line-right{color:#a0dbea}
+body.site-page.obsidian-ice.independent-portfolio .fx-manifesto-bottom p{color:#bacbd5}
+body.site-page.obsidian-ice.independent-portfolio .fx-manifesto-bottom a{color:#a3dce9}
+body.site-page.obsidian-ice.independent-portfolio .fx-work{background:var(--v4-bg);color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .fx-section-index{border-color:var(--v4-line);color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .fx-small-heading{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .fx-section-heading h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .fx-section-heading h2 em{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .fx-section-heading>p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .fx-filter-bar{border-color:var(--v4-line)}
+body.site-page.obsidian-ice.independent-portfolio .fx-filter-bar button{color:var(--v4-muted);border-bottom-color:transparent}
+body.site-page.obsidian-ice.independent-portfolio .fx-filter-bar button:hover{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .fx-filter-bar button[aria-pressed=true]{color:var(--v4-ice);border-bottom-color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .fx-filter-status{color:var(--v4-dim)}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured{
+ background:var(--v4-panel);border:1px solid #4a6879;color:var(--v4-ink);border-radius:5px;
+ box-shadow:0 40px 70px #0006;
+}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured-art{background:radial-gradient(circle at 40% 34%,#dfeaf0,#a3c8c9 62%,#658d99)}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured-copy{background:#142330;color:#f5fbfd}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured-copy h3{color:#f3fbff}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured-copy h3 em{color:#a0dced}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured-copy .fx-featured-lead{color:#e5eff5}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured-copy>p:not(.fx-featured-lead),body.site-page.obsidian-ice.independent-portfolio .fx-featured-copy>small{color:#b5c8d5}
+body.site-page.obsidian-ice.independent-portfolio .fx-featured-meta{color:#91cbdc}
+body.site-page.obsidian-ice.independent-portfolio .fx-feature-tags span{background:#213b4c;border:1px solid #406b80;color:#c4e4ed}
+body.site-page.obsidian-ice.independent-portfolio .fx-launch{background:#9bdced;color:#0e222f;border:1px solid #9bdced}
+body.site-page.obsidian-ice.independent-portfolio .fx-launch:hover{background:#d9f1f7;border-color:#d9f1f7;color:#0c2532}
+body.site-page.obsidian-ice.independent-portfolio .fx-feature-actions a{color:#a7ddec}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-card{background:transparent;color:var(--v4-ink);border:0}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-media{border:1px solid #385265;box-shadow:0 25px 50px #0005}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-info{border-bottom:1px solid var(--v4-line)}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-top{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-top span:last-child{color:var(--v4-dim)}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-info h3{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-info p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .fx-project-info>a{color:var(--v4-ice);border-color:var(--v4-line)}
+body.site-page.obsidian-ice.independent-portfolio .fx-media-hover{background:#132534ec;border:1px solid #88c8de;color:#e9f9ff}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-panel{background:#182631;border:1px solid #3b5a6b}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-panel h3{color:#f1f9fc}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-panel p,body.site-page.obsidian-ice.independent-portfolio .fx-demo-note{color:#b3c8d6}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-browser{background:#0d1721;border-color:#3d5b6b}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-placeholder{background:#172833}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-placeholder strong{color:#eefaff}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-placeholder span{color:#acbfcc}
+body.site-page.obsidian-ice.independent-portfolio .fx-demo-load{background:#a1dced;color:#09222f;border-color:#a1dced}
+body.site-page.obsidian-ice.independent-portfolio .fx-motion-story{background:var(--v4-bg-2);color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-head{border-color:var(--v4-line)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-head h2,body.site-page.obsidian-ice.independent-portfolio .fx-story-chapter h3{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-head h2 em,body.site-page.obsidian-ice.independent-portfolio .fx-story-chapter h3 em{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-kicker,body.site-page.obsidian-ice.independent-portfolio .fx-story-chapter>span{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-head p,body.site-page.obsidian-ice.independent-portfolio .fx-story-chapter p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-chapter,body.site-page.obsidian-ice.independent-portfolio .fx-chapter-line span{border-color:var(--v4-line)}
+body.site-page.obsidian-ice.independent-portfolio .fx-chapter-line span{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-stage{background:#172834;border-color:#4d7081;box-shadow:0 30px 70px #0007}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-stage:before{background:radial-gradient(circle at 68% 24%,#48819c,transparent 54%),linear-gradient(130deg,#1c3b4c,#0e1b29)}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-stage-top,body.site-page.obsidian-ice.independent-portfolio .fx-story-stage-foot{color:#d3e6ed}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-orbit{border-color:#afd9e029;box-shadow:0 0 0 45px #8dccdf0b,0 0 0 89px #e9f8ff08}
+body.site-page.obsidian-ice.independent-portfolio .fx-story-float{background:#142b39;color:#d7eff7;border:1px solid #4c8498}
+/* Portfolio closing: responsible person, pastry pitch, contact form on matte surfaces. */
+body.site-page.obsidian-ice.independent-portfolio .folio-pitch{background:var(--v4-panel2);color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .folio-pitch h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .folio-pitch p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio #nosotros{background:var(--v4-bg)}
+body.site-page.obsidian-ice.independent-portfolio .studio-copy h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice.independent-portfolio .studio-copy p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.independent-portfolio .studio-copy a{color:var(--v4-ice)}
+body.site-page.obsidian-ice.independent-portfolio .responsible-mark{background:#173242;color:#e4f5fc;border-color:#557489}
+/* Sales pages — preserve independent routes and product workflow */
+body.site-page.obsidian-ice.studio-subpage{
+ --cream:var(--v4-bg);--paper:var(--v4-bg-2);--surface:var(--v4-panel);--ink:var(--v4-ink);
+ --muted:var(--v4-muted);--line:var(--v4-line);--accent:var(--v4-ice);
+ background:var(--v4-bg);color:var(--v4-ink);
+}
+body.site-page.obsidian-ice.studio-subpage .page-hero{
+ position:relative;background:radial-gradient(ellipse 35% 65% at 84% 50%,#26627d4c,transparent 86%),var(--v4-bg);
+ border-bottom:1px solid var(--v4-line);color:var(--v4-ink);padding:150px 0 103px;
+ isolation:isolate;overflow:hidden;
+}
+body.site-page.obsidian-ice.studio-subpage .page-hero:before{
+ color:#a7e1f80a;right:2%;top:7%;font-size:clamp(190px,28vw,465px);
+}
+body.site-page.obsidian-ice.studio-subpage .page-hero:after{background:#78c3e013}
+body.site-page.obsidian-ice.studio-subpage .v4-subpage-grid{
+ position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background-image:linear-gradient(90deg,#96d8e50c 1px,transparent 1px),
+ linear-gradient(0deg,#96d8e509 1px,transparent 1px);
+ background-size:92px 92px;mask-image:linear-gradient(90deg,transparent,#000 100%);
+}
+body.site-page.obsidian-ice.studio-subpage .v4-subpage-caption{
+ position:absolute;right:22px;bottom:17px;color:var(--v4-dim);
+ font:700 9px Manrope,sans-serif;letter-spacing:.19em;
+}
+body.site-page.obsidian-ice.studio-subpage .page-hero h1{
+ font:760 clamp(52px,6.8vw,98px)/1.06 Manrope,sans-serif;color:var(--v4-ink);
+ letter-spacing:-.09em;max-width:980px;
+}
+body.site-page.obsidian-ice.studio-subpage .page-hero h1 i,body.site-page.obsidian-ice.studio-subpage .page-hero h1 em{
+ font:400 italic 1em Georgia,serif!important;color:var(--v4-ice)!important;
+}
+body.site-page.obsidian-ice.studio-subpage .page-hero p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.studio-subpage .page-hero .eyebrow{color:var(--v4-ice)}
+body.site-page.obsidian-ice.studio-subpage .page-hero .button.dark{background:var(--v4-ice);color:#0b2230;border-color:var(--v4-ice)}
+body.site-page.obsidian-ice.studio-subpage .page-hero .button.stroke{background:transparent;color:var(--v4-ink);border-color:var(--v4-line)}
+body.site-page.obsidian-ice.studio-subpage .page-hero .button:not(.dark):not(.stroke){background:var(--v4-ice);color:#0e2734}
+body.site-page.obsidian-ice.studio-subpage .page-hero .text-link{color:var(--v4-ice)}
+body.site-page.obsidian-ice.studio-subpage .section-pad{background:var(--v4-bg);color:var(--v4-ink)}
+body.site-page.obsidian-ice.studio-subpage .section-muted{background:var(--v4-bg-2)}
+body.site-page.obsidian-ice.studio-subpage .section-title,body.site-page.obsidian-ice.studio-subpage .section-top h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice.studio-subpage .section-title i{color:var(--v4-ice)}
+body.site-page.obsidian-ice.studio-subpage .service-card,body.site-page.obsidian-ice.studio-subpage .al-card,
+body.site-page.obsidian-ice.studio-subpage .detail-card{
+ background:var(--v4-panel);border:1px solid var(--v4-line);border-radius:5px;color:var(--v4-ink);
+ box-shadow:0 20px 40px #0002;transition:border-color .4s,transform .4s,box-shadow .4s;
+}
+body.site-page.obsidian-ice.studio-subpage .service-card:hover,body.site-page.obsidian-ice.studio-subpage .al-card:hover,body.site-page.obsidian-ice.studio-subpage .detail-card:hover{
+ border-color:var(--v4-ice-deep);transform:translateY(-6px);box-shadow:0 25px 45px #0005;
+}
+body.site-page.obsidian-ice.studio-subpage .service-card h3,body.site-page.obsidian-ice.studio-subpage .al-card h3,
+body.site-page.obsidian-ice.studio-subpage .detail-card h3{color:var(--v4-ink)}
+body.site-page.obsidian-ice.studio-subpage .service-card p,body.site-page.obsidian-ice.studio-subpage .al-card p,body.site-page.obsidian-ice.studio-subpage .detail-card p{color:var(--v4-muted)}
+body.site-page.obsidian-ice.studio-subpage .service-card .num{color:var(--v4-ice)}
+body.site-page.obsidian-ice.studio-subpage .service-illustration{background:var(--v4-panel2);filter:saturate(.85)}
+body.site-page.obsidian-ice.studio-subpage .service-link,body.site-page.obsidian-ice.studio-subpage .service-card a{color:var(--v4-ice)}
+body.site-page.obsidian-ice.studio-subpage .al-plans{background:var(--v4-bg-2)}
+body.site-page.obsidian-ice.studio-subpage .al-plans .section-title,body.site-page.obsidian-ice.studio-subpage .al-plans .copy{color:var(--v4-ink)}
+body.site-page.obsidian-ice.studio-subpage .al-price,body.site-page.obsidian-ice.studio-subpage .al-card .al-price span{color:var(--v4-ice)!important}
+body.site-page.obsidian-ice.studio-subpage .al-card .al-eyebrow{color:var(--v4-ice)}
+body.site-page.obsidian-ice.studio-subpage .al-card li{color:var(--v4-muted)}
+body.site-page.obsidian-ice.studio-subpage .al-card a{background:var(--v4-ice);color:#07202d;border-radius:4px}
+body.site-page.obsidian-ice.studio-subpage .al-featured{
+ background:linear-gradient(145deg,#1d3341,#13222f);border:1px solid #72b5cd;box-shadow:0 24px 60px #0005;
+}
+body.site-page.obsidian-ice.studio-subpage .al-disclaimer{color:var(--v4-muted)}
+body.site-page.obsidian-ice.studio-subpage .nfc-store{background:var(--v4-bg-2)}
+body.site-page.obsidian-ice.studio-subpage .nfc-product,body.site-page.obsidian-ice.studio-subpage .nfc-product-card{background:var(--v4-panel);border:1px solid var(--v4-line)}
+body.site-page.obsidian-ice.studio-subpage .asset-gallery figure{background:var(--v4-panel);border-color:var(--v4-line)}
+body.site-page.obsidian-ice.studio-subpage .brief-form,body.site-page.obsidian-ice.studio-subpage .quote-panel{
+ background:var(--v4-panel);border:1px solid var(--v4-line);color:var(--v4-ink);
+ box-shadow:0 24px 45px #0002;border-radius:5px;
+}
+body.site-page.obsidian-ice .contact-panel{color:var(--v4-ink)}
+body.site-page.obsidian-ice .contact-intro h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice .contact-intro p,body.site-page.obsidian-ice .contact-intro a{color:var(--v4-muted)}
+body.site-page.obsidian-ice .contact-intro a:hover{color:var(--v4-ice)}
+body.site-page.obsidian-ice .brief-form{background:var(--v4-panel);color:var(--v4-ink);border:1px solid var(--v4-line);border-radius:5px;box-shadow:0 20px 55px #0003}
+body.site-page.obsidian-ice .brief-form label{color:var(--v4-ink)}
+body.site-page.obsidian-ice .brief-form input,body.site-page.obsidian-ice .brief-form select,body.site-page.obsidian-ice .brief-form textarea{
+ background:var(--v4-bg-2)!important;border:1px solid var(--v4-line)!important;
+ color:var(--v4-ink)!important;border-radius:4px;
+}
+body.site-page.obsidian-ice .brief-form input::placeholder,body.site-page.obsidian-ice .brief-form textarea::placeholder{color:var(--v4-dim)}
+body.site-page.obsidian-ice .contact-actions button{background:var(--v4-ice);color:#0b1f2b;border:1px solid var(--v4-ice);border-radius:4px;font-weight:750}
+body.site-page.obsidian-ice .contact-actions .contact-email-button{background:transparent;color:var(--v4-ink);border:1px solid var(--v4-line)}
+body.site-page.obsidian-ice .brief-form .form-note,body.site-page.obsidian-ice .brief-form .direct-contact a{color:var(--v4-muted)}
+body.site-page.obsidian-ice .brief-form .direct-contact a:hover{color:var(--v4-ice)}
+/* End-to-end quotation workflow and NFC store: only visual skin, no behavioral modifications. */
+body.site-page.obsidian-ice .quote-builder{background:var(--v4-bg)}
+body.site-page.obsidian-ice .quote-head h2,body.site-page.obsidian-ice .brief-section h2{color:var(--v4-ink)}
+body.site-page.obsidian-ice .quote-head p{color:var(--v4-muted)}
+body.site-page.obsidian-ice .quote-types button,body.site-page.obsidian-ice .quote-type{
+ background:var(--v4-panel2);color:var(--v4-ink);border-color:var(--v4-line);
+}
+body.site-page.obsidian-ice .quote-type[aria-pressed=true]{border-color:var(--v4-ice);background:var(--v4-lightwash)}
+body.site-page.obsidian-ice .quote-panel h3,body.site-page.obsidian-ice .quote-panel strong{color:var(--v4-ink)}
+body.site-page.obsidian-ice .quote-panel .quote-kicker{color:var(--v4-ice)}
+body.site-page.obsidian-ice .quote-panel label,body.site-page.obsidian-ice .quote-panel p{color:var(--v4-muted)}
+body.site-page.obsidian-ice .brief-section{background:var(--v4-bg-2)}
+body.site-page.obsidian-ice .brief-card{background:var(--v4-panel);border-color:var(--v4-line)}
+body.site-page.obsidian-ice .faq-list summary{color:var(--v4-ink)}
+/* Reduced motion = just as beautiful, fully usable, no layout-dependent animations. */
+@media(prefers-reduced-motion:reduce){
+ body.site-page.obsidian-ice .v3-workbench-sheet,body.site-page.obsidian-ice .v3-folio-screen,
+ body.site-page.obsidian-ice .fx-story-stage,body.site-page.obsidian-ice .home-gateway-item{
+  transform:none!important;transition-duration:.01ms!important;
+ }
+ body.site-page.obsidian-ice .v4-reading-line{transition:none!important}
+ body.site-page.obsidian-ice .v4-scroll-reveal{opacity:1!important;filter:none!important;transform:none!important}
+}
+@media(max-width:1050px){
+ body.site-page.obsidian-ice.independent-home .v3-home-layout{grid-template-columns:1fr;max-width:900px}
+ body.site-page.obsidian-ice.independent-home .v3-h1{font-size:clamp(63px,8.5vw,95px)}
+ body.site-page.obsidian-ice.independent-home .v3-workbench{width:min(650px,100%);margin:0 auto 30px}
+ body.site-page.obsidian-ice.independent-home .v3-huge-a{font-size:520px;right:-18%;top:25%}
+}
+@media(max-width:700px){
+ body.site-page.obsidian-ice .shell,body.site-page.obsidian-ice.independent-home .v3-home-layout{width:calc(100% - 38px)}
+ body.site-page.obsidian-ice.independent-home .home-studio-hero.v3-home-hero{padding:112px 0 75px;min-height:0}
+ body.site-page.obsidian-ice.independent-home .v3-h1{font-size:clamp(45px,10.2vw,70px);letter-spacing:-.083em}
+ body.site-page.obsidian-ice.independent-home .v3-hero-actions{display:grid;grid-template-columns:1fr}
+ body.site-page.obsidian-ice.independent-home .v3-workbench{box-shadow:0 24px 55px #0006,7px 8px 0 #1a2935;padding:12px}
+ body.site-page.obsidian-ice .v3-workbench-sheet{transform:none!important}
+ body.site-page.obsidian-ice .v3-workbench-heading{font-size:8px}
+ body.site-page.obsidian-ice .v4-workbench-status{font-size:7px}
+ body.site-page.obsidian-ice .v3-workbench-image{height:265px}
+ body.site-page.obsidian-ice .v3-workbench-card strong{font-size:23px}
+ body.site-page.obsidian-ice.independent-home .home-gateway{padding:80px 0}
+ body.site-page.obsidian-ice .home-gateway-feature{min-height:400px}
+ body.site-page.obsidian-ice .v3-rule-strip{height:41px}
+ body.site-page.obsidian-ice.independent-portfolio .v3-portfolio-hero{padding:111px 0 65px}
+ body.site-page.obsidian-ice.independent-portfolio .v3-folio-title-row h1{font-size:clamp(53px,11vw,77px)}
+ body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen{min-height:315px;transform:none!important}
+ body.site-page.obsidian-ice.independent-portfolio .v3-folio-tabs button{min-height:75px}
+ body.site-page.obsidian-ice.studio-subpage .page-hero{padding:121px 0 83px}
+ body.site-page.obsidian-ice.studio-subpage .page-hero h1{font-size:clamp(45px,9.2vw,67px)}
+ body.site-page.obsidian-ice.studio-subpage .v4-subpage-caption{font-size:7px}
+ body.site-page.obsidian-ice .site-nav .nav-cta{min-height:40px}
+}
+@media(max-width:400px){
+ body.site-page.obsidian-ice.independent-home .v3-h1{font-size:clamp(40px,9.6vw,49px)}
+ body.site-page.obsidian-ice .v3-workbench-sheet{min-height:255px}
+ body.site-page.obsidian-ice .v3-workbench-image{height:225px}
+ body.site-page.obsidian-ice.independent-portfolio .v3-folio-title-row h1{font-size:clamp(45px,10vw,56px)}
+ body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen{min-height:275px}
+}
