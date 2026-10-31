@@ -79,7 +79,7 @@ if(process.env.GITHUB_HEAD_REF==='audit/pr27-preview-http-5b2dfd8'){
   const {createHash}=await import('node:crypto');
   const commit='5b2dfd825ea3d14f48d74c8a01f3cea8763de2bb';
   const preview='https://aptitud-labs-git-home-resumenes-final-aldo200908-lgtms-projects.vercel.app/?nocache=5b2dfd8';
-  const raw='https://raw.githubusercontent.com/aldo200908-lgtm/Aptitud-Labs/'+commit+'/index.html';
+  const {execFileSync}=await import('node:child_process');
   const options={signal:AbortSignal.timeout(25000),cache:'no-store',headers:{'Cache-Control':'no-cache','Pragma':'no-cache','User-Agent':'AptitudLabs-PreviewAudit/1.0'}};
   try{
     const response=await fetch(preview,options);
@@ -93,8 +93,10 @@ if(process.env.GITHUB_HEAD_REF==='audit/pr27-preview-http-5b2dfd8'){
     const webWeb=html.includes('WEB WEB'),iaIa=html.includes('IA IA');
     const labelPairs=[...html.matchAll(/<span class="al-summary-art-tag">([^<]*)<\/span>\s*<span class="al-summary-art-motif">([^<]*)<\/span>/g)];
     const visualDuplicates=labelPairs.filter(m=>m[1].split(/[^\p{L}\d]+/u).filter(Boolean).includes(m[2])).map(m=>m[1]+' / '+m[2]);
-    const original=await fetch(raw,{signal:AbortSignal.timeout(25000)});
-    const expectedBuffer=Buffer.from(await original.arrayBuffer());
+    // actions/checkout configura un token de lectura para commits del repositorio.
+    // La lectura anónima raw.githubusercontent.com devuelve 404 si no es público.
+    execFileSync('git',['fetch','--no-tags','--depth=1','origin',commit],{timeout:30000,maxBuffer:1024*1024});
+    const expectedBuffer=execFileSync('git',['show',commit+':index.html'],{timeout:20000,maxBuffer:1024*1024});
     const expectedSha=createHash('sha256').update(expectedBuffer).digest('hex');
     const matchesOriginal=buffer.equals(expectedBuffer);
     console.log('=== EVIDENCIA HTTP — PR #27 COMMIT 5b2dfd8 ===');
@@ -111,8 +113,8 @@ if(process.env.GITHUB_HEAD_REF==='audit/pr27-preview-http-5b2dfd8'){
     console.log('SHA-256 HTML obtenido: '+sha);
     console.log('SHA-256 index.html de commit '+commit+': '+expectedSha);
     console.log('HTML byte por byte igual al commit 5b2dfd8: '+matchesOriginal);
-    console.log('Vercel response bytes: '+buffer.length+'; GitHub response status: '+original.status);
-    if(!response.ok||!original.ok||service!==0||nfc!==1||!subtitle||webWeb||iaIa||visualDuplicates.length||labelPairs.length!==9||!matchesOriginal){
+    console.log('Vercel response bytes: '+buffer.length+'; GitHub checkout bytes: '+expectedBuffer.length);
+    if(!response.ok||service!==0||nfc!==1||!subtitle||webWeb||iaIa||visualDuplicates.length||labelPairs.length!==9||!matchesOriginal){
       console.log('::error::La vista previa no corresponde al HTML verificado del commit 5b2dfd8.');
       process.exitCode=1;
     }else{
