@@ -196,18 +196,6 @@ def run():
             check(phone.get_attribute("value") == "", "Editor empieza sin WhatsApp inventado")
             driver.find_element(By.ID, "export").click()
             denied = driver.execute_script("return document.getElementById('toast').textContent")
-            print("Editor invalid-export state:", driver.execute_script("""
-              return {
-                url: location.href,
-                ready: document.readyState,
-                handler: typeof document.getElementById('export').onclick,
-                dataPhone: data.phone,
-                phoneInput: document.querySelector('[data-key="phone"]').value,
-                phoneStatus: document.getElementById('phoneStatus').textContent,
-                toast: document.getElementById('toast').textContent,
-                toastShown: document.getElementById('toast').classList.contains('show')
-              }
-            """), flush=True)
             no_download = not list(Path(downloads).glob("*.html"))
             check("WhatsApp válido" in denied and no_download,
                   "No exporta con número de WhatsApp ausente")
@@ -219,16 +207,6 @@ def run():
             description = driver.find_element(By.CSS_SELECTOR, '[data-key="description"]')
             description.clear()
             description.send_keys("Atención & calidad <sin riesgos>")
-            print("Editor preview-update state:", driver.execute_script("""
-              return {
-                url: location.href,
-                handler: typeof document.getElementById('export').onclick,
-                dataPhone: data.phone,
-                phoneInput: document.querySelector('[data-key="phone"]').value,
-                previewHref: document.getElementById('pvButton').getAttribute('href'),
-                phoneStatus: document.getElementById('phoneStatus').textContent
-              }
-            """), flush=True)
             check(
                 driver.find_element(By.ID, "pvButton").get_attribute("href")
                 == "https://wa.me/51987654321",
