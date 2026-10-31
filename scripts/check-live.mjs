@@ -55,7 +55,7 @@ for(const site of sites){
     if(verified){success++;console.log('OK: portada pública corresponde exactamente a index.html de este commit')}
     else{
       versionErrors++;
-      console.log('::error::'+site.host+
+      console.log('::warning::'+site.host+
         ' no sirve el HTML actualizado de index.html. Revisar proyecto, dominio, alias y caché en Vercel.');
     }
   }catch(e){
