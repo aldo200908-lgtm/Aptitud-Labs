@@ -57,5 +57,16 @@ jobs:
             echo "No hay cambios en las portadas."
           else
             git commit -m "chore(portafolio): actualizar capturas reales de Sushi y Allin Mikuy"
-            git push
+            for intento in 1 2 3; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                echo "Portadas publicadas en GitHub."
+                exit 0
+              fi
+              echo "Hubo cambios concurrentes. Reintentando push..."
+              sleep 3
+            done
+            echo "No se pudieron guardar las capturas en main."
+            exit 1
           fi
