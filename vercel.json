@@ -100,6 +100,10 @@
     {
       "src": "cotizar/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "demos/maison-dulce/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -208,6 +212,10 @@
     {
       "src": "^/web-para-restaurantes/?$",
       "dest": "/web-para-restaurantes/index.html"
+    },
+    {
+      "src": "^/demos/maison-dulce/?$",
+      "dest": "/demos/maison-dulce/index.html"
     },
     {
       "handle": "filesystem"
