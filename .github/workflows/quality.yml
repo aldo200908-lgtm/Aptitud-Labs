@@ -18,6 +18,7 @@ jobs:
         run: |
           node scripts/check-site.mjs
           node scripts/test-site-theme.mjs
+          node --test scripts/test-measurement.mjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

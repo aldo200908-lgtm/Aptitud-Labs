@@ -30,6 +30,7 @@ if(form){
     const url=channel==='email'?'mailto:aptitudlabs.studio@gmail.com?subject='+encodeURIComponent('Proyecto web - '+nombre)+'&body='+encodeURIComponent(mensaje):'https://wa.me/51937367296?text='+encodeURIComponent(mensaje);
     const status=document.getElementById('briefResult');
     if(status)status.textContent=channel==='email'?'Se abrirá tu aplicación de correo con el mensaje preparado. Revísalo y confirma el envío.':'Se abrirá WhatsApp con un mensaje preparado. Revísalo y confirma el envío. No enviamos mensajes automáticamente.';
+    window.AptitudMeasure?.record(channel==='email'?'contact_email':'contact_whatsapp');
     window.location.href=url;
   });
 }

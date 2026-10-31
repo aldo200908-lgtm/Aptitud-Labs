@@ -352,6 +352,27 @@ def run():
                     """, selector)
                     check(ratio >= 4.5, f"{route} {selector}: contraste oscuro {ratio:.2f}:1")
 
+            # Public examples owned by the studio: mobile layout and real primary interactions.
+            demos_origin = "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site"
+            for slug in ("barberia", "tienda", "caja", "pulso"):
+                driver.set_window_size(390, 844)
+                driver.get(demos_origin + "/" + slug + "/")
+                wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "h1")) == 1)
+                check(driver.execute_script("return document.documentElement.scrollWidth <= innerWidth + 2"),
+                      f"Demo {slug}: sin desbordamiento a 390px")
+                check("DEMO INTERACTIVA" in driver.find_element(By.CLASS_NAME, "demo-ribbon").text,
+                      f"Demo {slug}: identifica datos ficticios")
+                if slug == "caja":
+                    driver.find_element(By.CSS_SELECTOR, "#product-buttons button").click()
+                    driver.find_element(By.ID, "confirm").click()
+                    check("4.50" in driver.find_element(By.ID, "revenue").text,
+                          "Demo caja: venta actualiza el resumen")
+                if slug == "pulso":
+                    Select(driver.find_element(By.CSS_SELECTOR, "select[aria-label='Etapa de Negocio Aurora']")).select_by_value("propuesta")
+                    check(driver.find_element(By.ID, "tasks-count").text == "1",
+                          "Demo Pulso: transición crea tarea simulada")
+            driver.set_window_size(1280, 900)
+
             driver.get(base + "/resources/navbars/")
             wait(driver, lambda d: len(d.find_elements(By.TAG_NAME, "iframe")) == 5)
             check(
