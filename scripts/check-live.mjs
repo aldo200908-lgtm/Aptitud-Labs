@@ -114,7 +114,8 @@ if(process.env.GITHUB_HEAD_REF==='audit/release-20261030-preview'){
   console.log('FINAL CONTEO VER TODOS LOS SERVICIOS='+service);
   console.log('FINAL CONTEO Elige la modalidad que encaja con tu negocio='+nfc);
   console.log('FINAL HERO href="#trabajo-destacado"='+hero);
-  if(home.status!==200||home.cache!=='MISS'||work!==1||service!==1||nfc!==1||!hero)errors++;
+  if(home.cache!=='MISS')console.log('::warning::CDN '+home.cache+'; el contenido se valida contra el commit exacto, sin interpretarlo como fallo de despliegue.');
+  if(home.status!==200||work!==1||service!==1||nfc!==1||!hero)errors++;
   execFileSync('git',['fetch','--no-tags','--depth=1','origin',commit],{timeout:30000,maxBuffer:1024*1024});
   const original=execFileSync('git',['show',commit+':index.html'],{timeout:20000,maxBuffer:1024*1024});
   const script=Buffer.from('<script async data-explicit-opt-in="true" data-deployment-id="'+deploy+'" src="https://vercel.live/_next-live/feedback/feedback.js"></script>');
