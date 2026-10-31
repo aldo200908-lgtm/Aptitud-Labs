@@ -3,12 +3,18 @@
  * No modifica DNS ni Vercel. El resultado es informativo: un build exitoso
  * no demuestra que el dominio público resuelva ni que sea accesible. */
 import {lookup} from 'node:dns/promises';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 
 const sites = [
   {host:'aptitudlabs.com',label:'Dominio comercial'},
   {host:'aptitud-labs.vercel.app',label:'Alias Vercel'},
 ];
+const expectedHTML=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+const expectedSha=createHash('sha256').update(expectedHTML).digest('hex');
+console.log('SHA-256 de index.html en el commit de GitHub: '+expectedSha);
 let success=0;
+let versionErrors=0;
 for(const site of sites){
   console.log('\n'+site.label+': https://'+site.host+'/');
   try{
@@ -17,21 +23,45 @@ for(const site of sites){
   }catch(e){
     console.log('DNS FALLÓ: '+(e.code||e.message));
     console.log('::warning::No se pudo resolver '+site.host+'. Revisar los registros DNS o el alias si corresponde.');
+    versionErrors++;
     continue;
   }
   try{
     const response=await fetch('https://'+site.host+'/',{
       signal:AbortSignal.timeout(12000),
-      headers:{'User-Agent':'AptitudLabs-QualitySmoke/1.0'}
+      cache:'no-store',
+      headers:{
+        'User-Agent':'AptitudLabs-QualitySmoke/1.1',
+        'Cache-Control':'no-cache',
+        'Pragma':'no-cache'
+      }
     });
     const body=await response.text();
-    console.log('HTTP: '+response.status+'; destino: '+response.url+'; bytes: '+body.length);
-    const expected=response.ok && /<title>[^<]*Aptitud Labs/i.test(body);
-    if(expected){success++;console.log('OK: portada identificada como Aptitud Labs')}
-    else console.log('::warning::'+site.host+' no respondió con la portada pública esperada. Revisar dominio, protección y deployment.');
+    const remoteSha=createHash('sha256').update(body).digest('hex');
+    const correctTitle=body.includes('Proyectos seleccionados');
+    const correctHero=body.includes('href="#trabajo-destacado"');
+    const containsObsolete=body.includes('Nuestro trabajo. En acción.');
+    const identical=body===expectedHTML;
+    const verified=response.ok && correctTitle && correctHero && !containsObsolete && identical;
+    console.log('HTTP: '+response.status+'; destino: '+response.url+'; caracteres: '+body.length);
+    console.log('Cache-Control: '+(response.headers.get('cache-control')||'ausente')+
+      '; x-vercel-cache: '+(response.headers.get('x-vercel-cache')||'ausente')+
+      '; age: '+(response.headers.get('age')||'ausente'));
+    console.log('SHA-256 del HTML público: '+remoteSha+
+      '; coincide exactamente con index.html: '+identical);
+    console.log('Marcadores: Proyectos seleccionados='+correctTitle+
+      ', href="#trabajo-destacado"='+correctHero+
+      ', título antiguo='+containsObsolete);
+    if(verified){success++;console.log('OK: portada pública corresponde exactamente a index.html de este commit')}
+    else{
+      versionErrors++;
+      console.log('::error::'+site.host+
+        ' no sirve el HTML actualizado de index.html. Revisar proyecto, dominio, alias y caché en Vercel.');
+    }
   }catch(e){
     console.log('HTTP FALLÓ: '+(e.cause?.code||e.name)+': '+e.message);
     console.log('::warning::No se pudo comprobar la portada pública de '+site.host);
+    versionErrors++;
   }
 }
 console.log('\nComprobación pública independiente: '+success+'/'+sites.length+' sitios respondieron correctamente.');
@@ -70,4 +100,9 @@ try{
 }catch(e){console.log('::warning::No se pudo comprobar el recurso hero: '+e.message)}
 console.log('Endpoints públicos: '+passes+'/'+(endpointChecks.length+1)+' comprobaciones aprobadas.');
 
-// Diagnóstico no bloqueante: el estado de publicación requiere revisión humana.
+// Si GitHub contiene la versión nueva pero el dominio entrega la antigua,
+// no dar el despliegue por validado. El exit code protege de falsos verdes.
+if(versionErrors){
+  console.log('::error::Verificación de HTML público fallida en '+versionErrors+' host(s).');
+  process.exitCode=1;
+}
