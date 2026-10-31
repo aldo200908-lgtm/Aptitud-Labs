@@ -73,52 +73,81 @@ console.log('Endpoints públicos: '+passes+'/'+(endpointChecks.length+1)+' compr
 // Diagnóstico no bloqueante: el estado de publicación requiere revisión humana.
 
 
-// Comprobación HTTP de release #27, independiente de la rama que se publicará.
+// Comprobación HTTP final de producción con commit exacto y rutas principales.
 if(process.env.GITHUB_HEAD_REF==='audit/release-20261030-preview'){
  const {createHash}=await import('node:crypto');
  const {execFileSync}=await import('node:child_process');
- const commit='7d135c65a2778e277c82edfab942fabffbb60b29';
- const preview='https://aptitud-labs-git-home-resumenes-final-aldo200908-lgtms-projects.vercel.app/?nocache=7d135c65';
- const vercelId='dpl_D9bJSKcJq1mQK3YpJxyPp6VVKiQT';
- const sha=buf=>createHash('sha256').update(buf).digest('hex');
- console.log('=== RELEASE PREVIEW #27 HTTP ===');
- console.log('COMMIT SOLICITADO='+commit);
- console.log('VISTA PREVIA URL='+preview);
+ const origin='https://aptitudlabs.com';
+ const commit='dc9cd37384da66d10fbed1e2d18b750afec0d125';
+ const deploy='dpl_8rr9LmLvU3522Km3Nc8KaaqV6Cg9';
+ const nocache='?nocache=final';
+ const sha=x=>createHash('sha256').update(x).digest('hex');
+ const opts={cache:'no-store',signal:AbortSignal.timeout(25000),headers:{
+  'Cache-Control':'no-cache','Pragma':'no-cache','User-Agent':'AptitudLabs-FinalReleaseAudit/1.0'
+ }};
+ async function get(path){
+  const url=new URL(path,origin);
+  if(!url.search)url.search=nocache;
+  const r=await fetch(url,{...opts,signal:AbortSignal.timeout(25000)});
+  const bytes=Buffer.from(await r.arrayBuffer());
+  return {status:r.status,body:bytes.toString('utf8'),bytes,cache:r.headers.get('x-vercel-cache')||'ausente',
+   headers:r.headers,final:r.url};
+ }
+ let errors=0;
+ console.log('=== AUDITORIA FINAL DE APTITUDLABS.COM EN PRODUCCION ===');
+ console.log('COMMIT MAIN ESPERADO='+commit);
  try{
-  const response=await fetch(preview,{signal:AbortSignal.timeout(25000),cache:'no-store',headers:{'Cache-Control':'no-cache','Pragma':'no-cache','User-Agent':'AptitudLabs-ReleaseValidation'}});
-  const buffer=Buffer.from(await response.arrayBuffer());
-  const html=buffer.toString('utf8');
-  const count=x=>html.split(x).length-1;
-  console.log('VISTA PREVIA HTTP='+response.status+' FINAL='+response.url+' CACHE='+(response.headers.get('x-vercel-cache')||'ausente'));
-  const checks={
-   'VER TODOS LOS SERVICIOS':count('VER TODOS LOS SERVICIOS')===1,
-   'Elige la modalidad que encaja con tu negocio':html.includes('Elige la modalidad que encaja con tu negocio'),
-   'Desde S/ 249':html.includes('Desde S/ 249'),
-   'Desde S/ 419':html.includes('Desde S/ 419'),
-   'Desde S/ 690':html.includes('Desde S/ 690'),
-   'Tarifas orientativas exactas':html.includes('Tarifas orientativas de desarrollo inicial. El precio final se confirma por escrito; dominio, hosting, mantenimiento y opciones adicionales se cotizan por separado.'),
-   'Visual conceptual. Los diseños':html.includes('Visual conceptual. Los diseños'),
-   'sin texto anterior de tarifas':!html.includes('ya publicadas en nuestra página de planes'),
-   'sin puntuación NFC anterior':!html.includes('Visual conceptual; Los diseños'),
-   'Nuestro trabajo intacto':html.includes('Proyectos seleccionados')&&html.includes('href="#trabajo-destacado"'),
-   'un único Explorar Tienda':count('EXPLORAR TIENDA')===1
-  };
-  for(const [name,ok] of Object.entries(checks))console.log('PREVIEW '+name+'='+ok);
-  console.log('PREVIEW CTA SERVICIOS CONTEO='+count('VER TODOS LOS SERVICIOS'));
-  console.log('PREVIEW CTA TIENDA CONTEO='+count('EXPLORAR TIENDA'));
-  console.log('PREVIEW HTML SHA-256='+sha(buffer));
+  const home=await get('/');
+  const body=home.body;
+  console.log('FINAL URL='+home.final);
+  console.log('FINAL HTTP='+home.status);
+  console.log('FINAL X-VERCEL-CACHE='+home.cache);
+  console.log('FINAL X-VERCEL-ID='+(home.headers.get('x-vercel-id')||'ausente'));
+  console.log('FINAL HTML BYTES='+home.bytes.length);
+  console.log('FINAL SHA-256 HTML PUBLICO='+sha(home.bytes));
+  const count=x=>body.split(x).length-1;
+  const work=count('Proyectos seleccionados');
+  const service=count('VER TODOS LOS SERVICIOS');
+  const nfc=count('Elige la modalidad que encaja con tu negocio');
+  const hero=body.includes('href="#trabajo-destacado"');
+  console.log('FINAL CONTEO Proyectos seleccionados='+work);
+  console.log('FINAL CONTEO VER TODOS LOS SERVICIOS='+service);
+  console.log('FINAL CONTEO Elige la modalidad que encaja con tu negocio='+nfc);
+  console.log('FINAL HERO href="#trabajo-destacado"='+hero);
+  if(home.status!==200||home.cache!=='MISS'||work!==1||service!==1||nfc!==1||!hero)errors++;
   execFileSync('git',['fetch','--no-tags','--depth=1','origin',commit],{timeout:30000,maxBuffer:1024*1024});
-  const orig=execFileSync('git',['show',commit+':index.html'],{timeout:20000,maxBuffer:1024*1024});
-  const injected=Buffer.from('<script async data-explicit-opt-in="true" data-deployment-id="'+vercelId+'" src="https://vercel.live/_next-live/feedback/feedback.js"></script>');
-  const hasInjected=buffer.subarray(-injected.length).equals(injected);
-  const cleaned=hasInjected?buffer.subarray(0,buffer.length-injected.length):buffer;
-  console.log('PREVIEW SHA-256 INDEX COMMIT='+sha(orig));
-  console.log('PREVIEW VERCEL SCRIPT='+hasInjected+' BYTES='+injected.length);
-  console.log('PREVIEW HTML ES EXACTO COMMIT='+cleaned.equals(orig));
-  console.log('PREVIEW DEPLOYMENT ID='+vercelId);
-  if(response.status!==200||!cleaned.equals(orig)||Object.values(checks).some(x=>!x)){
-    console.log('::error::La vista previa #27 no superó el control de release');process.exitCode=1;
-  }else console.log('RESULTADO PR27: APROBADO PARA FUSION');
- }catch(e){console.log('::error::Verificación fallida: '+(e.stack||e));process.exitCode=1}
- console.log('=== FIN RELEASE PREVIEW #27 ===');
+  const original=execFileSync('git',['show',commit+':index.html'],{timeout:20000,maxBuffer:1024*1024});
+  const script=Buffer.from('<script async data-explicit-opt-in="true" data-deployment-id="'+deploy+'" src="https://vercel.live/_next-live/feedback/feedback.js"></script>');
+  const injected=home.bytes.subarray(-script.length).equals(script);
+  const clean=injected?home.bytes.subarray(0,home.bytes.length-script.length):home.bytes;
+  const exact=clean.equals(original);
+  console.log('FINAL SHA-256 index.html DEL COMMIT='+sha(original));
+  console.log('FINAL SHA-256 NORMALIZADO='+sha(clean));
+  console.log('FINAL SCRIPT VERCEL='+injected);
+  console.log('FINAL COMMIT SERVIDO='+ (exact?commit:'NO COINCIDE'));
+  console.log('FINAL HTML COINCIDE CON COMMIT='+exact);
+  if(!exact)errors++;
+  const sitemap=await get('/sitemap.xml');
+  console.log('FINAL SITEMAP HTTP='+sitemap.status);
+  const pages=[...sitemap.body.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)].map(m=>m[1].trim());
+  console.log('FINAL SITEMAP PAGINAS='+pages.length);
+  if(sitemap.status!==200||pages.length!==13)errors++;
+  const statuses=[];
+  for(const [i,page] of pages.entries()){
+   const path=new URL(page).pathname;
+   try{
+    const result=await get(path);
+    const ok=result.status===200;
+    console.log('FINAL RUTA '+String(i+1).padStart(2,'0')+'/13 '+path+' HTTP='+result.status+' '+(ok?'OK':'ERROR'));
+    statuses.push({path,status:result.status});
+    if(!ok)errors++;
+   }catch(e){console.log('FINAL RUTA '+String(i+1).padStart(2,'0')+'/13 '+path+' ERROR='+e);statuses.push({path,status:0});errors++}
+  }
+  console.log('FINAL RUTAS HTTP 200='+statuses.filter(x=>x.status===200).length+'/'+pages.length);
+  console.log('FINAL RUTAS CON ERROR='+statuses.filter(x=>x.status!==200).map(x=>x.path+'('+x.status+')').join(','));
+  console.log('FINAL TOTAL ERRORES='+errors);
+  if(errors){console.log('::error::FALLÓ AUDITORIA DE PRODUCCION. Se requiere revertir el ultimo commit de main.');process.exitCode=1}
+  else console.log('RESULTADO FINAL: PRODUCCION VERIFICADA. COMMIT '+commit);
+ }catch(e){console.log('::error::FALLO HTTP DE PRODUCCION: '+(e?.stack||e));process.exitCode=1}
+ console.log('=== FIN AUDITORIA FINAL DE PRODUCCION ===');
 }
