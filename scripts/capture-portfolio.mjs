@@ -72,6 +72,8 @@ try {
 
       console.log('CAPTURA OK:', filename, buffer.length + ' bytes', JSON.stringify(details));
       if (target.id === 'aptitud-portfolio') {
+        await page.locator('#proyectos').scrollIntoViewIfNeeded();
+        await page.evaluate(() => Promise.all([...document.querySelectorAll('.project-cover img')].map(img => img.decode().catch(() => {}))));
         const integrity = await page.evaluate(() => ({
           h1: document.querySelectorAll('h1').length,
           services: document.querySelectorAll('.service-card').length,
