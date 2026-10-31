@@ -31,6 +31,25 @@ jobs:
                            'planes/index.html','nfc-qr/index.html','cotizar/index.html',
                            'assets/motion-graphics-v5.css','assets/motion-graphics-v5.js'):
               assert (site/relative).is_file(), relative
+          # Confirm all homepage portals now show real project/catalogue media.
+          import re
+          home=(site/'index.html').read_text(encoding='utf-8')
+          for selector in ('v6-gateway-services','v6-gateway-plans','v6-gateway-nfc'):
+              assert selector in home, f'Missing improved image card: {selector}'
+          for asset in ('assets/projects/sushi-ten-bento-cover.png',
+                        'assets/projects/pulso-cover.webp',
+                        'assets/projects/tienda-cover.webp',
+                        'assets/nfc/stand-01.webp',
+                        'assets/nfc/smartphone.webp',
+                        'assets/gateway-realwork-v6.css',
+                        'assets/gateway-realwork-v6.js'):
+              assert (site/asset).is_file(), f'Image or style missing from publication: {asset}'
+              assert '/Aptitud-Labs/'+asset in home, f'Rebased reference missing: {asset}'
+          for obsolete in ('class="v3-gateway-graphic"','class="v3-plan-graphic"',
+                           'class="v3-nfc-graphic"'):
+              assert obsolete not in home, f'Generic illustration remains: {obsolete}'
+          assert len(re.findall(r'class="home-gateway-item',home))==4, 'Home should have 4 navigable cards'
+          print('All four portals and the five authentic visual assets checked.')
           print('GitHub Pages preview contents verified.')
           PY
       - name: Upload GitHub Pages artifact
