@@ -104,7 +104,8 @@ def run():
                 {"behavior": "allow", "downloadPath": downloads},
             )
 
-            # Sitio comercial: menú y formulario de WhatsApp sin salir del navegador.
+            # Test the collapsed menu at a mobile width, then the inquiry on desktop.
+            driver.set_window_size(390, 844)
             driver.get(base + "/")
             wait(driver, lambda d: d.find_element(By.ID, "briefForm"))
             check(driver.title.startswith("Diseño de Páginas Web"), "Portada con título comercial")
@@ -117,6 +118,8 @@ def run():
             driver.switch_to.active_element.send_keys(Keys.ESCAPE)
             wait(driver, lambda d: d.find_element(By.ID, "resource-menu-toggle").get_attribute("aria-expanded") == "false")
             check(driver.switch_to.active_element.get_attribute("id") == "resource-menu-toggle", "Escape devuelve el foco al menú")
+
+            driver.set_window_size(1280, 900)
 
             # La portada navega con window.location.href, no con window.open.
             # Registrar la navegación real sin contactar a WhatsApp ni enviar mensajes.
