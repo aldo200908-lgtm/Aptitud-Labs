@@ -531,3 +531,34 @@ body.site-page.obsidian-ice .faq-list summary{color:var(--v4-ink)}
  body.site-page.obsidian-ice.independent-portfolio .v3-folio-title-row h1{font-size:clamp(45px,10vw,56px)}
  body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen{min-height:275px}
 }
+
+/* Secondary elements reveal as a filmic mask, while all primary controls stay ready. */
+body.site-page.obsidian-ice.v4-observing .v4-scroll-reveal{
+ transition:opacity 1s cubic-bezier(.16,1,.3,1),
+ transform 1s cubic-bezier(.16,1,.3,1),
+ filter 1s cubic-bezier(.16,1,.3,1);
+}
+body.site-page.obsidian-ice.v4-observing .v4-scroll-reveal:not(.v4-seen){
+ opacity:.05;transform:translateY(28px);filter:blur(3px);
+}
+body.site-page.obsidian-ice.v4-observing .v4-scroll-reveal.v4-seen{
+ opacity:1;transform:none;filter:none;
+}
+body.site-page.obsidian-ice.independent-home .v3-huge-a{
+ translate:0 calc(var(--v4-scene-scroll,0)*-52px);
+}
+body.site-page.obsidian-ice.independent-portfolio .v3-folio-screen-stage:after{
+ content:"";position:absolute;z-index:5;inset:0;pointer-events:none;
+ background:radial-gradient(circle 250px at var(--v4-spot-x,60%) var(--v4-spot-y,40%),#eaffff20,transparent 90%);
+ mix-blend-mode:screen;
+}
+body.site-page.obsidian-ice .home-gateway-item,
+body.site-page.obsidian-ice .fx-project-card{
+ backface-visibility:hidden;
+}
+body.site-page.obsidian-ice .fx-project-card[hidden],
+body.site-page.obsidian-ice .fx-featured[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){
+ body.site-page.obsidian-ice.v4-observing .v4-scroll-reveal{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}
+ body.site-page.obsidian-ice .v3-huge-a{translate:none!important}
+}
