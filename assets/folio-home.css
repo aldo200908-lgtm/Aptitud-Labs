@@ -31,3 +31,17 @@
 @media(max-width:820px){.al-folio-home{background-attachment:scroll}.al-folio-home .al-summary .al-summary-card,.al-folio-home .al-card,.al-folio-home .sector-card{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.al-folio-home .site-nav,.al-folio-home .menu-panel,.al-folio-home .folio-badge,.al-folio-home .sector-card,.al-folio-home .process-step,.al-folio-home .al-card,.al-folio-home .al-coverage-grid>div,.al-folio-home .brief-form,.al-folio-home .al-summary .al-summary-card{background:var(--folio-panel);border-color:var(--line)}}
 @media(prefers-reduced-transparency:reduce){.al-folio-home{background-image:none}.al-folio-home .site-nav,.al-folio-home .menu-panel,.al-folio-home .folio-badge,.al-folio-home .sector-card,.al-folio-home .process-step,.al-folio-home .al-card,.al-folio-home .al-coverage-grid>div,.al-folio-home .brief-form,.al-folio-home .al-summary .al-summary-card{background:var(--folio-panel);-webkit-backdrop-filter:none;backdrop-filter:none}}
+
+/* Original Aptitud Labs glass illustrations, optimized responsive WebP. */
+.al-folio-home .al-summary .al-summary-art.has-illustration{position:relative;display:block;aspect-ratio:3/2;min-height:0;padding:0;overflow:hidden;background:#f3f8fb}
+.al-folio-home .al-summary .al-summary-art.has-illustration>img{display:block;width:100%;height:100%;object-fit:cover}
+.al-folio-home .al-summary .al-summary-art.has-illustration .al-summary-art-tag{position:absolute;top:12px;left:12px;z-index:1;padding:7px 10px;border:1px solid #ffffffc9;border-radius:7px;background:#ffffffc7;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#344b60;font-size:8px;letter-spacing:1px;box-shadow:0 3px 10px #152e4409}
+.al-folio-home .nfc-showcase{display:grid;grid-template-columns:1fr 1fr;max-width:var(--max);gap:55px;align-items:center}
+.folio-nfc-visual{margin:0;min-width:0}
+.folio-nfc-visual>img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:22px;border:1px solid var(--glass-border);box-shadow:var(--glass-shadow)}
+.folio-nfc-visual figcaption{font-size:9px;line-height:1.8;color:var(--muted);margin-top:13px;max-width:450px}
+.al-folio-home .nfc-showcase .section-title{font-size:clamp(30px,3.3vw,43px)}
+@media(max-width:820px){.al-folio-home .nfc-showcase{grid-template-columns:1fr;gap:30px;max-width:600px}.folio-nfc-visual>img{border-radius:16px}.folio-nfc-visual figcaption{max-width:none}}
+@media(prefers-reduced-transparency:reduce){.al-folio-home .al-summary .al-summary-art.has-illustration .al-summary-art-tag{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
+
+.al-folio-home .nfc-showcase li{color:var(--muted);border-color:var(--line)}

@@ -344,6 +344,15 @@ body{background-color:var(--bg);background-image:radial-gradient(ellipse at 8% 8
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.floating-nav,.skill-chip,.service-card,.timeline-card,.project-card,.studio-strip,.contact-form,.round-stamp{background:var(--panel);border-color:var(--line)}}
 @media(prefers-reduced-transparency:reduce){body,:root[data-theme=dark] body{background-image:none}.floating-nav,.skill-chip,.service-card,.timeline-card,.project-card,.studio-strip,.contact-form,.round-stamp{background:var(--panel);-webkit-backdrop-filter:none;backdrop-filter:none}}
 </style>
+<style>
+/* Explanatory original illustrations: same material/palette as the glass cards. */
+.service-card{padding:0;overflow:hidden}
+.service-card .folio-service-image{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-bottom:1px solid var(--line);margin:0 0 24px;display:block}
+.service-card h3,.service-card>p,.service-card .service-example,.service-card .service-link{margin-left:22px;margin-right:22px}
+.service-card .service-link{margin-bottom:24px}
+.service-card .service-example{width:calc(100% - 44px)}
+@media(max-width:640px){.service-card{padding:0}.service-card .folio-service-image{margin-bottom:22px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
@@ -425,25 +434,25 @@ body{background-color:var(--bg);background-image:radial-gradient(ellipse at 8% 8
    <div class="section-heading reveal"><span class="eyebrow">Lo que hacemos</span><h2 id="services-title">Soluciones que aportan valor</h2><p>No se trata de tener una página por tenerla. Se trata de mostrar lo que vendes, facilitar consultas o resolver una tarea concreta.</p></div>
    <div class="service-grid">
     <article class="service-card reveal">
-     <span class="service-icon" aria-hidden="true">⌘</span><h3>Desarrollo web</h3>
+     <img class="folio-service-image" src="/assets/illustrations/web-glass-480.webp" srcset="/assets/illustrations/web-glass-480.webp 480w, /assets/illustrations/web-glass-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 950px) 45vw, 280px" width="960" height="640" alt="Ilustración de una página web adaptable en laptop y celular, con paneles de cristal celeste" loading="lazy" decoding="async"><h3>Desarrollo web</h3>
      <p>Haz que tus productos se encuentren y se consulten fácilmente desde cualquier dispositivo.</p>
      <div class="service-example"><strong>Podemos desarrollar</strong><span>Catálogo, botones de pedido por WhatsApp, novedades y contacto.</span></div>
      <a class="service-link" href="#contacto" aria-label="Consultar desarrollo web">Consultar una web <span aria-hidden="true">↗</span></a>
     </article>
     <article class="service-card reveal">
-     <span class="service-icon" aria-hidden="true">▣</span><h3>Apps y sistemas</h3>
+     <img class="folio-service-image" src="/assets/illustrations/apps-glass-480.webp" srcset="/assets/illustrations/apps-glass-480.webp 480w, /assets/illustrations/apps-glass-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 950px) 45vw, 280px" width="960" height="640" alt="Ilustración de aplicaciones para catálogo y gestión en dos celulares, con tarjetas de cristal" loading="lazy" decoding="async"><h3>Apps y sistemas</h3>
      <p>Organiza mejor un proceso concreto con una herramienta diseñada para tu manera de trabajar.</p>
      <div class="service-example"><strong>Podemos plantear</strong><span>Prototipos de inventario, reservas y gestión sencilla.</span></div>
      <a class="service-link" href="#contacto" aria-label="Consultar prototipos de aplicaciones y sistemas">Explorar mi idea <span aria-hidden="true">↗</span></a>
     </article>
     <article class="service-card reveal">
-     <span class="service-icon" aria-hidden="true">✳</span><h3>Automatización e IA</h3>
+     <img class="folio-service-image" src="/assets/illustrations/automation-glass-480.webp" srcset="/assets/illustrations/automation-glass-480.webp 480w, /assets/illustrations/automation-glass-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 950px) 45vw, 280px" width="960" height="640" alt="Ilustración de un asistente digital conectado con mensajes, documentos y tareas" loading="lazy" decoding="async"><h3>Automatización e IA</h3>
      <p>Estudiamos procesos repetitivos para proponer flujos digitales más prácticos.</p>
      <div class="service-example"><strong>Según el alcance</strong><span>Formularios, notificaciones y asistentes experimentales.</span></div>
      <a class="service-link" href="#contacto" aria-label="Consultar automatización e inteligencia artificial">Conversar solución <span aria-hidden="true">↗</span></a>
     </article>
     <article class="service-card reveal">
-     <span class="service-icon" aria-hidden="true">◇</span><h3>NFC y QR</h3>
+     <img class="folio-service-image" src="/assets/illustrations/nfc-glass-480.webp" srcset="/assets/illustrations/nfc-glass-480.webp 480w, /assets/illustrations/nfc-glass-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 950px) 45vw, 280px" width="960" height="640" alt="Ilustración de una tarjeta NFC y soporte QR junto a un celular con catálogo digital" loading="lazy" decoding="async"><h3>NFC y QR</h3>
      <p>Conecta tus materiales físicos con información que las personas puedan abrir al instante.</p>
      <div class="service-example"><strong>Ideas posibles</strong><span>Tarjetas de contacto, menú digital y enlaces de negocios.</span></div>
      <a class="service-link" href="/nfc-qr/" aria-label="Conocer soluciones NFC y QR">Ver soluciones <span aria-hidden="true">↗</span></a>
