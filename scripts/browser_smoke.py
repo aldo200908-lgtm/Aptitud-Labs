@@ -107,32 +107,49 @@ def run():
             # Test the collapsed menu at a mobile width, then the inquiry on desktop.
             driver.set_window_size(390, 844)
             driver.get(base + "/")
-            wait(driver, lambda d: d.find_element(By.ID, "briefForm"))
-            check("Aptitud Labs" in driver.title and "Diseño web" in driver.title, "Portada con título comercial")
-            check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Portada tiene un solo H1")
+            wait(driver, lambda d: d.find_element(By.ID, "hero-title"))
+            check("Aptitud Labs" in driver.title and "Diseño web" in driver.title, "Inicio con título comercial")
+            check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Inicio tiene un solo H1")
+            check(driver.find_element(By.ID, "conoce-aptitud").is_displayed(),
+                  "Inicio muestra acceso a las páginas independientes")
+            check(len(driver.find_elements(By.CSS_SELECTOR, ".home-gateway-grid > a")) == 4,
+                  "Inicio enlaza a Portafolio, Servicios, Planes y NFC")
+            check(not driver.find_elements(By.ID, "fx-project-grid"),
+                  "Inicio no duplica el portafolio completo")
+            check(len(driver.find_elements(By.CSS_SELECTOR, ".desktop-links a[href='/proyectos/']")) == 1,
+                  "Portafolio tiene una ruta independiente en la navegación")
+
+            # La galería, el manifiesto y el laboratorio existen SOLO en /proyectos/.
+            driver.get(base + "/proyectos/")
+            wait(driver, lambda d: d.find_element(By.ID, "fx-project-grid"))
+            check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Portafolio tiene su propio H1")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#vision .fx-manifesto-line")) == 2,
-                  "Portada incorpora tipografía cinética editorial")
+                  "Portafolio tiene manifiesto tipográfico cinético")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#laboratorio [data-fx-chapter]")) == 3,
-                  "Laboratorio visual presenta tres capítulos de movimiento")
+                  "Laboratorio visual pertenece a la página de Portafolio")
             check(driver.find_element(By.ID, "fx-stage-caption").text.startswith("01"),
-                  "Escena inicial de la narrativa animada es la fase 01")
+                  "Portafolio muestra la escena inicial del laboratorio")
             wait(driver, lambda d: len(d.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]")) == 7)
             check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]")) == 7,
-                  "Portada incluye los siete proyectos sin entrar al portafolio secundario")
+                  "Portafolio independiente muestra las siete demostraciones")
             check(driver.find_element(By.ID, "fx-demo-frame").get_attribute("src") in ("", None),
-                  "Iframe externo no se carga antes de la interacción")
+                  "La vista externa se carga solo por interacción")
             wait(driver, lambda d: d.execute_script(
                 "return document.getElementById('fx-filter-status').textContent.includes('7 experiencias')"
             ))
             driver.execute_script("document.querySelector('[data-future-filter=\"herramientas\"]').click()")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]:not([hidden])")) == 2,
-                  "El filtro de sistemas muestra dos demostraciones")
+                  "Filtro del portafolio: 2 herramientas")
             driver.execute_script("document.querySelector('[data-future-filter=\"web\"]').click()")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]:not([hidden])")) == 5,
-                  "El filtro de web muestra cinco proyectos, incluido Maison Dulce")
+                  "Filtro del portafolio: 5 webs")
             driver.execute_script("document.querySelector('[data-future-filter=\"todos\"]').click()")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]:not([hidden])")) == 7,
-                  "El filtro todos restituye siete proyectos")
+                  "Filtro del portafolio: 7 proyectos")
+            check(driver.find_element(By.ID, "demo-pasteleria").is_displayed(),
+                  "El enlace compartido de Maison Dulce sigue funcionando")
+            driver.get(base + "/")
+            wait(driver, lambda d: d.find_element(By.ID, "briefForm"))
 
             toggle = driver.find_element(By.ID, "resource-menu-toggle")
             toggle.click()
