@@ -110,6 +110,12 @@ def run():
             wait(driver, lambda d: d.find_element(By.ID, "briefForm"))
             check("Aptitud Labs" in driver.title and "Diseño web" in driver.title, "Portada con título comercial")
             check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Portada tiene un solo H1")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#vision .fx-manifesto-line")) == 2,
+                  "Portada incorpora tipografía cinética editorial")
+            check(len(driver.find_elements(By.CSS_SELECTOR, "#laboratorio [data-fx-chapter]")) == 3,
+                  "Laboratorio visual presenta tres capítulos de movimiento")
+            check(driver.find_element(By.ID, "fx-stage-caption").text.startswith("01"),
+                  "Escena inicial de la narrativa animada es la fase 01")
             wait(driver, lambda d: len(d.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]")) == 7)
             check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]")) == 7,
                   "Portada incluye los siete proyectos sin entrar al portafolio secundario")
