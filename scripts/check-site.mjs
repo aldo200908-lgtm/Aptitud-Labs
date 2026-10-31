@@ -19,6 +19,10 @@ const pages = new Map([
   ['/privacidad/', 'privacidad/index.html'],
   ['/web-para-barberias/', 'web-para-barberias/index.html'],
   ['/web-para-restaurantes/', 'web-para-restaurantes/index.html'],
+  ['/servicios/', 'servicios/index.html'],
+  ['/proyectos/', 'proyectos/index.html'],
+  ['/planes/', 'planes/index.html'],
+  ['/cotizar/', 'cotizar/index.html'],
 ]);
 const extras = ['aptitud-web/index.html','404.html',
   'resources/navbars/aurora.html','resources/navbars/folio.html',
