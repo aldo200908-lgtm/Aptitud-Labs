@@ -71,3 +71,54 @@ try{
 console.log('Endpoints públicos: '+passes+'/'+(endpointChecks.length+1)+' comprobaciones aprobadas.');
 
 // Diagnóstico no bloqueante: el estado de publicación requiere revisión humana.
+
+
+// Comprobación HTTP de release #27, independiente de la rama que se publicará.
+if(process.env.GITHUB_HEAD_REF==='audit/release-20261030-preview'){
+ const {createHash}=await import('node:crypto');
+ const {execFileSync}=await import('node:child_process');
+ const commit='7d135c65a2778e277c82edfab942fabffbb60b29';
+ const preview='https://aptitud-labs-git-home-resumenes-final-aldo200908-lgtms-projects.vercel.app/?nocache=7d135c65';
+ const vercelId='dpl_D9bJSKcJq1mQK3YpJxyPp6VVKiQT';
+ const sha=buf=>createHash('sha256').update(buf).digest('hex');
+ console.log('=== RELEASE PREVIEW #27 HTTP ===');
+ console.log('COMMIT SOLICITADO='+commit);
+ console.log('VISTA PREVIA URL='+preview);
+ try{
+  const response=await fetch(preview,{signal:AbortSignal.timeout(25000),cache:'no-store',headers:{'Cache-Control':'no-cache','Pragma':'no-cache','User-Agent':'AptitudLabs-ReleaseValidation'}});
+  const buffer=Buffer.from(await response.arrayBuffer());
+  const html=buffer.toString('utf8');
+  const count=x=>html.split(x).length-1;
+  console.log('VISTA PREVIA HTTP='+response.status+' FINAL='+response.url+' CACHE='+(response.headers.get('x-vercel-cache')||'ausente'));
+  const checks={
+   'VER TODOS LOS SERVICIOS':count('VER TODOS LOS SERVICIOS')===1,
+   'Elige la modalidad que encaja con tu negocio':html.includes('Elige la modalidad que encaja con tu negocio'),
+   'Desde S/ 249':html.includes('Desde S/ 249'),
+   'Desde S/ 419':html.includes('Desde S/ 419'),
+   'Desde S/ 690':html.includes('Desde S/ 690'),
+   'Tarifas orientativas exactas':html.includes('Tarifas orientativas de desarrollo inicial. El precio final se confirma por escrito; dominio, hosting, mantenimiento y opciones adicionales se cotizan por separado.'),
+   'Visual conceptual. Los diseños':html.includes('Visual conceptual. Los diseños'),
+   'sin texto anterior de tarifas':!html.includes('ya publicadas en nuestra página de planes'),
+   'sin puntuación NFC anterior':!html.includes('Visual conceptual; Los diseños'),
+   'Nuestro trabajo intacto':html.includes('Proyectos seleccionados')&&html.includes('href="#trabajo-destacado"'),
+   'un único Explorar Tienda':count('EXPLORAR TIENDA')===1
+  };
+  for(const [name,ok] of Object.entries(checks))console.log('PREVIEW '+name+'='+ok);
+  console.log('PREVIEW CTA SERVICIOS CONTEO='+count('VER TODOS LOS SERVICIOS'));
+  console.log('PREVIEW CTA TIENDA CONTEO='+count('EXPLORAR TIENDA'));
+  console.log('PREVIEW HTML SHA-256='+sha(buffer));
+  execFileSync('git',['fetch','--no-tags','--depth=1','origin',commit],{timeout:30000,maxBuffer:1024*1024});
+  const orig=execFileSync('git',['show',commit+':index.html'],{timeout:20000,maxBuffer:1024*1024});
+  const injected=Buffer.from('<script async data-explicit-opt-in="true" data-deployment-id="'+vercelId+'" src="https://vercel.live/_next-live/feedback/feedback.js"></script>');
+  const hasInjected=buffer.subarray(-injected.length).equals(injected);
+  const cleaned=hasInjected?buffer.subarray(0,buffer.length-injected.length):buffer;
+  console.log('PREVIEW SHA-256 INDEX COMMIT='+sha(orig));
+  console.log('PREVIEW VERCEL SCRIPT='+hasInjected+' BYTES='+injected.length);
+  console.log('PREVIEW HTML ES EXACTO COMMIT='+cleaned.equals(orig));
+  console.log('PREVIEW DEPLOYMENT ID='+vercelId);
+  if(response.status!==200||!cleaned.equals(orig)||Object.values(checks).some(x=>!x)){
+    console.log('::error::La vista previa #27 no superó el control de release');process.exitCode=1;
+  }else console.log('RESULTADO PR27: APROBADO PARA FUSION');
+ }catch(e){console.log('::error::Verificación fallida: '+(e.stack||e));process.exitCode=1}
+ console.log('=== FIN RELEASE PREVIEW #27 ===');
+}
