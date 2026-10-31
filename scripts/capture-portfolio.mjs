@@ -78,6 +78,40 @@ try {
       await page.close();
     }
   }
+
+  // Comprobación visual adicional: portafolio completo en un celular.
+  const mobile = await browser.newPage({
+    viewport: { width: 390, height: 844 },
+    deviceScaleFactor: 1,
+    isMobile: true,
+    hasTouch: true,
+    reducedMotion: 'reduce',
+  });
+  try {
+    const response = await mobile.goto('https://aptitudlabs.com/proyectos/', { waitUntil: 'domcontentloaded', timeout: 60000 });
+    if (!response?.ok()) throw new Error('Portafolio móvil: error HTTP ' + response?.status());
+    await mobile.evaluate(() => document.fonts.ready).catch(() => {});
+    await mobile.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
+    await mobile.waitForTimeout(1500);
+    const geometry = await mobile.evaluate(() => ({
+      width: window.innerWidth,
+      bodyScrollWidth: document.body.scrollWidth,
+      documentScrollWidth: document.documentElement.scrollWidth,
+      navLinks: document.querySelectorAll('.pf-links a').length,
+      dropdownCount: document.querySelectorAll('select,details,.menu-toggle,.menu-panel').length,
+      sections: [...document.querySelectorAll('main section[id]')].map(n => n.id),
+    }));
+    if (geometry.documentScrollWidth > geometry.width + 2) throw new Error('Desbordamiento horizontal móvil: ' + JSON.stringify(geometry));
+    if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6) throw new Error('Navegación incorrecta: ' + JSON.stringify(geometry));
+    const filename = path.join(outDir,'aptitud-portfolio-mobile.png');
+    await mobile.screenshot({ path: filename, type: 'png', fullPage: false, animations: 'disabled' });
+    console.log('CAPTURA MÓVIL OK:', filename, JSON.stringify(geometry));
+  } catch (error) {
+    failures.push({ name: 'Portafolio móvil', error: String(error) });
+    console.error('Portafolio móvil: ', error);
+  } finally {
+    await mobile.close();
+  }
 } finally {
   await browser.close();
 }
