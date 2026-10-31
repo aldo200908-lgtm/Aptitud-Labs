@@ -103,6 +103,12 @@ if(process.env.GITHUB_HEAD_REF==='audit/pr27-preview-http-5b2dfd8'){
     while(firstDiff<Math.min(buffer.length,expectedBuffer.length)&&buffer[firstDiff]===expectedBuffer[firstDiff])firstDiff++;
     const extraBytes=buffer.length-expectedBuffer.length;
     const singleInsertion=extraBytes>0&&buffer.subarray(firstDiff+extraBytes).equals(expectedBuffer.subarray(firstDiff));
+    const vercelInjection=singleInsertion&&firstDiff===expectedBuffer.length&&
+      buffer.subarray(firstDiff).toString('utf8')===
+      '<script async data-explicit-opt-in="true" data-deployment-id="dpl_Hnx6U38rgCpfsTyCw3zxcPUTQvzF" src="https://vercel.live/_next-live/feedback/feedback.js"></script>';
+    const previewMatchesCommit=matchesOriginal||vercelInjection;
+    console.log('HTML fuente coincide con commit 5b2dfd8 tras excluir solo el script Vercel conocido: '+previewMatchesCommit);
+    console.log('Despliegue Vercel de 5b2dfd8 confirmado en HTML: '+vercelInjection);
     console.log('Diferencia HTTP/original: bytes extra='+extraBytes+'; primer byte diferente='+firstDiff+'; inserción única='+singleInsertion);
     console.log('Contexto original: '+JSON.stringify(expectedBuffer.subarray(Math.max(0,firstDiff-120),firstDiff+230).toString('utf8')));
     console.log('Contexto Vercel: '+JSON.stringify(buffer.subarray(Math.max(0,firstDiff-120),firstDiff+400).toString('utf8')));
@@ -122,11 +128,11 @@ if(process.env.GITHUB_HEAD_REF==='audit/pr27-preview-http-5b2dfd8'){
     console.log('SHA-256 index.html de commit '+commit+': '+expectedSha);
     console.log('HTML byte por byte igual al commit 5b2dfd8: '+matchesOriginal);
     console.log('Vercel response bytes: '+buffer.length+'; GitHub checkout bytes: '+expectedBuffer.length);
-    if(!response.ok||service!==0||nfc!==1||!subtitle||webWeb||iaIa||visualDuplicates.length||labelPairs.length!==9||!matchesOriginal){
+    if(!response.ok||service!==0||nfc!==1||!subtitle||webWeb||iaIa||visualDuplicates.length||labelPairs.length!==9||!previewMatchesCommit){
       console.log('::error::La vista previa no corresponde al HTML verificado del commit 5b2dfd8.');
       process.exitCode=1;
     }else{
-      console.log('RESULTADO: APROBADO. La vista previa entrega exactamente el HTML de index.html del commit 5b2dfd8.');
+      console.log('RESULTADO: APROBADO. La vista previa entrega el HTML original de 5b2dfd8, más únicamente el script de comentarios inyectado por Vercel.');
     }
     console.log('=== FIN EVIDENCIA HTTP ===');
   }catch(e){
