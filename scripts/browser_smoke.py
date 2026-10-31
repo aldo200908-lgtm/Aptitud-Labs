@@ -7,6 +7,7 @@ python scripts/browser_smoke.py
 from __future__ import annotations
 
 import functools
+import json
 import os
 import re
 import shutil
@@ -76,6 +77,7 @@ def run():
         options = Options()
         options.binary_location = chrome
         options.page_load_strategy = "eager"
+        options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
         for flag in (
             "--headless=new",
             "--no-sandbox",
@@ -116,9 +118,13 @@ def run():
             wait(driver, lambda d: d.find_element(By.ID, "resource-menu-toggle").get_attribute("aria-expanded") == "false")
             check(driver.switch_to.active_element.get_attribute("id") == "resource-menu-toggle", "Escape devuelve el foco al menú")
 
-            driver.execute_script(
-                "window.__qaWhatsApp=null; window.open=(url)=>{window.__qaWhatsApp=url;return {};};"
-            )
+            # La portada navega con window.location.href, no con window.open.
+            # Registrar la navegación real sin contactar a WhatsApp ni enviar mensajes.
+            driver.execute_cdp_cmd("Network.enable", {})
+            driver.execute_cdp_cmd("Page.enable", {})
+            driver.execute_cdp_cmd("Network.setBlockedURLs", {"urls": ["*://wa.me/*"]})
+            driver.get_log("performance")  # descartar tráfico anterior
+
             driver.find_element(By.NAME, "nombre").send_keys("Persona QA")
             Select(driver.find_element(By.NAME, "servicio")).select_by_visible_text("Diseño o desarrollo web")
             driver.find_element(By.NAME, "detalle").send_keys(
@@ -136,7 +142,24 @@ def run():
             """,send_button)
             print("Diagnóstico clic WhatsApp:",obscurer,flush=True)
             send_button.click()
-            outgoing = wait(driver, lambda d: d.execute_script("return window.__qaWhatsApp"))
+            def attempted_whatsapp_navigation(d):
+                for entry in d.get_log("performance"):
+                    try:
+                        event = json.loads(entry["message"])["message"]
+                        method, params = event.get("method"), event.get("params", {})
+                        if method == "Network.requestWillBeSent":
+                            url = params.get("request", {}).get("url", "")
+                        elif method == "Page.frameRequestedNavigation":
+                            url = params.get("url", "")
+                        else:
+                            continue
+                        if url.startswith("https://wa.me/51937367296?text="):
+                            return url
+                    except (ValueError, KeyError, TypeError):
+                        continue
+                return False
+
+            outgoing = wait(driver, attempted_whatsapp_navigation)
             check(outgoing.startswith("https://wa.me/51937367296?text="), "WhatsApp usa el número de Aptitud Labs")
             check("Persona QA" in unquote(outgoing) and "No indicado" in unquote(outgoing),
                   "El mensaje conserva nombre y correo opcional")
