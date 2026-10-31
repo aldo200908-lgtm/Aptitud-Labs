@@ -100,3 +100,8 @@ body.studio-subpage[data-theme=dark] .al-card .al-price span{color:#fff2de!impor
 body.studio-subpage[data-theme=dark] .al-card .al-eyebrow{color:#f2c8ae}
 body.studio-subpage[data-theme=dark] .al-card li{color:#e4e5da}
 body.studio-subpage[data-theme=dark] .al-disclaimer{color:#e4e5da}
+
+body.studio-subpage[data-theme=dark] .al-plans .section-title,
+body.studio-subpage[data-theme=dark] .al-plans .section-top h2{color:#fff4e6!important}
+body.studio-subpage[data-theme=dark] .al-plans .copy,
+body.studio-subpage[data-theme=dark] .al-plans .section-top p{color:#e4e8dc!important}
