@@ -105,7 +105,7 @@ try {
     }));
     if (geometry.documentScrollWidth > geometry.width + 2) throw new Error('Desbordamiento horizontal móvil: ' + JSON.stringify(geometry));
     if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6 || !geometry.contactForm || !geometry.themeToggle) throw new Error('Navegación o controles incorrectos: ' + JSON.stringify(geometry));
-    const filename = path.join(outDir,'aptitud-portfolio-mobile.png');
+    const filename = path.join(outDir,'aptitud-portfolio-mobile-cover.png');
     await mobile.screenshot({ path: filename, type: 'png', fullPage: false, animations: 'disabled' });
     console.log('CAPTURA MÓVIL OK:', filename, JSON.stringify(geometry));
   } catch (error) {
