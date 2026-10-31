@@ -77,10 +77,7 @@
   for(const project of projects){
    const show=choice==='todos'||project.dataset.futureKind===choice;
    project.hidden=!show;
-   if(show){
-    count++;
-    if(!project.classList.contains('fx-visible'))project.classList.add('fx-visible');
-   }
+   if(show)count++;
   }
   controls.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.futureFilter===choice)));
   if(status)status.textContent=count+(count===1?' experiencia disponible.':' experiencias disponibles.');
