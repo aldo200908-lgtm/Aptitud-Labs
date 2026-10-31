@@ -1,0 +1,162 @@
+/* Aptitud Labs — V6 / Real work over generic illustrations.
+   Art direction: display actual project previews and catalogue imagery on the
+   three secondary homepage portals. First Maison card remains unchanged. */
+body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card{
+ background:linear-gradient(145deg,#172b39 2%,#101c27 77%,#0c151e);
+ border:1px solid #446376;
+ min-height:242px;
+ isolation:isolate;
+ overflow:hidden;
+ box-shadow:0 17px 39px #02070c70;
+}
+body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card:before{
+ content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+ background:linear-gradient(180deg,#0d1b27c9 0%,#0b1624a2 34%,transparent 53%,#07131de8 95%);
+ opacity:1;
+}
+body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card>span:first-child{
+ position:relative;z-index:6;color:#a9dbea;font-size:9px;letter-spacing:.15em;
+}
+body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card>strong{
+ position:relative;z-index:6;color:#f4fbff;
+ font-size:clamp(22px,2.1vw,32px);max-width:92%;line-height:1.12;
+ text-shadow:0 2px 11px #08121be0;
+}
+body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card>small{
+ position:relative;z-index:7;color:#eef6fa;align-items:center;
+ padding-top:10px;margin-top:auto;
+ text-shadow:0 2px 8px #050c11c9;
+}
+body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card>small b{
+ color:#a9e5f4;filter:drop-shadow(0 1px 5px #1b6177a0);
+}
+body.site-page.obsidian-ice.independent-home .v6-service-art,
+body.site-page.obsidian-ice.independent-home .v6-plans-art,
+body.site-page.obsidian-ice.independent-home .v6-nfc-art{
+ position:absolute;inset:0;pointer-events:none;z-index:1;
+ transform:translateZ(0);
+}
+.v6-service-screen,.v6-plans-screen{
+ position:absolute;display:block;overflow:hidden;
+ background:#0e1a26;border:1px solid #6da5bc8a;
+ box-shadow:0 17px 34px #0008,0 0 0 5px #9bd2e709;
+ border-radius:4px;transform-origin:50% 50%;
+ transition:transform .8s cubic-bezier(.16,1,.3,1),box-shadow .8s;
+}
+.v6-screen-label{
+ position:absolute;left:0;right:0;top:0;height:23px;
+ padding:5px 9px;display:flex;align-items:center;
+ background:#0c1a25e8;border-bottom:1px solid #78c4df36;
+ color:#bfe7f5;font:800 7px/1.1 Manrope,Arial,sans-serif;
+ letter-spacing:.13em;z-index:4;
+}
+.v6-service-screen img,.v6-plans-screen img{
+ display:block;width:100%;height:100%;object-fit:cover;
+ object-position:top center;
+ transition:transform .85s cubic-bezier(.16,1,.3,1),filter .85s;
+ filter:saturate(1.08);
+}
+.v6-service-screen-primary{
+ width:68%;height:61%;right:-5%;bottom:8%;
+ transform:rotate(-7deg) skewY(-1deg);
+}
+.v6-service-screen-secondary{
+ width:49%;height:43%;left:3%;bottom:7%;
+ transform:rotate(6deg);
+}
+.v6-service-screen-primary img{object-position:25% top}
+.v6-service-screen-secondary img{object-position:top center}
+body.site-page.obsidian-ice.independent-home .v3-gateway-services.v6-realwork-card{
+ background:radial-gradient(circle at 65% 65%,#365c71,#122330 74%);
+}
+body.site-page.obsidian-ice.independent-home .v3-gateway-plans.v6-realwork-card{
+ background:radial-gradient(circle at 67% 62%,#283f52,#101c29 74%);
+}
+.v6-plans-screen{
+ width:78%;height:68%;right:-3%;bottom:7%;
+ transform:rotate(6deg);
+ border-color:#9fcbd6a0;
+}
+.v6-plans-screen img{object-position:top center}
+.v6-plans-ticket{
+ position:absolute;z-index:5;bottom:18%;left:4%;width:53%;max-width:210px;
+ background:#a7dfee;color:#0a2434;
+ border:1px solid #e3faffbb;border-radius:3px;
+ box-shadow:8px 9px 0 #081a26b8,0 12px 35px #0007;
+ padding:10px 11px;display:flex;flex-direction:column;gap:3px;
+ transform:rotate(-5deg);
+ transition:transform .7s cubic-bezier(.16,1,.3,1);
+}
+.v6-plans-ticket b{font:800 8px Manrope,sans-serif;letter-spacing:.12em}
+.v6-plans-ticket>span{font:850 15px Manrope,sans-serif;letter-spacing:-.04em}
+.v6-plans-ticket i{position:absolute;right:9px;bottom:9px;font:800 18px Manrope,sans-serif}
+body.site-page.obsidian-ice.independent-home .v3-gateway-nfc.v6-realwork-card{
+ background:radial-gradient(circle at 65% 65%,#284d5c,#10202d 72%);
+}
+.v6-nfc-art img{
+ position:absolute;display:block;object-fit:cover;
+ border:1px solid #6395a68f;border-radius:5px;
+ box-shadow:0 16px 35px #0008;
+ transition:transform .8s cubic-bezier(.16,1,.3,1),filter .8s;
+}
+.v6-nfc-product{
+ width:67%;height:66%;right:-1%;bottom:8%;
+ transform:rotate(-6deg);
+}
+.v6-nfc-phone{
+ width:38%;height:51%;left:4%;bottom:8%;
+ transform:rotate(8deg);
+}
+.v6-nfc-sticker{
+ position:absolute;right:5%;bottom:8%;z-index:5;
+ background:#9bd8e9;border-radius:2px;color:#082431;
+ padding:6px 9px;transform:rotate(5deg);
+ font:800 8px Manrope,sans-serif;letter-spacing:.09em;
+ box-shadow:0 5px 16px #04101bbb;
+}
+.v6-nfc-sticker i{font-style:normal;font-size:13px;margin-left:5px}
+@media(hover:hover) and (pointer:fine){
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-service-screen-primary{transform:rotate(-4deg) translate(-7px,-13px)}
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-service-screen-secondary{transform:rotate(3deg) translate(4px,-8px)}
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-plans-screen{transform:rotate(2deg) translate(-10px,-10px)}
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-plans-ticket{transform:rotate(-2deg) translateY(-10px)}
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-nfc-product{transform:rotate(-2deg) translateY(-12px)}
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-nfc-phone{transform:rotate(4deg) translateY(-6px)}
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-service-screen img,
+ body.site-page.obsidian-ice.independent-home .v6-realwork-card:hover .v6-plans-screen img{transform:scale(1.055)}
+}
+@media(max-width:880px){
+ body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card{min-height:270px}
+ .v6-service-screen-primary{width:70%;height:64%}
+ .v6-service-screen-secondary{width:51%;height:46%}
+ .v6-plans-screen{height:68%}
+}
+@media(max-width:700px){
+ body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card{
+  min-height:340px;padding:25px 25px 20px;
+ }
+ body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card>strong{
+  font-size:clamp(27px,7vw,36px);max-width:100%;
+ }
+ body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card:before{
+  background:linear-gradient(180deg,#0c1b27eb,#0b1724af 30%,transparent 56%,#07121ee8 93%);
+ }
+ .v6-service-screen-primary{width:68%;height:59%;right:-3%;bottom:10%;transform:rotate(-5deg)}
+ .v6-service-screen-secondary{width:51%;height:44%;left:4%;bottom:10%}
+ .v6-plans-screen{width:84%;height:63%;right:-4%;bottom:9%}
+ .v6-plans-ticket{left:5%;bottom:17%;width:48%;padding:11px}
+ .v6-plans-ticket>span{font-size:17px}
+ .v6-nfc-product{width:72%;height:63%;right:-2%;bottom:9%}
+ .v6-nfc-phone{width:39%;height:51%;left:4%;bottom:9%}
+ .v6-nfc-sticker{bottom:10%}
+}
+@media(max-width:390px){
+ body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card{min-height:320px;padding:22px 20px 19px}
+ body.site-page.obsidian-ice.independent-home .home-gateway-item.v6-realwork-card>strong{font-size:27px}
+ .v6-plans-ticket>span{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+ .v6-service-screen,.v6-plans-screen,.v6-service-screen img,.v6-plans-screen img,.v6-nfc-art img,.v6-plans-ticket{
+  transition:none!important;
+ }
+}
