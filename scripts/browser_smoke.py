@@ -164,6 +164,16 @@ def run():
             check("Persona QA" in unquote(outgoing) and "No indicado" in unquote(outgoing),
                   "El mensaje conserva nombre y correo opcional")
 
+            # Una navegación externa bloqueada puede dejar la pestaña de prueba
+            # sin procesar entradas WebDriver; continuar en una pestaña nueva.
+            old_tab = driver.current_window_handle
+            driver.switch_to.new_window("tab")
+            new_tab = driver.current_window_handle
+            driver.switch_to.window(old_tab)
+            driver.close()
+            driver.switch_to.window(new_tab)
+            driver.execute_cdp_cmd("Network.setBlockedURLs", {"urls": []})
+
             driver.set_window_size(390, 844)
             driver.get(base + "/")
             wait(driver, lambda d: d.find_element(By.ID, "hero-title"))
