@@ -183,8 +183,11 @@ def run():
             driver.execute_script("document.querySelector('[data-future-filter=\"todos\"]').click()")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#fx-project-grid [data-future-kind]:not([hidden])")) == 7,
                   "Filtro del portafolio: 7 proyectos")
-            check(driver.find_element(By.ID, "demo-pasteleria").is_displayed(),
-                  "El enlace compartido de Maison Dulce sigue funcionando")
+            maison_card = driver.find_element(By.ID, "demo-pasteleria")
+            driver.execute_script("arguments[0].scrollIntoView({behavior:'instant',block:'center'});", maison_card)
+            wait(driver, lambda d: d.find_element(By.ID, "demo-pasteleria").is_displayed())
+            check(maison_card.is_displayed(),
+                  "El enlace compartido de Maison Dulce sigue funcionando tras revelarse al scroll")
             driver.get(base + "/")
             wait(driver, lambda d: d.find_element(By.ID, "briefForm"))
 
