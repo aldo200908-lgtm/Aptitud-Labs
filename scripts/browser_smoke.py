@@ -114,6 +114,18 @@ def run():
                   "Inicio muestra acceso a las páginas independientes")
             check(len(driver.find_elements(By.CSS_SELECTOR, ".home-gateway-grid > a")) == 4,
                   "Inicio enlaza a Portafolio, Servicios, Planes y NFC")
+            wait(driver, lambda d: d.execute_script(
+                "return document.body.dataset.theme === 'dark' && !!document.querySelector('.v4-reading-line')"
+            ))
+            check(driver.execute_script("return getComputedStyle(document.body).colorScheme") == "dark",
+                  "Obsidian Ice inicia en negro mate por defecto")
+            check(driver.execute_script(
+                "return !!document.querySelector('link[href=\"/assets/obsidian-ice-v4.css\"]')"
+            ), "La dirección de arte premium carga sus estilos en Inicio")
+            check(driver.execute_script(
+                "return !!document.querySelector('.v4-technical-grid')"
+            ), "Inicio incluye retícula técnica con composición")
+
             wait(driver, lambda d: d.find_element(By.ID, "v3-workbench-main").get_attribute("src"))
             check(len(driver.find_elements(By.CSS_SELECTOR, "#v3-workbench [data-v3-preview]")) == 3,
                   "Inicio tiene tres vistas de demostración seleccionables")
@@ -136,6 +148,11 @@ def run():
             check(len(driver.find_elements(By.TAG_NAME, "h1")) == 1, "Portafolio tiene su propio H1")
             check(len(driver.find_elements(By.CSS_SELECTOR, "#v3-folio-showcase [data-v3-case-control]")) == 3,
                   "Portafolio incluye un reel de tres proyectos")
+            check(driver.execute_script("return !!document.querySelector('.v4-folio-layers')"),
+                  "Portafolio ofrece profundidad de capas tridimensionales")
+            check(driver.execute_script("return document.body.dataset.theme") == "dark",
+                  "Portafolio comparte negro mate por defecto")
+
             driver.execute_script("document.querySelector('[data-v3-case-control=\"sushi\"]').click()")
             wait(driver, lambda d: "sushi-ten-bento-cover.png" in d.find_element(By.ID, "v3-folio-main").get_attribute("src"))
             check("Sushi Ten Bento" in driver.find_element(By.ID, "v3-folio-open").get_attribute("aria-label"),
