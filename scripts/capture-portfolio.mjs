@@ -139,7 +139,7 @@ try {
         .slice(0,18)
         .map(({el,rect}) => ({tag:el.tagName,className:String(el.className).slice(0,75),right:Math.round(rect.right),left:Math.round(rect.left),width:Math.round(rect.width)})),
     }));
-    if (geometry.documentScrollWidth > geometry.width + 2) throw new Error('Desbordamiento horizontal móvil: ' + JSON.stringify(geometry));
+    if (geometry.width > 392 || geometry.documentScrollWidth > 392) throw new Error('Desbordamiento horizontal móvil o viewport ampliado: ' + JSON.stringify(geometry));
     if (geometry.dropdownCount !== 0 || geometry.navLinks !== 6 || !geometry.contactForm || !geometry.themeToggle || geometry.projectCards !== 2 || geometry.options !== 4) throw new Error('Navegación o controles incorrectos: ' + JSON.stringify(geometry));
     const filename = path.join(outDir,'aptitud-portfolio-mobile-cover.png');
     await mobile.screenshot({ path: filename, type: 'png', fullPage: false, animations: 'disabled' });
