@@ -225,6 +225,49 @@ def run():
             toggle.click()
             wait(driver, lambda d: d.find_element(By.ID, "resource-menu-toggle").get_attribute("aria-expanded") == "true")
             check(not driver.find_element(By.ID, "resource-menu").get_attribute("hidden"), "Menú abre y muestra contenido")
+            # Regression from real Android screenshots: nav used sticky layout
+            # but kept left:50% + translateX(-50%), which clipped half the menu.
+            for mobile_width in (320, 360, 390, 430):
+                driver.set_window_size(mobile_width, 844)
+                bounds = driver.execute_script("""
+                    const nav=document.querySelector('.site-nav');
+                    const brand=nav.querySelector('.brand');
+                    const menu=document.getElementById('resource-menu');
+                    const close=document.getElementById('resource-menu-close');
+                    const nr=nav.getBoundingClientRect();
+                    const br=brand.getBoundingClientRect();
+                    const mr=menu.getBoundingClientRect();
+                    const cr=close.getBoundingClientRect();
+                    const links=[...menu.querySelectorAll('a')].map(el=>el.getBoundingClientRect());
+                    return {
+                      vw:document.documentElement.clientWidth,
+                      inner:innerWidth,
+                      nav:{left:nr.left,right:nr.right,width:nr.width},
+                      brand:{left:br.left,right:br.right},
+                      menu:{left:mr.left,right:mr.right,width:mr.width},
+                      close:{left:cr.left,right:cr.right},
+                      linksFit:links.every(r=>r.left>=-2&&r.right<=document.documentElement.clientWidth+2),
+                      scrollWidth:document.documentElement.scrollWidth
+                    };
+                """)
+                w = bounds["vw"]
+                check(bounds["nav"]["left"] >= -2
+                      and bounds["nav"]["right"] >= w - 2
+                      and bounds["nav"]["right"] <= w + 2
+                      and bounds["brand"]["left"] >= 0
+                      and bounds["brand"]["right"] <= w,
+                      f"Barra móvil dentro del viewport a {mobile_width}px: {bounds['nav']}")
+                check(bounds["menu"]["left"] >= -2
+                      and bounds["menu"]["right"] <= w + 2
+                      and bounds["menu"]["width"] >= w - 3
+                      and bounds["close"]["left"] >= 0
+                      and bounds["close"]["right"] <= w
+                      and bounds["linksFit"],
+                      f"Menú y enlaces completos a {mobile_width}px: {bounds['menu']}")
+                check(bounds["scrollWidth"] <= w + 2,
+                      f"Sin desbordamiento lateral a {mobile_width}px")
+            driver.set_window_size(390, 844)
+
             driver.switch_to.active_element.send_keys(Keys.ESCAPE)
             wait(driver, lambda d: d.find_element(By.ID, "resource-menu-toggle").get_attribute("aria-expanded") == "false")
             check(driver.switch_to.active_element.get_attribute("id") == "resource-menu-toggle", "Escape devuelve el foco al menú")
