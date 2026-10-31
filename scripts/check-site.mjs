@@ -169,6 +169,18 @@ test(!!localBusiness&&!('address' in localBusiness)&&!('geo' in localBusiness),
 test(home.includes('https://wa.me/51937367296'),'Falta WhatsApp válido');
 test(home.includes('aptitudlabs.studio@gmail.com'),'Falta correo de contacto');
 test(home.includes('id="sectores"'),'Falta acceso a rubros');
+const portfolioPage=file('proyectos/index.html');
+test(home.includes('href="/proyectos/"')&&home.includes('id="conoce-aptitud"'),
+ 'Inicio debe enlazar al Portafolio en una ruta propia');
+test(!home.includes('id="fx-project-grid"')&&!home.includes('id="laboratorio"'),
+ 'La galería y el laboratorio deben vivir solo en la página de Portafolio');
+test(portfolioPage.includes('id="fx-project-grid"')&&portfolioPage.includes('id="laboratorio"'),
+ 'Portafolio debe conservar los proyectos y el laboratorio cinético');
+test((portfolioPage.match(/data-future-kind=/g)||[]).length===7,
+ 'Portafolio debe conservar exactamente siete demostraciones');
+test(home.includes('href="/servicios/"')&&home.includes('href="/planes/"')&&home.includes('href="/nfc-qr/"'),
+ 'Servicios, planes y NFC deben ser páginas independientes');
+
 const servicesRedirect=vercel.routes.find(r=>r.status===308&&r.headers?.Location==='/servicios/');
 test(!!servicesRedirect,'Soluciones debe redirigir permanentemente a Servicios');
 test(!sitemap.includes('https://aptitudlabs.com/soluciones/'),'No incluir redirecciones en sitemap');
