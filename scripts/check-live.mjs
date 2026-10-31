@@ -99,6 +99,14 @@ if(process.env.GITHUB_HEAD_REF==='audit/pr27-preview-http-5b2dfd8'){
     const expectedBuffer=execFileSync('git',['show',commit+':index.html'],{timeout:20000,maxBuffer:1024*1024});
     const expectedSha=createHash('sha256').update(expectedBuffer).digest('hex');
     const matchesOriginal=buffer.equals(expectedBuffer);
+    let firstDiff=0;
+    while(firstDiff<Math.min(buffer.length,expectedBuffer.length)&&buffer[firstDiff]===expectedBuffer[firstDiff])firstDiff++;
+    const extraBytes=buffer.length-expectedBuffer.length;
+    const singleInsertion=extraBytes>0&&buffer.subarray(firstDiff+extraBytes).equals(expectedBuffer.subarray(firstDiff));
+    console.log('Diferencia HTTP/original: bytes extra='+extraBytes+'; primer byte diferente='+firstDiff+'; inserción única='+singleInsertion);
+    console.log('Contexto original: '+JSON.stringify(expectedBuffer.subarray(Math.max(0,firstDiff-120),firstDiff+230).toString('utf8')));
+    console.log('Contexto Vercel: '+JSON.stringify(buffer.subarray(Math.max(0,firstDiff-120),firstDiff+400).toString('utf8')));
+    if(singleInsertion)console.log('Bloque inyectado: '+JSON.stringify(buffer.subarray(firstDiff,firstDiff+extraBytes).toString('utf8')));
     console.log('=== EVIDENCIA HTTP — PR #27 COMMIT 5b2dfd8 ===');
     console.log('URL solicitada: '+preview);
     console.log('HTTP: '+response.status+'; URL final: '+response.url);
