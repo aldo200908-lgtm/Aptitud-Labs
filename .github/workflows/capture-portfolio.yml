@@ -1,0 +1,61 @@
+name: Capturar portadas reales del portafolio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/capture-portfolio.mjs'
+      - '.github/workflows/capture-portfolio.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-screenshots
+  cancel-in-progress: false
+
+jobs:
+  screenshots:
+    name: Capturas en Chromium 1600x900
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instalar Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Generar capturas de páginas publicadas
+        run: node scripts/capture-portfolio.mjs
+
+      - name: Guardar una copia como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portadas-reales-1600x900
+          path: assets/projects/*-cover.png
+          if-no-files-found: warn
+
+      - name: Guardar portadas en GitHub
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/projects/*-cover.png
+          if git diff --cached --quiet; then
+            echo "No hay cambios en las portadas."
+          else
+            git commit -m "chore(portafolio): actualizar capturas reales de Sushi y Allin Mikuy"
+            git push
+          fi
