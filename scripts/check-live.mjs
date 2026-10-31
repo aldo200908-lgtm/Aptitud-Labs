@@ -71,3 +71,56 @@ try{
 console.log('Endpoints públicos: '+passes+'/'+(endpointChecks.length+1)+' comprobaciones aprobadas.');
 
 // Diagnóstico no bloqueante: el estado de publicación requiere revisión humana.
+
+
+// Comprobación puntual y efímera de la vista previa ORIGINAL de PR #27.
+// El PR #27 NO se modifica: así la rama sigue apuntando al commit 5b2dfd8.
+if(process.env.GITHUB_HEAD_REF==='audit/pr27-preview-http-5b2dfd8'){
+  const {createHash}=await import('node:crypto');
+  const commit='5b2dfd825ea3d14f48d74c8a01f3cea8763de2bb';
+  const preview='https://aptitud-labs-git-home-resumenes-final-aldo200908-lgtms-projects.vercel.app/?nocache=5b2dfd8';
+  const raw='https://raw.githubusercontent.com/aldo200908-lgtm/Aptitud-Labs/'+commit+'/index.html';
+  const options={signal:AbortSignal.timeout(25000),cache:'no-store',headers:{'Cache-Control':'no-cache','Pragma':'no-cache','User-Agent':'AptitudLabs-PreviewAudit/1.0'}};
+  try{
+    const response=await fetch(preview,options);
+    const buffer=Buffer.from(await response.arrayBuffer());
+    const html=buffer.toString('utf8');
+    const sha=createHash('sha256').update(buffer).digest('hex');
+    const occurrences=(needle)=>html.split(needle).length-1;
+    const service=occurrences('VER SERVICIOS');
+    const nfc=occurrences('EXPLORAR TIENDA');
+    const subtitle=html.includes('Elige la modalidad que encaja con tu negocio');
+    const webWeb=html.includes('WEB WEB'),iaIa=html.includes('IA IA');
+    const labelPairs=[...html.matchAll(/<span class="al-summary-art-tag">([^<]*)<\/span>\s*<span class="al-summary-art-motif">([^<]*)<\/span>/g)];
+    const visualDuplicates=labelPairs.filter(m=>m[1].split(/[^\p{L}\d]+/u).filter(Boolean).includes(m[2])).map(m=>m[1]+' / '+m[2]);
+    const original=await fetch(raw,{signal:AbortSignal.timeout(25000)});
+    const expectedBuffer=Buffer.from(await original.arrayBuffer());
+    const expectedSha=createHash('sha256').update(expectedBuffer).digest('hex');
+    const matchesOriginal=buffer.equals(expectedBuffer);
+    console.log('=== EVIDENCIA HTTP — PR #27 COMMIT 5b2dfd8 ===');
+    console.log('URL solicitada: '+preview);
+    console.log('HTTP: '+response.status+'; URL final: '+response.url);
+    console.log('content-type: '+(response.headers.get('content-type')||'ausente')+'; x-vercel-id: '+(response.headers.get('x-vercel-id')||'ausente')+'; x-vercel-cache: '+(response.headers.get('x-vercel-cache')||'ausente'));
+    console.log('VER SERVICIOS: '+service);
+    console.log('EXPLORAR TIENDA: '+nfc);
+    console.log('Subtítulo exacto: '+subtitle);
+    console.log('WEB WEB literal: '+webWeb);
+    console.log('IA IA literal: '+iaIa);
+    console.log('Motivos visualmente duplicados: '+JSON.stringify(visualDuplicates));
+    console.log('Pares etiqueta/motivo: '+labelPairs.length);
+    console.log('SHA-256 HTML obtenido: '+sha);
+    console.log('SHA-256 index.html de commit '+commit+': '+expectedSha);
+    console.log('HTML byte por byte igual al commit 5b2dfd8: '+matchesOriginal);
+    console.log('Vercel response bytes: '+buffer.length+'; GitHub response status: '+original.status);
+    if(!response.ok||!original.ok||service!==0||nfc!==1||!subtitle||webWeb||iaIa||visualDuplicates.length||labelPairs.length!==9||!matchesOriginal){
+      console.log('::error::La vista previa no corresponde al HTML verificado del commit 5b2dfd8.');
+      process.exitCode=1;
+    }else{
+      console.log('RESULTADO: APROBADO. La vista previa entrega exactamente el HTML de index.html del commit 5b2dfd8.');
+    }
+    console.log('=== FIN EVIDENCIA HTTP ===');
+  }catch(e){
+    console.log('::error::No se pudo verificar el HTML de Vercel por HTTP: '+e.stack);
+    process.exitCode=1;
+  }
+}
