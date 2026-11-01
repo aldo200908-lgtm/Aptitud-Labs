@@ -1,0 +1,226 @@
+{
+  "pages": [
+    {
+      "route": "",
+      "name": "inicio",
+      "width": 390,
+      "height": 4864,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "proyectos/",
+      "name": "portafolio",
+      "width": 390,
+      "height": 6066,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "servicios/",
+      "name": "servicios",
+      "width": 390,
+      "height": 5033,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "planes/",
+      "name": "planes",
+      "width": 390,
+      "height": 4448,
+      "css": 2,
+      "js": 4
+    },
+    {
+      "route": "nfc-qr/",
+      "name": "nfc",
+      "width": 390,
+      "height": 4631,
+      "css": 3,
+      "js": 2
+    },
+    {
+      "route": "cotizar/",
+      "name": "cotizar",
+      "width": 390,
+      "height": 3693,
+      "css": 5,
+      "js": 5
+    },
+    {
+      "route": "",
+      "name": "inicio",
+      "width": 1280,
+      "height": 3568,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "proyectos/",
+      "name": "portafolio",
+      "width": 1280,
+      "height": 4520,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "servicios/",
+      "name": "servicios",
+      "width": 1280,
+      "height": 3658,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "planes/",
+      "name": "planes",
+      "width": 1280,
+      "height": 3197,
+      "css": 2,
+      "js": 4
+    },
+    {
+      "route": "nfc-qr/",
+      "name": "nfc",
+      "width": 1280,
+      "height": 3735,
+      "css": 3,
+      "js": 2
+    },
+    {
+      "route": "cotizar/",
+      "name": "cotizar",
+      "width": 1280,
+      "height": 2581,
+      "css": 5,
+      "js": 5
+    }
+  ],
+  "checks": [
+    "inicio has exactly one H1 at 390px",
+    "inicio no horizontal overflow at 390px",
+    "inicio loads shared design at 390px",
+    "inicio no legacy theme imports",
+    "inicio images decode after natural mobile scrolling",
+    "portafolio has exactly one H1 at 390px",
+    "portafolio no horizontal overflow at 390px",
+    "portafolio loads shared design at 390px",
+    "portafolio no legacy theme imports",
+    "portafolio images decode after natural mobile scrolling",
+    "servicios has exactly one H1 at 390px",
+    "servicios no horizontal overflow at 390px",
+    "servicios loads shared design at 390px",
+    "servicios no legacy theme imports",
+    "servicios images decode after natural mobile scrolling",
+    "planes has exactly one H1 at 390px",
+    "planes no horizontal overflow at 390px",
+    "planes loads shared design at 390px",
+    "planes no legacy theme imports",
+    "planes images decode after natural mobile scrolling",
+    "nfc has exactly one H1 at 390px",
+    "nfc no horizontal overflow at 390px",
+    "nfc loads shared design at 390px",
+    "nfc no legacy theme imports",
+    "nfc images decode after natural mobile scrolling",
+    "cotizar has exactly one H1 at 390px",
+    "cotizar no horizontal overflow at 390px",
+    "cotizar loads shared design at 390px",
+    "cotizar no legacy theme imports",
+    "cotizar images decode after natural mobile scrolling",
+    "inicio has exactly one H1 at 1280px",
+    "inicio no horizontal overflow at 1280px",
+    "inicio loads shared design at 1280px",
+    "inicio no legacy theme imports",
+    "portafolio has exactly one H1 at 1280px",
+    "portafolio no horizontal overflow at 1280px",
+    "portafolio loads shared design at 1280px",
+    "portafolio no legacy theme imports",
+    "servicios has exactly one H1 at 1280px",
+    "servicios no horizontal overflow at 1280px",
+    "servicios loads shared design at 1280px",
+    "servicios no legacy theme imports",
+    "planes has exactly one H1 at 1280px",
+    "planes no horizontal overflow at 1280px",
+    "planes loads shared design at 1280px",
+    "planes no legacy theme imports",
+    "nfc has exactly one H1 at 1280px",
+    "nfc no horizontal overflow at 1280px",
+    "nfc loads shared design at 1280px",
+    "nfc no legacy theme imports",
+    "cotizar has exactly one H1 at 1280px",
+    "cotizar no horizontal overflow at 1280px",
+    "cotizar loads shared design at 1280px",
+    "cotizar no legacy theme imports",
+    "mobile menu opens",
+    "mobile menu closes",
+    "homepage contains no demo wall",
+    "portfolio preserves seven projects",
+    "portfolio preserves external demo links",
+    "portfolio tool filter shows two systems",
+    "portfolio web filter shows five websites",
+    "three pricing plan totals render",
+    "NFC catalog preserves six products",
+    "NFC detail dialog opens",
+    "NFC cart opens after adding product",
+    "NFC cart calculates subtotal",
+    "quote shows one route at a time",
+    "quote calculator opens",
+    "quote calculator computes total",
+    "quote calculator switches to application pricing",
+    "formal six-step brief is mounted",
+    "formal brief hides other quote panels",
+    "pricing link selects calculator directly",
+    "quote calculator no mobile overflow"
+  ],
+  "screenshots": [
+    {
+      "path": "atelier-evidence/screens/inicio-mobile-full.jpg",
+      "size": 183354
+    },
+    {
+      "path": "atelier-evidence/screens/portafolio-mobile-full.jpg",
+      "size": 214829
+    },
+    {
+      "path": "atelier-evidence/screens/servicios-mobile-full.jpg",
+      "size": 189663
+    },
+    {
+      "path": "atelier-evidence/screens/planes-mobile-full.jpg",
+      "size": 168422
+    },
+    {
+      "path": "atelier-evidence/screens/nfc-mobile-full.jpg",
+      "size": 198201
+    },
+    {
+      "path": "atelier-evidence/screens/cotizar-mobile-full.jpg",
+      "size": 141166
+    },
+    {
+      "path": "atelier-evidence/screens/inicio-desktop.jpg",
+      "size": 266653
+    },
+    {
+      "path": "atelier-evidence/screens/portafolio-desktop.jpg",
+      "size": 371914
+    },
+    {
+      "path": "atelier-evidence/screens/servicios-desktop.jpg",
+      "size": 277771
+    },
+    {
+      "path": "atelier-evidence/screens/planes-desktop.jpg",
+      "size": 243422
+    },
+    {
+      "path": "atelier-evidence/screens/nfc-desktop.jpg",
+      "size": 300932
+    },
+    {
+      "path": "atelier-evidence/screens/cotizar-desktop.jpg",
+      "size": 207992
+    }
+  ]
+}
