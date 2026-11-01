@@ -49,6 +49,46 @@
       "js": 5
     },
     {
+      "route": "diseno-web-puno/",
+      "name": "puno",
+      "width": 390,
+      "height": 3763,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "diseno-web-juliaca/",
+      "name": "juliaca",
+      "width": 390,
+      "height": 3694,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "web-para-restaurantes/",
+      "name": "restaurantes",
+      "width": 390,
+      "height": 3666,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "web-para-barberias/",
+      "name": "barberias",
+      "width": 390,
+      "height": 3554,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "privacidad/",
+      "name": "privacidad",
+      "width": 390,
+      "height": 5304,
+      "css": 2,
+      "js": 1
+    },
+    {
       "route": "",
       "name": "inicio",
       "width": 1280,
@@ -95,6 +135,46 @@
       "height": 2581,
       "css": 5,
       "js": 5
+    },
+    {
+      "route": "diseno-web-puno/",
+      "name": "puno",
+      "width": 1280,
+      "height": 3182,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "diseno-web-juliaca/",
+      "name": "juliaca",
+      "width": 1280,
+      "height": 3153,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "web-para-restaurantes/",
+      "name": "restaurantes",
+      "width": 1280,
+      "height": 3218,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "web-para-barberias/",
+      "name": "barberias",
+      "width": 1280,
+      "height": 3088,
+      "css": 2,
+      "js": 1
+    },
+    {
+      "route": "privacidad/",
+      "name": "privacidad",
+      "width": 1280,
+      "height": 3331,
+      "css": 2,
+      "js": 1
     }
   ],
   "checks": [
@@ -128,6 +208,31 @@
     "cotizar loads shared design at 390px",
     "cotizar no legacy theme imports",
     "cotizar images decode after natural mobile scrolling",
+    "puno has exactly one H1 at 390px",
+    "puno no horizontal overflow at 390px",
+    "puno loads shared design at 390px",
+    "puno no legacy theme imports",
+    "puno images decode after natural mobile scrolling",
+    "juliaca has exactly one H1 at 390px",
+    "juliaca no horizontal overflow at 390px",
+    "juliaca loads shared design at 390px",
+    "juliaca no legacy theme imports",
+    "juliaca images decode after natural mobile scrolling",
+    "restaurantes has exactly one H1 at 390px",
+    "restaurantes no horizontal overflow at 390px",
+    "restaurantes loads shared design at 390px",
+    "restaurantes no legacy theme imports",
+    "restaurantes images decode after natural mobile scrolling",
+    "barberias has exactly one H1 at 390px",
+    "barberias no horizontal overflow at 390px",
+    "barberias loads shared design at 390px",
+    "barberias no legacy theme imports",
+    "barberias images decode after natural mobile scrolling",
+    "privacidad has exactly one H1 at 390px",
+    "privacidad no horizontal overflow at 390px",
+    "privacidad loads shared design at 390px",
+    "privacidad no legacy theme imports",
+    "privacidad images decode after natural mobile scrolling",
     "inicio has exactly one H1 at 1280px",
     "inicio no horizontal overflow at 1280px",
     "inicio loads shared design at 1280px",
@@ -152,6 +257,26 @@
     "cotizar no horizontal overflow at 1280px",
     "cotizar loads shared design at 1280px",
     "cotizar no legacy theme imports",
+    "puno has exactly one H1 at 1280px",
+    "puno no horizontal overflow at 1280px",
+    "puno loads shared design at 1280px",
+    "puno no legacy theme imports",
+    "juliaca has exactly one H1 at 1280px",
+    "juliaca no horizontal overflow at 1280px",
+    "juliaca loads shared design at 1280px",
+    "juliaca no legacy theme imports",
+    "restaurantes has exactly one H1 at 1280px",
+    "restaurantes no horizontal overflow at 1280px",
+    "restaurantes loads shared design at 1280px",
+    "restaurantes no legacy theme imports",
+    "barberias has exactly one H1 at 1280px",
+    "barberias no horizontal overflow at 1280px",
+    "barberias loads shared design at 1280px",
+    "barberias no legacy theme imports",
+    "privacidad has exactly one H1 at 1280px",
+    "privacidad no horizontal overflow at 1280px",
+    "privacidad loads shared design at 1280px",
+    "privacidad no legacy theme imports",
     "mobile menu opens",
     "mobile menu closes",
     "homepage contains no demo wall",
@@ -176,7 +301,7 @@
   "screenshots": [
     {
       "path": "atelier-evidence/screens/inicio-mobile-full.jpg",
-      "size": 183354
+      "size": 174531
     },
     {
       "path": "atelier-evidence/screens/portafolio-mobile-full.jpg",
@@ -184,7 +309,7 @@
     },
     {
       "path": "atelier-evidence/screens/servicios-mobile-full.jpg",
-      "size": 199798
+      "size": 190599
     },
     {
       "path": "atelier-evidence/screens/planes-mobile-full.jpg",
@@ -199,8 +324,28 @@
       "size": 141143
     },
     {
+      "path": "atelier-evidence/screens/puno-mobile-full.jpg",
+      "size": 132335
+    },
+    {
+      "path": "atelier-evidence/screens/juliaca-mobile-full.jpg",
+      "size": 129337
+    },
+    {
+      "path": "atelier-evidence/screens/restaurantes-mobile-full.jpg",
+      "size": 140233
+    },
+    {
+      "path": "atelier-evidence/screens/barberias-mobile-full.jpg",
+      "size": 132450
+    },
+    {
+      "path": "atelier-evidence/screens/privacidad-mobile-full.jpg",
+      "size": 307995
+    },
+    {
       "path": "atelier-evidence/screens/inicio-desktop.jpg",
-      "size": 266634
+      "size": 266653
     },
     {
       "path": "atelier-evidence/screens/portafolio-desktop.jpg",
@@ -208,19 +353,39 @@
     },
     {
       "path": "atelier-evidence/screens/servicios-desktop.jpg",
-      "size": 277788
+      "size": 277771
     },
     {
       "path": "atelier-evidence/screens/planes-desktop.jpg",
-      "size": 243438
+      "size": 243422
     },
     {
       "path": "atelier-evidence/screens/nfc-desktop.jpg",
-      "size": 285698
+      "size": 341479
     },
     {
       "path": "atelier-evidence/screens/cotizar-desktop.jpg",
-      "size": 207912
+      "size": 207992
+    },
+    {
+      "path": "atelier-evidence/screens/puno-desktop.jpg",
+      "size": 237037
+    },
+    {
+      "path": "atelier-evidence/screens/juliaca-desktop.jpg",
+      "size": 224336
+    },
+    {
+      "path": "atelier-evidence/screens/restaurantes-desktop.jpg",
+      "size": 224363
+    },
+    {
+      "path": "atelier-evidence/screens/barberias-desktop.jpg",
+      "size": 204105
+    },
+    {
+      "path": "atelier-evidence/screens/privacidad-desktop.jpg",
+      "size": 361817
     }
   ]
 }
