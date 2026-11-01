@@ -5,176 +5,176 @@
       "name": "inicio",
       "width": 390,
       "height": 4864,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "proyectos/",
       "name": "portafolio",
       "width": 390,
       "height": 6066,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "servicios/",
       "name": "servicios",
       "width": 390,
       "height": 5033,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "planes/",
       "name": "planes",
       "width": 390,
       "height": 4448,
-      "css": 2,
-      "js": 4
+      "css": 3,
+      "js": 5
     },
     {
       "route": "nfc-qr/",
       "name": "nfc",
       "width": 390,
       "height": 4631,
-      "css": 3,
-      "js": 2
+      "css": 4,
+      "js": 3
     },
     {
       "route": "cotizar/",
       "name": "cotizar",
       "width": 390,
       "height": 3693,
-      "css": 5,
-      "js": 5
+      "css": 6,
+      "js": 6
     },
     {
       "route": "diseno-web-puno/",
       "name": "puno",
       "width": 390,
       "height": 3763,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "diseno-web-juliaca/",
       "name": "juliaca",
       "width": 390,
       "height": 3694,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "web-para-restaurantes/",
       "name": "restaurantes",
       "width": 390,
       "height": 3666,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "web-para-barberias/",
       "name": "barberias",
       "width": 390,
       "height": 3554,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "privacidad/",
       "name": "privacidad",
       "width": 390,
       "height": 5304,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "",
       "name": "inicio",
       "width": 1280,
       "height": 3568,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "proyectos/",
       "name": "portafolio",
       "width": 1280,
       "height": 4520,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "servicios/",
       "name": "servicios",
       "width": 1280,
       "height": 3658,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "planes/",
       "name": "planes",
       "width": 1280,
       "height": 3197,
-      "css": 2,
-      "js": 4
+      "css": 3,
+      "js": 5
     },
     {
       "route": "nfc-qr/",
       "name": "nfc",
       "width": 1280,
       "height": 3735,
-      "css": 3,
-      "js": 2
+      "css": 4,
+      "js": 3
     },
     {
       "route": "cotizar/",
       "name": "cotizar",
       "width": 1280,
       "height": 2581,
-      "css": 5,
-      "js": 5
+      "css": 6,
+      "js": 6
     },
     {
       "route": "diseno-web-puno/",
       "name": "puno",
       "width": 1280,
       "height": 3182,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "diseno-web-juliaca/",
       "name": "juliaca",
       "width": 1280,
       "height": 3153,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "web-para-restaurantes/",
       "name": "restaurantes",
       "width": 1280,
       "height": 3218,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "web-para-barberias/",
       "name": "barberias",
       "width": 1280,
       "height": 3088,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     },
     {
       "route": "privacidad/",
       "name": "privacidad",
       "width": 1280,
       "height": 3331,
-      "css": 2,
-      "js": 1
+      "css": 3,
+      "js": 2
     }
   ],
   "checks": [
@@ -296,96 +296,108 @@
     "formal six-step brief is mounted",
     "formal brief hides other quote panels",
     "pricing link selects calculator directly",
-    "quote calculator no mobile overflow"
+    "quote calculator no mobile overflow",
+    "motion stylesheet linked",
+    "motion JavaScript linked",
+    "motion engine boots on default preference",
+    "nonintrusive scroll-progress indicator mounted",
+    "hero photograph has scroll-linked depth",
+    "scroll indicator advances with document position",
+    "semantic section titles carry motion reveal without rewriting text",
+    "project cards stay visible during animation preparation",
+    "responsive 3D treatment prepared without hover device",
+    "reduced-motion preference disables the motion engine",
+    "reduced-motion titles remain fully readable",
+    "all seven projects remain available with motion reduced"
   ],
   "screenshots": [
     {
       "path": "atelier-evidence/screens/inicio-mobile-full.jpg",
-      "size": 174531
+      "size": 136389
     },
     {
       "path": "atelier-evidence/screens/portafolio-mobile-full.jpg",
-      "size": 205164
+      "size": 172997
     },
     {
       "path": "atelier-evidence/screens/servicios-mobile-full.jpg",
-      "size": 190599
+      "size": 142131
     },
     {
       "path": "atelier-evidence/screens/planes-mobile-full.jpg",
-      "size": 168422
+      "size": 147581
     },
     {
       "path": "atelier-evidence/screens/nfc-mobile-full.jpg",
-      "size": 184261
+      "size": 156434
     },
     {
       "path": "atelier-evidence/screens/cotizar-mobile-full.jpg",
-      "size": 141143
+      "size": 128490
     },
     {
       "path": "atelier-evidence/screens/puno-mobile-full.jpg",
-      "size": 132335
+      "size": 121424
     },
     {
       "path": "atelier-evidence/screens/juliaca-mobile-full.jpg",
-      "size": 129337
+      "size": 113632
     },
     {
       "path": "atelier-evidence/screens/restaurantes-mobile-full.jpg",
-      "size": 140233
+      "size": 115072
     },
     {
       "path": "atelier-evidence/screens/barberias-mobile-full.jpg",
-      "size": 132450
+      "size": 112794
     },
     {
       "path": "atelier-evidence/screens/privacidad-mobile-full.jpg",
-      "size": 307995
+      "size": 308060
     },
     {
       "path": "atelier-evidence/screens/inicio-desktop.jpg",
-      "size": 266653
+      "size": 202033
     },
     {
       "path": "atelier-evidence/screens/portafolio-desktop.jpg",
-      "size": 371914
+      "size": 266396
     },
     {
       "path": "atelier-evidence/screens/servicios-desktop.jpg",
-      "size": 277771
+      "size": 208040
     },
     {
       "path": "atelier-evidence/screens/planes-desktop.jpg",
-      "size": 243422
+      "size": 207988
     },
     {
       "path": "atelier-evidence/screens/nfc-desktop.jpg",
-      "size": 341479
+      "size": 257277
     },
     {
       "path": "atelier-evidence/screens/cotizar-desktop.jpg",
-      "size": 207992
+      "size": 190304
     },
     {
       "path": "atelier-evidence/screens/puno-desktop.jpg",
-      "size": 237037
+      "size": 188529
     },
     {
       "path": "atelier-evidence/screens/juliaca-desktop.jpg",
-      "size": 224336
+      "size": 182997
     },
     {
       "path": "atelier-evidence/screens/restaurantes-desktop.jpg",
-      "size": 224363
+      "size": 174576
     },
     {
       "path": "atelier-evidence/screens/barberias-desktop.jpg",
-      "size": 204105
+      "size": 172313
     },
     {
       "path": "atelier-evidence/screens/privacidad-desktop.jpg",
-      "size": 361817
+      "size": 362224
     }
   ]
 }
