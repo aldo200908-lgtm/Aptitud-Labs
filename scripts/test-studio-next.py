@@ -71,7 +71,11 @@ def scroll_load():
 def check_layout(route,label,width):
     driver.set_window_size(width,844 if width<600 else 900)
     visit(route)
+    # Ensure lazy images genuinely finish decoding before declaring them broken.
+    js("document.querySelectorAll('img').forEach(i=>i.loading='eager')")
     scroll_load()
+    WebDriverWait(driver,15).until(lambda d: d.execute_script(
+        "return [...document.images].every(i=>i.complete)"))
     stats=js("""
         const root=document.documentElement;
         const images=[...document.images].filter(i=>i.getClientRects().length>0);
