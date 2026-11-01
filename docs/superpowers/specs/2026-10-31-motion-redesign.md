@@ -1,0 +1,4 @@
+# Aptitud Labs motion redesign
+User request: remodel the complete GitHub Pages website with motion graphics, 3D and effects. Preserve the existing brand, separate portfolio, contact details, prices and working quoting/NFC modules. No repeated stock imagery or AI glow. Graphite and silver with restrained ice blue, large editorial type, a procedural 3D sculpture, and three sticky service scenes. Keep native scrolling, a readable mobile layout, keyboard controls and reduced-motion fallback. Publish to the existing gh-pages branch after checks.
+
+Approaches considered: keep patching legacy V3–V11 (rejected: conflicting animations); large WebGL framework (unnecessary dependencies); consolidate the existing clean static pages and add a small native canvas/scroll engine (selected implementation judgment). No hosting migration.
