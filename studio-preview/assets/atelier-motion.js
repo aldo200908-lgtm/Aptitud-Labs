@@ -233,3 +233,94 @@
     });
   });
 })();
+
+
+/* AL_MOTION_3D_EDITORIAL_V2 */
+;(() => {
+  'use strict';
+  const root=document.body;
+  if(!root || !root.classList.contains('al-theme'))return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+  if(reduce.matches)return;
+  const photo=document.querySelector('.al-hero-photo');
+  const route=location.pathname.replace(/\/+$/,'/') || '/';
+  const home=route==='/' || route==='/Aptitud-Labs/studio-preview/';
+  const nfc=route.endsWith('/nfc-qr/');
+  let stage=null;
+  if(home && photo){
+    root.classList.add('al-home-stage');
+    const wrap=document.createElement('div');
+    wrap.className='al-depth-stage';
+    wrap.setAttribute('aria-hidden','true');
+    wrap.innerHTML='<span class="al-depth-horizon"></span><span class="al-depth-aura"></span>'+
+      '<div class="al-depth-world"><span class="al-depth-ring al-depth-ring--one"></span>'+
+      '<span class="al-depth-ring al-depth-ring--two"></span>'+
+      '<span class="al-depth-ring al-depth-ring--three"></span>'+
+      '<span class="al-depth-shard al-depth-shard--one"></span>'+
+      '<span class="al-depth-shard al-depth-shard--two"></span>'+
+      '<div class="al-depth-cube">'+
+      '<span class="al-depth-face al-depth-face--front"><span class="al-depth-signet">A<i>.</i></span></span>'+
+      '<span class="al-depth-face al-depth-face--back"></span>'+
+      '<span class="al-depth-face al-depth-face--left"></span>'+
+      '<span class="al-depth-face al-depth-face--right"></span>'+
+      '<span class="al-depth-face al-depth-face--top"></span>'+
+      '<span class="al-depth-face al-depth-face--bottom"></span></div></div>';
+    photo.appendChild(wrap);
+    stage=wrap;
+  } else if(nfc && photo){
+    const card=document.createElement('div');
+    card.className='al-nfc-depth-card';
+    card.setAttribute('aria-hidden','true');
+    card.innerHTML='<span>APTITUD LABS.</span><span class="al-nfc-arc">)))</span><small>NFC / CONTACTO</small>';
+    photo.appendChild(card);
+  }
+  const cardNodes=[...document.querySelectorAll('.al-work-card,.al-service-tile,.al-price-card,.nfc-product')];
+  cardNodes.forEach((card,i)=>{
+    card.classList.add('al-motion-kinetic-card');
+    card.style.setProperty('--al-card-enter',((i%2===0?1:-1)*17)+'deg');
+  });
+  const catalog=document.querySelector('#nfc-products');
+  const mutation=catalog && new MutationObserver(records=>{
+    if(records.every(x=>x.type!=='childList'))return;
+    catalog.querySelectorAll('.nfc-product:not(.al-motion-kinetic-card)').forEach((card,i)=>{
+      card.classList.add('al-motion-kinetic-card');
+      card.style.setProperty('--al-card-enter',((i%2===0?1:-1)*17)+'deg');
+    });
+  });
+  if(mutation)mutation.observe(catalog,{childList:true});
+  const viewport=()=>window.innerHeight||760;
+  let raf=0;
+  function update(){
+    raf=0;
+    if(reduce.matches)return;
+    const height=viewport();
+    if(stage && photo){
+      const rect=photo.getBoundingClientRect();
+      const progress=Math.max(-1,Math.min(1,(rect.top+rect.height*.5-height*.5)/height));
+      stage.style.setProperty('--al-depth-scroll',(-progress*40).toFixed(1)+'px');
+      stage.style.setProperty('--al-depth-tilt',(progress*-7).toFixed(2)+'deg');
+    }
+    if(window.innerWidth <= 900){
+      document.querySelectorAll('.al-motion-kinetic-card.al-motion-visible:not([hidden])').forEach(card=>{
+        const r=card.getBoundingClientRect();
+        if(r.bottom<0||r.top>height)return;
+        const p=Math.max(-1,Math.min(1,(r.top+r.height*.5-height*.5)/height));
+        card.style.setProperty('--al-card-live-x',(p*9).toFixed(2)+'deg');
+        card.style.setProperty('--al-card-live-y',(p*5).toFixed(2)+'deg');
+        card.style.setProperty('--al-card-live-z',(-Math.max(0,1-Math.abs(p))*8).toFixed(1)+'px');
+      });
+    }
+  }
+  function schedule(){if(!raf)raf=requestAnimationFrame(update)}
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+  schedule();
+  reduce.addEventListener?.('change',e=>{
+    if(!e.matches)return;
+    if(raf)cancelAnimationFrame(raf);
+    stage?.remove();
+    document.querySelector('.al-nfc-depth-card')?.remove();
+    root.classList.remove('al-home-stage');
+    mutation?.disconnect();
+  });
+})();
