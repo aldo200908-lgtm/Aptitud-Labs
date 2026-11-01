@@ -94,7 +94,8 @@ def document(name,title,description,body,modules=(),scripts=()):
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 {css}</head><body class="studio-next" data-page="{name}" data-theme="dark">
 {nav(name)}<main id="contenido">{body}</main>{footer()}{js}</body></html>'''
-    where=OUT/(name if name!="home" else "")
+    route_dirs={"home":"","projects":"proyectos","services":"servicios","plans":"planes","nfc":"nfc-qr","quote":"cotizar"}
+    where=OUT/route_dirs.get(name,name)
     where.mkdir(exist_ok=True,parents=True)
     (where/"index.html").write_text(out,encoding="utf-8")
     print(f"BUILD: {name} | {len(out)} bytes")
