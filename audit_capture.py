@@ -124,6 +124,8 @@ try:
                 if m["totalHeight"]>8400:
                     height=min(2600,m["totalHeight"]-8400)
                     results["screens"].append(capture(label+"-mobile-bottom",extra_clip={"x":0,"y":m["totalHeight"]-height,"width":min(m["clientWidth"],390),"height":height,"scale":1}))
+            if label in ("07-puno-seo","08-privacidad","09-juliaca-seo","10-soluciones"):
+                results["screens"].append(capture(label+"-mobile-top"))
             if label=="01-inicio" and m["menuButton"]:
                 el=driver.find_element(By.ID,"resource-menu-toggle")
                 el.click();time.sleep(.2)
