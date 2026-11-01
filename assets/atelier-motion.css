@@ -207,6 +207,46 @@ body.al-theme{
 ::view-transition-old(root){animation:.18s ease-out both al-nav-leave}
 ::view-transition-new(root){animation:.25s ease-in both al-nav-enter}
 .al-hero-photo{view-transition-name:al-hero-photograph}
+/* Motion graphics carry through navigation and state changes, not just on scroll. */
+@keyframes al-menu-arrive{
+  from{opacity:.3;transform:translate3d(0,-12px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@keyframes al-menu-link{
+  from{opacity:.3;transform:translate3d(0,10px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+.al-mobile-nav:not([hidden]){
+  animation:al-menu-arrive .36s var(--al-motion-ease) both;
+  transform-origin:top center;
+}
+.al-mobile-nav:not([hidden]) a{
+  animation:al-menu-link .42s var(--al-motion-ease) both;
+  animation-delay:calc((var(--al-menu-index,0) * 45ms) + 70ms);
+}
+.al-mobile-nav:not([hidden]) a:nth-child(1){--al-menu-index:0}
+.al-mobile-nav:not([hidden]) a:nth-child(2){--al-menu-index:1}
+.al-mobile-nav:not([hidden]) a:nth-child(3){--al-menu-index:2}
+.al-mobile-nav:not([hidden]) a:nth-child(4){--al-menu-index:3}
+.al-mobile-nav:not([hidden]) a:nth-child(5){--al-menu-index:4}
+.al-mobile-nav:not([hidden]) a:nth-child(6){--al-menu-index:5}
+@keyframes al-panel-arrive{
+  from{opacity:.6;transform:translate3d(0,16px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+.al-motion-enabled .al-choice-panel:not([hidden]){
+  animation:al-panel-arrive .52s var(--al-motion-ease) both;
+}
+.al-motion-enabled .nfc-shop-overlay:not([hidden]) .nfc-shop-dialog,
+.al-motion-enabled .nfc-shop-overlay:not([hidden]) .nfc-cart-dialog{
+  animation:al-panel-arrive .4s var(--al-motion-ease) both;
+}
+.al-motion-enabled .al-filter button[aria-pressed=true],
+.al-motion-enabled .al-choice[aria-pressed=true]{transition:background-color .23s ease,border-color .23s ease}
+.al-motion-enabled .al-btn:active,
+.al-motion-enabled .nfc-product button:active{
+  transform:scale(.987);
+}
 /* Accessibility and budget: disable all discretionary motion if requested. */
 @media(prefers-reduced-motion:reduce){
   @view-transition{navigation:none}
@@ -227,6 +267,10 @@ body.al-theme{
     transform:none!important;animation:none!important;transition:none!important;box-shadow:none!important
   }
   .al-motion-enabled .al-btn span[aria-hidden=true]{transform:none!important}
+  .al-mobile-nav:not([hidden]),.al-mobile-nav:not([hidden]) a,
+  .al-choice-panel:not([hidden]),.nfc-shop-dialog,.nfc-cart-dialog{
+    animation:none!important;transition:none!important
+  }
   .al-terms details[open] p{animation:none!important}
   ::view-transition-old(root),::view-transition-new(root){animation:none!important}
 }

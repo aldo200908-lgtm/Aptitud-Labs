@@ -153,6 +153,15 @@ try:
  check(js("return [...document.querySelectorAll('.al-service-tile')].every(x=>getComputedStyle(x).opacity!=='0')"),
        "service cards remain perceptible before observer reveal")
  load("proyectos/",390)
+ js("""document.querySelectorAll('.al-work-card .al-photograph')[1]
+        .scrollIntoView({block:'center',behavior:'instant'})""")
+ time.sleep(.75)
+ check(js("""const img=document.querySelectorAll('.al-work-card .al-photograph')[1];
+            return img.classList.contains('al-motion-photo-seen') &&
+                   img.querySelector('img').naturalWidth>0"""),
+       "project photographs reveal when actually scrolled into view")
+ snap("portafolio-fotografia-motion-viewport",full=False)
+ load("proyectos/",390)
  check(js("return [...document.querySelectorAll('[data-al-kind]')].every(x=>getComputedStyle(x).opacity!== '0')"),
        "project cards stay visible during animation preparation")
  load("servicios/",1280)
