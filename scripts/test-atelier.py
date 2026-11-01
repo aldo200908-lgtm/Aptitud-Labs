@@ -16,13 +16,14 @@ OUT=Path.cwd()/"atelier-evidence"
 OUT.mkdir(exist_ok=True)
 (OUT/"screens").mkdir(exist_ok=True)
 temp=tempfile.TemporaryDirectory()
-(Path(temp.name)/"Aptitud-Labs").symlink_to(SITE,target_is_directory=True)
+(Path(temp.name)/"Aptitud-Labs").mkdir(exist_ok=True)
+(Path(temp.name)/"Aptitud-Labs"/"studio-preview").symlink_to(SITE,target_is_directory=True)
 class Handler(SimpleHTTPRequestHandler):
  def __init__(self,*args,**kwargs):super().__init__(*args,directory=temp.name,**kwargs)
  def log_message(self,*args):pass
 server=ThreadingHTTPServer(("127.0.0.1",0),Handler)
 threading.Thread(target=server.serve_forever,daemon=True).start()
-BASE="http://127.0.0.1:%d/Aptitud-Labs/"%server.server_port
+BASE="http://127.0.0.1:%d/Aptitud-Labs/studio-preview/"%server.server_port
 os.environ["no_proxy"]="localhost,127.0.0.1"
 os.environ["NO_PROXY"]="localhost,127.0.0.1"
 options=Options()
