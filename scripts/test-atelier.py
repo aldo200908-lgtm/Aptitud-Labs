@@ -70,7 +70,14 @@ def check_page(route,name,width):
        f"{name} no legacy theme imports")
  if width==390:
   scroll_all()
-  images=js("""return [...document.images].map(x=>({src:x.getAttribute('src'),ok:x.complete&&x.naturalWidth>0}))""")
+  try:
+   WebDriverWait(d,12).until(lambda _:
+       js("return [...document.images].every(x=>x.complete&&x.naturalWidth>0)"))
+  except Exception:
+   pass
+  images=js("""return [...document.images].map(x=>({src:x.getAttribute('src'),ok:x.complete&&x.naturalWidth>0,complete:x.complete,naturalWidth:x.naturalWidth}))""")
+  if any(not x["ok"] for x in images):
+   print("IMAGE FAILURES",name,json.dumps([x for x in images if not x["ok"]]),flush=True)
   check(all(x["ok"] for x in images),f"{name} images decode after natural mobile scrolling")
   snap(name+"-mobile-full")
  else:
