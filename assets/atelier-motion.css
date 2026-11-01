@@ -34,11 +34,12 @@ body.al-theme{
   transition:clip-path .92s var(--al-motion-ease),
     opacity .7s ease,transform .92s var(--al-motion-ease);
   transition-delay:var(--al-motion-delay,0ms);
-  clip-path:inset(0 0 80% 0);
-  opacity:.78;transform:translate3d(0,25px,0);
+  /* Text stays readable even if a scroll observer is late. */
+  clip-path:none;
+  opacity:.8;transform:translate3d(0,20px,0);
 }
 .al-motion-enabled .al-motion-heading.al-motion-visible{
-  clip-path:inset(-5% -5% -5% -5%);opacity:1;transform:translate3d(0,0,0)
+  clip-path:none;opacity:1;transform:translate3d(0,0,0)
 }
 .al-motion-enabled .al-motion-heading em{display:inline;transition:color .5s ease}
 .al-motion-enabled .al-motion-heading.al-motion-visible em{color:var(--al-accent)}
@@ -83,7 +84,9 @@ body.al-theme{
 }
 .al-motion-enabled .al-motion-photo:not(.al-hero-photo)::before{
   content:"";z-index:2;position:absolute;inset:0;pointer-events:none;
-  background:#17232b;transform:translate3d(0,0,0) scaleX(1);
+  /* Translucent shutter: photography stays perceptible before reveal. */
+  background:linear-gradient(90deg,#17232b6f,#17232b36);
+  transform:translate3d(0,0,0) scaleX(1);
   transform-origin:right center;
   transition:transform 1.04s var(--al-motion-ease);
   transition-delay:var(--al-motion-delay,0ms);

@@ -148,6 +148,10 @@ try:
  progress=js("return parseFloat(document.querySelector('.al-header').style.getPropertyValue('--al-document-progress'))")
  check(progress>0 and progress<1,"scroll indicator advances with document position")
  check(js("return [...document.querySelectorAll('.al-motion-heading')].length>=3"),"semantic section titles carry motion reveal without rewriting text")
+ check(js("return getComputedStyle(document.querySelector('.al-section-title')).clipPath==='none'"),
+       "motion headings never clip readable text when offscreen")
+ check(js("return [...document.querySelectorAll('.al-service-tile')].every(x=>getComputedStyle(x).opacity!=='0')"),
+       "service cards remain perceptible before observer reveal")
  load("proyectos/",390)
  check(js("return [...document.querySelectorAll('[data-al-kind]')].every(x=>getComputedStyle(x).opacity!== '0')"),
        "project cards stay visible during animation preparation")
