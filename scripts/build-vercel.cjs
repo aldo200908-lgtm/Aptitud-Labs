@@ -22,7 +22,8 @@ function copy(relative) {
   if (/\.(html|css|js|json|webmanifest|svg|txt)$/i.test(source)) {
     let content = fs.readFileSync(source, 'utf8')
       .replaceAll('https://aldo200908-lgtm.github.io/Aptitud-Labs/', 'https://aptitudlabs.com/')
-      .replaceAll('/Aptitud-Labs/', '/');
+      .replaceAll('/Aptitud-Labs/', '/')
+      .replaceAll('/aptitud-web/', '/');
     if (relative.endsWith('index.html') && routes.includes(path.dirname(relative) === '.' ? '' : path.dirname(relative))) {
       content = content.replace(/<meta name="robots" content="noindex,nofollow">/g,
         '<meta name="robots" content="index,follow">');
