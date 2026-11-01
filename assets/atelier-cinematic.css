@@ -246,3 +246,24 @@ body.al-theme{background:#0d1217}
  .al-cinema-scrub-card,.cin-reveal-heading{opacity:1!important;transform:none!important;clip-path:none!important}
  .al-cinema-scrub-card .al-photograph::after{display:none}
 }
+
+
+/* Scroll choreography wins over the earlier mouse-only tilt styles.
+   Still composes pointer tilt when available, rather than suppressing it. */
+body.al-theme.al-motion-enabled .al-cinema-scrub-card.al-motion-tilt.al-motion-visible,
+body.al-theme.al-motion-enabled .al-cinema-scrub-card.al-motion-kinetic-card.al-motion-visible,
+body.al-theme .al-cinema-scrub-card {
+  transform:perspective(1100px)
+    translate3d(0,var(--cin-card-rise,0px),0)
+    rotateX(calc(var(--cin-card-rot,0deg) + var(--al-tilt-x,0deg)))
+    rotateY(calc(var(--cin-card-yaw,0deg) + var(--al-tilt-y,0deg)))
+    scale(var(--cin-card-scale,1))!important;
+  opacity:var(--cin-card-alpha,1)!important;
+  transition:none!important;
+}
+.cin-story-shot{margin:0}
+@media(prefers-reduced-motion:reduce){
+ body.al-theme.al-motion-enabled .al-cinema-scrub-card.al-motion-tilt.al-motion-visible,
+ body.al-theme.al-motion-enabled .al-cinema-scrub-card.al-motion-kinetic-card.al-motion-visible,
+ body.al-theme .al-cinema-scrub-card{transform:none!important;opacity:1!important}
+}
