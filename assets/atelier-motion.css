@@ -34,8 +34,8 @@ body.al-theme{
   transition:clip-path .92s var(--al-motion-ease),
     opacity .7s ease,transform .92s var(--al-motion-ease);
   transition-delay:var(--al-motion-delay,0ms);
-  clip-path:inset(0 0 102% 0);
-  opacity:.22;transform:translate3d(0,34px,0);
+  clip-path:inset(0 0 80% 0);
+  opacity:.78;transform:translate3d(0,25px,0);
 }
 .al-motion-enabled .al-motion-heading.al-motion-visible{
   clip-path:inset(-5% -5% -5% -5%);opacity:1;transform:translate3d(0,0,0)
@@ -45,7 +45,7 @@ body.al-theme{
 .al-motion-enabled .al-motion-copy{
   transition:opacity .68s ease,transform .74s var(--al-motion-ease);
   transition-delay:var(--al-motion-delay,100ms);
-  opacity:0;transform:translate3d(0,22px,0)
+  opacity:.78;transform:translate3d(0,19px,0)
 }
 .al-motion-enabled .al-motion-copy.al-motion-visible{
   opacity:1;transform:translate3d(0,0,0)
@@ -110,7 +110,8 @@ body.al-theme{
 }
 .al-motion-section.al-motion-visible::before{transform:scaleX(1)}
 .al-motion-enabled .al-motion-card{
-  opacity:0;transform:translate3d(0,28px,0) scale(.983);
+  /* Projects remain perceptible even before an observer fires. */
+  opacity:.86;transform:translate3d(0,24px,0) scale(.989);
   transition:
     opacity .72s ease,
     transform .92s var(--al-motion-ease),

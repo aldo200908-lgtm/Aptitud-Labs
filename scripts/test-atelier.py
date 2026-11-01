@@ -107,9 +107,11 @@ try:
  check(len(cards)==7,"portfolio preserves seven projects")
  check(len(d.find_elements(By.CSS_SELECTOR,"[data-al-kind] a[href^='https://']"))>=7,"portfolio preserves external demo links")
  js('document.querySelector(\'[data-al-filter="herramientas"]\').click()')
- check(len([x for x in cards if x.is_displayed()])==2,"portfolio tool filter shows two systems")
+ check(sum(not js("return arguments[0].hidden",x) for x in cards)==2,
+       "portfolio tool filter shows two systems")
  js('document.querySelector(\'[data-al-filter="web"]\').click()')
- check(len([x for x in cards if x.is_displayed()])==5,"portfolio web filter shows five websites")
+ check(sum(not js("return arguments[0].hidden",x) for x in cards)==5,
+       "portfolio web filter shows five websites")
  load("planes/",390)
  prices=[x.text for x in d.find_elements(By.CSS_SELECTOR,"[data-plan-price]")]
  check(len(prices)==3 and all("S/" in x for x in prices),"three pricing plan totals render")
@@ -134,6 +136,47 @@ try:
  load("cotizar/?plan=business#cotizador",390)
  check(not d.find_element(By.CSS_SELECTOR,'[data-al-panel="cotizador"]').get_attribute("hidden"),"pricing link selects calculator directly")
  check(js("return document.documentElement.scrollWidth <= document.documentElement.clientWidth+2"),"quote calculator no mobile overflow")
+ # Validate motion graphics as an enhancement rather than hiding page functionality.
+ load("",390)
+ check(js("return !!document.querySelector('link[href*=\"/assets/atelier-motion.css\"]')"),"motion stylesheet linked")
+ check(js("return !!document.querySelector('script[src*=\"/assets/atelier-motion.js\"]')"),"motion JavaScript linked")
+ check(js("return document.body.classList.contains('al-motion-enabled')"),"motion engine boots on default preference")
+ check(js("return !!document.querySelector('.al-motion-progress')"),"nonintrusive scroll-progress indicator mounted")
+ check(js("return !!document.querySelector('.al-hero-photo.al-motion-hero-depth')"),"hero photograph has scroll-linked depth")
+ js("window.scrollTo(0,750)")
+ time.sleep(.25)
+ progress=js("return parseFloat(document.querySelector('.al-header').style.getPropertyValue('--al-document-progress'))")
+ check(progress>0 and progress<1,"scroll indicator advances with document position")
+ check(js("return [...document.querySelectorAll('.al-motion-heading')].length>=3"),"semantic section titles carry motion reveal without rewriting text")
+ load("proyectos/",390)
+ check(js("return [...document.querySelectorAll('[data-al-kind]')].every(x=>getComputedStyle(x).opacity!== '0')"),
+       "project cards stay visible during animation preparation")
+ load("servicios/",1280)
+ js("document.querySelector('.al-service-tile').scrollIntoView({block:'center',behavior:'instant'})")
+ time.sleep(.3)
+ fine=js("return matchMedia('(hover:hover) and (pointer:fine)').matches")
+ if fine:
+  js("""const c=document.querySelector('.al-service-tile');const r=c.getBoundingClientRect();
+       c.dispatchEvent(new PointerEvent('pointerenter',{pointerType:'mouse'}));
+       c.dispatchEvent(new PointerEvent('pointermove',{pointerType:'mouse',
+         clientX:r.left+r.width*.78,clientY:r.top+r.height*.28,bubbles:true}));""")
+  time.sleep(.15)
+  tilt=js("return document.querySelector('.al-service-tile').style.getPropertyValue('--al-tilt-y')")
+  check(bool(tilt) and abs(float(tilt.replace('deg','')))>0.5,
+        "desktop cards respond in 3D to pointer movement")
+ else:
+  check(js("return !!document.querySelector('.al-service-tile.al-motion-tilt')"),
+        "responsive 3D treatment prepared without hover device")
+ # Accessibility: reduced motion must preserve legible content and all actions.
+ d.execute_cdp_cmd("Emulation.setEmulatedMedia",{"features":[{"name":"prefers-reduced-motion","value":"reduce"}]})
+ load("proyectos/",390)
+ check(js("return !document.body.classList.contains('al-motion-enabled')"),
+       "reduced-motion preference disables the motion engine")
+ check(js("return getComputedStyle(document.querySelector('h1')).clipPath==='none'"),
+       "reduced-motion titles remain fully readable")
+ check(len(d.find_elements(By.CSS_SELECTOR,'[data-al-kind]'))==7,
+       "all seven projects remain available with motion reduced")
+ d.execute_cdp_cmd("Emulation.setEmulatedMedia",{"features":[]})
  for severity in d.get_log("browser"):
   if severity["level"]=="SEVERE" and "favicon" not in severity["message"].lower():
    print("BROWSER",severity["message"][:300],flush=True)
