@@ -24,7 +24,7 @@ jobs:
       - name: Install Selenium
         run: python3 -m pip install --disable-pip-version-check "selenium>=4.20,<5"
       - name: Build GitHub Pages paths without changing production
-        run: python3 scripts/build-gh-pages-preview.py --repo Aptitud-Labs --output _site
+        run: python3 scripts/build-gh-pages-preview.py --repo Aptitud-Labs --subpath studio-preview --output _site
       - name: Functional and visual tests on mobile and desktop
         run: python3 scripts/test-atelier.py
       - name: Save screenshots and test report for review
