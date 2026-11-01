@@ -314,13 +314,13 @@ assert len(pages)==12, f"Expected 12 pages, got {len(pages)}"
 h=(OUT/"index.html").read_text()
 assert "mg-motion" not in h and "v3-workbench" not in h
 assert h.count('data-next-kind=')==0
-portfolio_html=(OUT/"projects"/"index.html").read_text()
+portfolio_html=(OUT/"proyectos"/"index.html").read_text()
 assert portfolio_html.count("data-next-kind=")==7
 assert "allow-same-origin" not in portfolio_html
-quote_html=(OUT/"quote"/"index.html").read_text()
+quote_html=(OUT/"cotizar"/"index.html").read_text()
 for key in ("#quote-total",'id="briefForm"','id="quote-total"','id="brief-next"','data-quote-panel="consulta"','data-quote-panel="cotizador"','data-quote-panel="contratar"'):
     if key=="#quote-total":continue
     assert key in quote_html,key
-assert (OUT/"nfc"/"index.html").read_text().count('id="nfc-products"')==1
+assert (OUT/"nfc-qr"/"index.html").read_text().count('id="nfc-products"')==1
 assert all("noindex,nofollow" in p.read_text() for p in pages)
 print("PASS: clean multipage rebuild, original interactive modules preserved.")
