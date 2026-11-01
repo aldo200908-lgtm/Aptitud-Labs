@@ -62,6 +62,10 @@
   const option=[...serviceField.options].find(o=>o.textContent===serviceLabels[requested]);
   if(option)serviceField.value=option.value;
  }
+ // Keep the selected portfolio reference editable in the inquiry.
+ const reference=new URLSearchParams(location.search).get('referencia');
+ const idea=document.querySelector('#briefForm textarea[name="detalle"]');
+ if(reference&&idea&&!idea.value.trim())idea.value='Me interesa una experiencia similar a '+reference.slice(0,80)+'. Mi negocio se dedica a ';
  // Graceful fallback for broken image files: no stock imagery or fake demos.
  document.querySelectorAll('.hero-art-photo,.feature-media img,.project-media img,.service-row-photo img').forEach(img=>{
   img.addEventListener('error',()=>{img.classList.add('image-unavailable');img.alt='Imagen no disponible';},{once:true});
