@@ -1,0 +1,39 @@
+name: Atelier rebuild | visual QA before preview
+
+on:
+  push:
+    branches: ["redesign/aptitud-studio-clean-20261031"]
+    paths-ignore: ["atelier-evidence/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aptitud-atelier-qa
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated reconstruction
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Selenium
+        run: python3 -m pip install --disable-pip-version-check "selenium>=4.20,<5"
+      - name: Build GitHub Pages paths without changing production
+        run: python3 scripts/build-gh-pages-preview.py --repo Aptitud-Labs --output _site
+      - name: Functional and visual tests on mobile and desktop
+        run: python3 scripts/test-atelier.py
+      - name: Save screenshots and test report for review
+        if: always()
+        run: |
+          if [ -d atelier-evidence ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add atelier-evidence
+            git diff --cached --quiet || git commit -m "test(atelier): update screenshot evidence [skip ci]"
+            git push origin HEAD:redesign/aptitud-studio-clean-20261031
+          fi
