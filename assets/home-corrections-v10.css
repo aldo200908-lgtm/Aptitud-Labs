@@ -1,0 +1,45 @@
+/* V10 — fix the actual inherited olive/green contact styles.
+   This file loads after every legacy theme and wins on the home only. */
+html body.site-page.obsidian-ice.independent-home .initial-inquiry,
+html body.site-page.obsidian-ice.independent-home .initial-inquiry.section-muted,
+html body.site-page.obsidian-ice.independent-home #contacto,
+html body.site-page.obsidian-ice.independent-home #contacto .shell,
+html body.site-page.obsidian-ice.independent-home #contacto .contact-panel{
+ background:#151c22!important;background-color:#151c22!important;
+ background-image:none!important;color:#edf1f1!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-panel{
+ border:1px solid #39474e!important;border-radius:9px!important;
+ box-shadow:none!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-intro,
+html body.site-page.obsidian-ice.independent-home #contacto .contact-intro h2{
+ background:transparent!important;color:#f1f1ef!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-intro p,
+html body.site-page.obsidian-ice.independent-home #contacto .coverage-line{
+ color:#b6c3c9!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form{
+ background:#1d272e!important;background-image:none!important;
+ border:1px solid #43525b!important;box-shadow:none!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form input,
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form select,
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form textarea{
+ background:#121b22!important;color:#f2f4f2!important;
+ border:1px solid #47575f!important;
+}
+html body.site-page.obsidian-ice.independent-home .v8-hero-visual{
+ border:0!important;background:transparent!important;
+ box-shadow:none!important;border-radius:7px!important;
+}
+html body.site-page.obsidian-ice.independent-home .v8-hero-photo-wrap{
+ border-radius:7px!important;
+}
+html body.site-page.obsidian-ice.independent-home .v8-hero-visual-top,
+html body.site-page.obsidian-ice.independent-home .v8-hero-visual-bottom{display:none!important}
+html body.site-page.obsidian-ice.independent-home .v3-rule-strip{display:none!important}
+html body.site-page.obsidian-ice.independent-home .v8-hero-photo-wrap img{
+ filter:saturate(.83);object-position:68% center;
+}

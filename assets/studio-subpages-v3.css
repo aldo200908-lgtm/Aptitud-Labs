@@ -1,0 +1,107 @@
+/* Aptitud Labs · consistent subpage identity.
+   Each section remains its own URL, layout and working behavior. */
+body.site-page.studio-subpage{
+ --cream:#f4f0e7;--paper:#e9e2d7;--surface:#fffaf2;
+ --ink:#28362c;--muted:#626d62;--line:#c8c1b3;
+ --accent:#a3634b;--accent-soft:#e8d6c6;
+ background:var(--cream);color:var(--ink);color-scheme:light;
+}
+.studio-subpage .site-nav{background:#f7f3eaf3;border:1px solid #bfc0b1;box-shadow:0 10px 22px #43463812;border-radius:0;backdrop-filter:blur(18px)}
+.studio-subpage .site-nav .brand{color:#28342b;letter-spacing:-.075em;font-weight:850}
+.studio-subpage .site-nav .brand-period{color:#c76f51}
+.studio-subpage .site-nav .nav-cta{background:#28362d;color:#fff7e8;border:1px solid #28362d;border-radius:0;box-shadow:none}
+.studio-subpage .site-nav .desktop-links a{color:#4e5b50}
+.studio-subpage .site-nav .theme-control,.studio-subpage .site-nav .menu-toggle{background:#f7f2e9;color:#293b30;border-color:#aaa99b}
+.studio-subpage .site-nav .menu-panel{background:#f9f4ea;border-color:#bfb8aa}
+.studio-subpage .site-nav .menu-panel a,.studio-subpage .site-nav .menu-panel-close{color:#26372c;border-color:#d4c8b9}
+.studio-subpage .page-hero{
+ position:relative;isolation:isolate;overflow:hidden;
+ background:#e9e2d7;color:#29362e;padding:clamp(140px,12vw,185px) 0 clamp(70px,8vw,110px);
+ border-bottom:1px solid #c8bdb0;
+}
+.studio-subpage .page-hero:before{
+ content:attr(data-studio-number);position:absolute;z-index:-1;
+ right:4%;top:4%;font:900 clamp(200px,29vw,460px)/1 Manrope,sans-serif;
+ letter-spacing:-.12em;color:#ded3c2;pointer-events:none;transform:rotate(-11deg);
+}
+.studio-subpage .page-hero:after{content:"";position:absolute;top:10%;bottom:10%;right:27%;width:1px;background:#b7ad9b50;transform:rotate(18deg);pointer-events:none;z-index:-1}
+.studio-subpage .page-hero .shell{position:relative;z-index:1}
+.studio-subpage .page-hero .eyebrow{color:#a06449;font-weight:750;letter-spacing:.17em}
+.studio-subpage .page-hero h1{font:750 clamp(47px,6vw,89px)/1.05 Manrope,sans-serif;color:#29382e;letter-spacing:-.082em;max-width:900px;margin:20px 0 26px}
+.studio-subpage .page-hero h1 i,.studio-subpage .page-hero h1 em{color:#bb694f!important;font:400 italic 1em Georgia,serif!important;letter-spacing:-.065em}
+.studio-subpage .page-hero p{max-width:620px;color:#657066;font-size:14px;line-height:1.85}
+.studio-subpage .page-hero .button,.studio-subpage .page-hero .text-link{border-radius:2px}
+.studio-subpage .page-hero .button.dark{background:#29382e;color:#fff7eb;border-color:#29382e}
+.studio-subpage .page-hero .button.stroke{background:transparent;color:#29382e;border-color:#9d9e8d}
+.studio-subpage .page-hero .button:not(.dark):not(.stroke){background:#2e3b31;color:#fff7eb}
+.studio-subpage .section-pad{background:var(--cream)}
+.studio-subpage .section-muted{background:var(--paper)}
+.studio-subpage .section-title,.studio-subpage .section-top h2{font:680 clamp(36px,4.5vw,62px)/1.15 Manrope,sans-serif;letter-spacing:-.071em;color:var(--ink)}
+.studio-subpage .section-title i{font:400 italic 1em Georgia,serif;color:#a9634c}
+.studio-subpage .eyebrow{color:#a86550;letter-spacing:.13em}
+.studio-subpage .copy,.studio-subpage .section-top p{color:var(--muted)}
+.studio-subpage .service-card,.studio-subpage .al-card,.studio-subpage .detail-card,.studio-subpage .quote-panel,.studio-subpage .brief-card{
+ border:1px solid #c8bdb0;border-radius:4px;background:#fffaf1;color:#29362e;
+ box-shadow:none;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s,border-color .45s;
+}
+.studio-subpage .service-card:hover,.studio-subpage .al-card:hover,.studio-subpage .detail-card:hover{
+ transform:translateY(-7px);border-color:#a16e55;box-shadow:0 20px 36px #544b3f1a;
+}
+.studio-subpage .service-card h3,.studio-subpage .al-card h3,.studio-subpage .detail-card h3{color:#29362e}
+.studio-subpage .service-card p,.studio-subpage .al-card p,.studio-subpage .detail-card p{color:#697068}
+.studio-subpage .service-illustration{background:#e7e2d8;border-radius:3px;filter:saturate(.82)}
+.studio-subpage .service-link,.studio-subpage .al-card a,.studio-subpage .al-card .al-price{color:#986346}
+.studio-subpage .service-link:hover{color:#293a2e}
+.studio-subpage .al-plans{background:#efe8dd}
+.studio-subpage .al-card{padding:32px}
+.studio-subpage .al-featured{background:#ead7c3;border:2px solid #a8785d}
+.studio-subpage .al-price{font-family:Manrope,sans-serif;letter-spacing:-.06em;font-size:clamp(25px,3vw,39px)}
+.studio-subpage .al-card a{background:#283b30;color:#fff8ec;border-radius:2px}
+.studio-subpage .al-card a:hover{background:#aa6b4e;color:#fff7ed}
+.studio-subpage .al-eyebrow{color:#a1694f}
+.studio-subpage .section-dark{background:#293a31;color:#f8f2e6}
+.studio-subpage .section-dark .section-title,.studio-subpage .section-dark h3{color:#f9f4eb}
+.studio-subpage .section-dark p,.studio-subpage .section-dark .copy{color:#d9ddd2}
+.studio-subpage .nfc-store{background:#eee8dc}
+.studio-subpage .nfc-product,.studio-subpage .nfc-product-card{border-radius:4px;box-shadow:none}
+.studio-subpage .brief-form,.studio-subpage .quote-panel{border-color:#c8bdb0;background:#fffaf1}
+.studio-subpage .brief-form input,.studio-subpage .brief-form textarea,.studio-subpage .brief-form select{background:#f8f2e8;color:#29362e;border-color:#c8bdb0}
+.studio-subpage .contact-actions button{background:#27392e;color:#fff7ee;border-radius:2px}
+.studio-subpage .site-footer{background:#25352c;color:#efeadd;border-color:#43594a}
+.studio-subpage .site-footer a,.studio-subpage .site-footer .brand{color:#fff8e9}
+.studio-subpage .site-footer p,.studio-subpage .footer-bottom{color:#ced2c6}
+/* Preserve accessible dark mode while keeping the warm graphic system. */
+.studio-subpage[data-theme=dark]{--cream:#202920;--paper:#293428;--surface:#323b30;--ink:#f4f0e6;--muted:#ced2c5;--line:#667368;--accent:#e5ab8c;background:var(--cream);color:var(--ink)}
+.studio-subpage[data-theme=dark] .page-hero{background:#2a352b;color:#f4f0e6;border-color:#5b6c5b}
+.studio-subpage[data-theme=dark] .page-hero h1,.studio-subpage[data-theme=dark] .page-hero p{color:#e9eee4}
+.studio-subpage[data-theme=dark] .page-hero:before{color:#405041}
+.studio-subpage[data-theme=dark] .site-nav{background:#29342ced;border-color:#6a7766}
+.studio-subpage[data-theme=dark] .site-nav .brand,.studio-subpage[data-theme=dark] .site-nav .desktop-links a{color:#f4f0e6}
+.studio-subpage[data-theme=dark] .site-nav .theme-control,.studio-subpage[data-theme=dark] .site-nav .menu-toggle{background:#354135;color:#f5ede3;border-color:#647162}
+.studio-subpage[data-theme=dark] .site-nav .menu-panel{background:#29362d}
+.studio-subpage[data-theme=dark] .site-nav .menu-panel a,.studio-subpage[data-theme=dark] .site-nav .menu-panel-close{color:#f8eee2}
+.studio-subpage[data-theme=dark] .service-card,.studio-subpage[data-theme=dark] .detail-card,.studio-subpage[data-theme=dark] .al-card{background:#313c32;color:#f5efe2;border-color:#617063}
+.studio-subpage[data-theme=dark] .service-card h3,.studio-subpage[data-theme=dark] .detail-card h3,.studio-subpage[data-theme=dark] .al-card h3{color:#faf5ea}
+.studio-subpage[data-theme=dark] .service-card p,.studio-subpage[data-theme=dark] .detail-card p,.studio-subpage[data-theme=dark] .al-card p{color:#d6d9cd}
+@media(max-width:700px){
+ .studio-subpage .page-hero{padding:125px 0 70px}
+ .studio-subpage .page-hero h1{font-size:clamp(44px,9.2vw,65px)}
+ .studio-subpage .page-hero:before{right:-14%;font-size:240px;top:17%}
+ .studio-subpage .service-card,.studio-subpage .al-card{padding:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ .studio-subpage .service-card,.studio-subpage .detail-card,.studio-subpage .al-card{transform:none!important;transition:none!important}
+}
+
+/* Dark-mode price legibility validated against the production color tokens. */
+body.studio-subpage[data-theme=dark] .al-plans{background:#29372c}
+body.studio-subpage[data-theme=dark] .al-card .al-price,
+body.studio-subpage[data-theme=dark] .al-card .al-price span{color:#fff2de!important}
+body.studio-subpage[data-theme=dark] .al-card .al-eyebrow{color:#f2c8ae}
+body.studio-subpage[data-theme=dark] .al-card li{color:#e4e5da}
+body.studio-subpage[data-theme=dark] .al-disclaimer{color:#e4e5da}
+
+body.studio-subpage[data-theme=dark] .al-plans .section-title,
+body.studio-subpage[data-theme=dark] .al-plans .section-top h2{color:#fff4e6!important}
+body.studio-subpage[data-theme=dark] .al-plans .copy,
+body.studio-subpage[data-theme=dark] .al-plans .section-top p{color:#e4e8dc!important}

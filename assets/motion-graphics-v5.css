@@ -1,0 +1,220 @@
+/* Motion Graphics V5 — interactive editorial motion language.
+   Reference traits: masked kinetic typography, 3D rotating portfolio walls,
+   abstract illuminated ribbons and cinematic scroll scrubbing.
+   Original Aptitud black + refined ice blue direction. No copied assets. */
+body.site-page.obsidian-ice .mg-motion-reel,
+body.site-page.obsidian-ice .mg-project-wall{
+ --mg-black:#090f15;--mg-panel:#121e29;--mg-ice:#a2dff1;--mg-quiet:#9bb4c3;
+ --mg-rule:#334b5b;
+ position:relative;background:var(--mg-black);color:#f3faff;
+ isolation:isolate;overflow:clip;
+}
+body.site-page.obsidian-ice .mg-motion-reel{height:225svh;}
+body.site-page.obsidian-ice .mg-motion-reel .shell,
+body.site-page.obsidian-ice .mg-project-wall .shell{width:min(1370px,calc(100% - 64px))}
+.mg-motion-reel .mg-pin{
+ position:sticky;top:64px;left:0;height:calc(100svh - 64px);
+ min-height:420px;display:flex;flex-direction:column;
+ overflow:hidden;background:radial-gradient(ellipse 54% 54% at 53% 53%,#17405581,transparent 74%),#090f15;
+}
+.mg-motion-reel .mg-pin:before,
+.mg-project-wall .mg-wall-pin:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background-image:linear-gradient(90deg,#a8d4e10c 1px,transparent 1px),
+ linear-gradient(0deg,#a8d4e108 1px,transparent 1px);
+ background-size:clamp(65px,7vw,110px) clamp(65px,7vw,110px);
+ mask-image:linear-gradient(to bottom,#0007,transparent 80%);
+}
+.mg-reel-top{
+ min-height:62px;position:relative;z-index:9;
+ display:flex;align-items:center;justify-content:space-between;gap:15px;
+ border-bottom:1px solid #385263;
+ color:#bcd3df;font:750 9px/1.55 Manrope,Arial,sans-serif;letter-spacing:.16em;
+}
+.mg-dot{display:inline-block;width:6px;height:6px;margin-right:8px;background:#93d9ee;border-radius:50%;box-shadow:0 0 0 5px #87cee618}
+.mg-reel-stage{position:relative;flex:1;min-height:0;overflow:hidden;perspective:1250px}
+.mg-scanlines{
+ position:absolute;inset:0;z-index:8;pointer-events:none;
+ background:repeating-linear-gradient(to bottom,#ffffff07 0px,#ffffff07 1px,transparent 1px,transparent 7px);opacity:.17;
+}
+.mg-reel-axis{position:absolute;z-index:1;background:#97cbd830;pointer-events:none}
+.mg-reel-axis-h{top:53%;left:0;width:100%;height:1px}
+.mg-reel-axis-v{left:50%;top:0;width:1px;height:100%}
+.mg-coord{position:absolute;z-index:5;font:650 8px Manrope,Arial,sans-serif;letter-spacing:.16em;color:#a0c0d1}
+.mg-coord-a{left:5%;top:7%}.mg-coord-b{right:5%;bottom:7%}
+.mg-kinetic-type{
+ position:absolute;z-index:2;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ transform:translateY(-10%);text-align:center;pointer-events:none;
+ font:900 clamp(65px,12vw,196px)/.8 Manrope,Arial,sans-serif;letter-spacing:-.13em;color:#a7dbea;
+}
+.mg-kinetic-type>span{display:block;white-space:nowrap;will-change:transform,opacity;line-height:.88}
+.mg-kinetic-a{transform:translate3d(var(--mg-a-x,0px),var(--mg-a-y,0px),0);opacity:var(--mg-a-opacity,.45)}
+.mg-kinetic-b{color:#f0f9ff;transform:translate3d(var(--mg-b-x,0px),var(--mg-b-y,0px),0);opacity:var(--mg-b-opacity,.28);font-size:.65em}
+.mg-kinetic-c{transform:translate3d(var(--mg-c-x,0px),var(--mg-c-y,0px),0);opacity:var(--mg-c-opacity,.36);font-size:.66em}
+.mg-period{color:#6ab6cf}
+.mg-motion-orbit{position:absolute;inset:16% 25%;z-index:2;pointer-events:none;transform-style:preserve-3d}
+.mg-motion-orbit span{position:absolute;inset:0;border:1px solid #9ad4df30;border-radius:50%;transform:rotateX(64deg) rotateZ(var(--mg-ring,0deg))}
+.mg-motion-orbit span:nth-child(2){inset:-8%;transform:rotateY(68deg) rotateZ(var(--mg-ring,0deg));border-color:#7bbed12d}
+.mg-motion-orbit span:nth-child(3){inset:-17%;transform:rotateX(76deg) rotateZ(var(--mg-ring,0deg));border-style:dashed;opacity:.35}
+.mg-motion-gallery{position:absolute;z-index:4;inset:6% 0 4%;perspective:1050px;pointer-events:none}
+.mg-motion-face{
+ position:absolute;left:50%;top:50%;width:clamp(245px,38vw,500px);
+ aspect-ratio:1.45;overflow:hidden;
+ border:1px solid #86c4d9ac;border-radius:5px;
+ background:linear-gradient(140deg,#1b3240,#0b151e);
+ box-shadow:0 30px 75px #000c,0 0 35px #84c0d226;
+ transform-style:preserve-3d;backface-visibility:hidden;
+ transition:opacity .18s linear,filter .18s linear;
+ will-change:transform;
+}
+.mg-motion-face img{display:block;width:100%;height:calc(100% - 31px);object-fit:cover;object-position:center;background:#24313c}
+.mg-motion-face-one img{object-fit:contain;background:radial-gradient(circle,#cbdadc,#7799a5)}
+.mg-motion-face-three img{object-position:top center}
+.mg-face-bar{height:31px;padding:0 12px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#b5d8e5;font:750 8px Manrope,sans-serif;letter-spacing:.16em}
+.mg-face-bar i{font:700 15px Manrope,sans-serif;color:#9adbea}
+.mg-light-ribbon{
+ position:absolute;z-index:3;top:55%;left:-18%;width:136%;height:clamp(70px,11vw,155px);
+ background:radial-gradient(ellipse at center,#8accdd47,#2b799042 30%,transparent 72%);
+ filter:blur(25px);transform:rotate(-9deg) translateY(var(--mg-ribbon-y,0px));
+ pointer-events:none;mix-blend-mode:screen;
+}
+.mg-reel-bottom{
+ position:relative;z-index:9;display:grid;grid-template-columns:1fr 1.1fr auto;gap:18px;
+ align-items:center;min-height:95px;border-top:1px solid #354f60;
+}
+.mg-reel-chapter span{display:block;font:750 8px Manrope,sans-serif;letter-spacing:.14em;color:#8ba5b4;margin-bottom:5px}
+.mg-reel-chapter strong{display:block;color:#e5f3f8;font:750 17px Manrope,sans-serif;letter-spacing:-.03em}
+.mg-reel-bottom p{color:#9eb6c4;font:450 11px/1.55 Manrope,sans-serif;max-width:290px}
+.mg-reel-bottom>a{
+ display:inline-flex;gap:10px;align-items:center;justify-content:space-between;
+ color:#a2dff1;font:800 10px Manrope,sans-serif;letter-spacing:.11em;text-decoration:none;
+ border:1px solid #6da8c2;padding:13px 14px;border-radius:3px;transition:background .3s,color .3s;
+}
+.mg-reel-bottom>a:hover{color:#0a202d;background:#a2dff1}
+.mg-reel-meter{position:absolute;bottom:0;left:0;width:100%;height:2px;background:#3a5261}
+.mg-reel-meter span{display:block;background:#a2def0;height:100%;width:100%;transform:scaleX(var(--mg-progress,.01));transform-origin:left}
+/* The showreel is progressively enhanced: default scene is still readable. */
+.mg-motion-face-one{transform:translate3d(-50%,-50%,100px)}
+.mg-motion-face-two{transform:translate3d(35%,-50%,-80px) rotateY(-30deg);opacity:.4}
+.mg-motion-face-three{transform:translate3d(85%,-50%,-170px) rotateY(-35deg);opacity:.25}
+/* 2 / portfolio: orchestrated lateral camera sweep through a framed wall */
+.mg-project-wall{height:205svh;padding-top:75px}
+.mg-wall-intro{position:relative;z-index:2;padding:30px 0 45px;border-top:1px solid #42606e}
+.mg-wall-intro>span{color:#a6daec;font:800 10px Manrope,sans-serif;letter-spacing:.16em}
+.mg-wall-intro h2{
+ color:#f1f8fc!important;font:800 clamp(55px,7.7vw,116px)/.98 Manrope,sans-serif;
+ letter-spacing:-.1em;margin:23px 0 25px;
+}
+.mg-wall-intro h2 em{font:400 italic 1em Georgia,serif;color:#a2dff1}
+.mg-wall-intro p{max-width:550px;font:450 14px/1.8 Manrope,sans-serif;color:#9eb5c2}
+.mg-wall-pin{
+ position:sticky;top:64px;height:calc(100svh - 64px);min-height:450px;
+ background:radial-gradient(ellipse 60% 60% at 50% 50%,#1a4357a3,transparent 79%),#090f15;
+ border-block:1px solid #3c5667;
+ overflow:hidden;isolation:isolate;
+}
+.mg-wall-annotations,.mg-wall-footer{
+ position:absolute;left:3.5%;right:3.5%;z-index:7;
+ display:flex;align-items:center;justify-content:space-between;gap:20px;
+ font:750 9px/1.5 Manrope,sans-serif;letter-spacing:.13em;color:#a6c0cf;
+}
+.mg-wall-annotations{top:22px}.mg-wall-footer{bottom:20px}
+.mg-wall-footer a{color:#a2e0f1;text-decoration:none}
+.mg-wall-surface{position:absolute;inset:8% 0 10%;overflow:hidden;perspective:1800px}
+.mg-wall-depth{position:absolute;inset:0;pointer-events:none;transform:rotateX(70deg)}
+.mg-wall-depth span{position:absolute;inset:10% 20%;border:1px dashed #8ebfd248}
+.mg-wall-depth span:nth-child(2){inset:20% 28%;border-color:#bedce22b}
+.mg-wall-depth span:nth-child(3){inset:30% 35%;border-color:#dceff21b}
+.mg-wall-track{position:absolute;inset:0;transform-style:preserve-3d;perspective:1500px}
+.mg-wall-card{
+ position:absolute;left:50%;top:48%;width:clamp(230px,34vw,440px);
+ aspect-ratio:1.25;padding:10px;background:#162734;border:1px solid #6898ac;
+ box-shadow:0 25px 75px #000b,0 0 0 1px #e8faff0d;backface-visibility:hidden;
+ transform-style:preserve-3d;will-change:transform;overflow:hidden;border-radius:4px;
+}
+.mg-wall-card>span{display:block;height:26px;font:750 9px Manrope,sans-serif;letter-spacing:.13em;color:#a8d9e9}
+.mg-wall-card img{display:block;width:100%;height:calc(100% - 55px);object-fit:cover;object-position:top;background:#1b2e3a}
+.mg-wall-card:first-child img{object-fit:contain;background:#b1c8ce}
+.mg-wall-card b{display:block;margin-top:7px;color:#eaf6fb;font:750 12px Manrope,sans-serif;letter-spacing:.02em}
+.mg-wall-crosshair{position:absolute;left:50%;top:50%;font:250 24px Manrope,sans-serif;color:#a5dcee3d;transform:translate(-50%,-50%);pointer-events:none}
+.mg-wall-beam{position:absolute;left:-20%;right:-20%;top:58%;height:85px;transform:rotate(-12deg);background:linear-gradient(0deg,transparent,#8ac8da19,transparent);filter:blur(14px);pointer-events:none}
+.mg-wall-1{transform:translate3d(-50%,-50%,110px)}
+.mg-wall-2{transform:translate3d(45%,-50%,-100px) rotateY(-28deg)}
+.mg-wall-3{transform:translate3d(90%,-50%,-180px) rotateY(-34deg)}
+.mg-wall-4{transform:translate3d(135%,-50%,-240px) rotateY(-44deg)}
+/* Consistent kinetic entrances elsewhere, not a random fade on every element. */
+body.site-page.obsidian-ice .mg-motion-in .v3-line>span{animation:mg-title-rise .9s cubic-bezier(.16,1,.3,1) both}
+body.site-page.obsidian-ice .mg-motion-in .v3-line:nth-child(2)>span{animation-delay:.12s}
+body.site-page.obsidian-ice .mg-motion-in .v3-line:nth-child(3)>span{animation-delay:.22s}
+@keyframes mg-title-rise{from{opacity:0;transform:translateY(105%) skewY(4deg)}to{opacity:1;transform:translateY(0) skewY(0)}}
+/* Language of motion on all six pages: crop-based section headings and a
+   precise light-sweep on cards, without changing their click targets. */
+body.site-page.obsidian-ice .service-card,body.site-page.obsidian-ice .al-card,
+body.site-page.obsidian-ice .home-gateway-item,body.site-page.obsidian-ice .fx-project-card{
+ position:relative;
+}
+body.site-page.obsidian-ice .service-card:after,body.site-page.obsidian-ice .al-card:after{
+ content:"";position:absolute;z-index:3;inset:0;pointer-events:none;
+ background:linear-gradient(110deg,transparent 36%,#a5dfed13 49%,transparent 63%);
+ transform:translateX(-110%);transition:transform .65s ease;border-radius:inherit;
+}
+@media(hover:hover) and (pointer:fine){
+ body.site-page.obsidian-ice .service-card:hover:after,body.site-page.obsidian-ice .al-card:hover:after{transform:translateX(110%)}
+}
+@media(max-width:900px){
+ .mg-reel-bottom{grid-template-columns:1fr auto;min-height:95px}
+ .mg-reel-bottom p{display:none}
+ .mg-wall-intro h2{font-size:clamp(52px,8vw,87px)}
+}
+@media(max-width:700px){
+ body.site-page.obsidian-ice .mg-motion-reel .shell,
+ body.site-page.obsidian-ice .mg-project-wall .shell{width:calc(100% - 34px)}
+ body.site-page.obsidian-ice .mg-motion-reel{height:186svh}
+ .mg-motion-reel .mg-pin{top:61px;height:calc(100svh - 61px);min-height:340px}
+ .mg-reel-top{min-height:49px;font-size:7px}
+ .mg-reel-top span:last-child{max-width:42%;text-align:right;font-size:7px}
+ .mg-reel-stage{min-height:0}
+ .mg-coord{font-size:6px}
+ .mg-kinetic-type{font-size:clamp(65px,18vw,130px);transform:translateY(-23%);letter-spacing:-.1em}
+ .mg-kinetic-c{font-size:.49em}
+ .mg-motion-gallery{inset:10% 0 1%}
+ .mg-motion-face{width:min(74vw,370px);aspect-ratio:1.33}
+ .mg-face-bar{height:26px;font-size:7px}
+ .mg-motion-face img{height:calc(100% - 26px)}
+ .mg-motion-orbit{inset:26% 10%;opacity:.7}
+ .mg-reel-bottom{grid-template-columns:1fr auto;min-height:93px;gap:10px;padding-bottom:7px}
+ .mg-reel-chapter span{font-size:7px}
+ .mg-reel-chapter strong{font-size:12px;max-width:165px}
+ .mg-reel-bottom>a{font-size:8px;letter-spacing:0;padding:9px 7px;gap:5px;max-width:138px}
+ .mg-project-wall{height:177svh;padding-top:46px}
+ .mg-wall-intro{padding-bottom:27px}
+ .mg-wall-intro h2{font-size:clamp(46px,11vw,68px);margin:19px 0}
+ .mg-wall-intro p{font-size:12px}
+ .mg-wall-pin{top:61px;height:calc(100svh - 61px);min-height:340px}
+ .mg-wall-surface{inset:10% 0 12%}
+ .mg-wall-card{width:min(75vw,335px);aspect-ratio:1.2;padding:7px}
+ .mg-wall-card>span{font-size:7px;height:20px}
+ .mg-wall-card img{height:calc(100% - 44px)}
+ .mg-wall-card b{font-size:10px}
+ .mg-wall-annotations,.mg-wall-footer{left:4%;right:4%;font-size:7px;gap:8px}
+ .mg-wall-footer{bottom:13px;flex-wrap:wrap}
+ .mg-wall-footer span:nth-child(2){display:none}
+}
+@media(max-width:370px){
+ .mg-reel-bottom>a{max-width:115px;font-size:7px}
+ .mg-reel-chapter strong{font-size:11px}
+ .mg-wall-intro h2{font-size:43px}
+}
+/* Alternative preferences and accessibility.
+   On reduced motion, there is no sticky scroll-lock and no moving carousel. */
+@media(prefers-reduced-motion:reduce){
+ body.site-page.obsidian-ice .mg-motion-reel,
+ body.site-page.obsidian-ice .mg-project-wall{height:auto!important;min-height:0!important}
+ .mg-motion-reel .mg-pin,.mg-project-wall .mg-wall-pin{position:relative!important;top:auto!important;height:480px!important;min-height:0!important}
+ .mg-motion-face:not(.mg-motion-face-one),.mg-wall-card:not(.mg-wall-1){opacity:0!important;visibility:hidden!important}
+ .mg-motion-face-one{opacity:1!important;transform:translate3d(-50%,-50%,0)!important}
+ .mg-wall-1{opacity:1!important;transform:translate3d(-50%,-50%,0)!important}
+ .mg-kinetic-type>span{transform:none!important;will-change:auto!important}
+ .mg-motion-face,.mg-wall-card{will-change:auto!important;transition:none!important}
+ body.site-page.obsidian-ice .mg-motion-in .v3-line>span{animation:none!important;transform:none!important;opacity:1!important}
+}
