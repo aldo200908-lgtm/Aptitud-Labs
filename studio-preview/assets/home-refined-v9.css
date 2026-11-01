@@ -1,0 +1,64 @@
+/* V9 / Art direction: graphite, ink, soft stone and restrained glacier blue.
+   No tech-dashboard chrome, section counters, wireframe grids or neon glows. */
+body.site-page.obsidian-ice.independent-home{
+ --v4-bg:#10151a;--v4-bg-2:#151b20;--v4-deep:#0e1317;
+ --v4-panel:#1b232a;--v4-panel2:#202a31;--v4-raised:#26333a;
+ --v4-ink:#f0f0ec;--v4-muted:#b5bfc5;--v4-dim:#88979e;
+ --v4-line:#39454a;--v4-ice:#b2d7e1;--v4-active:#91becb;
+ --v4-ice-deep:#547d8a;--v4-silver:#dedfdb;
+ --v4-lightwash:transparent;--v4-hero-bloom:transparent;
+ background:#10151a;color:#f0f0ec;
+}
+body.site-page.obsidian-ice.independent-home .site-nav{background:#11171cf7;border-bottom:1px solid #343f45;box-shadow:none}
+body.site-page.obsidian-ice.independent-home .site-nav .brand{letter-spacing:-.065em}
+body.site-page.obsidian-ice.independent-home .v3-home-hero{
+ background:#10151a!important;box-shadow:none!important;
+}
+body.site-page.obsidian-ice.independent-home .v3-home-hero:before,
+body.site-page.obsidian-ice.independent-home .v3-home-hero:after,
+body.site-page.obsidian-ice.independent-home .v3-hero-grain,
+body.site-page.obsidian-ice.independent-home .v4-technical-grid,
+body.site-page.obsidian-ice.independent-home .v3-huge-a,
+body.site-page.obsidian-ice.independent-home .v3-side-type,
+body.site-page.obsidian-ice.independent-home .v4-reading-line,
+body.site-page.obsidian-ice.independent-home .fx-scroll-progress{display:none!important}
+body.site-page.obsidian-ice.independent-home .v3-index-line{border-color:#344149;color:#bac5c9;letter-spacing:.06em}
+body.site-page.obsidian-ice.independent-home .v3-index-line .v4-badge-index,
+body.site-page.obsidian-ice.independent-home .v4-status-led{display:none}
+body.site-page.obsidian-ice.independent-home .v3-h1{color:#f4f4f0;letter-spacing:-.068em;text-wrap:balance}
+body.site-page.obsidian-ice.independent-home .v3-h1 em,
+body.site-page.obsidian-ice.independent-home .v3-h1 i{color:#bad8df}
+body.site-page.obsidian-ice.independent-home .v3-lead{color:#b6c3c8;line-height:1.65}
+body.site-page.obsidian-ice.independent-home .v3-button{background:#c1dce3;color:#101a20;border:1px solid #c1dce3;border-radius:5px;box-shadow:none}
+body.site-page.obsidian-ice.independent-home .v3-button-ghost{background:transparent;border:1px solid #5a6970;border-radius:5px;box-shadow:none;color:#e7efef}
+body.site-page.obsidian-ice.independent-home .v3-home-bottom{border-color:#38474c;color:#a6b6bd}
+body.site-page.obsidian-ice.independent-home .v8-hero-visual{border:1px solid #414e54;background:#1b2329;box-shadow:0 28px 60px #0005;border-radius:4px}
+body.site-page.obsidian-ice.independent-home .v8-hero-visual-top,
+body.site-page.obsidian-ice.independent-home .v8-hero-visual-bottom{background:#1a2329;border-color:#414e54;color:#c3ced1;letter-spacing:.01em;text-transform:none;font-size:11px;font-weight:600}
+body.site-page.obsidian-ice.independent-home .v8-hero-photo-wrap{background:#1b2329}
+body.site-page.obsidian-ice.independent-home .v8-studio-statement{background:#1a2228}
+body.site-page.obsidian-ice.independent-home .v8-statement-copy h2{color:#f3f2ee}
+body.site-page.obsidian-ice.independent-home .v8-statement-copy h2 em{color:#c1dce3}
+body.site-page.obsidian-ice.independent-home .v8-statement-photo{border-color:#414e54;box-shadow:0 20px 55px #0004}
+body.site-page.obsidian-ice.independent-home .home-gateway{background:#10151a}
+body.site-page.obsidian-ice.independent-home .home-gateway-header>span{display:none}
+body.site-page.obsidian-ice.independent-home .home-gateway-header h2{color:#f1f1ed}
+body.site-page.obsidian-ice.independent-home .home-gateway-header h2 em{color:#bfdce3}
+body.site-page.obsidian-ice.independent-home .home-gateway-item{border:1px solid #465258!important;border-radius:5px!important;box-shadow:none!important;background:#1c252b}
+body.site-page.obsidian-ice.independent-home .home-gateway-item:after{box-shadow:none}
+body.site-page.obsidian-ice.independent-home .home-gateway-item>strong{text-shadow:0 3px 18px #0009}
+body.site-page.obsidian-ice.independent-home .home-studio-belief{background:#192127}
+body.site-page.obsidian-ice.independent-home .home-belief-grid h2{color:#f1f0ec}
+body.site-page.obsidian-ice.independent-home .home-belief-grid h2 em{color:#c3dce3}
+body.site-page.obsidian-ice.independent-home .initial-inquiry{background:#11181d}
+body.site-page.obsidian-ice.independent-home .contact-panel{border-color:#46545a}
+body.site-page.obsidian-ice.independent-home .home-belief-steps b{display:none}
+body.site-page.obsidian-ice.independent-home .home-belief-steps>div{padding-left:0}
+body.site-page.obsidian-ice.independent-home .v7-photographic-card:before{background:linear-gradient(180deg,#10171dd9,#10171d22 55%,#10171dc9)!important}
+body.site-page.obsidian-ice.independent-home .v7-card-photo{filter:saturate(.72) contrast(1.02)}
+@media(max-width:700px){
+ body.site-page.obsidian-ice.independent-home .v3-h1{font-size:clamp(48px,11vw,80px)}
+ body.site-page.obsidian-ice.independent-home .v3-home-hero{overflow:hidden}
+ body.site-page.obsidian-ice.independent-home .v8-hero-visual{box-shadow:0 18px 40px #0004}
+}
+@media(prefers-reduced-motion:reduce){body.site-page.obsidian-ice.independent-home *,body.site-page.obsidian-ice.independent-home *:before,body.site-page.obsidian-ice.independent-home *:after{scroll-behavior:auto!important}}

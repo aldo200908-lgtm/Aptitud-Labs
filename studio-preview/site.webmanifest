@@ -1,0 +1,18 @@
+{
+  "name": "Aptitud Labs",
+  "short_name": "Aptitud",
+  "description": "Diseño web, IA y automatización para negocios en Perú",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#F8FAFC",
+  "theme_color": "#152E44",
+  "icons": [
+    {
+      "src": "/Aptitud-Labs/studio-preview/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

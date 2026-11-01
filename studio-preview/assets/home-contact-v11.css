@@ -1,0 +1,84 @@
+/* Aptitud Labs — contact color correction V11.
+   An old .studio-v3 dark selector was painting the contact section olive.
+   Neutral graphite palette with no green mixing or decorative gradients.
+   Also uses a distinct file URL to bypass stale mobile CSS caches. */
+html body.site-page.obsidian-ice.independent-home #contacto{
+  background:#11171c!important;
+  background-image:none!important;
+  color:#edf0f0!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-panel{
+  background:#1a232b!important;
+  background-image:none!important;
+  border:1px solid #43535d!important;
+  border-radius:12px!important;
+  box-shadow:none!important;
+  color:#f2f4f4!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-intro{
+  background:none!important;
+  color:#e9eded!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-intro h2{
+  color:#f5f5f3!important;
+  letter-spacing:-.065em;
+  text-wrap:balance;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-intro p{
+  color:#b6c5cb!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-intro a{
+  color:#c6e5ee!important;
+  text-decoration-color:#84aebd;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form{
+  background:#121b23!important;
+  background-image:none!important;
+  border:1px solid #3c4b56!important;
+  box-shadow:none!important;
+  color:#edf2f4!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form label{
+  color:#edf1f3!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form input,
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form select,
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form textarea{
+  background:#0f1820!important;
+  color:#e9f1f5!important;
+  border:1px solid #435761!important;
+  border-radius:5px!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form input::placeholder,
+html body.site-page.obsidian-ice.independent-home #contacto .brief-form textarea::placeholder{
+  color:#8fa1ac!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-actions button{
+  background:#b5dce6!important;
+  color:#14242d!important;
+  box-shadow:none!important;
+}
+html body.site-page.obsidian-ice.independent-home #contacto .contact-actions .contact-email-button{
+  background:transparent!important;
+  color:#dcecf1!important;
+  border:1px solid #64808d!important;
+}
+@media(max-width:700px){
+  html body.site-page.obsidian-ice.independent-home #contacto{padding-block:62px!important;}
+  html body.site-page.obsidian-ice.independent-home #contacto .contact-panel{
+    padding:clamp(22px,6vw,32px)!important;
+    gap:27px!important;
+  }
+  html body.site-page.obsidian-ice.independent-home #contacto .contact-intro h2{
+    font-size:clamp(35px,9vw,54px)!important;line-height:1.07!important;
+    margin:0 0 20px!important;
+  }
+  html body.site-page.obsidian-ice.independent-home #contacto .contact-intro p{
+    font-size:clamp(14px,3.5vw,17px)!important;line-height:1.75!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html body.site-page.obsidian-ice.independent-home #contacto *{
+    scroll-behavior:auto!important;
+  }
+}
