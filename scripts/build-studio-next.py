@@ -303,6 +303,11 @@ document("privacidad","Privacidad y datos personales","Información sobre uso de
 sol=OUT/"soluciones";sol.mkdir(exist_ok=True)
 (sol/"index.html").write_text('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url='+site("servicios/")+'"><title>Servicios | Aptitud Labs</title><p><a href="'+site("servicios/")+'">Ver servicios</a></p></html>',encoding="utf-8")
 
+# The new frontend assets are published inside /rebuild/ only.
+import shutil
+for asset in ("studio-next.css","studio-next-widgets.css","studio-next.js"):
+    shutil.copy2(BASE/"studio-next-src"/asset, OUT/"assets"/asset)
+
 # Validation: route/asset links, project count, scripts, no older CSS/JS versions.
 pages=list(OUT.rglob("index.html"))
 assert len(pages)==12, f"Expected 12 pages, got {len(pages)}"
