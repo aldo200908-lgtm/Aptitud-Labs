@@ -1,78 +1,94 @@
-/* Native scroll choreography and accessible project viewer. No scroll hijack. */
+/* Full-screen native-scroll portfolio. Exactly one active scene in motion mode. */
 (()=>{
 'use strict';
 if(!document.body.hasAttribute('data-portfolio-experience'))return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const fine=matchMedia('(hover: hover) and (pointer: fine)');
+const compact=matchMedia('(max-height: 600px)');
 const mobile=matchMedia('(max-width: 620px)');
-const root=document.documentElement;
-const section=document.querySelector('.pf-feature-scroll');
-const feature=document.querySelector('[data-pf-feature]');
-const cards=[...document.querySelectorAll('[data-pf-card]')];
-const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
-let queued=false;
+const fine=matchMedia('(hover: hover) and (pointer: fine)');
+const theatre=document.querySelector('.ex-theatre');
+const stage=document.querySelector('[data-ex-stage]');
+const scenes=[...document.querySelectorAll('[data-ex-scene]')];
+const nav=[...document.querySelectorAll('[data-ex-nav]')];
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const staticMode=()=>reduced.matches||compact.matches;
+let selected=-1,queued=false;
+function setScene(index){
+ selected=index;
+ scenes.forEach((scene,i)=>{
+  scene.querySelectorAll('.ex-name,.ex-image-button').forEach(el=>el.getAnimations?.().forEach(animation=>animation.cancel()));
+  const active=i===index;
+  scene.hidden=!active;
+  scene.setAttribute('aria-hidden',String(!active));
+  if(active&&!staticMode()){
+   const name=scene.querySelector('.ex-name');
+   name?.animate?.([{opacity:.25,translate:'0 25px'},{opacity:1,translate:'0 0'}],{duration:460,easing:'cubic-bezier(.16,1,.3,1)'});
+   const image=scene.querySelector('.ex-image-button');
+   image?.animate?.([{opacity:.3,clipPath:'inset(0 0 17% 0)'},{opacity:1,clipPath:'inset(0 0 0 0)'}],{duration:560,easing:'cubic-bezier(.16,1,.3,1)'});
+  }
+ });
+ stage.dataset.tone=scenes[index].dataset.tone;
+ stage.querySelector('[data-ex-counter]').textContent=(index+1)+' de '+scenes.length;
+ nav.forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.exNav)===index)));
+}
+function measure(){
+ const box=theatre.getBoundingClientRect();
+ const top=parseFloat(getComputedStyle(stage).top)||0;
+ const distance=Math.max(1,theatre.offsetHeight-stage.offsetHeight);
+ return {box,top,distance,progress:clamp((top-box.top)/distance,0,1)};
+}
 function paint(){
  queued=false;
- const full=Math.max(1,document.documentElement.scrollHeight-innerHeight);
- root.style.setProperty('--pf-read',String(clamp(scrollY/full,0,1)));
- if(reduced.matches)return;
- if(section&&feature){
-  const box=section.getBoundingClientRect();
-  if(box.bottom>0&&box.top<innerHeight){
-   const t=clamp((innerHeight*.55-box.top)/Math.max(1,box.height*.65),0,1);
-   feature.style.setProperty('--pf-feature-y',((1-t)*25).toFixed(1)+'px');
-   feature.style.setProperty('--pf-feature-rx',((1-t)*6).toFixed(2)+'deg');
-   feature.style.setProperty('--pf-feature-ry',((1-t)*-4).toFixed(2)+'deg');
-   feature.style.setProperty('--pf-feature-scale',(.96+t*.04).toFixed(4));
-  }
- }
- if(!mobile.matches)cards.forEach(card=>{
-  if(card.hidden)return;
-  const box=card.getBoundingClientRect();
-  if(box.bottom<0||box.top>innerHeight)return;
-  const y=clamp((box.top-innerHeight*.5)/innerHeight*17,-15,15);
-  card.style.setProperty('--pf-card-y',y.toFixed(1)+'px');
- });
+ if(staticMode()||!stage||!scenes.length)return;
+ const {box,progress}=measure();
+ const scaled=progress*scenes.length;
+ const index=Math.min(scenes.length-1,Math.floor(scaled));
+ const phase=clamp(scaled-index,0,1);
+ if(index!==selected)setScene(index);
+ stage.style.setProperty('--ex-progress',progress.toFixed(4));
+ if(box.bottom<0||box.top>innerHeight)return;
+ stage.style.setProperty('--ex-ry',(-10+phase*(mobile.matches?16:20)).toFixed(2)+'deg');
+ stage.style.setProperty('--ex-rx',(4-phase*8).toFixed(2)+'deg');
+ stage.style.setProperty('--ex-rz',(1.5-phase*3).toFixed(2)+'deg');
+ stage.style.setProperty('--ex-y',((.5-phase)*(mobile.matches?16:25)).toFixed(1)+'px');
+ stage.style.setProperty('--ex-scale',(.96+Math.sin(phase*Math.PI)*.04).toFixed(4));
 }
 function schedule(){if(!queued){queued=true;requestAnimationFrame(paint)}}
-window.addEventListener('scroll',schedule,{passive:true});
-window.addEventListener('resize',schedule,{passive:true});
-window.addEventListener('load',schedule,{once:true});
-reduced.addEventListener('change',()=>{
- if(reduced.matches){
-  document.querySelectorAll('.pf-is-pending').forEach(el=>el.classList.remove('pf-is-pending'));
-  document.querySelectorAll('.pf-title-line>span,.pf-title-line>em').forEach(el=>el.getAnimations().forEach(a=>a.cancel()));
- }
- schedule();
-});
-schedule();
-// The title is animated once; original text stays in place for accessibility.
-if(!reduced.matches){
- document.querySelectorAll('.pf-title-line>span,.pf-title-line>em').forEach((el,index)=>{
-  el.animate?.([{transform:'translateY(110%)'},{transform:'translateY(0)'}],{duration:950,delay:index*110,easing:'cubic-bezier(.16,1,.3,1)'});
- });
- if('IntersectionObserver' in window){
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-   if(entry.isIntersecting){entry.target.classList.remove('pf-is-pending');observer.unobserve(entry.target)}
-  }),{threshold:.04,rootMargin:'0px 0px 50px 0px'});
-  cards.forEach(card=>{if(card.getBoundingClientRect().top>innerHeight)card.classList.add('pf-is-pending');observer.observe(card)});
- }
+function configure(){
+ document.body.classList.toggle('ex-live',!staticMode());
+ if(staticMode()){
+  scenes.forEach(scene=>{scene.hidden=false;scene.removeAttribute('aria-hidden');scene.querySelectorAll('.ex-name,.ex-image-button').forEach(el=>el.getAnimations?.().forEach(a=>a.cancel()))});
+  selected=-1;
+ }else schedule();
 }
-cards.forEach(card=>{
- const visual=card.querySelector('.pf-card-visual');
- visual.addEventListener('pointermove',event=>{
-  if(reduced.matches||!fine.matches)return;
-  const box=visual.getBoundingClientRect();
-  visual.style.setProperty('--pf-card-rx',(((event.clientY-box.top)/box.height-.5)*-5).toFixed(2)+'deg');
-  visual.style.setProperty('--pf-card-ry',(((event.clientX-box.left)/box.width-.5)*7).toFixed(2)+'deg');
- });
- visual.addEventListener('pointerleave',()=>{visual.style.removeProperty('--pf-card-rx');visual.style.removeProperty('--pf-card-ry')});
-});
-document.querySelectorAll('[data-next-filter]').forEach(button=>button.addEventListener('click',()=>{
- // Hidden cards may be revealed far below the observer's viewport; never leave them faded.
- cards.forEach(card=>card.classList.remove('pf-is-pending'));
+function goToProject(index){
+ const target=(index+scenes.length)%scenes.length;
+ if(staticMode()){scenes[target].scrollIntoView({block:'start',behavior:'instant'});return}
+ const {box,top,distance}=measure();
+ const destination=scrollY+box.top-top+distance*((target+.48)/scenes.length);
+ window.scrollTo({top:destination,behavior:'instant'});
+ setScene(target);
  schedule();
-}));
+}
+if(stage&&theatre&&scenes.length){
+ nav.forEach(button=>button.addEventListener('click',()=>goToProject(Number(button.dataset.exNav))));
+ document.querySelectorAll('[data-ex-jump]').forEach(button=>button.addEventListener('click',()=>goToProject(Number(button.dataset.exJump))));
+ stage.querySelector('[data-ex-prev]').addEventListener('click',()=>goToProject(selected-1));
+ stage.querySelector('[data-ex-next]').addEventListener('click',()=>goToProject(selected+1));
+ stage.addEventListener('pointermove',event=>{
+  if(staticMode()||!fine.matches)return;
+  const box=stage.getBoundingClientRect();
+  stage.style.setProperty('--ex-pointer-ry',(((event.clientX-box.left)/box.width-.5)*5).toFixed(2)+'deg');
+  stage.style.setProperty('--ex-pointer-rx',(((event.clientY-box.top)/box.height-.5)*-3).toFixed(2)+'deg');
+ });
+ stage.addEventListener('pointerleave',()=>{stage.style.removeProperty('--ex-pointer-ry');stage.style.removeProperty('--ex-pointer-rx')});
+ window.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('resize',schedule,{passive:true});
+ window.addEventListener('load',schedule,{once:true});
+ reduced.addEventListener('change',configure);
+ compact.addEventListener('change',configure);
+ configure();
+}
 // All project data is embedded in the static document. No external preview dependency.
 const source=document.getElementById('portfolio-project-data');
 const dialog=document.getElementById('project-dialog');
