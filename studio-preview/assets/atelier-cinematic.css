@@ -267,3 +267,9 @@ body.al-theme .al-cinema-scrub-card {
  body.al-theme.al-motion-enabled .al-cinema-scrub-card.al-motion-kinetic-card.al-motion-visible,
  body.al-theme .al-cinema-scrub-card{transform:none!important;opacity:1!important}
 }
+
+
+/* First scene is visible before scripting but can correctly fade after scroll begins. */
+.cin-story-copy:first-child,.cin-story-shot:first-child{opacity:var(--cin-opacity,1)}
+/* Avoid permanently reserving GPU memory for below-the-fold cards. */
+.al-cinema-scrub-card{will-change:auto}
