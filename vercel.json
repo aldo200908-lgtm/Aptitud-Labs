@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "node scripts/build-vercel.cjs",
+  "outputDirectory": "vercel-dist",
+  "redirects": [
+    { "source": "/Aptitud-Labs", "destination": "/", "permanent": true },
+    { "source": "/Aptitud-Labs/:path*", "destination": "/:path*", "permanent": true }
+  ]
+}
