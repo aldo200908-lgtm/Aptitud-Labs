@@ -302,7 +302,7 @@ body.al-theme{
 .al-motion-enabled .al-service-tile .al-photograph img{
   transform:translate3d(0,var(--al-photo-drift,0px),0) scale(1.18);
 }
-.al-motion-enabled .al-home-stage .al-hero-photo img{
+.al-motion-enabled.al-home-stage .al-hero-photo img{
   transform:translate3d(0,var(--al-photo-drift,0px),0) scale(1.16);
   filter:brightness(.77) saturate(.9) contrast(1.08);
 }
@@ -449,3 +449,11 @@ body.al-theme{
     transform:none!important;filter:none!important
   }
 }
+
+/* NFC's wireless symbol is vector-like CSS geometry, never keyboard punctuation. */
+.al-nfc-depth-card .al-nfc-arc{position:relative;width:64px;height:55px;display:block;align-self:flex-end}
+.al-nfc-depth-card .al-nfc-arc i{position:absolute;bottom:1px;left:0;border-right:2px solid #c2e6f0;border-top:2px solid #c2e6f0;border-radius:0 100% 0 0;transform:rotate(-8deg)}
+.al-nfc-depth-card .al-nfc-arc i:nth-child(1){width:23px;height:23px}
+.al-nfc-depth-card .al-nfc-arc i:nth-child(2){width:38px;height:38px}
+.al-nfc-depth-card .al-nfc-arc i:nth-child(3){width:53px;height:53px}
+@media(max-width:620px){.al-nfc-depth-card .al-nfc-arc{transform:scale(.68);transform-origin:right center}}
