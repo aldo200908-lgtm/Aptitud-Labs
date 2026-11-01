@@ -271,7 +271,7 @@
     const card=document.createElement('div');
     card.className='al-nfc-depth-card';
     card.setAttribute('aria-hidden','true');
-    card.innerHTML='<span>APTITUD LABS.</span><span class="al-nfc-arc">)))</span><small>NFC / CONTACTO</small>';
+    card.innerHTML='<span>APTITUD LABS.</span><span class="al-nfc-arc"><i></i><i></i><i></i></span><small>NFC / CONTACTO</small>';
     photo.appendChild(card);
   }
   const cardNodes=[...document.querySelectorAll('.al-work-card,.al-service-tile,.al-price-card,.nfc-product')];
