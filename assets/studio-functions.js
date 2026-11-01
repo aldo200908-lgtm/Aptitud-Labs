@@ -54,6 +54,14 @@
   openQuote('contratar');
  });
  chooseFromLocation();
+ // Carry the selected service into the contact form.
+ const requested=new URLSearchParams(location.search).get('servicio');
+ const serviceLabels={web:'Diseño o desarrollo web',apps:'Aplicación Android',sistemas:'CRM o sistema para negocio',automatizacion:'Automatización, bot o IA',nfc:'Tarjetas NFC con QR'};
+ const serviceField=document.querySelector('#briefForm select[name="servicio"]');
+ if(serviceField&&serviceLabels[requested]){
+  const option=[...serviceField.options].find(o=>o.textContent===serviceLabels[requested]);
+  if(option)serviceField.value=option.value;
+ }
  // Graceful fallback for broken image files: no stock imagery or fake demos.
  document.querySelectorAll('.hero-art-photo,.feature-media img,.project-media img,.service-row-photo img').forEach(img=>{
   img.addEventListener('error',()=>{img.classList.add('image-unavailable');img.alt='Imagen no disponible';},{once:true});
