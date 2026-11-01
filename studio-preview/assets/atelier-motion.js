@@ -31,7 +31,7 @@
       record.target.classList.add('al-motion-visible');
       observer.unobserve(record.target);
     }
-  },{rootMargin:'0px 0px -42px 0px',threshold:.07}):null;
+  },{rootMargin:'110px 0px 110px 0px',threshold:0}):null;
 
   function observeElement(el,kind,delay=0){
     if(!el||observed.has(el))return;
