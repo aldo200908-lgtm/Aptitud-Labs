@@ -61,20 +61,5 @@
   choose(currentFromUrl());
   window.addEventListener('hashchange',()=>choose(currentFromUrl()));
  }
- // Nonblocking, one-time entrances; these never hide content before JavaScript.
- const reduce=matchMedia('(prefers-reduced-motion: reduce)');
- if(!reduce.matches&&'IntersectionObserver' in window){
-  const elements=$$('.al-service-tile,.al-work-card,.al-price-card,.al-feature-strip article');
-  const observer=new IntersectionObserver(entries=>{
-   for(const entry of entries){
-    if(!entry.isIntersecting)continue;
-    observer.unobserve(entry.target);
-    entry.target.animate([
-     {transform:'translateY(17px)',opacity:.74},
-     {transform:'translateY(0)',opacity:1}
-    ],{duration:550,easing:'cubic-bezier(.2,.75,.2,1)'});
-   }
-  },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
-  elements.forEach(el=>observer.observe(el));
- }
+
 })();
