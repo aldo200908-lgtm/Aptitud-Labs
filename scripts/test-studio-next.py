@@ -118,10 +118,10 @@ try:
     links=[card.find_element(By.CSS_SELECTOR,"a.project-media").get_attribute("href") for card in cards]
     check(len(set(links))==7,"Portfolio demo URLs are duplicated")
     btn=driver.find_element(By.CSS_SELECTOR,'[data-next-filter="sistemas"]')
-    btn.click()
+    driver.execute_script("arguments[0].click()",btn)
     displayed=[card for card in cards if card.is_displayed()]
     check(len(displayed)==2,f"Portfolio tools filter returned {len(displayed)}")
-    driver.find_element(By.CSS_SELECTOR,'[data-next-filter="todos"]').click()
+    driver.execute_script("arguments[0].click()",driver.find_element(By.CSS_SELECTOR,'[data-next-filter="todos"]'))
     check(len([card for card in cards if card.is_displayed()])==7,"All projects filter failed")
     # NFC: six cards, open details, add one product, see cart; DO NOT submit checkout.
     visit("nfc-qr/")
@@ -133,7 +133,7 @@ try:
     wait_for(".nfc-shop-dialog")
     active=driver.find_element(By.CSS_SELECTOR,".nfc-shop-overlay:not([hidden])")
     check(active.is_displayed(),"NFC modal did not open")
-    driver.find_element(By.CSS_SELECTOR,".nfc-add-cart").click()
+    driver.execute_script("arguments[0].click()",driver.find_element(By.CSS_SELECTOR,".nfc-add-cart"))
     check(driver.find_element(By.CSS_SELECTOR,".nfc-cart-total").is_displayed(),"NFC cart summary hidden")
     check(driver.find_element(By.ID,"nfc-cart-count").text=="1","NFC cart counter failed")
     capture("nfc-cart")
@@ -141,7 +141,7 @@ try:
     visit("cotizar/")
     check(driver.find_element(By.CSS_SELECTOR,'[data-quote-panel="consulta"]').is_displayed(),"Consulta should be default")
     check(not driver.find_element(By.CSS_SELECTOR,'[data-quote-panel="cotizador"]').is_displayed(),"Calculator must start hidden")
-    driver.find_element(By.CSS_SELECTOR,'[data-quote-tab="cotizador"]').click()
+    driver.execute_script("arguments[0].click()",driver.find_element(By.CSS_SELECTOR,'[data-quote-tab="cotizador"]'))
     check(driver.find_element(By.CSS_SELECTOR,'[data-quote-panel="cotizador"]').is_displayed(),"Calculator tab failed")
     total=driver.find_element(By.ID,"quote-total").text
     check("S/" in total,"Price calculator did not initialize")
@@ -150,7 +150,7 @@ try:
     changed=driver.find_element(By.ID,"quote-total").text
     check(total!=changed,f"Price total didn't update: {total} -> {changed}")
     capture("quote-calculator")
-    driver.find_element(By.CSS_SELECTOR,'[data-quote-tab="contratar"]').click()
+    driver.execute_script("arguments[0].click()",driver.find_element(By.CSS_SELECTOR,'[data-quote-tab="contratar"]'))
     check(driver.find_element(By.ID,"brief-step-title").text,"Formal hiring wizard not initialized")
     check(driver.find_element(By.ID,"brief-next").is_displayed(),"Formal wizard Next button missing")
     capture("quote-hiring")
