@@ -53,13 +53,16 @@ def rebase(text: str, prefix: str) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", default="Aptitud-Labs")
+    parser.add_argument("--subpath", default="")
     parser.add_argument("--output", default="_site")
     options = parser.parse_args()
     source = Path.cwd()
     output = (source / options.output).resolve()
     if not re.fullmatch(r"[A-Za-z0-9._-]+", options.repo):
         raise SystemExit("Invalid repository path")
-    prefix = "/" + options.repo
+    if options.subpath and not re.fullmatch(r"[A-Za-z0-9._-]+", options.subpath):
+        raise SystemExit("Invalid preview subpath")
+    prefix = "/" + options.repo + ("/" + options.subpath if options.subpath else "")
     if output == source or source not in output.parents:
         raise SystemExit("Output must be a subdirectory of checkout")
     if output.exists():
@@ -115,17 +118,16 @@ def main() -> None:
 
     assert (output / "index.html").is_file(), "Missing home page"
     assert (output / "proyectos" / "index.html").is_file(), "Missing separate portfolio"
-    assert (output / "assets" / "motion-graphics-v5.js").is_file(), "Missing Motion V5 JS"
-    assert (output / "assets" / "motion-graphics-v5.css").is_file(), "Missing Motion V5 CSS"
+    assert (output / "assets" / "atelier.js").is_file(), "Missing Atelier JS"
+    assert (output / "assets" / "atelier.css").is_file(), "Missing Atelier CSS"
     html = (output / "index.html").read_text(encoding="utf-8")
-    assert prefix + "/assets/motion-graphics-v5.css" in html, "CSS was not rebased"
-    assert prefix + "/assets/motion-graphics-v5.js" in html, "JS was not rebased"
-    assert prefix + "/proyectos/" in html, "Portfolio navigation was not rebased"
-    assert "noindex,nofollow" in html, "Public preview must not enter search indexes"
-    print(f"GitHub Pages preview generated: {prefix}/, {count} text files rebased")
-    print("Motion V5, Home, Portfolio, Services, Plans, NFC and Quote preserved.")
-    print("Excluded: repository workflows, history, scripts, reports and Vercel config.")
-
+    assert prefix + "/assets/atelier.css" in html, "Atelier CSS not rebased"
+    assert prefix + "/assets/atelier.js" in html, "Atelier JS not rebased"
+    assert prefix + "/proyectos/" in html, "Portfolio navigation not rebased"
+    assert "noindex,nofollow" in html, "Public preview must not be indexed"
+    print(f"Atelier Pages output: {prefix}/; {count} text files, correctly rebased")
+    print("Home, Portfolio, Services, Plans, NFC catalog, pricing calculator and formal brief included.")
+    print("Excluded: repository history, workflows, scripts and internal reports.")
 
 if __name__ == "__main__":
     main()
