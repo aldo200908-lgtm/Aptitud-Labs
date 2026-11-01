@@ -1468,20 +1468,20 @@
         },
         {
           "cls": "fx-ticker-track",
-          "left": -16,
-          "right": 2595,
+          "left": -18,
+          "right": 2594,
           "tag": "DIV"
         },
         {
           "cls": "",
-          "left": -16,
-          "right": 1290,
+          "left": -18,
+          "right": 1288,
           "tag": "SPAN"
         },
         {
           "cls": "",
-          "left": 1290,
-          "right": 2595,
+          "left": 1288,
+          "right": 2594,
           "tag": "SPAN"
         },
         {
@@ -7534,16 +7534,16 @@
         {
           "alt": "",
           "h": 675,
-          "loaded": true,
+          "loaded": false,
           "src": "/Aptitud-Labs/assets/visuals/servicios-realista.webp",
           "w": 1200
         },
         {
           "alt": "",
-          "h": 900,
-          "loaded": true,
+          "h": 0,
+          "loaded": false,
           "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
-          "w": 1600
+          "w": 0
         },
         {
           "alt": "",
@@ -7731,7 +7731,7 @@
         },
         {
           "href": "/Aptitud-Labs/servicios/",
-          "label": "Diseño web\ny soluciones digitales.\nDiseño web, sistemas e IA\n↗",
+          "label": "Diseño web\ny soluciones digitales.\nSUSHI TEN / WEB\nPULSO / APP\nDiseño web, sistemas e IA\n↗",
           "target": ""
         },
         {
@@ -9651,20 +9651,20 @@
           },
           {
             "cls": "fx-ticker-track",
-            "left": -110,
-            "right": 2501,
+            "left": -107,
+            "right": 2504,
             "tag": "DIV"
           },
           {
             "cls": "",
-            "left": -110,
-            "right": 1196,
+            "left": -107,
+            "right": 1198,
             "tag": "SPAN"
           },
           {
             "cls": "",
-            "left": 1196,
-            "right": 2501,
+            "left": 1198,
+            "right": 2504,
             "tag": "SPAN"
           },
           {
@@ -9840,7 +9840,7 @@
   "screens": [
     {
       "path": "audit-evidence/screens/01-inicio-mobile-top.jpg",
-      "bytes": 117485
+      "bytes": 117232
     },
     {
       "path": "audit-evidence/screens/01-inicio-mobile-full.jpg",
@@ -9852,11 +9852,11 @@
     },
     {
       "path": "audit-evidence/screens/02-portafolio-mobile-top.jpg",
-      "bytes": 279137
+      "bytes": 279785
     },
     {
       "path": "audit-evidence/screens/02-portafolio-mobile-full.jpg",
-      "bytes": 258588
+      "bytes": 258625
     },
     {
       "path": "audit-evidence/screens/02-portafolio-mobile-bottom.jpg",
@@ -9864,7 +9864,7 @@
     },
     {
       "path": "audit-evidence/screens/03-servicios-mobile-top.jpg",
-      "bytes": 154646
+      "bytes": 153756
     },
     {
       "path": "audit-evidence/screens/03-servicios-mobile-full.jpg",
@@ -9872,7 +9872,7 @@
     },
     {
       "path": "audit-evidence/screens/04-planes-mobile-top.jpg",
-      "bytes": 169814
+      "bytes": 182938
     },
     {
       "path": "audit-evidence/screens/04-planes-mobile-full.jpg",
@@ -9880,7 +9880,7 @@
     },
     {
       "path": "audit-evidence/screens/05-nfc-mobile-top.jpg",
-      "bytes": 235466
+      "bytes": 235486
     },
     {
       "path": "audit-evidence/screens/05-nfc-mobile-full.jpg",
@@ -9892,7 +9892,7 @@
     },
     {
       "path": "audit-evidence/screens/06-cotizar-mobile-top.jpg",
-      "bytes": 305976
+      "bytes": 305965
     },
     {
       "path": "audit-evidence/screens/06-cotizar-mobile-full.jpg",
@@ -9903,20 +9903,36 @@
       "bytes": 43114
     },
     {
+      "path": "audit-evidence/screens/07-puno-seo-mobile-top.jpg",
+      "bytes": 365236
+    },
+    {
+      "path": "audit-evidence/screens/08-privacidad-mobile-top.jpg",
+      "bytes": 258482
+    },
+    {
+      "path": "audit-evidence/screens/09-juliaca-seo-mobile-top.jpg",
+      "bytes": 209704
+    },
+    {
+      "path": "audit-evidence/screens/10-soluciones-mobile-top.jpg",
+      "bytes": 154646
+    },
+    {
       "path": "audit-evidence/screens/11-inicio-desktop-top.jpg",
-      "bytes": 216812
+      "bytes": 214656
     },
     {
       "path": "audit-evidence/screens/11-inicio-desktop-full.jpg",
-      "bytes": 228831
+      "bytes": 229186
     },
     {
       "path": "audit-evidence/screens/12-portafolio-desktop-top.jpg",
-      "bytes": 504858
+      "bytes": 505429
     },
     {
       "path": "audit-evidence/screens/12-portafolio-desktop-full.jpg",
-      "bytes": 300069
+      "bytes": 299550
     }
   ]
 }
