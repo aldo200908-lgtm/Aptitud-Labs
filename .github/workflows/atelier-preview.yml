@@ -37,3 +37,32 @@ jobs:
             git diff --cached --quiet || git commit -m "test(atelier): update screenshot evidence [skip ci]"
             git push origin HEAD:redesign/aptitud-studio-clean-20261031
           fi
+
+      - name: Publish only /studio-preview on GitHub Pages
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git clone -q --depth 1 --branch gh-pages "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/aptitud-pages
+          mkdir -p /tmp/aptitud-pages/studio-preview
+          rm -rf /tmp/aptitud-pages/studio-preview
+          mkdir -p /tmp/aptitud-pages/studio-preview
+          cp -a _site/. /tmp/aptitud-pages/studio-preview/
+          cd /tmp/aptitud-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A studio-preview
+          if git diff --cached --quiet; then
+            echo "No preview changes to publish."
+            exit 0
+          fi
+          git commit -m "preview: isolated Atelier reconstruction (no root overwrite)"
+          for attempt in 1 2 3; do
+            if git push origin gh-pages; then
+              echo "Published /Aptitud-Labs/studio-preview/"
+              exit 0
+            fi
+            git pull --rebase origin gh-pages
+          done
+          exit 1
