@@ -304,6 +304,8 @@
     "hero photograph has scroll-linked depth",
     "scroll indicator advances with document position",
     "semantic section titles carry motion reveal without rewriting text",
+    "motion headings never clip readable text when offscreen",
+    "service cards remain perceptible before observer reveal",
     "project cards stay visible during animation preparation",
     "responsive 3D treatment prepared without hover device",
     "reduced-motion preference disables the motion engine",
@@ -313,43 +315,43 @@
   "screenshots": [
     {
       "path": "atelier-evidence/screens/inicio-mobile-full.jpg",
-      "size": 136389
+      "size": 157178
     },
     {
       "path": "atelier-evidence/screens/portafolio-mobile-full.jpg",
-      "size": 172997
+      "size": 194016
     },
     {
       "path": "atelier-evidence/screens/servicios-mobile-full.jpg",
-      "size": 142131
+      "size": 152898
     },
     {
       "path": "atelier-evidence/screens/planes-mobile-full.jpg",
-      "size": 147581
+      "size": 157709
     },
     {
       "path": "atelier-evidence/screens/nfc-mobile-full.jpg",
-      "size": 156434
+      "size": 166334
     },
     {
       "path": "atelier-evidence/screens/cotizar-mobile-full.jpg",
-      "size": 128490
+      "size": 132016
     },
     {
       "path": "atelier-evidence/screens/puno-mobile-full.jpg",
-      "size": 121424
+      "size": 123986
     },
     {
       "path": "atelier-evidence/screens/juliaca-mobile-full.jpg",
-      "size": 113632
+      "size": 126117
     },
     {
       "path": "atelier-evidence/screens/restaurantes-mobile-full.jpg",
-      "size": 115072
+      "size": 128340
     },
     {
       "path": "atelier-evidence/screens/barberias-mobile-full.jpg",
-      "size": 112794
+      "size": 122080
     },
     {
       "path": "atelier-evidence/screens/privacidad-mobile-full.jpg",
@@ -357,43 +359,43 @@
     },
     {
       "path": "atelier-evidence/screens/inicio-desktop.jpg",
-      "size": 202033
+      "size": 231114
     },
     {
       "path": "atelier-evidence/screens/portafolio-desktop.jpg",
-      "size": 266396
+      "size": 315088
     },
     {
       "path": "atelier-evidence/screens/servicios-desktop.jpg",
-      "size": 208040
+      "size": 255479
     },
     {
       "path": "atelier-evidence/screens/planes-desktop.jpg",
-      "size": 207988
+      "size": 228376
     },
     {
       "path": "atelier-evidence/screens/nfc-desktop.jpg",
-      "size": 257277
+      "size": 289572
     },
     {
       "path": "atelier-evidence/screens/cotizar-desktop.jpg",
-      "size": 190304
+      "size": 198142
     },
     {
       "path": "atelier-evidence/screens/puno-desktop.jpg",
-      "size": 188529
+      "size": 218151
     },
     {
       "path": "atelier-evidence/screens/juliaca-desktop.jpg",
-      "size": 182997
+      "size": 209672
     },
     {
       "path": "atelier-evidence/screens/restaurantes-desktop.jpg",
-      "size": 174576
+      "size": 203053
     },
     {
       "path": "atelier-evidence/screens/barberias-desktop.jpg",
-      "size": 172313
+      "size": 192527
     },
     {
       "path": "atelier-evidence/screens/privacidad-desktop.jpg",
