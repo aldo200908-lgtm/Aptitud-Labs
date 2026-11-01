@@ -90,7 +90,10 @@ def check_page(route,name,width):
  "js":js("return document.querySelectorAll('script[src]').length")})
 try:
  for width in (390,1280):
-  for route,name in [("","inicio"),("proyectos/","portafolio"),("servicios/","servicios"),("planes/","planes"),("nfc-qr/","nfc"),("cotizar/","cotizar")]:
+  for route,name in [("","inicio"),("proyectos/","portafolio"),("servicios/","servicios"),("planes/","planes"),("nfc-qr/","nfc"),("cotizar/","cotizar"),
+                     ("diseno-web-puno/","puno"),("diseno-web-juliaca/","juliaca"),
+                     ("web-para-restaurantes/","restaurantes"),("web-para-barberias/","barberias"),
+                     ("privacidad/","privacidad")]:
    check_page(route,name,width)
  load("",390)
  toggle=d.find_element(By.ID,"al-menu-toggle")
