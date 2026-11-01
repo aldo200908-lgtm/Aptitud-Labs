@@ -119,10 +119,10 @@ try:
     check(len(set(links))==7,"Portfolio demo URLs are duplicated")
     btn=driver.find_element(By.CSS_SELECTOR,'[data-next-filter="sistemas"]')
     driver.execute_script("arguments[0].click()",btn)
-    displayed=[card for card in cards if card.is_displayed()]
-    check(len(displayed)==2,f"Portfolio tools filter returned {len(displayed)}")
+    displayed=driver.execute_script("return [...document.querySelectorAll('[data-next-kind]')].filter(el=>!el.hidden).length")
+    check(displayed==2,f"Portfolio tools filter returned {displayed}")
     driver.execute_script("arguments[0].click()",driver.find_element(By.CSS_SELECTOR,'[data-next-filter="todos"]'))
-    check(len([card for card in cards if card.is_displayed()])==7,"All projects filter failed")
+    check(driver.execute_script("return [...document.querySelectorAll('[data-next-kind]')].filter(el=>!el.hidden).length")==7,"All projects filter failed")
     # NFC: six cards, open details, add one product, see cart; DO NOT submit checkout.
     visit("nfc-qr/")
     cards=driver.find_elements(By.CSS_SELECTOR,".nfc-product")
