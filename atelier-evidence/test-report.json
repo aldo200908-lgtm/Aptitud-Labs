@@ -180,11 +180,11 @@
     },
     {
       "path": "atelier-evidence/screens/portafolio-mobile-full.jpg",
-      "size": 214829
+      "size": 205164
     },
     {
       "path": "atelier-evidence/screens/servicios-mobile-full.jpg",
-      "size": 189663
+      "size": 199798
     },
     {
       "path": "atelier-evidence/screens/planes-mobile-full.jpg",
@@ -192,15 +192,15 @@
     },
     {
       "path": "atelier-evidence/screens/nfc-mobile-full.jpg",
-      "size": 198201
+      "size": 184261
     },
     {
       "path": "atelier-evidence/screens/cotizar-mobile-full.jpg",
-      "size": 141166
+      "size": 141143
     },
     {
       "path": "atelier-evidence/screens/inicio-desktop.jpg",
-      "size": 266653
+      "size": 266634
     },
     {
       "path": "atelier-evidence/screens/portafolio-desktop.jpg",
@@ -208,19 +208,19 @@
     },
     {
       "path": "atelier-evidence/screens/servicios-desktop.jpg",
-      "size": 277771
+      "size": 277788
     },
     {
       "path": "atelier-evidence/screens/planes-desktop.jpg",
-      "size": 243422
+      "size": 243438
     },
     {
       "path": "atelier-evidence/screens/nfc-desktop.jpg",
-      "size": 300932
+      "size": 285698
     },
     {
       "path": "atelier-evidence/screens/cotizar-desktop.jpg",
-      "size": 207992
+      "size": 207912
     }
   ]
 }
