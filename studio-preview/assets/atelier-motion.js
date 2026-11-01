@@ -201,6 +201,23 @@
     });
   });
 
+  // Inline feedback for changing estimates and basket totals.
+  // The original calculation text is untouched; only its transition animates.
+  for(const price of ['#quote-total','.nfc-cart-total']){
+    const field=$(price);
+    if(!field || !('MutationObserver' in window))continue;
+    let animating=null;
+    new MutationObserver(()=>{
+      if(reduce.matches || typeof field.animate!=='function')return;
+      animating?.cancel();
+      animating=field.animate(
+        [{opacity:.68,transform:'translate3d(0,5px,0) scale(.97)'},
+         {opacity:1,transform:'translate3d(0,0,0) scale(1)'}],
+        {duration:310,easing:'cubic-bezier(.2,.75,.2,1)'}
+      );
+    }).observe(field,{childList:true,characterData:true,subtree:true});
+  }
+
   // If accessibility preference is changed while the page is open,
   // immediately clear active effects rather than trapping invisible content.
   reduce.addEventListener?.('change',e=>{
