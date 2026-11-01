@@ -1,0 +1,334 @@
+[
+  {
+    "page": "Inicio",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Diseño web, apps y soluciones digitales en Puno | Aptitud Labs"
+  },
+  {
+    "page": "Portafolio",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Portafolio de webs y aplicaciones | Aptitud Labs"
+  },
+  {
+    "page": "Servicios",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Servicios digitales | Aptitud Labs"
+  },
+  {
+    "page": "Planes",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/pricing.js",
+      "/Aptitud-Labs/assets/pricing-plans.js",
+      "/Aptitud-Labs/assets/nfc-store.js",
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Planes y precios | Aptitud Labs"
+  },
+  {
+    "page": "Tienda NFC",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css",
+      "/Aptitud-Labs/assets/nfc-store.css",
+      "/Aptitud-Labs/rebuild/assets/studio-next-widgets.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/nfc-store.js",
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Tienda NFC y QR | Aptitud Labs"
+  },
+  {
+    "page": "Cotizar",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css",
+      "/Aptitud-Labs/assets/cotizador.css",
+      "/Aptitud-Labs/assets/brief.css",
+      "/Aptitud-Labs/rebuild/assets/studio-next-widgets.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/pricing.js",
+      "/Aptitud-Labs/assets/nfc-store.js",
+      "/Aptitud-Labs/assets/cotizador.js",
+      "/Aptitud-Labs/assets/brief.js",
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Cotizador y contacto | Aptitud Labs"
+  },
+  {
+    "page": "Puno",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Diseño web en Puno | Aptitud Labs"
+  },
+  {
+    "page": "Juliaca",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Diseño web en Juliaca | Aptitud Labs"
+  },
+  {
+    "page": "Restaurantes",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Páginas web para restaurantes | Aptitud Labs"
+  },
+  {
+    "page": "Barberías",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Páginas web para barberías | Aptitud Labs"
+  },
+  {
+    "page": "Privacidad",
+    "width": 390,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 390,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Privacidad y datos personales | Aptitud Labs"
+  },
+  {
+    "page": "Inicio",
+    "width": 1280,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 1280,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Diseño web, apps y soluciones digitales en Puno | Aptitud Labs"
+  },
+  {
+    "page": "Portafolio",
+    "width": 1280,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 1280,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Portafolio de webs y aplicaciones | Aptitud Labs"
+  },
+  {
+    "page": "Servicios",
+    "width": 1280,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 1280,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Servicios digitales | Aptitud Labs"
+  },
+  {
+    "page": "Planes",
+    "width": 1280,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/pricing.js",
+      "/Aptitud-Labs/assets/pricing-plans.js",
+      "/Aptitud-Labs/assets/nfc-store.js",
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 1280,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Planes y precios | Aptitud Labs"
+  },
+  {
+    "page": "Tienda NFC",
+    "width": 1280,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css",
+      "/Aptitud-Labs/assets/nfc-store.css",
+      "/Aptitud-Labs/rebuild/assets/studio-next-widgets.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/nfc-store.js",
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 1280,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Tienda NFC y QR | Aptitud Labs"
+  },
+  {
+    "page": "Cotizar",
+    "width": 1280,
+    "broken": [],
+    "css": [
+      "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "/Aptitud-Labs/rebuild/assets/studio-next.css",
+      "/Aptitud-Labs/assets/cotizador.css",
+      "/Aptitud-Labs/assets/brief.css",
+      "/Aptitud-Labs/rebuild/assets/studio-next-widgets.css"
+    ],
+    "h1": 1,
+    "js": [
+      "/Aptitud-Labs/assets/pricing.js",
+      "/Aptitud-Labs/assets/nfc-store.js",
+      "/Aptitud-Labs/assets/cotizador.js",
+      "/Aptitud-Labs/assets/brief.js",
+      "/Aptitud-Labs/assets/refresh.js",
+      "/Aptitud-Labs/rebuild/assets/studio-next.js"
+    ],
+    "overflow": 0,
+    "scrollWidth": 1280,
+    "theme": "rgb(16, 22, 27)",
+    "title": "Cotizador y contacto | Aptitud Labs"
+  }
+]
