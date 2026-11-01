@@ -70,6 +70,9 @@ def check_page(route,name,width):
        f"{name} no legacy theme imports")
  if width==390:
   scroll_all()
+  # A full-page screenshot may catch a lazy image before its observer fires.
+  # Eagerly request all images for asset-integrity validation after scroll.
+  js("document.querySelectorAll('img[loading=lazy]').forEach(x=>x.loading='eager')")
   try:
    WebDriverWait(d,12).until(lambda _:
        js("return [...document.images].every(x=>x.complete&&x.naturalWidth>0)"))
