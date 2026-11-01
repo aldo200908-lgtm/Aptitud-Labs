@@ -467,6 +467,469 @@
       "unlabeledBtns": [],
       "label": "01-inicio",
       "route": "/Aptitud-Labs/",
+      "afterScroll": {
+        "background": "rgb(34, 40, 35)",
+        "canonical": null,
+        "clientWidth": 390,
+        "contactBg": "rgb(17, 23, 28)",
+        "contactFormBg": "rgb(18, 27, 35)",
+        "contactPanelBg": "rgb(26, 35, 43)",
+        "duplicateIDs": [],
+        "fullInputs": 4,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "Tu negociono es uno más.Su web tampoco."
+          },
+          {
+            "level": "H2",
+            "text": "Una buena idea merece un gran diseño."
+          },
+          {
+            "level": "H2",
+            "text": "Tu negocio puede llegar más lejos."
+          },
+          {
+            "level": "H2",
+            "text": "Primero escuchamos.Después creamos algo propio."
+          },
+          {
+            "level": "H2",
+            "text": "Cuéntanos qué necesitatu negocio."
+          }
+        ],
+        "heroBg": "rgb(16, 21, 26)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "Concepto visual de herramientas digitales en laptop, tableta y teléfono",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/servicios-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "Concepto visual de planificación y propuesta digital",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/planes-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-chocolate.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/servicios-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "",
+            "h": 900,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
+            "w": 1600
+          },
+          {
+            "alt": "",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/pulso-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/planes-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/tienda-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/nfc-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/stand-01.webp",
+            "w": 896
+          },
+          {
+            "alt": "",
+            "h": 670,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/smartphone.webp",
+            "w": 1200
+          }
+        ],
+        "inputFields": [
+          {
+            "label": "Tu nombre",
+            "name": "nombre",
+            "placeholder": "¿Cómo te llamas?",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "label": "¿Qué necesitas?Selecciona un servicioDiseño o desarrollo webAplicación",
+            "name": "servicio",
+            "placeholder": "",
+            "required": true,
+            "type": "select-one"
+          },
+          {
+            "label": "Tu idea",
+            "name": "detalle",
+            "placeholder": "Qué hace tu negocio y qué te gustaría resolver...",
+            "required": true,
+            "type": "textarea"
+          },
+          {
+            "label": "Tu correo (opcional)",
+            "name": "correo",
+            "placeholder": "tu@correo.com",
+            "required": false,
+            "type": "email"
+          }
+        ],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Hablemos ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Ver lo que creamos\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea\n↗",
+            "target": ""
+          },
+          {
+            "href": "#conoce-aptitud",
+            "label": "DESCUBRE ↓",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Descubre nuestros servicios\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Descubre lo\nque creamos.\nVer portafolio completo\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Diseño web\ny soluciones digitales.\nDiseño web, sistemas e IA\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Un plan claro\npara cada proyecto.\nAlcances y precios orientativos\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Conecta con tus clientes\nen un toque.\nProductos y personalización\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Conoce nuestros servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/",
+            "label": "Solicita una propuesta ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Completa la solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Juliaca",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "Escribir directamente ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "Correo",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Diseño web, aplicaciones y soluciones digitales para negocios de Puno y Juliaca. Explora servicios, portafolio, planes y catálogo NFC de Aptitud Labs.",
+        "missingAlt": 0,
+        "overflows": [],
+        "poorLinks": [],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/futuristic-home.js",
+          "/Aptitud-Labs/assets/kinetic-editorial.js",
+          "/Aptitud-Labs/assets/studio-v3.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js",
+          "/Aptitud-Labs/assets/gateway-realwork-v6.js",
+          "/Aptitud-Labs/assets/photographic-direction-v7.js"
+        ],
+        "scrollWidth": 390,
+        "sections": [
+          {
+            "bg": "rgb(16, 21, 26)",
+            "cls": "home-studio-hero v3-home-hero",
+            "firstHeading": "Tu negociono es uno más.Su web tampoco.",
+            "height": 1148,
+            "id": "inicio",
+            "padding": "112px"
+          },
+          {
+            "bg": "rgb(26, 34, 40)",
+            "cls": "v8-studio-statement",
+            "firstHeading": "Una buena idea merece un gran diseño.",
+            "height": 918,
+            "id": "",
+            "padding": "75px"
+          },
+          {
+            "bg": "rgb(16, 21, 26)",
+            "cls": "home-gateway",
+            "firstHeading": "Tu negocio puede llegar más lejos.",
+            "height": 1762,
+            "id": "conoce-aptitud",
+            "padding": "56px"
+          },
+          {
+            "bg": "rgb(25, 33, 39)",
+            "cls": "home-studio-belief",
+            "firstHeading": "Primero escuchamos.Después creamos algo propio.",
+            "height": 633,
+            "id": "nuestra-forma",
+            "padding": "43px"
+          },
+          {
+            "bg": "rgb(17, 23, 28)",
+            "cls": "section-pad section-muted initial-inquiry",
+            "firstHeading": "Cuéntanos qué necesitatu negocio.",
+            "height": 1314,
+            "id": "contacto",
+            "padding": "62px"
+          }
+        ],
+        "styles": [
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/business-sections.css",
+          "/Aptitud-Labs/assets/al-summary.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/futuristic-home.css",
+          "/Aptitud-Labs/assets/kinetic-editorial.css",
+          "/Aptitud-Labs/assets/page-architecture.css",
+          "/Aptitud-Labs/assets/studio-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css",
+          "/Aptitud-Labs/assets/gateway-realwork-v6.css",
+          "/Aptitud-Labs/assets/photographic-direction-v7.css",
+          "/Aptitud-Labs/assets/home-art-direction-v8.css",
+          "/Aptitud-Labs/assets/home-refined-v9.css",
+          "/Aptitud-Labs/assets/home-corrections-v10.css",
+          "/Aptitud-Labs/assets/home-contact-v11.css?v=20261031-11"
+        ],
+        "theme": "dark",
+        "title": "Aptitud Labs | Diseño web, experiencias y software en Puno",
+        "totalHeight": 6397,
+        "unlabeledBtns": []
+      },
       "menuOpened": "true",
       "browserLogs": []
     },
@@ -1005,20 +1468,20 @@
         },
         {
           "cls": "fx-ticker-track",
-          "left": -23,
-          "right": 2588,
+          "left": -16,
+          "right": 2595,
           "tag": "DIV"
         },
         {
           "cls": "",
-          "left": -23,
-          "right": 1282,
+          "left": -16,
+          "right": 1290,
           "tag": "SPAN"
         },
         {
           "cls": "",
-          "left": 1282,
-          "right": 2588,
+          "left": 1290,
+          "right": 2595,
           "tag": "SPAN"
         },
         {
@@ -1220,6 +1683,755 @@
       "unlabeledBtns": [],
       "label": "02-portafolio",
       "route": "/Aptitud-Labs/proyectos/",
+      "afterScroll": {
+        "background": "rgb(34, 40, 35)",
+        "canonical": null,
+        "clientWidth": 390,
+        "contactBg": "rgb(231, 222, 210)",
+        "contactFormBg": "rgb(19, 29, 38)",
+        "contactPanelBg": "rgba(0, 0, 0, 0)",
+        "duplicateIDs": [],
+        "fullInputs": 4,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "No solo se mira.Se explora."
+          },
+          {
+            "level": "H2",
+            "text": "Una buena webhace que quieras seguir."
+          },
+          {
+            "level": "H3",
+            "text": "Las imágenes cuentan."
+          },
+          {
+            "level": "H3",
+            "text": "El scroll tiene ritmo."
+          },
+          {
+            "level": "H3",
+            "text": "Las interfaces responden."
+          },
+          {
+            "level": "H3",
+            "text": "Te mostramos lo que es demo."
+          },
+          {
+            "level": "H2",
+            "text": "No es una galería.Es un recorrido."
+          },
+          {
+            "level": "H2",
+            "text": "Siete ideas.Siete maneras de construir."
+          },
+          {
+            "level": "H3",
+            "text": "MaisonDulce."
+          },
+          {
+            "level": "H3",
+            "text": "Corte 01"
+          },
+          {
+            "level": "H3",
+            "text": "Luma Store"
+          },
+          {
+            "level": "H3",
+            "text": "Caja Clara"
+          },
+          {
+            "level": "H3",
+            "text": "Pulso"
+          },
+          {
+            "level": "H3",
+            "text": "Sushi Ten Bento"
+          },
+          {
+            "level": "H3",
+            "text": "Allin Mikuy"
+          },
+          {
+            "level": "H3",
+            "text": "Explora Maison Dulce sin salir de Aptitud Labs."
+          },
+          {
+            "level": "H2",
+            "text": "No se trata de animar por animar.Cada movimiento tiene un propósito."
+          },
+          {
+            "level": "H3",
+            "text": "Primero, unaidentidad que impacta."
+          },
+          {
+            "level": "H3",
+            "text": "Después, le damosvida al recorrido."
+          },
+          {
+            "level": "H3",
+            "text": "Al final, todotiene que funcionar."
+          },
+          {
+            "level": "H2",
+            "text": "Imagina tu pasteleríacon su propia experiencia."
+          },
+          {
+            "level": "H2",
+            "text": "Soy Aldo.Trabajemos tu idea juntos."
+          },
+          {
+            "level": "H2",
+            "text": "Cuéntanos qué necesitatu negocio."
+          }
+        ],
+        "heroBg": "rgb(10, 16, 22)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "Torta de fresas de la demostración Maison Dulce",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-chocolate.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/caja-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "",
+            "h": 900,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
+            "w": 1600
+          },
+          {
+            "alt": "",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/barberia-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Torta de fresas en la experiencia digital Maison Dulce",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-chocolate.webp",
+            "w": 640
+          },
+          {
+            "alt": "Captura de la demostración Corte 01",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/barberia-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Captura de la demostración Luma Store",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/tienda-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Captura de la demostración Caja Clara",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/caja-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Captura de la demostración Pulso",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/pulso-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Captura de la demostración Sushi Ten Bento",
+            "h": 900,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
+            "w": 1600
+          },
+          {
+            "alt": "Captura de la demostración Allin Mikuy",
+            "h": 900,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/allin-mikuy-cover.png",
+            "w": 1600
+          }
+        ],
+        "inputFields": [
+          {
+            "label": "Tu nombre",
+            "name": "nombre",
+            "placeholder": "¿Cómo te llamas?",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "label": "¿Qué necesitas?Selecciona un servicioDiseño o desarrollo webAplicación",
+            "name": "servicio",
+            "placeholder": "",
+            "required": true,
+            "type": "select-one"
+          },
+          {
+            "label": "Tu idea",
+            "name": "detalle",
+            "placeholder": "Qué hace tu negocio y qué te gustaría resolver...",
+            "required": true,
+            "type": "textarea"
+          },
+          {
+            "label": "Tu correo (opcional)",
+            "name": "correo",
+            "placeholder": "tu@correo.com",
+            "required": false,
+            "type": "email"
+          }
+        ],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "Abrir esta experiencia\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "#experiencias",
+            "label": "VER LOS SIETE PROYECTOS ↓",
+            "target": ""
+          },
+          {
+            "href": "#experiencias",
+            "label": "DESCUBRE CÓMO LO HACEMOS ↘",
+            "target": ""
+          },
+          {
+            "href": "#experiencias",
+            "label": "ABRIR GALERÍA COMPLETA ↘",
+            "target": ""
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "PROYECTO DESTACADO / 01\nMAISON\nDULCE.\nINTERACTIVE EXPERIENCE — PASTELERÍA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "Ver pantalla completa ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/barberia/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/barberia/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/tienda/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/tienda/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/caja/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/caja/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/pulso/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/pulso/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/sushi-ten-bento-/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/sushi-ten-bento-/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "Abrir demo completa ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://wa.me/51937367296?text=Hola%2C%20vi%20el%20portafolio%20de%20Aptitud%20Labs%20y%20la%20demo%20Maison%20Dulce.%20Me%20gustar%C3%ADa%20conversar%20sobre%20una%20web%20para%20mi%20pasteler%C3%ADa.",
+            "label": "Conversemos sobre tu pastelería ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/planes/#condiciones",
+            "label": "Condiciones de los planes ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Conversemos sobre tu negocio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Completa la solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Juliaca",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "Escribir directamente ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "Correo",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Explora 7 demostraciones de Aptitud Labs: pastelería Maison Dulce, catálogos, barberías, gastronomía y herramientas para negocios en Puno.",
+        "missingAlt": 0,
+        "overflows": [
+          {
+            "cls": "",
+            "left": 272,
+            "right": 419,
+            "tag": "IMG"
+          },
+          {
+            "cls": "fx-ticker-track",
+            "left": -109,
+            "right": 2502,
+            "tag": "DIV"
+          },
+          {
+            "cls": "",
+            "left": -109,
+            "right": 1196,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "",
+            "left": 1196,
+            "right": 2502,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "mg-wall-depth",
+            "left": -29,
+            "right": 419,
+            "tag": "DIV"
+          },
+          {
+            "cls": "mg-wall-card mg-wall-1",
+            "left": -157,
+            "right": -21,
+            "tag": "ARTICLE"
+          },
+          {
+            "cls": "",
+            "left": -153,
+            "right": -25,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "",
+            "left": -153,
+            "right": -25,
+            "tag": "IMG"
+          },
+          {
+            "cls": "",
+            "left": -153,
+            "right": -25,
+            "tag": "B"
+          },
+          {
+            "cls": "mg-wall-card mg-wall-2",
+            "left": -123,
+            "right": 73,
+            "tag": "ARTICLE"
+          },
+          {
+            "cls": "",
+            "left": -117,
+            "right": 68,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "",
+            "left": -117,
+            "right": 68,
+            "tag": "IMG"
+          },
+          {
+            "cls": "",
+            "left": -117,
+            "right": 68,
+            "tag": "B"
+          },
+          {
+            "cls": "mg-wall-card mg-wall-3",
+            "left": -69,
+            "right": 196,
+            "tag": "ARTICLE"
+          },
+          {
+            "cls": "",
+            "left": -61,
+            "right": 189,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "",
+            "left": -61,
+            "right": 189,
+            "tag": "IMG"
+          },
+          {
+            "cls": "",
+            "left": -61,
+            "right": 189,
+            "tag": "B"
+          },
+          {
+            "cls": "mg-wall-beam",
+            "left": -81,
+            "right": 471,
+            "tag": "DIV"
+          },
+          {
+            "cls": "fx-featured-cake fx-featured-cake-b",
+            "left": 241,
+            "right": 411,
+            "tag": "IMG"
+          }
+        ],
+        "poorLinks": [],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/portfolio.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/futuristic-home.js",
+          "/Aptitud-Labs/assets/kinetic-editorial.js",
+          "/Aptitud-Labs/assets/studio-v3.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js"
+        ],
+        "scrollWidth": 390,
+        "sections": [
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "v3-portfolio-hero",
+            "firstHeading": "No solo se mira.Se explora.",
+            "height": 989,
+            "id": "inicio",
+            "padding": "88px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "folio-intro v3-folio-notes v3-observed v3-in",
+            "firstHeading": "Una buena webhace que quieras seguir.",
+            "height": 1199,
+            "id": "que-hacemos",
+            "padding": "105px"
+          },
+          {
+            "bg": "rgb(16, 28, 37)",
+            "cls": "fx-manifesto",
+            "firstHeading": "",
+            "height": 481,
+            "id": "vision",
+            "padding": "72px"
+          },
+          {
+            "bg": "rgb(9, 15, 21)",
+            "cls": "mg-project-wall",
+            "firstHeading": "No es una galería.Es un recorrido.",
+            "height": 1241,
+            "id": "motion-gallery",
+            "padding": "46px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "fx-work section-pad",
+            "firstHeading": "Siete ideas.Siete maneras de construir.",
+            "height": 5506,
+            "id": "experiencias",
+            "padding": "80px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "fx-motion-story",
+            "firstHeading": "No se trata de animar por animar.Cada movimiento tiene un propósito.",
+            "height": 2038,
+            "id": "laboratorio",
+            "padding": "75px"
+          },
+          {
+            "bg": "rgb(25, 37, 47)",
+            "cls": "folio-pitch",
+            "firstHeading": "Imagina tu pasteleríacon su propia experiencia.",
+            "height": 1031,
+            "id": "idea-pasteleria",
+            "padding": "76px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad section-muted",
+            "firstHeading": "Soy Aldo.Trabajemos tu idea juntos.",
+            "height": 1110,
+            "id": "nosotros",
+            "padding": "75px"
+          },
+          {
+            "bg": "rgb(231, 222, 210)",
+            "cls": "section-pad section-muted initial-inquiry",
+            "firstHeading": "Cuéntanos qué necesitatu negocio.",
+            "height": 1394,
+            "id": "contacto",
+            "padding": "75px"
+          }
+        ],
+        "styles": [
+          "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/portfolio-premium.css",
+          "/Aptitud-Labs/assets/futuristic-home.css",
+          "/Aptitud-Labs/assets/kinetic-editorial.css",
+          "/Aptitud-Labs/assets/page-architecture.css",
+          "/Aptitud-Labs/assets/studio-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css"
+        ],
+        "theme": "dark",
+        "title": "Portafolio Aptitud Labs | Webs, catálogos y demostraciones interactivas",
+        "totalHeight": 15759,
+        "unlabeledBtns": []
+      },
       "browserLogs": [
         "about:blank - An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing."
       ]
@@ -1298,10 +2510,10 @@
         },
         {
           "alt": "Vista de la herramienta de seguimiento Pulso",
-          "h": 0,
-          "loaded": false,
+          "h": 659,
+          "loaded": true,
           "src": "/Aptitud-Labs/assets/projects/pulso-cover.webp",
-          "w": 0
+          "w": 960
         },
         {
           "alt": "Ejemplo visual de soporte NFC de mesa",
@@ -1632,6 +2844,413 @@
       "unlabeledBtns": [],
       "label": "03-servicios",
       "route": "/Aptitud-Labs/servicios/",
+      "afterScroll": {
+        "background": "rgb(10, 16, 22)",
+        "canonical": null,
+        "clientWidth": 390,
+        "contactBg": null,
+        "contactFormBg": null,
+        "contactPanelBg": null,
+        "duplicateIDs": [],
+        "fullInputs": 0,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "Tecnología útil.Diseño con intención."
+          },
+          {
+            "level": "H2",
+            "text": "Servicios y entregables."
+          },
+          {
+            "level": "H3",
+            "text": "Páginas web que destacan."
+          },
+          {
+            "level": "H3",
+            "text": "Apps y sistemas inteligentes."
+          },
+          {
+            "level": "H3",
+            "text": "IA que ahorra trabajo."
+          },
+          {
+            "level": "H3",
+            "text": "NFC + QR para conectar."
+          },
+          {
+            "level": "H3",
+            "text": "Diseño para comunicar."
+          },
+          {
+            "level": "H3",
+            "text": "¿Algo que no está aquí?"
+          },
+          {
+            "level": "H2",
+            "text": "Mira un ejemplo.Define tu alcance."
+          }
+        ],
+        "heroBg": "rgb(10, 18, 27)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/servicios-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "Vista de demostración web Sushi Ten Bento",
+            "h": 900,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
+            "w": 1600
+          },
+          {
+            "alt": "Vista del sistema de gestión Caja Clara",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/caja-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Vista de la herramienta de seguimiento Pulso",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/pulso-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Ejemplo visual de soporte NFC de mesa",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/stand-01.webp",
+            "w": 896
+          },
+          {
+            "alt": "Vista de identidad web Corte 01, proyecto de demostración",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/barberia-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Vista de la experiencia web de demostración Allin Mikuy",
+            "h": 900,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/allin-mikuy-cover.png",
+            "w": 1600
+          }
+        ],
+        "inputFields": [],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "← Volver al inicio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Explorar diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consultar una herramienta ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/#demo-caja",
+            "label": "Probar un ejemplo de ventas e inventario ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Evaluar un flujo ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/#demo-pulso",
+            "label": "Ver una regla de seguimiento en acción ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Ver NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consultar piezas gráficas ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/#contacto",
+            "label": "Conversemos sobre tu idea ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Ver proyectos ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y condiciones ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Web Esencial desde S/ 249, Web Negocio desde S/ 419 y herramientas desde S/ 690",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "restaurantes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Diseño web, aplicaciones, automatizaciones, inteligencia artificial y tarjetas NFC para negocios en Puno y Juliaca. Descubre los servicios de Aptitud Labs.",
+        "missingAlt": 0,
+        "overflows": [],
+        "poorLinks": [
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "",
+            "target": ""
+          }
+        ],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/photographic-direction-v7.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js"
+        ],
+        "scrollWidth": 390,
+        "sections": [
+          {
+            "bg": "rgb(10, 18, 27)",
+            "cls": "page-hero v7-photographic-hero v7-photo-ready",
+            "firstHeading": "Tecnología útil.Diseño con intención.",
+            "height": 487,
+            "id": "",
+            "padding": "115px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad",
+            "firstHeading": "Servicios y entregables.",
+            "height": 3498,
+            "id": "servicios",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "section-pad section-muted",
+            "firstHeading": "Mira un ejemplo.Define tu alcance.",
+            "height": 858,
+            "id": "soluciones-rubros",
+            "padding": "52px"
+          }
+        ],
+        "styles": [
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/business-sections.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/studio-subpages-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/photographic-direction-v7.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css"
+        ],
+        "theme": "dark",
+        "title": "Servicios | Aptitud Labs",
+        "totalHeight": 5464,
+        "unlabeledBtns": []
+      },
       "browserLogs": []
     },
     {
@@ -1939,6 +3558,310 @@
       "unlabeledBtns": [],
       "label": "04-planes",
       "route": "/Aptitud-Labs/planes/",
+      "afterScroll": {
+        "background": "rgb(10, 16, 22)",
+        "canonical": null,
+        "clientWidth": 390,
+        "contactBg": null,
+        "contactFormBg": null,
+        "contactPanelBg": null,
+        "duplicateIDs": [],
+        "fullInputs": 0,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "Empieza por lo necesario.Crece a tu ritmo."
+          },
+          {
+            "level": "H2",
+            "text": "Un punto de partida.Sin sorpresas."
+          },
+          {
+            "level": "H3",
+            "text": "Web Esencial"
+          },
+          {
+            "level": "H3",
+            "text": "Web Negocio"
+          },
+          {
+            "level": "H3",
+            "text": "Apps y sistemas"
+          },
+          {
+            "level": "H2",
+            "text": "Qué queda por escrito."
+          },
+          {
+            "level": "H3",
+            "text": "Alcance y materiales"
+          },
+          {
+            "level": "H3",
+            "text": "Dos rondas de revisión"
+          },
+          {
+            "level": "H3",
+            "text": "15 días de correcciones"
+          },
+          {
+            "level": "H3",
+            "text": "Plazo y aprobación"
+          },
+          {
+            "level": "H3",
+            "text": "Qué recibes"
+          },
+          {
+            "level": "H3",
+            "text": "Proyectos a medida y visitas"
+          }
+        ],
+        "heroBg": "rgb(10, 18, 27)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/planes-realista.webp",
+            "w": 1200
+          }
+        ],
+        "inputFields": [],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "← Volver al inicio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/?plan=essential#cotizador",
+            "label": "Personalizar presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/?plan=business#cotizador",
+            "label": "Personalizar presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/?plan=custom#cotizador",
+            "label": "Explorar opciones ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Planes de diseño web desde S/249 y soluciones digitales a medida. Revisa qué incluye cada plan y personaliza tu presupuesto con Aptitud Labs.",
+        "missingAlt": 0,
+        "overflows": [],
+        "poorLinks": [],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/pricing.js",
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/pricing-plans.js",
+          "/Aptitud-Labs/assets/nfc-store.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/photographic-direction-v7.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js"
+        ],
+        "scrollWidth": 390,
+        "sections": [
+          {
+            "bg": "rgb(10, 18, 27)",
+            "cls": "page-hero v7-photographic-hero v7-photo-ready",
+            "firstHeading": "Empieza por lo necesario.Crece a tu ritmo.",
+            "height": 534,
+            "id": "",
+            "padding": "115px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "section-pad al-plans",
+            "firstHeading": "Un punto de partida.Sin sorpresas.",
+            "height": 2164,
+            "id": "planes",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "section-pad section-muted",
+            "firstHeading": "Qué queda por escrito.",
+            "height": 1925,
+            "id": "condiciones",
+            "padding": "52px"
+          }
+        ],
+        "styles": [
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/business-sections.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/studio-subpages-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/photographic-direction-v7.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css"
+        ],
+        "theme": "dark",
+        "title": "Planes y precios | Aptitud Labs",
+        "totalHeight": 5244,
+        "unlabeledBtns": []
+      },
       "browserLogs": []
     },
     {
@@ -2397,6 +4320,461 @@
       "unlabeledBtns": [],
       "label": "05-nfc",
       "route": "/Aptitud-Labs/nfc-qr/",
+      "afterScroll": {
+        "background": "rgb(10, 16, 22)",
+        "canonical": null,
+        "clientWidth": 390,
+        "contactBg": null,
+        "contactFormBg": null,
+        "contactPanelBg": null,
+        "duplicateIDs": [],
+        "fullInputs": 2,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "Un pequeño gesto.Una gran conexión."
+          },
+          {
+            "level": "H2",
+            "text": "Un acceso directo.Todo conectado."
+          },
+          {
+            "level": "H3",
+            "text": "Restaurantes"
+          },
+          {
+            "level": "H3",
+            "text": "Profesionales"
+          },
+          {
+            "level": "H3",
+            "text": "Tiendas y vitrinas"
+          },
+          {
+            "level": "H2",
+            "text": "Tu conexión.Tu diseño."
+          },
+          {
+            "level": "H3",
+            "text": "Tarjeta NFC Google"
+          },
+          {
+            "level": "H3",
+            "text": "Tarjeta NFC WhatsApp"
+          },
+          {
+            "level": "H3",
+            "text": "Tarjeta NFC Instagram"
+          },
+          {
+            "level": "H3",
+            "text": "Tarjeta NFC de negocio"
+          },
+          {
+            "level": "H3",
+            "text": "Llavero NFC"
+          },
+          {
+            "level": "H3",
+            "text": "Placa NFC de mesa"
+          },
+          {
+            "level": "H2",
+            "text": "El formato correctopara cada espacio."
+          },
+          {
+            "level": "H2",
+            "text": "Tan simple comoacercar y descubrir."
+          },
+          {
+            "level": "H3",
+            "text": "Configuramos"
+          },
+          {
+            "level": "H3",
+            "text": "Personalizamos"
+          },
+          {
+            "level": "H3",
+            "text": "Tu cliente entra"
+          },
+          {
+            "level": "H2",
+            "text": "Más que una tarjeta.Una solución."
+          },
+          {
+            "level": "H3",
+            "text": "Tarjeta individual"
+          },
+          {
+            "level": "H3",
+            "text": "Carta + mesa"
+          },
+          {
+            "level": "H3",
+            "text": "Catálogo + NFC"
+          },
+          {
+            "level": "H3",
+            "text": "Web + contacto"
+          },
+          {
+            "level": "H2",
+            "text": "Lo que convienesaber primero."
+          },
+          {
+            "level": "H2",
+            "text": "Tu negocio, a un toque."
+          }
+        ],
+        "heroBg": "rgb(10, 18, 27)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/nfc-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "Imagen de muestra de un soporte NFC para negocio",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/stand-01.webp",
+            "w": 896
+          },
+          {
+            "alt": "Imagen ilustrativa de Tarjeta NFC Google",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/google.webp",
+            "w": 896
+          },
+          {
+            "alt": "Imagen ilustrativa de Tarjeta NFC WhatsApp",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/whatsapp.webp",
+            "w": 896
+          },
+          {
+            "alt": "Imagen ilustrativa de Tarjeta NFC Instagram",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/instagram.webp",
+            "w": 896
+          },
+          {
+            "alt": "Imagen ilustrativa de Tarjeta NFC de negocio",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/business.webp",
+            "w": 896
+          },
+          {
+            "alt": "Imagen ilustrativa de Llavero NFC",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/keychain.webp",
+            "w": 896
+          },
+          {
+            "alt": "Imagen ilustrativa de Placa NFC de mesa",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/stand.webp",
+            "w": 896
+          },
+          {
+            "alt": "Diseño ilustrativo de tarjeta NFC de negocio",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/business.webp",
+            "w": 896
+          },
+          {
+            "alt": "Diseño ilustrativo de soporte NFC de mesa",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/stand.webp",
+            "w": 896
+          },
+          {
+            "alt": "Diseño ilustrativo de llavero NFC",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/keychain.webp",
+            "w": 896
+          }
+        ],
+        "inputFields": [],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "#nfc-shop",
+            "label": "Ver productos y precios ↓",
+            "target": ""
+          },
+          {
+            "href": "#galeria-nfc",
+            "label": "Ver los formatos ↓",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296?text=Hola%2C%20Aptitud%20Labs.%20Quiero%20cotizar%20tarjetas%20NFC%20con%20QR.%20Mi%20negocio%20es%3A",
+            "label": "Cotizar NFC por WhatsApp ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Tarjetas NFC con QR para negocios en Puno: carta digital para restaurantes, tarjetas de presentación, adhesivos y soportes. Conoce opciones y consulta una propuesta.",
+        "missingAlt": 0,
+        "overflows": [],
+        "poorLinks": [],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/nfc-store.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/photographic-direction-v7.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js"
+        ],
+        "scrollWidth": 390,
+        "sections": [
+          {
+            "bg": "rgb(10, 18, 27)",
+            "cls": "page-hero v7-photographic-hero v7-photo-ready",
+            "firstHeading": "Un pequeño gesto.Una gran conexión.",
+            "height": 1189,
+            "id": "",
+            "padding": "115px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad",
+            "firstHeading": "Un acceso directo.Todo conectado.",
+            "height": 1267,
+            "id": "",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "section-pad nfc-store",
+            "firstHeading": "Tu conexión.Tu diseño.",
+            "height": 1632,
+            "id": "nfc-shop",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "section-pad section-muted",
+            "firstHeading": "El formato correctopara cada espacio.",
+            "height": 1424,
+            "id": "galeria-nfc",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad",
+            "firstHeading": "Tan simple comoacercar y descubrir.",
+            "height": 1167,
+            "id": "funciona-nfc",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad section-dark",
+            "firstHeading": "Más que una tarjeta.Una solución.",
+            "height": 1168,
+            "id": "opciones-nfc",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad",
+            "firstHeading": "Lo que convienesaber primero.",
+            "height": 950,
+            "id": "",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "section-pad section-muted",
+            "firstHeading": "Tu negocio, a un toque.",
+            "height": 379,
+            "id": "cotizar-nfc",
+            "padding": "52px"
+          }
+        ],
+        "styles": [
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/nfc-store.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/studio-subpages-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/photographic-direction-v7.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css"
+        ],
+        "theme": "dark",
+        "title": "Tarjetas NFC y QR para Negocios | Aptitud Labs",
+        "totalHeight": 9797,
+        "unlabeledBtns": []
+      },
       "browserLogs": []
     },
     {
@@ -3007,6 +5385,613 @@
       "unlabeledBtns": [],
       "label": "06-cotizar",
       "route": "/Aptitud-Labs/cotizar/",
+      "afterScroll": {
+        "background": "rgb(10, 16, 22)",
+        "canonical": null,
+        "clientWidth": 390,
+        "contactBg": null,
+        "contactFormBg": null,
+        "contactPanelBg": null,
+        "duplicateIDs": [],
+        "fullInputs": 38,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "Tu idea mereceun buen comienzo."
+          },
+          {
+            "level": "H2",
+            "text": "Cuéntanos qué necesitatu negocio."
+          },
+          {
+            "level": "H2",
+            "text": "Diseña tu idea.Calcula tu presupuesto."
+          },
+          {
+            "level": "H3",
+            "text": "02 · Elige el diseño"
+          },
+          {
+            "level": "H3",
+            "text": "03 · Selecciona las funciones"
+          },
+          {
+            "level": "H3",
+            "text": "Página web"
+          },
+          {
+            "level": "H2",
+            "text": "¿Listo para contratar?Cuéntanos tu proyecto."
+          },
+          {
+            "level": "H3",
+            "text": "Tu negocio"
+          },
+          {
+            "level": "H3",
+            "text": "Primero claridad. Después desarrollo."
+          }
+        ],
+        "heroBg": "rgb(10, 18, 27)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/planes-realista.webp",
+            "w": 1200
+          }
+        ],
+        "inputFields": [
+          {
+            "label": "Tu nombre",
+            "name": "nombre",
+            "placeholder": "¿Cómo te llamas?",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "label": "¿Qué necesitas?Selecciona un servicioDiseño o desarrollo webAplicación",
+            "name": "servicio",
+            "placeholder": "",
+            "required": true,
+            "type": "select-one"
+          },
+          {
+            "label": "Tu idea",
+            "name": "detalle",
+            "placeholder": "Qué hace tu negocio y qué te gustaría resolver...",
+            "required": true,
+            "type": "textarea"
+          },
+          {
+            "label": "Tu correo (opcional)",
+            "name": "correo",
+            "placeholder": "tu@correo.com",
+            "required": false,
+            "type": "email"
+          },
+          {
+            "label": "MinimalistaDiseño limpio, sencillo y fácil de navegar.Incluido",
+            "name": "quote-design",
+            "placeholder": "",
+            "required": false,
+            "type": "radio"
+          },
+          {
+            "label": "CorporativoApariencia formal para presentar tu empresa.+S/ 70",
+            "name": "quote-design",
+            "placeholder": "",
+            "required": false,
+            "type": "radio"
+          },
+          {
+            "label": "Creativo premiumDiseño más original, con detalles de tu marca.+S/ 140",
+            "name": "quote-design",
+            "placeholder": "",
+            "required": false,
+            "type": "radio"
+          },
+          {
+            "label": "Tienda / catálogoDiseño para mostrar productos y facilitar pedidos.+S/",
+            "name": "quote-design",
+            "placeholder": "",
+            "required": false,
+            "type": "radio"
+          },
+          {
+            "label": "WhatsAppUn botón para que te escriban por WhatsApp.Incluido",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Adaptable a celularesSe adapta a celulares, tablets y computadoras.Inc",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "FormularioTus visitantes podrán enviarte consultas desde un formulario",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "GaleríaMuestra fotografías de tus productos o trabajos.+S/ 50",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "BlogPublica noticias, artículos y consejos.+S/ 90",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "CatálogoMuestra productos con fotos y precios, sin cobrar en línea.+S/",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "ReservasTus clientes podrán solicitar una cita u horario.+S/ 150",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Pagos en líneaCobra en línea mediante un proveedor externo; comisiones",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Segundo idiomaMuestra tu página en dos idiomas.+S/ 140",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Panel editableCambia textos, fotos y productos sin tocar código, usand",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "SEO ampliadoConfiguración inicial para que Google entienda mejor tu we",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "ChatbotResponde preguntas frecuentes con mensajes preparados.+S/ 150",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Usuarios privadosTus clientes podrán crear una cuenta y acceder a un á",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "AnalíticaConsulta cuántas personas visitan tu web.+S/ 50",
+            "name": "quote-feature",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Secciones o páginasUna incluida · +S/ 40 por adicional",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "label": "Dominio .com · S/ 75/año",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Hosting · S/ 120/año",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Redacción básica · S/ 50 único",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Mapa · S/ 30 único",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Logotipo básico · S/ 80 único",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "checkbox"
+          },
+          {
+            "label": "Productos a cargarNo necesitoHasta 10 · S/ 50Hasta 30 · S/ 150Hasta 50",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "select-one"
+          },
+          {
+            "label": "Mantenimiento mensualNingunoBásico · S/ 30/mesAvanzado · S/ 70/mes",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "select-one"
+          },
+          {
+            "label": "EntregaNormal (sin recargo)Prioritaria (a evaluar)",
+            "name": "",
+            "placeholder": "",
+            "required": false,
+            "type": "select-one"
+          },
+          {
+            "label": "Tu nombre (opcional)",
+            "name": "",
+            "placeholder": "Tu nombre",
+            "required": false,
+            "type": "text"
+          },
+          {
+            "label": "Detalles del proyecto (opcional)",
+            "name": "",
+            "placeholder": "Cuéntanos qué necesitas...",
+            "required": false,
+            "type": "textarea"
+          },
+          {
+            "label": "¿Cómo se llama tu negocio? *",
+            "name": "negocio",
+            "placeholder": "",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "label": "¿Qué productos o servicios ofreces? *",
+            "name": "actividad",
+            "placeholder": "",
+            "required": true,
+            "type": "textarea"
+          },
+          {
+            "label": "¿En qué ciudad atiendes? *",
+            "name": "ciudad",
+            "placeholder": "",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "label": "¿Qué quieres lograr con este proyecto? *Selecciona una opciónConseguir",
+            "name": "objetivo",
+            "placeholder": "",
+            "required": true,
+            "type": "select-one"
+          },
+          {
+            "label": "¿Ya tienes una web, app o sistema? *Selecciona una opciónNo, empezar d",
+            "name": "actual",
+            "placeholder": "",
+            "required": true,
+            "type": "select-one"
+          }
+        ],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "#consulta",
+            "label": "Consulta rápida ↓",
+            "target": ""
+          },
+          {
+            "href": "#cotizador",
+            "label": "Calcular presupuesto ↓",
+            "target": ""
+          },
+          {
+            "href": "#contratar",
+            "label": "Ya conozco el alcance ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "← Volver al inicio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Completa la solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Juliaca",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "Escribir directamente ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "Correo",
+            "target": ""
+          },
+          {
+            "href": "#contratar",
+            "label": "Quiero contratar esta configuración ↗",
+            "target": ""
+          },
+          {
+            "href": "#cotizador",
+            "label": "Solo quiero calcular un precio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Cotiza tu página web, aplicación o sistema con Aptitud Labs. Calcula un presupuesto orientativo y solicita una propuesta personalizada por WhatsApp.",
+        "missingAlt": 0,
+        "overflows": [],
+        "poorLinks": [],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/pricing.js",
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/nfc-store.js",
+          "/Aptitud-Labs/assets/cotizador.js",
+          "/Aptitud-Labs/assets/brief.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/photographic-direction-v7.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js"
+        ],
+        "scrollWidth": 390,
+        "sections": [
+          {
+            "bg": "rgb(10, 18, 27)",
+            "cls": "page-hero v7-photographic-hero v7-photo-ready",
+            "firstHeading": "Tu idea mereceun buen comienzo.",
+            "height": 616,
+            "id": "",
+            "padding": "115px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "section-pad section-muted initial-inquiry",
+            "firstHeading": "Cuéntanos qué necesitatu negocio.",
+            "height": 1282,
+            "id": "consulta",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad quote-builder",
+            "firstHeading": "Diseña tu idea.Calcula tu presupuesto.",
+            "height": 5192,
+            "id": "cotizador",
+            "padding": "52px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad brief-section",
+            "firstHeading": "¿Listo para contratar?Cuéntanos tu proyecto.",
+            "height": 1800,
+            "id": "contratar",
+            "padding": "52px"
+          }
+        ],
+        "styles": [
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/nfc-store.css",
+          "/Aptitud-Labs/assets/cotizador.css",
+          "/Aptitud-Labs/assets/pricing-extensions.css",
+          "/Aptitud-Labs/assets/brief.css",
+          "/Aptitud-Labs/assets/business-sections.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/studio-subpages-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/photographic-direction-v7.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css"
+        ],
+        "theme": "dark",
+        "title": "Cotizador y contratación | Aptitud Labs",
+        "totalHeight": 9511,
+        "unlabeledBtns": []
+      },
       "formValidationPresent": true,
       "browserLogs": []
     },
@@ -4946,7 +7931,470 @@
       "totalHeight": 4616,
       "unlabeledBtns": [],
       "label": "11-inicio-desktop",
-      "route": "/Aptitud-Labs/"
+      "route": "/Aptitud-Labs/",
+      "afterScroll": {
+        "background": "rgb(34, 40, 35)",
+        "canonical": null,
+        "clientWidth": 1280,
+        "contactBg": "rgb(17, 23, 28)",
+        "contactFormBg": "rgb(18, 27, 35)",
+        "contactPanelBg": "rgb(26, 35, 43)",
+        "duplicateIDs": [],
+        "fullInputs": 4,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "Tu negociono es uno más.Su web tampoco."
+          },
+          {
+            "level": "H2",
+            "text": "Una buena idea merece un gran diseño."
+          },
+          {
+            "level": "H2",
+            "text": "Tu negocio puede llegar más lejos."
+          },
+          {
+            "level": "H2",
+            "text": "Primero escuchamos.Después creamos algo propio."
+          },
+          {
+            "level": "H2",
+            "text": "Cuéntanos qué necesitatu negocio."
+          }
+        ],
+        "heroBg": "rgb(16, 21, 26)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "Concepto visual de herramientas digitales en laptop, tableta y teléfono",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/servicios-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "Concepto visual de planificación y propuesta digital",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/planes-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 0
+          },
+          {
+            "alt": "",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/maison-chocolate.webp",
+            "w": 0
+          },
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/servicios-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "",
+            "h": 900,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
+            "w": 1600
+          },
+          {
+            "alt": "",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/pulso-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "",
+            "h": 675,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/visuals/planes-realista.webp",
+            "w": 1200
+          },
+          {
+            "alt": "",
+            "h": 659,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/tienda-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/visuals/nfc-realista.webp",
+            "w": 0
+          },
+          {
+            "alt": "",
+            "h": 1200,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/nfc/stand-01.webp",
+            "w": 896
+          },
+          {
+            "alt": "",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/nfc/smartphone.webp",
+            "w": 0
+          }
+        ],
+        "inputFields": [
+          {
+            "label": "Tu nombre",
+            "name": "nombre",
+            "placeholder": "¿Cómo te llamas?",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "label": "¿Qué necesitas?Selecciona un servicioDiseño o desarrollo webAplicación",
+            "name": "servicio",
+            "placeholder": "",
+            "required": true,
+            "type": "select-one"
+          },
+          {
+            "label": "Tu idea",
+            "name": "detalle",
+            "placeholder": "Qué hace tu negocio y qué te gustaría resolver...",
+            "required": true,
+            "type": "textarea"
+          },
+          {
+            "label": "Tu correo (opcional)",
+            "name": "correo",
+            "placeholder": "tu@correo.com",
+            "required": false,
+            "type": "email"
+          }
+        ],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Hablemos ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Ver lo que creamos\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea\n↗",
+            "target": ""
+          },
+          {
+            "href": "#conoce-aptitud",
+            "label": "DESCUBRE ↓",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Descubre nuestros servicios\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Descubre lo\nque creamos.\nVer portafolio completo\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Diseño web\ny soluciones digitales.\nDiseño web, sistemas e IA\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Un plan claro\npara cada proyecto.\nAlcances y precios orientativos\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Conecta con tus clientes\nen un toque.\nNFC / QR ↗\nProductos y personalización\n↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Conoce nuestros servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/",
+            "label": "Solicita una propuesta ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Completa la solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Juliaca",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "Escribir directamente ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "Correo",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Diseño web, aplicaciones y soluciones digitales para negocios de Puno y Juliaca. Explora servicios, portafolio, planes y catálogo NFC de Aptitud Labs.",
+        "missingAlt": 0,
+        "overflows": [],
+        "poorLinks": [],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/futuristic-home.js",
+          "/Aptitud-Labs/assets/kinetic-editorial.js",
+          "/Aptitud-Labs/assets/studio-v3.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js",
+          "/Aptitud-Labs/assets/gateway-realwork-v6.js",
+          "/Aptitud-Labs/assets/photographic-direction-v7.js"
+        ],
+        "scrollWidth": 1280,
+        "sections": [
+          {
+            "bg": "rgb(16, 21, 26)",
+            "cls": "home-studio-hero v3-home-hero",
+            "firstHeading": "Tu negociono es uno más.Su web tampoco.",
+            "height": 847,
+            "id": "inicio",
+            "padding": "120px"
+          },
+          {
+            "bg": "rgb(26, 34, 40)",
+            "cls": "v8-studio-statement",
+            "firstHeading": "Una buena idea merece un gran diseño.",
+            "height": 918,
+            "id": "",
+            "padding": "128px"
+          },
+          {
+            "bg": "rgb(16, 21, 26)",
+            "cls": "home-gateway",
+            "firstHeading": "Tu negocio puede llegar más lejos.",
+            "height": 930,
+            "id": "conoce-aptitud",
+            "padding": "94px"
+          },
+          {
+            "bg": "rgb(25, 33, 39)",
+            "cls": "home-studio-belief",
+            "firstHeading": "Primero escuchamos.Después creamos algo propio.",
+            "height": 520,
+            "id": "nuestra-forma",
+            "padding": "88px"
+          },
+          {
+            "bg": "rgb(17, 23, 28)",
+            "cls": "section-pad section-muted initial-inquiry",
+            "firstHeading": "Cuéntanos qué necesitatu negocio.",
+            "height": 1028,
+            "id": "contacto",
+            "padding": "105px"
+          }
+        ],
+        "styles": [
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/business-sections.css",
+          "/Aptitud-Labs/assets/al-summary.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/futuristic-home.css",
+          "/Aptitud-Labs/assets/kinetic-editorial.css",
+          "/Aptitud-Labs/assets/page-architecture.css",
+          "/Aptitud-Labs/assets/studio-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css",
+          "/Aptitud-Labs/assets/gateway-realwork-v6.css",
+          "/Aptitud-Labs/assets/photographic-direction-v7.css",
+          "/Aptitud-Labs/assets/home-art-direction-v8.css",
+          "/Aptitud-Labs/assets/home-refined-v9.css",
+          "/Aptitud-Labs/assets/home-corrections-v10.css",
+          "/Aptitud-Labs/assets/home-contact-v11.css?v=20261031-11"
+        ],
+        "theme": "dark",
+        "title": "Aptitud Labs | Diseño web, experiencias y software en Puno",
+        "totalHeight": 4616,
+        "unlabeledBtns": []
+      }
     },
     {
       "background": "rgb(34, 40, 35)",
@@ -5483,20 +8931,20 @@
         },
         {
           "cls": "fx-ticker-track",
-          "left": -18,
-          "right": 2593,
+          "left": -19,
+          "right": 2592,
           "tag": "DIV"
         },
         {
           "cls": "",
-          "left": -18,
-          "right": 1287,
+          "left": -19,
+          "right": 1286,
           "tag": "SPAN"
         },
         {
           "cls": "",
-          "left": 1287,
-          "right": 2593,
+          "left": 1286,
+          "right": 2592,
           "tag": "SPAN"
         },
         {
@@ -5667,57 +9115,776 @@
       "totalHeight": 13588,
       "unlabeledBtns": [],
       "label": "12-portafolio-desktop",
-      "route": "/Aptitud-Labs/proyectos/"
+      "route": "/Aptitud-Labs/proyectos/",
+      "afterScroll": {
+        "background": "rgb(34, 40, 35)",
+        "canonical": null,
+        "clientWidth": 1280,
+        "contactBg": "rgb(231, 222, 210)",
+        "contactFormBg": "rgb(19, 29, 38)",
+        "contactPanelBg": "rgba(0, 0, 0, 0)",
+        "duplicateIDs": [],
+        "fullInputs": 4,
+        "h1Count": 1,
+        "headings": [
+          {
+            "level": "H1",
+            "text": "No solo se mira.Se explora."
+          },
+          {
+            "level": "H2",
+            "text": "Una buena webhace que quieras seguir."
+          },
+          {
+            "level": "H3",
+            "text": "Las imágenes cuentan."
+          },
+          {
+            "level": "H3",
+            "text": "El scroll tiene ritmo."
+          },
+          {
+            "level": "H3",
+            "text": "Las interfaces responden."
+          },
+          {
+            "level": "H3",
+            "text": "Te mostramos lo que es demo."
+          },
+          {
+            "level": "H2",
+            "text": "No es una galería.Es un recorrido."
+          },
+          {
+            "level": "H2",
+            "text": "Siete ideas.Siete maneras de construir."
+          },
+          {
+            "level": "H3",
+            "text": "MaisonDulce."
+          },
+          {
+            "level": "H3",
+            "text": "Corte 01"
+          },
+          {
+            "level": "H3",
+            "text": "Luma Store"
+          },
+          {
+            "level": "H3",
+            "text": "Caja Clara"
+          },
+          {
+            "level": "H3",
+            "text": "Pulso"
+          },
+          {
+            "level": "H3",
+            "text": "Sushi Ten Bento"
+          },
+          {
+            "level": "H3",
+            "text": "Allin Mikuy"
+          },
+          {
+            "level": "H3",
+            "text": "Explora Maison Dulce sin salir de Aptitud Labs."
+          },
+          {
+            "level": "H2",
+            "text": "No se trata de animar por animar.Cada movimiento tiene un propósito."
+          },
+          {
+            "level": "H3",
+            "text": "Primero, unaidentidad que impacta."
+          },
+          {
+            "level": "H3",
+            "text": "Después, le damosvida al recorrido."
+          },
+          {
+            "level": "H3",
+            "text": "Al final, todotiene que funcionar."
+          },
+          {
+            "level": "H2",
+            "text": "Imagina tu pasteleríacon su propia experiencia."
+          },
+          {
+            "level": "H2",
+            "text": "Soy Aldo.Trabajemos tu idea juntos."
+          },
+          {
+            "level": "H2",
+            "text": "Cuéntanos qué necesitatu negocio."
+          }
+        ],
+        "heroBg": "rgb(10, 16, 22)",
+        "htmlLang": "es",
+        "images": [
+          {
+            "alt": "Torta de fresas de la demostración Maison Dulce",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": true,
+            "src": "/Aptitud-Labs/assets/projects/maison-chocolate.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 659,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/caja-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "",
+            "h": 900,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
+            "w": 1600
+          },
+          {
+            "alt": "",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/barberia-cover.webp",
+            "w": 0
+          },
+          {
+            "alt": "Torta de fresas en la experiencia digital Maison Dulce",
+            "h": 640,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/maison-fresas.webp",
+            "w": 640
+          },
+          {
+            "alt": "",
+            "h": 640,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/maison-chocolate.webp",
+            "w": 640
+          },
+          {
+            "alt": "Captura de la demostración Corte 01",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/barberia-cover.webp",
+            "w": 0
+          },
+          {
+            "alt": "Captura de la demostración Luma Store",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/tienda-cover.webp",
+            "w": 0
+          },
+          {
+            "alt": "Captura de la demostración Caja Clara",
+            "h": 659,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/caja-cover.webp",
+            "w": 960
+          },
+          {
+            "alt": "Captura de la demostración Pulso",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/pulso-cover.webp",
+            "w": 0
+          },
+          {
+            "alt": "Captura de la demostración Sushi Ten Bento",
+            "h": 900,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/sushi-ten-bento-cover.png",
+            "w": 1600
+          },
+          {
+            "alt": "Captura de la demostración Allin Mikuy",
+            "h": 0,
+            "loaded": false,
+            "src": "/Aptitud-Labs/assets/projects/allin-mikuy-cover.png",
+            "w": 0
+          }
+        ],
+        "inputFields": [
+          {
+            "label": "Tu nombre",
+            "name": "nombre",
+            "placeholder": "¿Cómo te llamas?",
+            "required": true,
+            "type": "text"
+          },
+          {
+            "label": "¿Qué necesitas?Selecciona un servicioDiseño o desarrollo webAplicación",
+            "name": "servicio",
+            "placeholder": "",
+            "required": true,
+            "type": "select-one"
+          },
+          {
+            "label": "Tu idea",
+            "name": "detalle",
+            "placeholder": "Qué hace tu negocio y qué te gustaría resolver...",
+            "required": true,
+            "type": "textarea"
+          },
+          {
+            "label": "Tu correo (opcional)",
+            "name": "correo",
+            "placeholder": "tu@correo.com",
+            "required": false,
+            "type": "email"
+          }
+        ],
+        "links": [
+          {
+            "href": "#contenido",
+            "label": "Saltar al contenido principal",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Cuéntanos tu idea ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Inicio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#cotizador",
+            "label": "Calcular presupuesto ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca ↗",
+            "target": ""
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "Abrir esta experiencia\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "#experiencias",
+            "label": "VER LOS SIETE PROYECTOS ↓",
+            "target": ""
+          },
+          {
+            "href": "#experiencias",
+            "label": "DESCUBRE CÓMO LO HACEMOS ↘",
+            "target": ""
+          },
+          {
+            "href": "#experiencias",
+            "label": "ABRIR GALERÍA COMPLETA ↘",
+            "target": ""
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "PROYECTO DESTACADO / 01\nMAISON\nDULCE.\nINTERACTIVE EXPERIENCE — PASTELERÍA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "Ver pantalla completa ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/barberia/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/barberia/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/tienda/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/tienda/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/caja/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/caja/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/pulso/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aptitud-labs-demos.martinjobtpaz.chatgpt.site/pulso/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/sushi-ten-bento-/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/sushi-ten-bento-/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/",
+            "label": "ABRIR EXPERIENCIA\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Allin-mikuy-Caf-Restobar/",
+            "label": "Explorar demostración\n↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://aldo200908-lgtm.github.io/Maison-Dulce-/",
+            "label": "Abrir demo completa ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "https://wa.me/51937367296?text=Hola%2C%20vi%20el%20portafolio%20de%20Aptitud%20Labs%20y%20la%20demo%20Maison%20Dulce.%20Me%20gustar%C3%ADa%20conversar%20sobre%20una%20web%20para%20mi%20pasteler%C3%ADa.",
+            "label": "Conversemos sobre tu pastelería ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/planes/#condiciones",
+            "label": "Condiciones de los planes ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Conversemos sobre tu negocio ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#contratar",
+            "label": "Completa la solicitud de contratación ↗",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Juliaca",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "Escribir directamente ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "Correo",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/",
+            "label": "Aptitud Labs\n.",
+            "target": ""
+          },
+          {
+            "href": "https://wa.me/51937367296",
+            "label": "WhatsApp · +51 937 367 296 ↗",
+            "target": "_blank"
+          },
+          {
+            "href": "/Aptitud-Labs/servicios/",
+            "label": "Servicios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/proyectos/",
+            "label": "Portafolio",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/planes/",
+            "label": "Planes y precios",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/nfc-qr/",
+            "label": "Tienda NFC + QR",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/cotizar/#consulta",
+            "label": "Consulta rápida",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-puno/",
+            "label": "Diseño web en Puno",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/diseno-web-juliaca/",
+            "label": "Diseño web en Juliaca",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-restaurantes/",
+            "label": "Restaurantes y cafeterías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/web-para-barberias/",
+            "label": "Barberías",
+            "target": ""
+          },
+          {
+            "href": "/Aptitud-Labs/privacidad/",
+            "label": "Privacidad y datos",
+            "target": ""
+          },
+          {
+            "href": "mailto:aptitudlabs.studio@gmail.com",
+            "label": "aptitudlabs.studio@gmail.com",
+            "target": ""
+          }
+        ],
+        "menuButton": true,
+        "meta": "Explora 7 demostraciones de Aptitud Labs: pastelería Maison Dulce, catálogos, barberías, gastronomía y herramientas para negocios en Puno.",
+        "missingAlt": 0,
+        "overflows": [
+          {
+            "cls": "",
+            "left": 905,
+            "right": 1327,
+            "tag": "IMG"
+          },
+          {
+            "cls": "fx-ticker-track",
+            "left": -110,
+            "right": 2501,
+            "tag": "DIV"
+          },
+          {
+            "cls": "",
+            "left": -110,
+            "right": 1196,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "",
+            "left": 1196,
+            "right": 2501,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "mg-wall-depth",
+            "left": -111,
+            "right": 1391,
+            "tag": "DIV"
+          },
+          {
+            "cls": "mg-wall-card mg-wall-3",
+            "left": 953,
+            "right": 1377,
+            "tag": "ARTICLE"
+          },
+          {
+            "cls": "",
+            "left": 962,
+            "right": 1364,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "",
+            "left": 962,
+            "right": 1364,
+            "tag": "IMG"
+          },
+          {
+            "cls": "",
+            "left": 962,
+            "right": 1364,
+            "tag": "B"
+          },
+          {
+            "cls": "mg-wall-card mg-wall-4",
+            "left": 1079,
+            "right": 1507,
+            "tag": "ARTICLE"
+          },
+          {
+            "cls": "",
+            "left": 1087,
+            "right": 1493,
+            "tag": "SPAN"
+          },
+          {
+            "cls": "",
+            "left": 1087,
+            "right": 1493,
+            "tag": "IMG"
+          },
+          {
+            "cls": "",
+            "left": 1087,
+            "right": 1493,
+            "tag": "B"
+          },
+          {
+            "cls": "mg-wall-beam",
+            "left": -245,
+            "right": 1525,
+            "tag": "DIV"
+          }
+        ],
+        "poorLinks": [],
+        "prefersReduced": false,
+        "robots": "noindex,nofollow",
+        "scripts": [
+          "/Aptitud-Labs/assets/refresh.js",
+          "/Aptitud-Labs/assets/site-shell.js",
+          "/Aptitud-Labs/assets/portfolio.js",
+          "/Aptitud-Labs/assets/conversion-events.js",
+          "/Aptitud-Labs/assets/futuristic-home.js",
+          "/Aptitud-Labs/assets/kinetic-editorial.js",
+          "/Aptitud-Labs/assets/studio-v3.js",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.js",
+          "/Aptitud-Labs/assets/motion-graphics-v5.js"
+        ],
+        "scrollWidth": 1280,
+        "sections": [
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "v3-portfolio-hero",
+            "firstHeading": "No solo se mira.Se explora.",
+            "height": 1371,
+            "id": "inicio",
+            "padding": "135px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "folio-intro v3-folio-notes v3-observed",
+            "firstHeading": "Una buena webhace que quieras seguir.",
+            "height": 654,
+            "id": "que-hacemos",
+            "padding": "105px"
+          },
+          {
+            "bg": "rgb(16, 28, 37)",
+            "cls": "fx-manifesto",
+            "firstHeading": "",
+            "height": 607,
+            "id": "vision",
+            "padding": "100px"
+          },
+          {
+            "bg": "rgb(9, 15, 21)",
+            "cls": "mg-project-wall",
+            "firstHeading": "No es una galería.Es un recorrido.",
+            "height": 1552,
+            "id": "motion-gallery",
+            "padding": "75px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "fx-work section-pad",
+            "firstHeading": "Siete ideas.Siete maneras de construir.",
+            "height": 4211,
+            "id": "experiencias",
+            "padding": "112px"
+          },
+          {
+            "bg": "rgb(14, 21, 28)",
+            "cls": "fx-motion-story",
+            "firstHeading": "No se trata de animar por animar.Cada movimiento tiene un propósito.",
+            "height": 2157,
+            "id": "laboratorio",
+            "padding": "95px"
+          },
+          {
+            "bg": "rgb(25, 37, 47)",
+            "cls": "folio-pitch",
+            "firstHeading": "Imagina tu pasteleríacon su propia experiencia.",
+            "height": 738,
+            "id": "idea-pasteleria",
+            "padding": "105px"
+          },
+          {
+            "bg": "rgb(10, 16, 22)",
+            "cls": "section-pad section-muted",
+            "firstHeading": "Soy Aldo.Trabajemos tu idea juntos.",
+            "height": 729,
+            "id": "nosotros",
+            "padding": "105px"
+          },
+          {
+            "bg": "rgb(231, 222, 210)",
+            "cls": "section-pad section-muted initial-inquiry",
+            "firstHeading": "Cuéntanos qué necesitatu negocio.",
+            "height": 1028,
+            "id": "contacto",
+            "padding": "105px"
+          }
+        ],
+        "styles": [
+          "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap",
+          "/Aptitud-Labs/assets/refresh.css",
+          "/Aptitud-Labs/assets/site-shell.css",
+          "/Aptitud-Labs/assets/portfolio-premium.css",
+          "/Aptitud-Labs/assets/futuristic-home.css",
+          "/Aptitud-Labs/assets/kinetic-editorial.css",
+          "/Aptitud-Labs/assets/page-architecture.css",
+          "/Aptitud-Labs/assets/studio-v3.css",
+          "/Aptitud-Labs/assets/obsidian-ice-v4.css",
+          "/Aptitud-Labs/assets/mobile-visual-fixes.css",
+          "/Aptitud-Labs/assets/motion-graphics-v5.css"
+        ],
+        "theme": "dark",
+        "title": "Portafolio Aptitud Labs | Webs, catálogos y demostraciones interactivas",
+        "totalHeight": 13588,
+        "unlabeledBtns": []
+      }
     }
   ],
   "screens": [
     {
       "path": "audit-evidence/screens/01-inicio-mobile-top.jpg",
-      "bytes": 117225
+      "bytes": 117485
     },
     {
       "path": "audit-evidence/screens/01-inicio-mobile-full.jpg",
-      "bytes": 140501
+      "bytes": 222215
     },
     {
       "path": "audit-evidence/screens/01-inicio-menu-open.jpg",
-      "bytes": 136417
+      "bytes": 217294
     },
     {
       "path": "audit-evidence/screens/02-portafolio-mobile-top.jpg",
-      "bytes": 279663
+      "bytes": 279137
     },
     {
       "path": "audit-evidence/screens/02-portafolio-mobile-full.jpg",
-      "bytes": 104497
+      "bytes": 258588
     },
     {
       "path": "audit-evidence/screens/02-portafolio-mobile-bottom.jpg",
-      "bytes": 62875
+      "bytes": 90841
     },
     {
       "path": "audit-evidence/screens/03-servicios-mobile-top.jpg",
-      "bytes": 153768
+      "bytes": 154646
     },
     {
       "path": "audit-evidence/screens/03-servicios-mobile-full.jpg",
-      "bytes": 165051
+      "bytes": 208239
     },
     {
       "path": "audit-evidence/screens/04-planes-mobile-top.jpg",
-      "bytes": 182952
+      "bytes": 169814
     },
     {
       "path": "audit-evidence/screens/04-planes-mobile-full.jpg",
-      "bytes": 182898
+      "bytes": 193434
     },
     {
       "path": "audit-evidence/screens/05-nfc-mobile-top.jpg",
-      "bytes": 235350
+      "bytes": 235466
     },
     {
       "path": "audit-evidence/screens/05-nfc-mobile-full.jpg",
-      "bytes": 219938
+      "bytes": 290978
     },
     {
       "path": "audit-evidence/screens/05-nfc-mobile-bottom.jpg",
@@ -5725,11 +9892,11 @@
     },
     {
       "path": "audit-evidence/screens/06-cotizar-mobile-top.jpg",
-      "bytes": 305924
+      "bytes": 305976
     },
     {
       "path": "audit-evidence/screens/06-cotizar-mobile-full.jpg",
-      "bytes": 263143
+      "bytes": 277145
     },
     {
       "path": "audit-evidence/screens/06-cotizar-mobile-bottom.jpg",
@@ -5737,19 +9904,19 @@
     },
     {
       "path": "audit-evidence/screens/11-inicio-desktop-top.jpg",
-      "bytes": 216647
+      "bytes": 216812
     },
     {
       "path": "audit-evidence/screens/11-inicio-desktop-full.jpg",
-      "bytes": 224184
+      "bytes": 228831
     },
     {
       "path": "audit-evidence/screens/12-portafolio-desktop-top.jpg",
-      "bytes": 505623
+      "bytes": 504858
     },
     {
       "path": "audit-evidence/screens/12-portafolio-desktop-full.jpg",
-      "bytes": 293064
+      "bytes": 300069
     }
   ]
 }
