@@ -334,3 +334,14 @@ body.al-theme :is(.quote-panel,.quote-summary,.brief-card,.brief-aside) button:n
  body.al-theme .al-photograph img,body.al-theme .al-btn,body.al-theme .al-service-tile,
  body.al-theme .al-work-card{transition:none!important;transform:none!important}
 }
+
+/* Legal content — same brand, optimized for reading */
+.al-legal{max-width:820px;margin:auto}
+.al-legal>h1{font:700 clamp(42px,6vw,69px)/1.1 var(--al-heading);letter-spacing:-.065em;margin:0 0 28px}
+.al-legal>p.lead{font-size:19px;color:var(--al-muted);margin:0 0 38px}
+.al-legal .kicker{display:none}
+.al-legal section{border-top:1px solid var(--al-edge-soft);padding:29px 0}
+.al-legal h2{font:700 clamp(20px,2.4vw,26px)/1.32 var(--al-heading);
+ letter-spacing:-.04em;margin:0 0 16px}
+.al-legal p,.al-legal li{font-size:15px;line-height:1.9;color:var(--al-muted)}
+.al-legal a{color:var(--al-accent)}
