@@ -1,0 +1,33 @@
+name: Full visual audit captures (isolated branch)
+
+on:
+  push:
+    branches: ["audit/fullsite-20261031"]
+    paths-ignore: ["audit-evidence/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aptitud-fullsite-audit
+  cancel-in-progress: true
+
+jobs:
+  screenshot-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Chrome driver dependencies
+        run: python3 -m pip install --disable-pip-version-check "selenium>=4.20,<5"
+      - name: Capture page screenshots and UX metrics
+        run: python3 audit_capture.py
+      - name: Commit evidence without changing the live website
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit-evidence
+          git diff --cached --quiet || git commit -m "audit: screenshot evidence and findings [skip ci]"
+          git push origin HEAD:audit/fullsite-20261031
