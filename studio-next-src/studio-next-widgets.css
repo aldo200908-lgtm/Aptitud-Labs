@@ -1,0 +1,118 @@
+/* Scoped functional widget styling for Studio Next.
+   Original calculators, NFC store and six-step brief logic are retained.
+   This is not a cascade of past homepage designs. */
+.studio-next .nfc-store{background:#19232a;border-top:1px solid #394a53}
+.studio-next .nfc-store .wrap{max-width:1200px}
+.studio-next .nfc-store .section-top{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end}
+.studio-next .nfc-store .section-top .eyebrow{display:none}
+.studio-next .nfc-store .section-title{font:720 clamp(35px,4vw,65px)/1.1 Manrope,sans-serif;color:#eff0ec;letter-spacing:-.06em;margin:0}
+.studio-next .nfc-store .section-top .copy{font-size:15px;max-width:540px}
+.studio-next .nfc-store-toolbar{color:#ced7db}
+.studio-next .nfc-store .nfc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:26px 0 32px}
+.studio-next .nfc-store .nfc-product{background:#222d34;border:1px solid #425660;border-radius:7px;padding-bottom:19px}
+.studio-next .nfc-product-picture{aspect-ratio:1.15;background:#19272f}
+.studio-next .nfc-product-picture img{object-fit:cover}
+.studio-next .nfc-store .nfc-product h3{font:700 19px/1.26 Manrope,sans-serif;margin:16px 18px 0;color:#f0f3f3;letter-spacing:-.035em}
+.studio-next .nfc-store .nfc-product p{font-size:13px;color:#b5c3c9;line-height:1.6;margin:8px 18px 0;display:block}
+.studio-next .nfc-store .nfc-product strong{color:#d4eaf0;margin:13px 18px 0;font-size:17px}
+.studio-next .nfc-store .nfc-product button,.studio-next .nfc-add-cart,.studio-next .nfc-checkout{
+ background:#badbe3;color:#14232a;border:1px solid #badbe3;border-radius:5px;font:700 13px Manrope,sans-serif;
+ padding:13px 15px;margin:18px 18px 0
+}
+.studio-next .nfc-store .nfc-product button{margin:16px 18px 0}
+.studio-next .nfc-cart-toggle{background:transparent;border:1px solid #6e8791;border-radius:5px;color:#deedf0;padding:10px 14px}
+.studio-next .nfc-cart-toggle span{background:#badce5;color:#111b21}
+.studio-next .nfc-note{color:#b2c0c8;font-size:13px}
+.studio-next .nfc-shop-overlay{background:#071016cc;z-index:1000;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.studio-next .nfc-shop-dialog{background:#1e2a32;color:#ecf2f1;border:1px solid #5b7480;border-radius:8px;box-shadow:0 35px 90px #0009;overflow-y:auto;max-height:88dvh}
+.studio-next .nfc-modal-info h2,.studio-next .nfc-cart-dialog h2{color:#f3f4f0;font:730 clamp(24px,3vw,34px)/1.16 Manrope,sans-serif}
+.studio-next .nfc-modal-info p,.studio-next .nfc-cart-row p,.studio-next .nfc-modal-info>p:not(.nfc-note){color:#b9c9ce}
+.studio-next .nfc-tag{color:#b3d9e4;letter-spacing:.02em;text-transform:none;font-weight:700}
+.studio-next .nfc-modal-price{color:#f1f2ee}
+.studio-next .nfc-choice{background:#17242b;color:#e9f0f2;border:1px solid #5c7481;border-radius:5px}
+.studio-next .nfc-choice.is-active{background:#2c414b;color:#e9f4f5;border:1px solid #b7d7df}
+.studio-next .nfc-quantity button,.studio-next .nfc-cart-controls button{background:#162128;border:1px solid #6a828c;color:#f1f3f3}
+.studio-next .nfc-cart-row{border-color:#45565d}
+.studio-next .nfc-cart-total{color:#f0f4f4}
+.studio-next .nfc-checkout{width:100%;margin:0}
+.studio-next .nfc-checkout-info label{color:#f0f3f3}
+.studio-next .nfc-checkout-info input,.studio-next .nfc-checkout-info textarea{background:#111a20;color:#f0f3f3;border:1px solid #5c747f;border-radius:5px}
+.studio-next .nfc-empty{color:#b1c0c7}
+.studio-next .nfc-modal-image{background:#1b303a;border-radius:5px}
+.studio-next .nfc-gallery-thumb{background:#1c2a33;border:1px solid #5b6f79;border-radius:3px}
+.studio-next .nfc-gallery-thumb.is-active{border-color:#d0ecf0}
+.studio-next .nfc-shop-close{border:1px solid #677c87;border-radius:5px;color:#eff3f2;background:#1c2a32}
+.studio-next .nfc-placeholder{background:#263a44;color:#d2e4e7}
+/* Calculator: render all original options and calculations, but avoid legacy light-blue cards. */
+.studio-next .quote-builder,.studio-next .brief-section{background:transparent!important;color:#f0f2ef;border:0}
+.studio-next .quote-head .eyebrow,.studio-next .brief-intro .eyebrow{display:none}
+.studio-next .quote-head h2,.studio-next .brief-intro h2{color:#f2f3f0}
+.studio-next .quote-layout{grid-template-columns:minmax(0,1.45fr) minmax(275px,.8fr);gap:20px}
+.studio-next .quote-panel,.studio-next .quote-summary{background:#212c33;border:1px solid #425660;border-radius:7px;box-shadow:none;color:#f0f3f1}
+.studio-next .quote-panel{padding:27px}
+.studio-next .quote-kicker{font-size:12px;color:#c1d9df;letter-spacing:0;text-transform:none}
+.studio-next .quote-type{background:#162229;border:1px solid #506773;color:#e9f2f3;border-radius:5px;min-height:74px}
+.studio-next .quote-type strong{color:#eff3f2}
+.studio-next .quote-type span{color:#a7bac2}
+.studio-next .quote-type[aria-pressed=true]{background:#2d4450;border-color:#b6d8e1;box-shadow:none}
+.studio-next .quote-step h3{color:#eef3f1}
+.studio-next .quote-step small{color:#afc0c7}
+.studio-next .quote-design,.studio-next .quote-option{background:#162129;border:1px solid #40525c;color:#eef2ef;border-radius:5px;min-height:90px}
+.studio-next .quote-design:has(input:checked),.studio-next .quote-option:has(input:checked){background:#293f4a;border-color:#8aadb9}
+.studio-next .quote-design input,.studio-next .quote-option input{accent-color:#b5d7df}
+.studio-next .quote-design small,.studio-next .quote-option small,.studio-next .quote-design .quote-description,.studio-next .quote-option .quote-description{color:#b8c7cc}
+.studio-next .quote-design .quote-price,.studio-next .quote-option .quote-price{background:#344b56;color:#cde6ea;border-radius:3px}
+.studio-next .quote-extra label,.studio-next .quote-addon-grid label{color:#e7ecea}
+.studio-next .quote-extra input,.studio-next .quote-extra textarea,.studio-next .quote-extra select{background:#111b23;color:#ecf1ef;border:1px solid #536c77;border-radius:5px;min-height:42px}
+.studio-next .quote-extra input[type=checkbox]{min-height:0;width:auto;accent-color:#b2d6df}
+.studio-next .quote-addons{border:1px solid #4f626b;border-radius:5px;padding:18px;margin:15px 0}
+.studio-next .quote-addons legend{color:#e4efef;padding-inline:6px}
+.studio-next .quote-addons p,.studio-next .quote-addons small{color:#b5c4c9}
+.studio-next .quote-summary{background:#273841;border-color:#61808b;position:sticky;top:95px}
+.studio-next .quote-summary .quote-kicker{color:#c0e2e8}
+.studio-next .quote-summary h3{color:#f1f4f2}
+.studio-next .quote-breakdown{color:#e5ecef}
+.studio-next .quote-breakdown li span:first-child{color:#c4d2d7}
+.studio-next .quote-total{border-color:#56717c}
+.studio-next .quote-total small{color:#b7cbd1}
+.studio-next .quote-note{color:#bdcfd5}
+.studio-next .quote-send{background:#b9dce5;color:#152630;border-radius:5px}
+.studio-next .quote-reset{color:#d3e3e8;border-color:#7794a0;border-radius:5px}
+.studio-next .quote-status{color:#c2dce1}
+.studio-next .brief-layout{grid-template-columns:minmax(0,1fr) minmax(240px,.42fr)}
+.studio-next .brief-card,.studio-next .brief-aside{border:1px solid #465f68;border-radius:7px;box-shadow:none;background:#1f2b32;color:#ebf0ef}
+.studio-next .brief-aside{background:#253740}
+.studio-next .brief-aside h3{color:#f0f2f2}
+.studio-next .brief-aside p{color:#c1d0d5}
+.studio-next .brief-step-title{color:#eef2f0}
+.studio-next .brief-step-subtitle{color:#b8c9ce}
+.studio-next .brief-field{color:#eef1f1}
+.studio-next .brief-field input,.studio-next .brief-field select,.studio-next .brief-field textarea{border:1px solid #526c75;background:#121c24;color:#f0f1ef;border-radius:5px}
+.studio-next .brief-meter{background:#394952}
+.studio-next .brief-meter>span{background:#a6d7e1}
+.studio-next .brief-controls button{background:#c0dee5;color:#16252d;border-radius:5px;border-color:#c0dee5}
+.studio-next .brief-controls button:first-child{background:#18242c;color:#e8f0f0;border-color:#677d88}
+.studio-next .brief-status{color:#c0e1e8}
+.studio-next .brief-cta{background:transparent;border:1px solid #7593a0;border-radius:5px;color:#dcecef}
+.studio-next .brief-review{color:#dce9ec}
+@media(max-width:960px){
+ .studio-next .nfc-store .nfc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .studio-next .nfc-store .section-top{grid-template-columns:1fr}
+ .studio-next .quote-layout,.studio-next .brief-layout{grid-template-columns:1fr}
+ .studio-next .quote-summary{position:static}
+}
+@media(max-width:600px){
+ .studio-next .nfc-store .nfc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .studio-next .nfc-store .nfc-product h3{font-size:15px;margin:12px 11px 0}
+ .studio-next .nfc-store .nfc-product p{font-size:12px;margin:5px 11px 0}
+ .studio-next .nfc-store .nfc-product strong{font-size:15px;margin:9px 11px 0}
+ .studio-next .nfc-store .nfc-product button{font-size:11px;margin:11px 10px 0;padding:10px 8px}
+ .studio-next .nfc-shop-dialog{padding:15px;max-height:90dvh}
+ .studio-next .nfc-options{grid-template-columns:1fr}
+ .studio-next .nfc-store-toolbar{flex-wrap:wrap}
+ .studio-next .quote-types{grid-template-columns:1fr 1fr;gap:8px}
+ .studio-next .quote-panel,.studio-next .quote-summary{padding:19px}
+ .studio-next .quote-designs,.studio-next .quote-options,.studio-next .quote-extra{grid-template-columns:1fr}
+ .studio-next .quote-type{min-height:65px}
+ .studio-next .brief-card,.studio-next .brief-aside{padding:19px}
+}
