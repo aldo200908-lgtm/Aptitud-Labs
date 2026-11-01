@@ -22,10 +22,16 @@ parser=argparse.ArgumentParser()
 parser.add_argument("--root",required=True)
 args=parser.parse_args()
 root=Path(args.root).resolve()
+# Match the actual project-Pages subpath rather than serving the repository root.
+webroot=Path("/tmp/aptitud-studio-next-webroot")
+webroot.mkdir(parents=True,exist_ok=True)
+link=webroot/"Aptitud-Labs"
+if link.is_symlink():link.unlink()
+if not link.exists():link.symlink_to(root,target_is_directory=True)
 out=Path.cwd()/"rebuild-evidence"
 out.mkdir(exist_ok=True)
 class Quiet(SimpleHTTPRequestHandler):
-    def __init__(self,*a,**kw):super().__init__(*a,directory=str(root),**kw)
+    def __init__(self,*a,**kw):super().__init__(*a,directory=str(webroot),**kw)
     def log_message(self,*a):pass
 server=ThreadingHTTPServer(("127.0.0.1",0),Quiet)
 threading.Thread(target=server.serve_forever,daemon=True).start()
