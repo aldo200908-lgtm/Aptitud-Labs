@@ -20,6 +20,10 @@ jobs:
     steps:
       - name: Checkout only the Motion V5 preview
         uses: actions/checkout@v4
+      - name: Install browser validation dependencies
+        run: python3 -m pip install --disable-pip-version-check "selenium>=4.20,<5"
+      - name: Verify real contact colors in mobile and desktop Chromium
+        run: python3 scripts/test-contact-color.py
       - name: Build scoped Pages assets (no production changes)
         run: python3 scripts/build-gh-pages-preview.py --repo Aptitud-Labs --output _site
       - name: Validate rebased assets and page routes
