@@ -112,6 +112,14 @@ try:
             m.update({"label":label,"route":"/Aptitud-Labs/"+relative})
             if label in ("01-inicio","02-portafolio","03-servicios","04-planes","05-nfc","06-cotizar"):
                 results["screens"].append(capture(label+"-mobile-top"))
+                # Scroll exactly as a visitor would so lazy photos, CSS reveals and
+                # IntersectionObserver motion actually enter the viewport.
+                for ypos in range(0,m["totalHeight"],570):
+                    driver.execute_script("window.scrollTo(0,arguments[0])",ypos)
+                    time.sleep(.065)
+                driver.execute_script("window.scrollTo(0,0)")
+                time.sleep(.75)
+                m["afterScroll"]=metrics()
                 results["screens"].append(capture(label+"-mobile-full",full=True))
                 if m["totalHeight"]>8400:
                     height=min(2600,m["totalHeight"]-8400)
@@ -138,6 +146,12 @@ try:
         driver.get(BASE+relative);time.sleep(.6)
         m=metrics();m.update({"label":label,"route":"/Aptitud-Labs/"+relative})
         results["screens"].append(capture(label+"-top"))
+        for ypos in range(0,m["totalHeight"],720):
+            driver.execute_script("window.scrollTo(0,arguments[0])",ypos)
+            time.sleep(.07)
+        driver.execute_script("window.scrollTo(0,0)")
+        time.sleep(.8)
+        m["afterScroll"]=metrics()
         results["screens"].append(capture(label+"-full",full=True))
         results["pages"].append(m)
 finally:
